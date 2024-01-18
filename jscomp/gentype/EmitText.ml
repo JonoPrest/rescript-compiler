@@ -6,8 +6,10 @@ let comment x = "/* " ^ x ^ " */"
 let genericsString ~typeVars =
   match typeVars == [] with
   | true -> ""
-  | false -> "<" ^ String.concat "," typeVars ^ ">"
-
-let quotes x = "\"" ^ x ^ "\""
+  | false ->
+    "<"
+    ^ String.concat ","
+        (List.map GenTypeCommon.sanitizeReservedKeywords typeVars)
+    ^ ">"
 
 let fieldAccess ~label value = value ^ "." ^ label

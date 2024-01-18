@@ -53,6 +53,8 @@ let isNumber s =
   done;
   res.contents
 
+let quotes x = "\"" ^ x ^ "\""
+
 let labelJSToString case =
   match case.labelJS with
   | NullLabel -> "null"
@@ -60,7 +62,7 @@ let labelJSToString case =
   | BoolLabel b -> b |> string_of_bool
   | FloatLabel s -> s
   | IntLabel i -> i
-  | StringLabel s -> s |> EmitText.quotes
+  | StringLabel s -> s |> quotes
 
 type closedFlag = Open | Closed
 
@@ -174,11 +176,16 @@ let createVariant ~inherits ~noPayloads ~payloads ~polymorphic ~tag ~unboxed =
 let ident ?(builtin = true) ?(typeArgs = []) name =
   Ident {builtin; name; typeArgs}
 
+let sanitizeReservedKeywords s =
+  if s |> Js_reserved_map.is_reserved then "$$" ^ s else s
+
 let sanitizeTypeName name =
   name
   |> String.map (function
        | '\'' -> '_'
        | c -> c)
+  |> sanitizeReservedKeywords
+
 let unknown = ident "unknown"
 let bigintT = ident "BigInt"
 let booleanT = ident "boolean"

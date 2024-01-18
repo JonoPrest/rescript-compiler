@@ -110,6 +110,7 @@ let emitAllModuleItems ~config ~emitters ~fileName
            ModuleName.forInnerModule ~fileName ~innerModuleName:moduleName
            |> ModuleName.toString
          in
+         Printf.printf "this is emittedModuleItem %s\n" emittedModuleItem;
          emittedModuleItem
          |> EmitType.emitExportConst ~docString ~early:false ~config ~emitters
               ~name:moduleName ~type_:typeForType ~typeNameIsInterface:(fun _ ->

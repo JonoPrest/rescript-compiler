@@ -155,7 +155,7 @@ let rec renderType ~(config : Config.t) ?(indent = None) ~typeNameIsInterface
       |> List.map (renderType ~config ~indent ~typeNameIsInterface ~inFunType)
       |> String.concat ", ")
     ^ "]"
-  | TypeVar s -> s
+  | TypeVar s -> s |> GenTypeCommon.sanitizeReservedKeywords
   | Variant {inherits; noPayloads; payloads; polymorphic; tag; unboxed} ->
     let inheritsRendered =
       inherits
@@ -248,7 +248,7 @@ and renderField ~config ~indent ~typeNameIsInterface ~inFunType
   let lbl =
     match isJSSafePropertyName lbl with
     | true -> lbl
-    | false -> EmitText.quotes lbl
+    | false -> GenTypeCommon.quotes lbl
   in
 
   let defStr =

@@ -242,6 +242,7 @@ let emitCodeItem ~config ~emitters ~moduleItemsEmitter ~env ~fileName
   | ExportValue {docString; moduleAccessPath; originalName; resolvedName; type_}
     ->
     let resolvedNameStr = ResolvedName.toString resolvedName in
+    Printf.printf "this is the resolvedNameStr %s \n" resolvedNameStr;
     let importPath =
       fileName
       |> ModuleResolver.resolveModule ~config ~importExtension:config.suffix
@@ -258,6 +259,7 @@ let emitCodeItem ~config ~emitters ~moduleItemsEmitter ~env ~fileName
       | true -> Runtime.default
       | false -> resolvedNameStr
     in
+    Printf.printf "this is the the end name %s \n" name;
     let module HookType = struct
       type t = {
         propsType: type_;
@@ -335,6 +337,8 @@ let emitCodeItem ~config ~emitters ~moduleItemsEmitter ~env ~fileName
       | _ -> (type_, None)
     in
 
+    Printf.printf "this is the resolved name going to extend %s \n"
+      (ResolvedName.toString resolvedName);
     resolvedName
     |> ExportModule.extendExportModules ~docString ~moduleItemsEmitter ~type_;
     let emitters =
@@ -357,10 +361,10 @@ let emitCodeItem ~config ~emitters ~moduleItemsEmitter ~env ~fileName
         emitExportType ~emitters ~config ~typeNameIsInterface exportType
       | _ -> emitters
     in
+    let accessPath = moduleAccessPath |> Runtime.emitModuleAccessPath ~config in
+    Printf.printf "this is the accessPath %s \n" accessPath;
     let emitters =
-      (fileNameJs |> ModuleName.toString)
-      ^ "."
-      ^ (moduleAccessPath |> Runtime.emitModuleAccessPath ~config)
+      (fileNameJs |> ModuleName.toString) ^ "." ^ accessPath
       |> EmitType.emitExportConst ~config ~docString ~early:false ~emitters
            ~name ~type_ ~typeNameIsInterface
     in

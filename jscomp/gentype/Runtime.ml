@@ -5,7 +5,7 @@ let newModuleItem ~name = name
 
 let rec emitModuleAccessPath ~config moduleAccessPath =
   match moduleAccessPath with
-  | Root s -> s
+  | Root s -> s |> GenTypeCommon.sanitizeReservedKeywords
   | Dot (p, moduleItem) ->
     p |> emitModuleAccessPath ~config |> EmitText.fieldAccess ~label:moduleItem
 

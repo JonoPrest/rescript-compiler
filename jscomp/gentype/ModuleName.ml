@@ -3,6 +3,9 @@ type t = string
 let curry = "Curry"
 let rescriptPervasives = "RescriptPervasives"
 
+let sanitizeReservedKeywords s =
+  if s |> Js_reserved_map.is_reserved then "$$" ^ s else s
+
 let sanitizeId s =
   let s =
     if String.contains s '.' || String.contains s '[' || String.contains s ']'
@@ -20,7 +23,7 @@ let sanitizeId s =
 let forJsFile s = sanitizeId s ^ "JS"
 
 let forInnerModule ~fileName ~innerModuleName =
-  (fileName |> forJsFile) ^ "." ^ innerModuleName
+  (fileName |> forJsFile) ^ "." ^ (innerModuleName |> sanitizeReservedKeywords)
 
 let fromStringUnsafe s = s
 let toString s = s
