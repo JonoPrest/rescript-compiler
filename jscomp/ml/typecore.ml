@@ -304,11 +304,16 @@ let extract_concrete_record env ty =
   match extract_concrete_typedecl env ty with
     (p0, p, {type_kind=Type_record (fields, repr)}) -> (p0, p, fields, repr)
   | _ -> raise Not_found
-
+ 
 let extract_concrete_variant env ty =
+  Format.printf "ty: %a @." Printtyp.type_expr ty;
   match extract_concrete_typedecl env ty with
-    (p0, p, {type_kind=Type_variant cstrs}) -> (p0, p, cstrs)
-  | (p0, p, {type_kind=Type_open}) -> (p0, p, [])
+    (p0, p, {type_kind=Type_variant cstrs}) -> 
+    Format.printf "type variant %a @." Printtyp.path p0;
+    (p0, p, cstrs)
+  | (p0, p, {type_kind=Type_open}) -> 
+    Format.printf "type open %a @." Printtyp.path p0;
+    (p0, p, [])
   | _ -> raise Not_found
 
 let label_is_optional ld =
@@ -343,6 +348,7 @@ let unify_exp_types ?typeClashContext loc env ty expected_ty =
     unify env ty expected_ty
   with
     Unify trace ->
+(*We want to hit here*)
       raise(Error(loc, env, Expr_type_clash(trace, typeClashContext)))
   | Tags(l1,l2) ->
       raise(Typetexp.Error(loc, env, Typetexp.Variant_tags (l1, l2)))
@@ -803,6 +809,7 @@ end) = struct
           use ();
           lbl
         with Not_found -> try
+          Format.printf "%a@." Printtyp.path tpath0;
           let lbl = lookup_from_type env tpath lid in
           check_lk tpath lbl;
           lbl
@@ -1691,6 +1698,7 @@ let rec type_approx env sexp =
       let ty = type_approx env e in
       let ty1 = approx_type env sty in
       begin try unify env ty ty1 with Unify trace ->
+            print_string "hit 3";
         raise(Error(sexp.pexp_loc, env, Expr_type_clash (trace, None)))
       end;
       ty1
@@ -1703,6 +1711,7 @@ let rec type_approx env sexp =
       and ty1 = approx_ty_opt sty1
       and ty2 = approx_type env sty2 in
       begin try unify env ty ty1 with Unify trace ->
+            print_string "hit 2";
         raise(Error(sexp.pexp_loc, env, Expr_type_clash (trace, None)))
       end;
       ty2
@@ -2575,6 +2584,7 @@ and type_expect_ ?typeClashContext ?in_function ?(recarg=Rejected) env sexp ty_e
                 let tv = newvar () in
                 let gen = generalizable tv.level arg.exp_type in
                 (try unify_var env tv arg.exp_type with Unify trace ->
+            print_string "hit 1";
                   raise(Error(arg.exp_loc, env, Expr_type_clash (trace, typeClashContext))));
                 gen
               end else true
@@ -3292,6 +3302,9 @@ and type_application ?typeClashContext uncurried env funct (sargs : sargs) : tar
       targs, ret_t, fully_applied
 
 and type_construct env loc lid sarg ty_expected attrs =
+  let ty_expected = match ty_expected.desc with
+  | Tconstr (Pident {name = "function$"}, [underlying; _], _) -> underlying
+    | _ -> ty_expected in
   let opath =
     try
       let (p0, p,_) = extract_concrete_variant env ty_expected in
@@ -3299,6 +3312,13 @@ and type_construct env loc lid sarg ty_expected attrs =
     with Not_found -> None
   in
   let constrs = Typetexp.find_all_constructors env lid.loc lid.txt in
+(*Here*)
+
+  (* Printast.expression Format.std_formatter ty_expected; *)
+  (* (Printtyp.type_expr Format.std_formatter ty_expected); *)
+  (* fprintf Format.std_formatter "type: %a \n" Printtyp.type_expr ty_expected; *)
+   (* Format.std_formatter ty_expected; *)
+  
   let constr =
     wrap_disambiguate "This variant expression is expected to have" ty_expected
       (Constructor.disambiguate lid env opath) constrs in
@@ -3902,6 +3922,7 @@ let report_error env ppf = function
     end else begin
       fprintf ppf "@[<v>";
 
+      (* Here is the bug *)
       fprintf ppf "@[<2>The %s @{<error>%s@} does not belong to type @{<info>%a@}@]@,@,"
         (label_of_kind kind)
         name (*kind*) Printtyp.path p;

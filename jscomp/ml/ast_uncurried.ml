@@ -114,3 +114,6 @@ let uncurried_type_get_arity_opt ~env typ =
   | Tconstr (Pident { name = "function$" }, [ _t; tArity ], _) ->
       Some (type_to_arity tArity)
   | _ -> None
+
+
+

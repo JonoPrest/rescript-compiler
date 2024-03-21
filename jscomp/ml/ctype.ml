@@ -1477,9 +1477,17 @@ let _ = forward_try_expand_once := try_expand_safe
 let rec extract_concrete_typedecl env ty =
   let ty = repr ty in
   match ty.desc with
-    Tconstr (p, _, _) ->
+
+  (* | Tconstr (Pident {name = "function$"}, [{desc = Tarrow (_, _,{desc=Tconstr (p, _,_)}, _)}; _], _)  *)
+  |Tconstr (p, _, _) ->
+     (* /another *)
       let decl = Env.find_type p env in
-      if decl.type_kind <> Type_abstract then (p, p, decl) else
+      if decl.type_kind <> Type_abstract then 
+      (
+        print_string "is abstract\n";
+        (p, p, decl) 
+      )
+      else
       let ty =
         try try_expand_once env ty with Cannot_expand -> raise Not_found
       in
