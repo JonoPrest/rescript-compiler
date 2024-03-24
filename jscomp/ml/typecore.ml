@@ -301,6 +301,7 @@ let extract_option_type env ty =
   | _ -> assert false
 
 let extract_concrete_record env ty =
+  print_string "extract_concrete_record called \n";
   match extract_concrete_typedecl env ty with
     (p0, p, {type_kind=Type_record (fields, repr)}) -> (p0, p, fields, repr)
   | _ -> raise Not_found
@@ -308,7 +309,7 @@ let extract_concrete_record env ty =
 let extract_concrete_variant env ty =
   Format.printf "ty: %a @." Printtyp.type_expr ty;
   match extract_concrete_typedecl env ty with
-    (p0, p, {type_kind=Type_variant cstrs}) -> 
+  (p0, p, {type_kind=Type_variant cstrs}) when not (Ast_uncurried_utils.typeIsUncurriedFun ty) -> 
     Format.printf "type variant %a @." Printtyp.path p0;
     (p0, p, cstrs)
   | (p0, p, {type_kind=Type_open}) -> 
@@ -349,6 +350,7 @@ let unify_exp_types ?typeClashContext loc env ty expected_ty =
   with
     Unify trace ->
 (*We want to hit here*)
+    print_string "unify error \n";
       raise(Error(loc, env, Expr_type_clash(trace, typeClashContext)))
   | Tags(l1,l2) ->
       raise(Typetexp.Error(loc, env, Typetexp.Variant_tags (l1, l2)))
@@ -664,13 +666,22 @@ let rec collect_missing_arguments env type1 type2 = match type1 with
   | {Types.desc=Tarrow (label, argtype, typ, _)} when Ctype.matches env typ type2 ->
     Some [(label, argtype)]
   | {desc=Tarrow (label, argtype, typ, _)} -> begin
+    print_string "Tarrow case";
       match collect_missing_arguments env typ type2 with
       | Some res -> Some ((label, argtype) :: res)
       | None -> None
     end
-  | _ -> None
+  | t when Ast_uncurried_utils.typeIsUncurriedFun t -> collect_missing_arguments env (Ast_uncurried_utils.typeExtractUncurriedFun t) type2
+  | _ -> 
+
+    print_string "no match\n";
+    None
 
 let print_expr_type_clash ?typeClashContext env trace ppf = begin
+  print_string "printing expr type clash \n";
+
+  (* Format.printf "trace: %a @." (Printtyp.trace true true "||") trace; *)
+  trace |> List.iter(fun (exp1, exp2) ->  Format.printf "type1: %a || type2: %a @." Printtyp.type_expr exp1 Printtyp.type_expr exp2 );
   (* this is the most frequent error. We should do whatever we can to provide
       specific guidance to this generic error before giving up *)
   let bottom_aliases_result = bottom_aliases trace in
@@ -701,11 +712,18 @@ let print_expr_type_clash ?typeClashContext env trace ppf = begin
       print_arguments arguments
   | None ->
     let missing_parameters = match bottom_aliases_result with
-      | Some (actual, expected) -> collect_missing_arguments env expected actual
-      | None -> assert false
+      | Some (actual, expected) -> 
+        print_string"Some bottom alias result \n";
+       Format.printf "expected: %a actual: %a @." Printtyp.type_expr expected
+        Printtyp.type_expr actual;
+        collect_missing_arguments env expected actual
+      | None -> 
+        print_string "no bottom alias result \n";
+        assert false
     in
     begin match missing_parameters with
       | Some [singleParameter] ->
+        (* We want to hit here *)
         fprintf ppf "@[This value might need to be @{<info>wrapped in a function@ that@ takes@ an@ extra@ parameter@}@ of@ type@ %a@]@,@,"
           print_arguments [singleParameter];
         fprintf ppf "@[@{<info>Here's the original error message@}@]@,"
@@ -713,7 +731,10 @@ let print_expr_type_clash ?typeClashContext env trace ppf = begin
         fprintf ppf "@[This value seems to @{<info>need to be wrapped in a function that takes extra@ arguments@}@ of@ type:@ @[<hv>%a@]@]@,@,"
           print_arguments arguments;
         fprintf ppf "@[@{<info>Here's the original error message@}@]@,"
-      | None -> ()
+      | None -> 
+
+        print_string "no underlying missing_parameters \n";
+        ()
     end;
 
     Printtyp.super_report_unification_error ppf env trace
@@ -1042,14 +1063,17 @@ let rec type_pat ~constrs ~labels ~no_existentials ~mode ~explode ~env
 
 and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
     sp expected_ty k =
+  print_string "type_pat_aux called \n";
   let mode' = if mode = Splitting_or then Normal else mode in
   let type_pat ?(constrs=constrs) ?(labels=labels) ?(mode=mode')
       ?(explode=explode) ?(env=env) =
     type_pat ~constrs ~labels ~no_existentials ~mode ~explode ~env in
   let loc = sp.ppat_loc in
   let rp k x : pattern = if constrs = None then k (rp x) else k x in
+  Format.printf "pattern: %a @." Pprintast.pattern sp;
   match sp.ppat_desc with
     Ppat_any ->
+    print_string"any hit \n";
       let k' d = rp k {
         pat_desc = d;
         pat_loc = loc; pat_extra=[];
@@ -1070,6 +1094,7 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
           ~explode sp expected_ty k
       else k' Tpat_any
   | Ppat_var name ->
+    print_string"Ppat_var hit \n";
       let id = (* PR#7330 *)
         if name.txt = "*extension*" then Ident.create name.txt else
         enter_variable loc name expected_ty
@@ -1081,6 +1106,7 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
         pat_attributes = sp.ppat_attributes;
         pat_env = !env }
   | Ppat_unpack name ->
+    print_string"Ppat_unpack hit \n";
       assert (constrs = None);
       let id = enter_variable loc name expected_ty ~is_module:true in
       rp k {
@@ -1093,6 +1119,7 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
   | Ppat_constraint({ppat_desc=Ppat_var name; ppat_loc=lloc},
                     ({ptyp_desc=Ptyp_poly _} as sty)) ->
       (* explicitly polymorphic type *)
+    print_string "Ppat_constraint 1 hit \n";
       assert (constrs = None);
       let cty, force = Typetexp.transl_simple_type_delayed !env sty in
       let ty = cty.ctyp_type in
@@ -1116,6 +1143,7 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
       | _ -> assert false
       end
   | Ppat_alias(sq, name) ->
+    print_string"Ppat_interval hit \n";
       assert (constrs = None);
       type_pat sq expected_ty (fun q ->
         begin_def ();
@@ -1130,6 +1158,7 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
           pat_attributes = sp.ppat_attributes;
           pat_env = !env })
   | Ppat_constant cst ->
+    print_string"Ppat_constant hit \n";
       let cst = constant_or_raise !env loc cst in
       unify_pat_types loc !env (type_constant cst) expected_ty;
       rp k {
@@ -1139,6 +1168,7 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
         pat_attributes = sp.ppat_attributes;
         pat_env = !env }
   | Ppat_interval (Pconst_char c1, Pconst_char c2) ->
+    print_string"Ppat_interval hit \n";
       let open Ast_helper.Pat in
       let gloc = {loc with Location.loc_ghost=true} in
       let rec loop c1 c2 =
@@ -1155,6 +1185,7 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
   | Ppat_interval _ ->
       raise (Error (loc, !env, Invalid_interval))
   | Ppat_tuple spl ->
+    print_string"Ppat_tuple hit \n";
       assert (List.length spl >= 2);
       let spl_ann = List.map (fun p -> (p,newvar ())) spl in
       let ty = newty (Ttuple(List.map snd spl_ann)) in
@@ -1167,6 +1198,7 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
         pat_attributes = sp.ppat_attributes;
         pat_env = !env })
   | Ppat_construct(lid, sarg) ->
+    print_string "Ppat_construct line hit \n";
       let opath =
         try
           let (p0, p, _) = extract_concrete_variant !env expected_ty in
@@ -1254,6 +1286,7 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
           pat_attributes = sp.ppat_attributes;
           pat_env = !env })
   | Ppat_variant(l, sarg) ->
+    print_string"Ppat_variant hit \n";
       let arg_type = match sarg with None -> [] | Some _ -> [newvar()] in
       let row = { row_fields =
                     [l, Reither(sarg = None, arg_type, true, ref None)];
@@ -1280,6 +1313,7 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
         | _            -> k None
       end
   | Ppat_record(lid_sp_list, closed) ->
+    print_string"Ppat_record hit \n";
       let opath, record_ty =
         try
           let (p0, p, _, _) = extract_concrete_record !env expected_ty in
@@ -1343,6 +1377,7 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
         type_label_a_list ?labels loc false !env type_label_pat opath
           lid_sp_list (k' k)
   | Ppat_array spl ->
+    print_string"Ppat_array hit \n";
       let ty_elt = newvar() in
       unify_pat_types
         loc !env (instance_def (Predef.type_array ty_elt)) expected_ty;
@@ -1355,6 +1390,7 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
         pat_attributes = sp.ppat_attributes;
         pat_env = !env })
   | Ppat_or(sp1, sp2) ->
+    print_string"Ppat_or hit \n";
       let state = save_state env in
       begin match
         if mode = Split_or || mode = Splitting_or then raise Need_backtrack;
@@ -1396,6 +1432,7 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
             type_pat ~mode sp2 expected_ty k
       end
   | Ppat_lazy sp1 ->
+    print_string"Ppat_lazy hit \n";
       let nv = newvar () in
       unify_pat_types loc !env (instance_def (Predef.type_lazy_t nv))
         expected_ty;
@@ -1408,6 +1445,7 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
         pat_attributes = sp.ppat_attributes;
         pat_env = !env })
   | Ppat_constraint(sp, sty) ->
+    print_string"Ppat_constraint 2 hit \n";
       (* Separate when not already separated by !principal *)
       let separate = true in
       if separate then begin_def();
@@ -1440,11 +1478,13 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
                   pat_extra = extra :: p.pat_extra}
         in k p)
   | Ppat_type lid ->
+    print_string"Ppat_type hit \n";
       let (path, p,ty) = build_or_pat !env loc lid in
       unify_pat_types loc !env ty expected_ty;
       k { p with pat_extra =
         (Tpat_type (path, lid), loc, sp.ppat_attributes) :: p.pat_extra }
   | Ppat_open (lid,p) ->
+    print_string"Ppat_open hit \n";
       let path, new_env =
         !type_open Asttypes.Fresh !env sp.ppat_loc lid in
       let new_env = ref new_env in
@@ -1454,8 +1494,10 @@ and type_pat_aux ~constrs ~labels ~no_existentials ~mode ~explode ~env
                             loc, sp.ppat_attributes) :: p.pat_extra }
       )
   | Ppat_exception _ ->
+    print_string"Ppat_exception hit \n";
       raise (Error (loc, !env, Exception_pattern_below_toplevel))
   | Ppat_extension ext ->
+    print_string"Ppat_extension hit \n";
       raise (Error_forward (Builtin_attributes.error_of_extension ext))
 
 let type_pat ?(allow_existentials=false) ?constrs ?labels ?(mode=Normal)
@@ -1943,6 +1985,7 @@ let rec name_pattern default = function
 (* Typing of expressions *)
 
 let unify_exp ?typeClashContext env exp expected_ty =
+  print_string "unify_exp called \n";
   let loc = proper_exp_loc exp in
   unify_exp_types ?typeClashContext loc env exp.exp_type expected_ty
 
@@ -3302,11 +3345,12 @@ and type_application ?typeClashContext uncurried env funct (sargs : sargs) : tar
       targs, ret_t, fully_applied
 
 and type_construct env loc lid sarg ty_expected attrs =
+  print_string "1 \n";
+  let opath =
+    try
   let ty_expected = match ty_expected.desc with
   | Tconstr (Pident {name = "function$"}, [underlying; _], _) -> underlying
     | _ -> ty_expected in
-  let opath =
-    try
       let (p0, p,_) = extract_concrete_variant env ty_expected in
       Some(p0, p)
     with Not_found -> None
@@ -3322,6 +3366,7 @@ and type_construct env loc lid sarg ty_expected attrs =
   let constr =
     wrap_disambiguate "This variant expression is expected to have" ty_expected
       (Constructor.disambiguate lid env opath) constrs in
+  print_string "2 \n";
   Env.mark_constructor Env.Positive env (Longident.last lid.txt) constr;
   Builtin_attributes.check_deprecated loc constr.cstr_attributes
     constr.cstr_name;
@@ -3335,6 +3380,7 @@ and type_construct env loc lid sarg ty_expected attrs =
   if List.length sargs <> constr.cstr_arity then
     raise(Error(loc, env, Constructor_arity_mismatch
                   (lid.txt, constr.cstr_arity, List.length sargs)));
+  print_string "3 \n";
   let separate = Env.has_local_constraints env in
   if separate then (begin_def (); begin_def ());
   let (ty_args, ty_res) = instance_constructor constr in
@@ -3346,6 +3392,7 @@ and type_construct env loc lid sarg ty_expected attrs =
       exp_attributes = attrs;
       exp_env = env } in
   let typeClashContext = typeClashContextMaybeOption ty_expected ty_res in
+  print_string "4 \n";
   if separate then begin
     end_def ();
     generalize_structure ty_res;
@@ -3361,7 +3408,11 @@ and type_construct env loc lid sarg ty_expected attrs =
     | _ -> assert false
   in
   let texp = {texp with exp_type = ty_res} in
-  if not separate then unify_exp ?typeClashContext env texp (instance env ty_expected);
+  if not separate then (
+
+  print_string "not separate \n";
+    unify_exp ?typeClashContext env texp (instance env ty_expected));
+  print_string "5 \n";
   let recarg =
     match constr.cstr_inlined with
     | None -> Rejected

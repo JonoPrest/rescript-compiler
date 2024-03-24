@@ -200,13 +200,18 @@ let typeClashContextForFunctionArgument typeClashContext sarg0 =
   | typeClashContext -> typeClashContext
 
 let typeClashContextMaybeOption ty_expected ty_res =
+  print_string "hitting typeClashContextMaybeOption \n";
   match (ty_expected, ty_res) with
   | ( {Types.desc = Tconstr (expectedPath, _, _)},
       {Types.desc = Tconstr (typePath, _, _)} )
     when Path.same Predef.path_option typePath
-         && Path.same expectedPath Predef.path_option = false ->
+         && Path.same expectedPath Predef.path_option = false 
+         && Path.same expectedPath Predef.path_uncurried = false ->
+    print_string "hitting some case\n";
     Some MaybeUnwrapOption
-  | _ -> None
+  | _ -> 
+    print_string "hitting none case\n";
+    None
 
 let typeClashContextInStatement sexp =
   match sexp.Parsetree.pexp_desc with

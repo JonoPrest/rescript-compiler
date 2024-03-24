@@ -6,11 +6,9 @@ let typeIsUncurriedFun (typ : Types.type_expr) =
 
 
 
-(* let typeExtractUncurriedFun (typ : Types.type_expr) =  *)
-  (* match typ.ptyp_desc with *)
-  (**)
-  (* | Tconstr (Pident {name = "function$"}, [{desc = Tarrow _}; _], _) -> *)
-  (* (* | Tconstr ({txt = Lident "function$"}, [tArg; tArity]) -> *) *)
-  (*   (tArg) *)
-  (* | _ -> assert false *)
+let typeExtractUncurriedFun (typ : Types.type_expr) = 
+  match typ.desc with
+  | Tconstr (Pident {name = "function$"}, [tArg; _], _) ->
+    tArg
+  | _ -> assert false
 
