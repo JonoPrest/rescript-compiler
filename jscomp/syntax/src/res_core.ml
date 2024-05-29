@@ -3399,28 +3399,50 @@ and parseIfOrIfLetExpression p =
   Parser.eatBreadcrumb p;
   expr
 
+(*
+let expect ?grammar token p =
+  if p.token = token then next p
+  else
+    let error = Diagnostics.expected ?grammar p.prevEndPos token in
+    err ~startPos:p.prevEndPos p error
+  *)
 and parseForRest hasOpeningParen pattern startPos p =
-  Parser.expect In p;
-  let e1 = parseExpr p in
-  let direction =
+  let handleFor =
     match p.Parser.token with
-    | Lident "to" -> Asttypes.Upto
-    | Lident "downto" -> Asttypes.Downto
-    | token ->
-      Parser.err p (Diagnostics.unexpected token p.breadcrumbs);
-      Asttypes.Upto
+    | In ->
+      Parser.next p;
+      let e1 = parseExpr p in
+      let direction =
+        match p.Parser.token with
+        | Lident "to" -> Asttypes.Upto
+        | Lident "downto" -> Asttypes.Downto
+        | token ->
+          Parser.err p (Diagnostics.unexpected token p.breadcrumbs);
+          Asttypes.Upto
+      in
+      if p.Parser.token = Eof then
+        Parser.err ~startPos:p.startPos p
+          (Diagnostics.unexpected p.Parser.token p.breadcrumbs)
+      else Parser.next p;
+      let e2 = parseExpr ~context:WhenExpr p in
+      if hasOpeningParen then Parser.expect Rparen p;
+      fun ~loc -> Ast_helper.Exp.for_ ~loc pattern e1 e2 direction
+    | Of ->
+      Parser.next p;
+      let iterExpr = parseExpr p in
+      let stubExpr2, stubDirection =
+        (Ast_helper.Exp.unreachable (), Asttypes.Upto)
+      in
+      fun ~loc ->
+        Ast_helper.Exp.for_ ~loc pattern iterExpr stubExpr2
+          stubDirection (*TODO add attribute*)
+    | _ -> assert false (*TODO: how should this fail?*)
   in
-  if p.Parser.token = Eof then
-    Parser.err ~startPos:p.startPos p
-      (Diagnostics.unexpected p.Parser.token p.breadcrumbs)
-  else Parser.next p;
-  let e2 = parseExpr ~context:WhenExpr p in
-  if hasOpeningParen then Parser.expect Rparen p;
   Parser.expect Lbrace p;
   let bodyExpr = parseExprBlock p in
   Parser.expect Rbrace p;
   let loc = mkLoc startPos p.prevEndPos in
-  Ast_helper.Exp.for_ ~loc pattern e1 e2 direction bodyExpr
+  handleFor ~loc bodyExpr
 
 and parseForExpression p =
   let startPos = p.Parser.startPos in
