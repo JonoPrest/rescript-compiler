@@ -4,13 +4,7 @@ import * as Mocha from "mocha";
 import * as Test_utils from "./test_utils.mjs";
 import * as Tagged_template_libJs from "./tagged_template_lib.js";
 
-function sql(prim0, prim1) {
-  return Tagged_template_libJs.sql(prim0, ...prim1);
-}
-
-let Pg = {
-  sql: sql
-};
+let Pg = {};
 
 let table = "users";
 

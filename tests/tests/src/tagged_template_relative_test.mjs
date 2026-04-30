@@ -2,23 +2,16 @@
 
 import * as Mocha from "mocha";
 import * as Test_utils from "./test_utils.mjs";
-import * as Tagged_template_relative_lib from "./tagged_template_relative_lib.mjs";
+import * as Tagged_template_libJs from "./tagged_template_lib.js";
 
 let table = "users";
 
 let id = "5";
 
-let queryAcrossFile = Tagged_template_relative_lib.taggedTemplateLiteralAssert([
-  `SELECT * FROM `,
-  ` WHERE id = `,
-  ``
-], [
-  table,
-  id
-]);
+let queryAcrossFile = Tagged_template_libJs.taggedTemplateLiteralAssert`SELECT * FROM ${table} WHERE id = ${id}`;
 
 Mocha.describe("tagged template across modules", () => {
-  Mocha.test("relative @module path tagged template called from another file emits a real tagged template invocation", () => Test_utils.eq("File \"tagged_template_relative_test.res\", line 13, characters 13-20", queryAcrossFile, "SELECT * FROM 'users' WHERE id = '5'"));
+  Mocha.test("relative @module path tagged template called from another file emits a real tagged template invocation", () => Test_utils.eq("File \"tagged_template_relative_test.res\", line 12, characters 13-20", queryAcrossFile, "SELECT * FROM 'users' WHERE id = '5'"));
 });
 
 export {

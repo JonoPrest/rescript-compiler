@@ -193,12 +193,24 @@ let check_ffi ?loc ffi : bool =
   | Js_module_as_class external_module_name ->
     upgrade (is_package_relative_path external_module_name.bundle);
     check_external_module_name external_module_name
-  | Js_new {external_module_name; name; splice = _; scopes = _}
-  | Js_call
-      {external_module_name; name; splice = _; scopes = _; tagged_template = _}
-    ->
+  | Js_new {external_module_name; name; splice = _; scopes = _} ->
     Ext_option.iter external_module_name (fun external_module_name ->
         upgrade (is_package_relative_path external_module_name.bundle));
+    Ext_option.iter external_module_name (fun name ->
+        check_external_module_name ?loc name);
+
+    valid_global_name ?loc name
+  | Js_call
+      {external_module_name; name; splice = _; scopes = _; tagged_template} ->
+    (* Tagged-template externals must keep their FFI metadata across module
+       boundaries so cross-module call sites can emit real backtick syntax;
+       a wrapped re-export degrades the call to a function call and loses the
+       `.raw` property that some libraries (e.g. postgres) rely on. So we
+       intentionally do not mark a relative bundle path as cross-module-inline
+       blocking when [tagged_template] is true. *)
+    if not tagged_template then
+      Ext_option.iter external_module_name (fun external_module_name ->
+          upgrade (is_package_relative_path external_module_name.bundle));
     Ext_option.iter external_module_name (fun name ->
         check_external_module_name ?loc name);
 
