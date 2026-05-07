@@ -8,6 +8,7 @@ depends: [
   "ounit2" {with-test & = "2.2.7"}
   "odoc" {with-doc}
   "ocaml-lsp-server" {with-dev-setup & = "1.22.0"}
+  "bisect_ppx" {with-dev-setup & >= "2.8.0"}
 
   # Test dependencies that would be broken on Windows runners
   "js_of_ocaml" {os != "win32" & with-test & = "6.0.1"}
