@@ -49,7 +49,8 @@ approximate anchors and re-confirm against the current source.
 
 | Lines | What | Why unreachable |
 |---|---|---|
-| 369–370 | `Const_int32 -> "%ldl"`, `Const_int64 -> "%LdL"` in `pretty_const` | No `int32`/`int64` literal patterns exist, so a witness is never of this shape. |
+| ~364–434 | `pretty_const`, `pretty_val`, `pretty_car`, `pretty_cdr`, `pretty_arg`, `pretty_lvals` | **Debug-only.** These are *not* the user-facing witness printer. The non-exhaustive warning builds its counter-example via `!print_res_pat` (parmatch.ml:2088), which is bound to `Pattern_printer.print_pattern` in `compiler/common/pattern_printer.ml` (already ~88% covered). The `pretty_*` family here is reachable only from the `dbg` tracing in this module. |
+| 369–370 | `Const_int32 -> "%ldl"`, `Const_int64 -> "%LdL"` in `pretty_const` | (Subsumed by the row above; also: no `int32`/`int64` literal patterns exist.) |
 | 461–476 | `pretty_line` / `pretty_matrix` (`prerr_endline "begin matrix"` …) | Debug-only matrix dumpers. |
 | 981–986 | `fatal_error "Parmatch.get_variant_constructors"` | Defensive; the guarded shapes are guaranteed by typing. |
 
@@ -57,40 +58,45 @@ approximate anchors and re-confirm against the current source.
 
 ## Reachable but cold — worth fixtures
 
-### `compiler/ml/parmatch.ml` — witness pretty-printers (`pretty_val` / `pretty_const`, ~364–434)
-
-These render the counter-example printed by a **non-exhaustive** warning
-("You forgot to handle a possible case here, for example: …"). They are cold
-only because existing fixtures print witnesses of a narrow set of shapes
-(mostly `option` / optional record). A non-exhaustive match per *shape* lights
-up the corresponding branch:
-
-| Branch | Fixture shape |
-|---|---|
-| `Tpat_tuple` (391), `Tpat_or` (416) | `switch (b1, b2) { \| (true, true) => … }` → `(false, true) \| (true, false)` |
-| cons / `pretty_car`/`pretty_cdr` (398, 419–428) | `switch (l: list<_>) { \| list{} => … }` → `list{_, ..._}` |
-| `Tpat_record` (402–412) | `switch r { \| {a: true, b: true} => … }` → `{a: true, b: false, _}` |
-| `Tpat_construct` w/ args (393–399) | `switch v { \| A => … }` → `B(_) \| D(_, _)` |
-| `Tpat_variant` (400–401) | non-exhaustive polymorphic-variant match → `#B(_)` |
-| `Tpat_array` (413) | non-exhaustive array-length match |
-| `pretty_const` int/char/string/float/bigint (365–368, 371–372) | non-exhaustive match on each scalar type |
+> **Correction / lesson.** An earlier draft of this file claimed the
+> `pretty_val` / `pretty_const` family (~364–434) was the reachable witness
+> printer and that one non-exhaustive fixture *per pattern shape* would light
+> it up. That is **wrong** — those are debug printers (see the dead-code table
+> above); the user-facing witness is rendered by `Pattern_printer.print_pattern`.
+> Direct measurement (compile each fixture with a dedicated `BISECT_FILE`)
+> confirmed the `pretty_*` lines stay cold even when the witness prints. Always
+> verify a "reachable" hypothesis against an actual `.coverage` file, not
+> against the visible warning text.
 
 ### `compiler/ml/parmatch.ml` — analysis edges
 
-| Lines | What | Trigger |
-|---|---|---|
-| 2058–2061 | `Warnings.All_clauses_guarded` | every clause carries an `if` guard |
-| 1649–1652, 1757–1761 | `Upartial` merge in or-pattern redundancy | an or-pattern clause whose *some* sub-branch is redundant |
-| 1814–1859 | `lub` (least upper bound) for tuple/variant/record/array | a clause covered by the *combination* of two overlapping or-branches |
+These *are* reachable, but the payoff is small (a handful of lines), because the
+surrounding exhaustiveness/redundancy machinery is already exercised by the
+existing suite.
+
+| Lines | What | Trigger | Status |
+|---|---|---|---|
+| 2058–2061 | `Warnings.All_clauses_guarded` | every clause carries an `if` guard | partially covered by `all_clauses_guarded` |
+| 1649–1652, 1757–1761 | `Upartial` merge in or-pattern redundancy | an or-pattern clause whose *some* sub-branch is redundant | partially covered by `redundant_or_branch` |
+| 1814–1859 | `lub` (least upper bound) for tuple/variant/record/array | a clause covered by the *combination* of two overlapping or-branches | still cold — `overlapping_or_lub` did **not** reach the tuple-`lub` branch; needs a sharper trigger |
 
 ### `compiler/ml/matching.ml` — compilation edges
 
-| Lines | What | Trigger |
-|---|---|---|
-| 1662–1705 | `make_test_sequence` dichotomic split (`split_sequence`/`cut`) | float/bigint/char match with **≥ 4** value cases (covered by `pattern_match_constants_test`) |
-| 2182–2186, 2396–2399, 2479–2482, 2911–2915, 2952–2957 | partial-match failaction / unused-handler / cannot-flatten paths | **non-exhaustive** matches (exercised via `super_errors` fixtures, which allow warnings) |
-| 1295–1300, 1311–1314, 1390–1393, 1491–1494 | `matcher_*` `Tpat_or` (`raise OrPat`) | or-patterns at a column being specialized during precompilation |
-| 1877–1923 | `as_interval_canfail` / `as_interval_nofail` hole logic | integer switches with non-contiguous values and a shared fail action |
+| Lines | What | Trigger | Status |
+|---|---|---|---|
+| 1662–1705 | `make_test_sequence` dichotomic split (`split_sequence`/`cut`) | float/bigint/char match with **≥ 4** value cases | ✓ covered by `pattern_match_constants_test` |
+| 2182–2186, 2396–2399, 2479–2482, 2911–2915, 2952–2957 | partial-match failaction / unused-handler / cannot-flatten paths | a *simple* non-exhaustive match is **not** enough; these need an unused or-pattern handler, a `Cannot_flatten` tuple-`let`, or a partial match whose non-constant constructors share an action | still cold — needs targeted fixtures |
+| 1295–1300, 1311–1314, 1390–1393, 1491–1494 | `matcher_*` `Tpat_or` (`raise OrPat`) | or-patterns at a column being specialized during precompilation | still cold |
+| 1877–1923 | `as_interval_canfail` / `as_interval_nofail` hole logic | integer switches with non-contiguous values and a shared fail action | still cold |
+
+> **Measured contribution of this PR's fixtures.** Confirmed via per-fixture
+> `BISECT_FILE` compilation (full JS, not `-bs-cmi-only`): ~10 lines in
+> `matching.ml` (the dichotomic split) and ~5 in `parmatch.ml`
+> (`All_clauses_guarded`, `Upartial`). The rest of the apparent full-suite
+> delta is measurement noise from differing compile sets between runs. The
+> behaviour fixtures' main value is **regression protection + cross-`bsc`
+> portability**, not the coverage metric — most pattern shapes were already
+> covered by the existing suite.
 
 ---
 
