@@ -32,81 +32,108 @@ function classifyInt(x) {
 }
 
 function classifyChar(c) {
-  if (c !== 97) {
-    if (c !== 101) {
-      if (c !== 122) {
-        return 0;
-      } else {
-        return 3;
-      }
-    } else {
+  switch (c) {
+    case 97 :
+      return 1;
+    case 101 :
       return 2;
-    }
-  } else {
-    return 1;
+    case 109 :
+      return 3;
+    case 113 :
+      return 4;
+    case 122 :
+      return 5;
+    default:
+      return 0;
   }
 }
 
 function classifyFloat(x) {
-  if (x !== 0.0) {
-    if (x !== 1.5) {
-      if (x !== 2.5) {
+  if (x < 2.5) {
+    if (x !== 0.0) {
+      if (x !== 1.5) {
         return "other";
       } else {
-        return "twohalf";
+        return "onehalf";
       }
     } else {
-      return "onehalf";
+      return "zero";
+    }
+  } else if (x !== 2.5) {
+    if (x !== 3.5) {
+      if (x !== 4.5) {
+        return "other";
+      } else {
+        return "fourhalf";
+      }
+    } else {
+      return "threehalf";
     }
   } else {
-    return "zero";
+    return "twohalf";
   }
 }
 
 function classifyBig(b) {
-  if (b !== 0n) {
-    if (b !== 1n) {
+  if (b < 10n) {
+    if (b !== 0n) {
+      if (b !== 1n) {
+        return "other";
+      } else {
+        return "one";
+      }
+    } else {
+      return "zero";
+    }
+  } else if (b !== 10n) {
+    if (b !== 50n) {
       if (b !== 100n) {
         return "other";
       } else {
         return "hundred";
       }
     } else {
-      return "one";
+      return "fifty";
     }
   } else {
-    return "zero";
+    return "ten";
   }
 }
 
 Mocha.describe("Pattern_match_constants_test", () => {
   Mocha.test("int switch with negatives, or-pattern and holes", () => {
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 48, characters 7-14", classifyInt(-5), "neg5");
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 49, characters 7-14", classifyInt(0), "zero");
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 50, characters 7-14", classifyInt(1), "small");
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 51, characters 7-14", classifyInt(2), "small");
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 52, characters 7-14", classifyInt(3), "small");
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 53, characters 7-14", classifyInt(100), "hundred");
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 54, characters 7-14", classifyInt(4), "other");
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 55, characters 7-14", classifyInt(-1), "other");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 56, characters 7-14", classifyInt(-5), "neg5");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 57, characters 7-14", classifyInt(0), "zero");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 58, characters 7-14", classifyInt(1), "small");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 59, characters 7-14", classifyInt(2), "small");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 60, characters 7-14", classifyInt(3), "small");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 61, characters 7-14", classifyInt(100), "hundred");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 62, characters 7-14", classifyInt(4), "other");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 63, characters 7-14", classifyInt(-1), "other");
   });
   Mocha.test("char switch", () => {
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 59, characters 7-14", classifyChar(/* 'a' */97), 1);
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 60, characters 7-14", classifyChar(/* 'e' */101), 2);
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 61, characters 7-14", classifyChar(/* 'z' */122), 3);
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 62, characters 7-14", classifyChar(/* 'q' */113), 0);
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 67, characters 7-14", classifyChar(/* 'a' */97), 1);
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 68, characters 7-14", classifyChar(/* 'e' */101), 2);
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 69, characters 7-14", classifyChar(/* 'm' */109), 3);
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 70, characters 7-14", classifyChar(/* 'q' */113), 4);
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 71, characters 7-14", classifyChar(/* 'z' */122), 5);
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 72, characters 7-14", classifyChar(/* 'x' */120), 0);
   });
-  Mocha.test("float switch (comparison sequence)", () => {
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 66, characters 7-14", classifyFloat(0.0), "zero");
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 67, characters 7-14", classifyFloat(1.5), "onehalf");
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 68, characters 7-14", classifyFloat(2.5), "twohalf");
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 69, characters 7-14", classifyFloat(9.9), "other");
+  Mocha.test("float switch (dichotomic comparison split)", () => {
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 76, characters 7-14", classifyFloat(0.0), "zero");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 77, characters 7-14", classifyFloat(1.5), "onehalf");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 78, characters 7-14", classifyFloat(2.5), "twohalf");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 79, characters 7-14", classifyFloat(3.5), "threehalf");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 80, characters 7-14", classifyFloat(4.5), "fourhalf");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 81, characters 7-14", classifyFloat(9.9), "other");
   });
-  Mocha.test("bigint switch (comparison sequence)", () => {
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 73, characters 7-14", classifyBig(0n), "zero");
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 74, characters 7-14", classifyBig(1n), "one");
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 75, characters 7-14", classifyBig(100n), "hundred");
-    Test_utils.eq("File \"pattern_match_constants_test.res\", line 76, characters 7-14", classifyBig(7n), "other");
+  Mocha.test("bigint switch (dichotomic comparison split)", () => {
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 85, characters 7-14", classifyBig(0n), "zero");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 86, characters 7-14", classifyBig(1n), "one");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 87, characters 7-14", classifyBig(10n), "ten");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 88, characters 7-14", classifyBig(50n), "fifty");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 89, characters 7-14", classifyBig(100n), "hundred");
+    Test_utils.eq("File \"pattern_match_constants_test.res\", line 90, characters 7-14", classifyBig(7n), "other");
   });
 });
 
