@@ -30,7 +30,7 @@ let classifyChar = c =>
   }
 
 /* >= 4 cases so make_test_sequence performs the dichotomic split
-   (split_sequence / cut) rather than a flat comparison chain. */
+ (split_sequence / cut) rather than a flat comparison chain. */
 let classifyFloat = x =>
   switch x {
   | 0.0 => "zero"
