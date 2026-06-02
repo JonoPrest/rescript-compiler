@@ -2,7 +2,7 @@ open Mocha
 open Test_utils
 
 /* Exercises `divide_array` in compiler/ml/matching.ml: dispatch on array
-   length, element projection, and a length-prefix pattern with a rest. */
+ length and element projection. */
 
 let sum = a =>
   switch a {
