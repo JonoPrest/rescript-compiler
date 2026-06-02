@@ -1,0 +1,14 @@
+
+  [1;33mWarning number 8[0m
+  [36m/.../fixtures/all_clauses_guarded.res[0m:[2m4:3-7:3[0m
+
+  2 [2m│[0m // exercises Warnings.All_clauses_guarded in parmatch.ml.
+  3 [2m│[0m let f = (x: int) =>
+  [1;33m4[0m [2m│[0m   [1;33mswitch x {[0m
+  [1;33m5[0m [2m│[0m [1;33m  | n if n > 0 => "pos"[0m
+  [1;33m6[0m [2m│[0m [1;33m  | n if n <= 0 => "nonpos"[0m
+  [1;33m7[0m [2m│[0m [1;33m  }[0m
+  8 [2m│[0m 
+
+  this pattern-matching is not exhaustive.
+All clauses in this pattern-matching are guarded.

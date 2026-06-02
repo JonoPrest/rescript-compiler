@@ -1,0 +1,11 @@
+
+  [1;33mWarning number 11[0m
+  [36m/.../fixtures/overlapping_or_lub.res[0m:[2m7:5-10[0m
+
+  5 [2m┆[0m switch x {
+  6 [2m┆[0m | (1, _) | (_, 2) => "a"
+  [1;33m7[0m [2m┆[0m | [1;33m(1, 2)[0m => "b"
+  8 [2m┆[0m | _ => "c"
+  9 [2m┆[0m }
+
+  this match case is unused.
