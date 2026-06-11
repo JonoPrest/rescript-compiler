@@ -27,38 +27,53 @@ the host `compiler-libs.common`. OCaml 5.3 support comes from
 [reanalyze#203](https://github.com/rescript-lang/reanalyze/pull/203) (branch
 `ocaml-5-3`), **not yet merged** — the runner pins its commit.
 
-## Status: it works
+## Status: it RUNS, but the output is NOT yet trustworthy
 
-Running DCE over all 529 dune-built cmts produces a full report. Category counts
-from a baseline run (`-dce-cmt _build/default`):
+The tooling runs end-to-end and produces a full report over all dune-built cmts.
+That is the mechanical milestone. **But the results cannot currently be acted on**,
+for two stacked reasons:
 
-| Category | Count |
-|---|---|
-| Dead Value | ~2740 |
-| Dead Type | ~386 |
-| Redundant Optional Argument | ~212 |
-| Dead Module | ~203 |
-| Unused Argument | ~169 |
-| Dead Value With Side Effects | ~108 |
-| (of which) variant cases "never constructed" | ~278 |
+### 1. (Fixed) Entry-point roots — use `dune build @check`
 
-## The big caveat: entry-point false positives
+reanalyze DCE is a whole-program reachability analysis anchored at **roots** (entry
+points = the executable mains). A plain `dune build` does native compilation and
+emits only `.cmti` (no impl `.cmt`) for modules with an `.mli` — including the `bsc`
+main — so reanalyze never sees the entry-point bodies and over-reports. The runner
+now uses `dune build @check`, which typecheck-builds everything and emits the impl
+`.cmt` for all modules. This fixed the `Bs_version`-class false positives and cut
+Dead Value ~2740 → ~2130, Dead Module ~203 → ~146.
 
-The raw numbers are dominated by false positives. reanalyze DCE is a whole-program
-reachability analysis anchored at **roots** (entry points). The compiler's true
-entry points are the executable mains — and **dune emits only `.cmti` (no `.cmt`
-body) for the `bsc` main**, while the playground (`jsoo`) main isn't built in the
-default profile at all. With the entry-point bodies missing, everything reachable
-only from them looks dead. Concrete example: `Bs_version` is flagged a "dead
-module" even though `compiler/bsc/rescript_compiler_main.ml` and
-`compiler/jsoo/jsoo_playground_main.ml` use it.
+Residual root gap: the playground `jsoo` main is `enabled_if profile=browser` with
+`(modes js wasm)` (no bytecode `.cmt`), and the dune comment says not to build it by
+default (slow). So code used only by the playground still shows as dead.
 
-**To make this actionable, the next step is fixing roots**, via some combination of:
-- getting dune to emit `.cmt` for the executable mains (so their call sites are
-  analyzed), and/or
-- declaring entry points live with `-live-paths` / `-live-names`, and/or
+### 2. (BLOCKER) reanalyze#203's 5.3 dependency tracking is incomplete
+
+Even with roots fixed, the report flags **obviously-live core modules as dead** —
+e.g. `Ast_helper` (510 references in-tree), `Lam_compile`, `Js_dump`, `Lam_convert`.
+The cause is stated in the PR itself: reanalyze#203 derives value dependencies
+*"just based on the type of what's available in the new `Cmt_format.cmt_infos`"* —
+a **tentative, incomplete** method that does not capture the real use edges in 5.3
+cmts. As a result the cross-reference-based categories (Dead Value / Dead Module /
+Dead Type / "never constructed") are unreliable: there are real positives buried in
+there, but you can't tell which without manually re-verifying every one, which
+defeats the purpose.
+
+Local, call-site-based categories fare better — e.g. `transl_apply`'s `~inlined` is
+correctly reported as always-supplied — but they rely on the same reference tracking,
+so they're only trustworthy when a function has few, simple call sites.
+
+**Conclusion:** the real blocker is upstream. Completing reanalyze#203's value-
+dependency extraction for OCaml 5.3 cmts (issue rescript-lang/reanalyze#202) is the
+prerequisite for this to find dead code reliably. Until then, treat the report as a
+lead generator that requires per-item manual verification, not a worklist.
+
+## Making it actionable (once #203's dependency tracking is solid)
+
+- declare entry points live with `-live-paths` / `-live-names`,
 - `@live`/`@dead` source annotations (precedent: ~38 already exist in
-  `compiler/gentype` and `compiler/syntax`), plus `-suppress` for whole subtrees.
+  `compiler/gentype` and `compiler/syntax`), plus `-suppress` for whole subtrees,
+- handle the `jsoo` root gap (annotate live, or a check-only browser-profile build).
 
 ## Lowest-noise categories to start from
 

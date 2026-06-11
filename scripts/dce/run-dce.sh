@@ -36,9 +36,13 @@ if [ ! -x "$REANALYZE_SRC/_build/default/src/Reanalyze.exe" ]; then
 fi
 BIN="$REANALYZE_SRC/_build/default/src/Reanalyze.exe"
 
-# 2. Build the compiler so dune emits fresh .cmt/.cmti.
-echo "==> dune build (producing .cmt files)"
-dune build
+# 2. Typecheck-build so dune emits fresh .cmt for EVERY module, including the
+#    executable mains (bsc, res_cli). A plain `dune build` does native compilation
+#    and emits only `.cmti` for modules that have an `.mli` (e.g. the bsc main),
+#    leaving reanalyze blind to the entry-point bodies and over-reporting dead code.
+#    `@check` is typecheck-only and emits the impl `.cmt` for all of them.
+echo "==> dune build @check (producing .cmt files incl. entry points)"
+dune build @check
 
 # 3. Run DCE over the whole dune build tree (compiler + tools + analysis +
 #    executables). All are host-OCaml 5.3 cmts; the ReScript runtime (4.06 cmts)
