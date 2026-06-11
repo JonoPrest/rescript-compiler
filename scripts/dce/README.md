@@ -63,10 +63,36 @@ Local, call-site-based categories fare better — e.g. `transl_apply`'s `~inline
 correctly reported as always-supplied — but they rely on the same reference tracking,
 so they're only trustworthy when a function has few, simple call sites.
 
-**Conclusion:** the real blocker is upstream. Completing reanalyze#203's value-
-dependency extraction for OCaml 5.3 cmts (issue rescript-lang/reanalyze#202) is the
-prerequisite for this to find dead code reliably. Until then, treat the report as a
-lead generator that requires per-item manual verification, not a worklist.
+#### Root cause (investigated) and why the fix is non-trivial
+
+reanalyze's DCE is **location-keyed**: declarations are registered by source
+position, and a use is connected to a declaration when the use's recorded "target
+location" equals the declaration's. OCaml 5.3 broke this on two fronts:
+
+1. `cmt_value_dependencies` (direct location-based use→def edges) was replaced by
+   `cmt_declaration_dependencies`, which identifies declarations by `Shape.Uid`. A
+   cmt's `cmt_uid_to_decl` only maps the uids it *defines*, so cross-module uids
+   can't be resolved locally. (#203 also only carries a small subset of edges here —
+   e.g. `typecore.cmt` exposes ~35 — so this is not the main reference source anyway.)
+2. The dominant reference source is the **typedtree walk** (`DeadValue.collectExpr`,
+   `Texp_ident` → `val_loc`). In 5.3 the `val_loc` on a cross-module reference's
+   `value_description` no longer matches where the declaration is registered, so the
+   use→decl edge is dropped → widely-used modules look dead.
+
+**Experiments (in a local reanalyze fix branch):**
+- Added a global, order-independent `Shape.Uid → declaration` table (pre-pass over
+  all cmts) and resolved `cmt_declaration_dependencies` against it. Correct and
+  necessary foundation, but ~no effect (that channel carries few edges).
+- Then resolved `Texp_ident` references via the value's `val_uid` through that table
+  instead of `val_loc`. This **regressed** (Dead Value 2129 → 2526), because
+  declarations are still registered at their old location key, so moving only the
+  *reference* side just relocates the mismatch.
+
+**Conclusion:** the fix is a real refactor, not a patch — reanalyze's DCE core must
+key declarations *and* references by the same canonical identity (uid-based) so the
+two sides agree. Best done upstream on reanalyze#203 (issue #202), ideally with its
+author. Until then, treat the report as a lead generator needing per-item manual
+verification, not a worklist.
 
 ## Making it actionable (once #203's dependency tracking is solid)
 
