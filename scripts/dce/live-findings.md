@@ -129,6 +129,18 @@ live after manual validation.
   following for this report, so the exported reset hook and loader payload fields
   look dead even though they are part of the live compiler setup.
 
+### `Experimental_features.reset`
+
+- Report: `Warning Dead Value`, `compiler/ml/experimental_features.ml` and
+  `.mli`, for `reset`.
+- Verdict: live; false positive.
+- Validation: `compiler/jsoo/jsoo_playground_main.ml` calls
+  `Experimental_features.reset` from the playground compiler reset path, next to
+  other global compiler-state resets.
+- Context: the playground entry point is outside the roots used for this report.
+  Removing this hook would let experimental feature flags leak between
+  playground compilations.
+
 ### `Location.report_error ?custom_intro ?src`
 
 - Report: `Warning Redundant Optional Argument`, `compiler/ml/location.ml` and
@@ -696,6 +708,20 @@ live after manual validation.
   `inner_map` helper were removed. The remaining `Lam` warnings are exported
   smart constructors used cross-module, which this DCE run does not root
   correctly.
+
+### `Lambda.let_kind.Variable`
+
+- Report: `Warning Dead Type`, `compiler/ml/lambda.ml` and `.mli`,
+  `let_kind.Variable`.
+- Verdict: live; false positive.
+- Validation: `compiler/core/lam_compat.ml` aliases
+  `type let_kind = Lambda.let_kind = Strict | Alias | StrictOpt | Variable`.
+  The `Variable` constructor is then used through `Lam_compat.let_kind` by
+  lambda DCE, conversion, scope, printing, JS statement generation, and JS
+  operator metadata.
+- Context: reanalyze reports the original constructor as unconstructed because
+  the live construction happens through the cross-module alias. Removing it from
+  `Lambda.let_kind` would break the shared let-kind model used by core lowering.
 
 ### `Lam_id_kind` block metadata
 
