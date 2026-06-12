@@ -1195,18 +1195,6 @@
   <-- line 38
   val make_unused : unit -> Ident.t [@@dead "+make_unused"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_js_file_kind.ml", line 26, characters 10-21
-  t.case is a record label never used to read a value
-  <-- line 26
-  type t = {case: case; [@dead "t.case"]  suffix: string} [@@warning "-69"]
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_js_file_kind.ml", line 26, characters 22-36
-  t.suffix is a record label never used to read a value
-  <-- line 26
-  type t = {case: case; [@dead "t.case"]  suffix: string [@dead "t.suffix"] } [@@warning "-69"]
-
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_namespace.ml", line 59, characters 0-352
   +is_valid_npm_package_name is never used
@@ -2077,4 +2065,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 422 issues (Warning Dead Module:4, Warning Dead Type:84, Warning Dead Value:111, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:26)
+  Analysis reported 420 issues (Warning Dead Module:4, Warning Dead Type:82, Warning Dead Value:111, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:26)
