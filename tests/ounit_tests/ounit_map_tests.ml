@@ -1,6 +1,6 @@
 let ( >:: ), ( >::: ) = OUnit.(( >:: ), ( >::: ))
 
-let ( =~ ) = OUnit.assert_equal
+let ( =~ ) x y = OUnit.assert_equal x y
 
 let test_sorted_strict arr =
   let v = Map_int.of_array arr |> Map_int.to_sorted_array in
