@@ -1963,66 +1963,6 @@
   <-- line 29
   val magic_sep_char : char [@@dead "+magic_sep_char"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/depends/bs_exception.ml", line 28, characters 2-36
-  error.Bs_cyclic_depends is a variant case which is never constructed
-  <-- line 28
-    | Bs_cyclic_depends of string list [@dead "error.Bs_cyclic_depends"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/depends/bs_exception.ml", line 29, characters 2-43
-  error.Bs_duplicated_module is a variant case which is never constructed
-  <-- line 29
-    | Bs_duplicated_module of string * string [@dead "error.Bs_duplicated_module"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/depends/bs_exception.ml", line 31, characters 2-34
-  error.Bs_package_not_found is a variant case which is never constructed
-  <-- line 31
-    | Bs_package_not_found of string [@dead "error.Bs_package_not_found"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/depends/bs_exception.ml", line 32, characters 2-31
-  error.Bs_main_not_exist is a variant case which is never constructed
-  <-- line 32
-    | Bs_main_not_exist of string [@dead "error.Bs_main_not_exist"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/depends/bs_exception.ml", line 33, characters 2-29
-  error.Bs_invalid_path is a variant case which is never constructed
-  <-- line 33
-    | Bs_invalid_path of string [@dead "error.Bs_invalid_path"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/depends/bs_exception.mli", line 28, characters 2-36
-  error.Bs_cyclic_depends is a variant case which is never constructed
-  <-- line 28
-    | Bs_cyclic_depends of string list [@dead "error.Bs_cyclic_depends"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/depends/bs_exception.mli", line 29, characters 2-43
-  error.Bs_duplicated_module is a variant case which is never constructed
-  <-- line 29
-    | Bs_duplicated_module of string * string [@dead "error.Bs_duplicated_module"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/depends/bs_exception.mli", line 31, characters 2-34
-  error.Bs_package_not_found is a variant case which is never constructed
-  <-- line 31
-    | Bs_package_not_found of string [@dead "error.Bs_package_not_found"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/depends/bs_exception.mli", line 32, characters 2-31
-  error.Bs_main_not_exist is a variant case which is never constructed
-  <-- line 32
-    | Bs_main_not_exist of string [@dead "error.Bs_main_not_exist"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/depends/bs_exception.mli", line 33, characters 2-29
-  error.Bs_invalid_path is a variant case which is never constructed
-  <-- line 33
-    | Bs_invalid_path of string [@dead "error.Bs_invalid_path"] 
-
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_fmt.ml", line 10, characters 0-54
   +invalid_argf is never used
@@ -2905,4 +2845,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 602 issues (Warning Dead Module:4, Warning Dead Type:94, Warning Dead Value:155, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:198, Warning Unused Argument:149)
+  Analysis reported 592 issues (Warning Dead Module:4, Warning Dead Type:84, Warning Dead Value:155, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:198, Warning Unused Argument:149)
