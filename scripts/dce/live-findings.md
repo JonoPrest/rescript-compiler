@@ -649,7 +649,9 @@ live after manual validation.
   expose those generated concrete modules.
 - Context: this is a `.cppo.ml` rooting issue. The report sees the generic tree
   implementation as dead, but those functions are the shared implementation of
-  the compiler's generated map and set modules.
+  the compiler's generated map and set modules. Unused top-level map/set core
+  helpers and internal-only signature exports were removed where they were not
+  part of the generated concrete modules.
 
 ### `Ext_array` production helpers
 

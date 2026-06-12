@@ -7,10 +7,6 @@ val cardinal : ('a, 'b) t -> int
 
 val bindings : ('a, 'b) t -> ('a * 'b) list
 
-val fill_array_with_f : ('a, 'b) t -> int -> 'c array -> ('a -> 'b -> 'c) -> int
-
-val fill_array_aux : ('a, 'b) t -> int -> ('a * 'b) array -> int
-
 val to_sorted_array : ('key, 'a) t -> ('key * 'a) array
 
 val to_sorted_array_with_f : ('a, 'b) t -> ('a -> 'b -> 'c) -> 'c array
@@ -47,10 +43,6 @@ val for_all : ('a, 'b) t -> ('a -> 'b -> bool) -> bool
 val exists : ('a, 'b) t -> ('a -> 'b -> bool) -> bool
 
 val join : ('a, 'b) t -> 'a -> 'b -> ('a, 'b) t -> ('a, 'b) t
-
-val concat : ('a, 'b) t -> ('a, 'b) t -> ('a, 'b) t
-
-val concat_or_join : ('a, 'b) t -> 'a -> 'b option -> ('a, 'b) t -> ('a, 'b) t
 
 module type S = sig
   type key
