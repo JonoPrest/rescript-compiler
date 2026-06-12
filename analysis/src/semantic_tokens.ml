@@ -91,9 +91,6 @@ module Token = struct
     in
     Array.concat arrays
 
-  let array_to_json_string arr =
-    let items = Array.map string_of_int arr |> Array.to_list in
-    "[" ^ String.concat "," items ^ "]"
 end
 
 let is_lowercase_id id =

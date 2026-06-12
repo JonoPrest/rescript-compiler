@@ -1245,75 +1245,21 @@
   <-- line 7
     let compare = compare [@@dead "+compare"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/completion_back_end.ml", line 903, characters 0-252
-  +completions_get_type_env is never used
-  <-- line 903
-    | _ -> None [@@dead "+completions_get_type_env"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/debug.ml", line 5, characters 0-92
-  +log is never used
-  <-- line 5
-    | Off -> () [@@dead "+log"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/process_cmt.ml", line 421, characters 0-247
-  +for_tree_module_type is never used
-  <-- line 421
-    | _ -> None [@@dead "+for_tree_module_type"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/semantic_tokens.ml", line 94, characters 2-136
-  Token.+array_to_json_string is never used
-  <-- line 94
-      "[" ^ String.concat "," items ^ "]" [@@dead "Token.+array_to_json_string"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 29, characters 2-365
-  Module_path.+to_path_with_prefix is never used
-  <-- line 29
-      prefix :: loop module_path [] [@@dead "Module_path.+to_path_with_prefix"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 313, characters 2-29
-  Query_env.+to_string is never used
-  <-- line 313
-    val to_string : t -> string [@@dead "Query_env.+to_string"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 322, characters 2-97
-  Query_env.+to_string is never used
-  <-- line 322
-      file.module_name :: List.rev path_rev |> String.concat "." [@@dead "Query_env.+to_string"] 
-
   Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 502, characters 0-149
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 488, characters 0-149
   +shared_types.Location_set is a dead module as all its items are dead.
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 505, characters 2-43
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 491, characters 2-43
   Location_set.+compare is never used
-  <-- line 505
+  <-- line 491
     let compare loc1 loc2 = compare loc2 loc1 [@@dead "Location_set.+compare"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 537, characters 2-30
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 523, characters 2-30
   package.rescript_version is a record label never used to read a value
-  <-- line 537
+  <-- line 523
     rescript_version: int * int; [@dead "package.rescript_version"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 855, characters 4-46
-  Completion.t.type_arg_context is a record label never used to read a value
-  <-- line 855
-      type_arg_context: type_arg_context option; [@dead "Completion.t.type_arg_context"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/type_utils.ml", line 979, characters 0-153
-  +unwrap_completion_type_if_option is never used
-  <-- line 979
-    | _ -> t [@@dead "+unwrap_completion_type_if_option"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.ml", line 31, characters 0-28
@@ -16539,4 +16485,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2892 issues (Warning Dead Module:150, Warning Dead Type:355, Warning Dead Value:2131, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2883 issues (Warning Dead Module:150, Warning Dead Type:354, Warning Dead Value:2123, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)

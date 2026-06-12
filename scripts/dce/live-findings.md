@@ -151,6 +151,18 @@ live after manual validation.
   `Hashtbl.Make`, `Set.Make`, or `Map.Make`. Reanalyze can miss those callback
   edges and report the callback definitions as ordinary unused values.
 
+### Analysis collection functor callbacks
+
+- Report: `Warning Dead Module` and `Warning Dead Value`,
+  `analysis/src/shared_types.ml`, `Location_set.compare`.
+- Verdict: live; false positive.
+- Validation: `Shared_types.Location_set` stores file references in
+  `Shared_types.extra.file_references`; `analysis/src/process_extra.ml` adds
+  locations with `Location_set.add` / `singleton`, and
+  `analysis/src/references.ml` reads them with `Location_set.elements`.
+- Context: the `compare` function is consumed by `Set.Make`, so it can look
+  unused as a plain value even though every set operation depends on it.
+
 ### `File_deps.File_hash` callbacks
 
 - Report: `Warning Dead Module` and `Warning Dead Value`,

@@ -900,12 +900,6 @@ let completion_to_item ~state
     filterText = filter_text;
   }
 
-let completions_get_type_env = function
-  | {Completion.kind = Value typ; env} :: _ -> Some (typ, env)
-  | {Completion.kind = ObjLabel typ; env} :: _ -> Some (typ, env)
-  | {Completion.kind = Field ({typ}, _); env} :: _ -> Some (typ, env)
-  | _ -> None
-
 type get_completions_for_context_path_mode = Regular | Pipe
 
 let completions_get_completion_type ~full ~state completions =
@@ -1587,14 +1581,13 @@ let print_constructor_args ~mode ~as_snippet args_len =
   if List.length !args > 0 then "(" ^ (!args |> String.concat ", ") ^ ")"
   else ""
 
-let rec complete_typed_value ?(type_arg_context : type_arg_context option)
-    ~raw_opens ~full ~state ~prefix ~completion_context ~mode
+let rec complete_typed_value ~raw_opens ~full ~state ~prefix ~completion_context ~mode
     (t : Shared_types.completion_type) =
   let empty_case = empty_case ~mode in
   let print_constructor_args = print_constructor_args ~mode in
   let create ?deprecated ?(docstring = []) ?(includes_snippets = false)
       ?insert_text ?sort_text name ~kind ~env =
-    Completion.create ?type_arg_context ?deprecated ~docstring ~includes_snippets
+    Completion.create ?deprecated ~docstring ~includes_snippets
       ?insert_text ?sort_text name ~kind ~env
   in
   let get_record_completions ~env ~fields ~extracted_type =
@@ -2152,10 +2145,10 @@ let rec process_completable ~state ~debug ~full ~scope ~env ~pos ~for_hover
     in
     match typ |> Type_utils.resolve_nested ~env ~full ~nested ~state with
     | None -> []
-    | Some (typ, _env, completion_context, type_arg_context) ->
+    | Some (typ, _env, completion_context, _type_arg_context) ->
       typ
-      |> complete_typed_value ?type_arg_context ~raw_opens ~mode:Expression
-           ~full ~prefix ~completion_context ~state)
+      |> complete_typed_value ~raw_opens ~mode:Expression ~full ~prefix
+           ~completion_context ~state)
   | CdecoratorPayload (ModuleWithImportAttributes {prefix; nested}) -> (
     let mk_field ~name ~primitive =
       {
@@ -2195,10 +2188,10 @@ let rec process_completable ~state ~debug ~full ~scope ~env ~pos ~for_hover
     in
     match typ |> Type_utils.resolve_nested ~env ~full ~nested ~state with
     | None -> []
-    | Some (typ, _env, completion_context, type_arg_context) ->
+    | Some (typ, _env, completion_context, _type_arg_context) ->
       typ
-      |> complete_typed_value ?type_arg_context ~raw_opens ~mode:Expression
-           ~full ~prefix ~completion_context ~state)
+      |> complete_typed_value ~raw_opens ~mode:Expression ~full ~prefix
+           ~completion_context ~state)
   | CdecoratorPayload (Module prefix) ->
     let package_json_path =
       Utils.find_package_json (full.package.root_path |> Uri.from_path)
@@ -2367,12 +2360,11 @@ let rec process_completable ~state ~debug ~full ~scope ~env ~pos ~for_hover
                     ~state)
       with
       | None -> fallback_or_empty ()
-      | Some (typ, _env, completion_context, type_arg_context) ->
+      | Some (typ, _env, completion_context, _type_arg_context) ->
         let items =
           typ
-          |> complete_typed_value ?type_arg_context ~raw_opens
-               ~mode:(Pattern pattern_mode) ~full ~prefix ~completion_context
-               ~state
+          |> complete_typed_value ~raw_opens ~mode:(Pattern pattern_mode) ~full
+               ~prefix ~completion_context ~state
         in
         fallback_or_empty ~items ())
     | None -> fallback_or_empty ())
@@ -2433,7 +2425,7 @@ let rec process_completable ~state ~debug ~full ~scope ~env ~pos ~for_hover
           in
           items_for_raw_jsx_prop_value @ regular_completions)
         else regular_completions
-      | Some (typ, _env, completion_context, type_arg_context) -> (
+      | Some (typ, _env, completion_context, _type_arg_context) -> (
         if Debug.verbose () then
           print_endline
             "[process_completable]--> found type in nested expression \
@@ -2449,8 +2441,8 @@ let rec process_completable ~state ~debug ~full ~scope ~env ~pos ~for_hover
         in
         let items =
           typ
-          |> complete_typed_value ?type_arg_context ~raw_opens ~mode:Expression
-               ~full ~prefix ~completion_context ~state
+          |> complete_typed_value ~raw_opens ~mode:Expression ~full ~prefix
+               ~completion_context ~state
           |> List.map (fun (c : Completion.t) ->
                  if wrap_insert_text_in_braces then
                    {

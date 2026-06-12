@@ -26,16 +26,6 @@ module Module_path = struct
     in
     loop module_path [tip_name]
 
-  let to_path_with_prefix module_path prefix : path =
-    let rec loop module_path current =
-      match module_path with
-      | File _ -> current
-      | IncludedModule (_, inner) -> loop inner current
-      | ExportedModule {name; module_path = inner} ->
-        loop inner (name :: current)
-      | NotVisible -> current
-    in
-    prefix :: loop module_path []
 end
 
 type field = {
@@ -310,7 +300,6 @@ module Query_env : sig
      Or A.B.D or A.D or D if it's in one of its parents. *)
   val path_from_env : t -> path -> bool * path
 
-  val to_string : t -> string
 end = struct
   type t = {
     file: File.t;
@@ -318,9 +307,6 @@ end = struct
     path_rev: path;
     parent: t option;
   }
-
-  let to_string {file; path_rev} =
-    file.module_name :: List.rev path_rev |> String.concat "."
 
   let from_file (file : File.t) =
     {file; exported = file.structure.exported; path_rev = []; parent = None}
@@ -852,13 +838,12 @@ module Completion = struct
     docstring: string list;
     kind: kind;
     detail: string option;
-    type_arg_context: type_arg_context option;
     additional_text_edits: Lsp.Types.TextEdit.t list option;
     synthetic: bool;
         (** Whether this item is an made up, synthetic item or not. *)
   }
 
-  let create ?(synthetic = false) ?additional_text_edits ?type_arg_context
+  let create ?(synthetic = false) ?additional_text_edits
       ?(includes_snippets = false) ?insert_text ~kind ~env ?sort_text
       ?deprecated ?detail ?(docstring = []) name =
     {
@@ -874,7 +859,6 @@ module Completion = struct
          else None);
       filter_text = None;
       detail;
-      type_arg_context;
       additional_text_edits;
       synthetic;
     }
