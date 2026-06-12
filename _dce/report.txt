@@ -859,41 +859,9 @@
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1092, characters 0-391
   optional argument loc of function +lookup is never used
 
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper.mli", line 72, characters 2-75
-  optional argument loc of function Typ.+poly is always supplied (6 calls)
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper.mli", line 59, characters 2-77
-  optional argument attrs of function Typ.+arrows is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper.mli", line 41, characters 2-43
-  optional argument suffix of function Const.+int is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper.mli", line 39, characters 2-64
-  optional argument quotation_delimiter of function Const.+string is never used
-
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/asttypes.ml", line 62, characters 0-175
   optional argument loc of function +to_arg_label is never used
-
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper.ml", line 73, characters 2-62
-  optional argument loc of function Typ.+poly is always supplied (1 calls)
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper.ml", line 59, characters 2-341
-  optional argument attrs of function Typ.+arrows is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper.ml", line 47, characters 2-76
-  optional argument quotation_delimiter of function Const.+string is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper.ml", line 41, characters 2-55
-  optional argument suffix of function Const.+int is never used
 
   Warning Redundant Optional Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 106, characters 0-108
@@ -17397,4 +17365,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 3042 issues (Warning Dead Module:153, Warning Dead Type:379, Warning Dead Value:2236, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:200, Warning Unused Argument:37)
+  Analysis reported 3034 issues (Warning Dead Module:153, Warning Dead Type:379, Warning Dead Value:2236, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:198, Warning Unused Argument:31)

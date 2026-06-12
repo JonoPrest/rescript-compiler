@@ -38,13 +38,13 @@ let with_default_loc l f =
 
 module Const = struct
   let integer ?suffix i = Pconst_integer (i, suffix)
-  let int ?suffix i = integer ?suffix (string_of_int i)
+  let int i = integer (string_of_int i)
   let int32 ?(suffix = 'l') i = integer ~suffix (Int32.to_string i)
   let int64 ?(suffix = 'L') i = integer ~suffix (Int64.to_string i)
   let nativeint ?(suffix = 'n') i = integer ~suffix (Nativeint.to_string i)
   let float ?suffix f = Pconst_float (f, suffix)
   let char c = Pconst_char (Char.code c)
-  let string ?quotation_delimiter s = Pconst_string (s, quotation_delimiter)
+  let string s = Pconst_string (s, None)
 end
 
 module Typ = struct
@@ -56,13 +56,13 @@ module Typ = struct
   let var ?loc ?attrs a = mk ?loc ?attrs (Ptyp_var a)
   let arrow ?loc ?attrs ~arity arg ret =
     mk ?loc ?attrs (Ptyp_arrow {arg; ret; arity})
-  let arrows ?loc ?attrs args ret =
+  let arrows ?loc args ret =
     let arity = Some (List.length args) in
     let rec build_arrows arity_to_use = function
       | [] -> ret
-      | [arg] -> arrow ?loc ?attrs ~arity:arity_to_use arg ret
+      | [arg] -> arrow ?loc ~arity:arity_to_use arg ret
       | arg :: rest ->
-        arrow ?loc ?attrs ~arity:arity_to_use arg (build_arrows None rest)
+        arrow ?loc ~arity:arity_to_use arg (build_arrows None rest)
     in
     build_arrows arity args
   let tuple ?loc ?attrs a = mk ?loc ?attrs (Ptyp_tuple a)
@@ -70,7 +70,7 @@ module Typ = struct
   let object_ ?loc ?attrs a b = mk ?loc ?attrs (Ptyp_object (a, b))
   let alias ?loc ?attrs a b = mk ?loc ?attrs (Ptyp_alias (a, b))
   let variant ?loc ?attrs a b c = mk ?loc ?attrs (Ptyp_variant (a, b, c))
-  let poly ?loc ?attrs a b = mk ?loc ?attrs (Ptyp_poly (a, b))
+  let poly ~loc ?attrs a b = mk ~loc ?attrs (Ptyp_poly (a, b))
   let package ?loc ?attrs a b = mk ?loc ?attrs (Ptyp_package (a, b))
   let extension ?loc ?attrs a = mk ?loc ?attrs (Ptyp_extension a)
 

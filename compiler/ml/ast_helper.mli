@@ -36,9 +36,9 @@ val with_default_loc : loc -> (unit -> 'a) -> 'a
 
 module Const : sig
   val char : char -> constant
-  val string : ?quotation_delimiter:string -> string -> constant
+  val string : string -> constant
   val integer : ?suffix:char -> string -> constant
-  val int : ?suffix:char -> int -> constant
+  val int : int -> constant
   val int32 : ?suffix:char -> int32 -> constant
   val int64 : ?suffix:char -> int64 -> constant
   val nativeint : ?suffix:char -> nativeint -> constant
@@ -56,7 +56,7 @@ module Typ : sig
   val var : ?loc:loc -> ?attrs:attrs -> string -> core_type
   val arrow :
     ?loc:loc -> ?attrs:attrs -> arity:arity -> arg -> core_type -> core_type
-  val arrows : ?loc:loc -> ?attrs:attrs -> arg list -> core_type -> core_type
+  val arrows : ?loc:loc -> arg list -> core_type -> core_type
   val tuple : ?loc:loc -> ?attrs:attrs -> core_type list -> core_type
   val constr : ?loc:loc -> ?attrs:attrs -> lid -> core_type list -> core_type
   val object_ :
@@ -69,7 +69,7 @@ module Typ : sig
     closed_flag ->
     label list option ->
     core_type
-  val poly : ?loc:loc -> ?attrs:attrs -> str list -> core_type -> core_type
+  val poly : loc:loc -> ?attrs:attrs -> str list -> core_type -> core_type
   val package :
     ?loc:loc -> ?attrs:attrs -> lid -> (lid * core_type) list -> core_type
   val extension : ?loc:loc -> ?attrs:attrs -> extension -> core_type
