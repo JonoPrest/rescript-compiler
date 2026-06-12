@@ -329,6 +329,22 @@ live after manual validation.
   smart constructors used cross-module, which this DCE run does not root
   correctly.
 
+### `Lam_id_kind` block metadata
+
+- Report: `Warning Dead Type` / `Warning Dead Value`,
+  `compiler/core/lam_id_kind.ml` and `.mli`, including `element.NA`,
+  `element.SimpleForm`, `t.ImmutableBlock`, and `print`.
+- Verdict: live; false positive for the remaining metadata constructors.
+- Validation: `compiler/core/lam_util.cppo.ml` constructs
+  `Lam_id_kind.ImmutableBlock` in `kind_of_lambda_block`, builds
+  `SimpleForm` / `NA` entries in `element_of_lambda`, and consumes the block
+  metadata in `field_flatten_get`. These helpers are called by
+  `lam_beta_reduce.ml`, `lam_pass_collect.ml`, `lam_pass_remove_alias.ml`, and
+  `lam_coercion.ml`.
+- Context: the truly unused `Undefined`, `MutableBlock`, and `Exception`
+  constructors were removed. The remaining warnings are `.cppo.ml` and
+  cross-module lambda optimization edges that DCE does not root reliably.
+
 ### Core lambda analysis and rewrite passes
 
 - Report: `Warning Dead Module` / `Warning Dead Value` clusters in
