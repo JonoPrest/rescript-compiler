@@ -166,7 +166,6 @@ type t =
   | Pnull_to_opt
   | Pnull_undefined_to_opt
   | Pis_null
-  | Pis_undefined
   | Pis_null_undefined
   | Pimport
   | Ptypeof
@@ -226,7 +225,7 @@ let eq_primitive_approx (lhs : t) (rhs : t) =
   (* etc *)
   | Pjs_apply | Pjs_runtime_apply | Pval_from_option | Pval_from_option_not_nest
   | Pnull_to_opt | Pnull_undefined_to_opt | Pis_null | Pis_not_none | Psome
-  | Psome_not_nest | Pis_undefined | Pis_null_undefined | Pimport | Ptypeof
+  | Psome_not_nest | Pis_null_undefined | Pimport | Ptypeof
   | Pfn_arity | Pis_poly_var_block | Pdebugger | Pinit_mod | Pupdate_mod
   | Pduprecord | Pmakearray | Parraylength | Parrayrefu | Parraysetu
   | Parrayrefs | Parraysets | Pjs_fn_make_unit | Pjs_fn_method | Phash

@@ -2638,45 +2638,39 @@
   let is_null ?comment (x : t) = triple_equal ?comment x nil [@@dead "+is_null"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1728, characters 0-59
-  +is_undef is never used
-  <-- line 1728
-  let is_undef ?comment x = triple_equal ?comment x undefined [@@dead "+is_undef"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1730, characters 0-117
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1728, characters 0-117
   +is_null_undefined_constant is never used
-  <-- line 1730
+  <-- line 1728
     | _ -> false [@@dead "+is_null_undefined_constant"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1735, characters 0-216
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1733, characters 0-216
   +is_null_undefined is never used
-  <-- line 1735
+  <-- line 1733
     | _ -> {comment; expression_desc = Is_null_or_undefined x} [@@dead "+is_null_undefined"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1741, characters 0-605
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1739, characters 0-605
   +eq_null_undefined_boolean is never used
-  <-- line 1741
+  <-- line 1739
     | _ -> {expression_desc = Bin (EqEqEq, a, b); comment} [@@dead "+eq_null_undefined_boolean"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1756, characters 0-605
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1754, characters 0-605
   +neq_null_undefined_boolean is never used
-  <-- line 1756
+  <-- line 1754
     | _ -> {expression_desc = Bin (NotEqEq, a, b); comment} [@@dead "+neq_null_undefined_boolean"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1771, characters 0-106
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1769, characters 0-106
   +make_exception is never used
-  <-- line 1771
+  <-- line 1769
     pure_runtime_call Primitive_modules.exceptions Literals.create [str s] [@@dead "+make_exception"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1774, characters 0-173
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1772, characters 0-173
   +variadic_args is never used
-  <-- line 1774
+  <-- line 1772
     | arg :: args -> arg :: variadic_args args [@@dead "+variadic_args"] 
 
   Warning Dead Value
@@ -3346,33 +3340,27 @@
   val is_null : ?comment:string -> t -> t [@@dead "+is_null"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 359, characters 0-40
-  +is_undef is never used
-  <-- line 359
-  val is_undef : ?comment:string -> t -> t [@@dead "+is_undef"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 361, characters 0-53
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 359, characters 0-53
   +is_null_undefined_constant is never used
-  <-- line 361
+  <-- line 359
   val is_null_undefined_constant : J.expression -> bool [@@dead "+is_null_undefined_constant"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 363, characters 0-49
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 361, characters 0-49
   +is_null_undefined is never used
-  <-- line 363
+  <-- line 361
   val is_null_undefined : ?comment:string -> t -> t [@@dead "+is_null_undefined"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 365, characters 0-32
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 363, characters 0-32
   +make_exception is never used
-  <-- line 365
+  <-- line 363
   val make_exception : string -> t [@@dead "+make_exception"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 367, characters 0-36
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 365, characters 0-36
   +variadic_args is never used
-  <-- line 367
+  <-- line 365
   val variadic_args : t list -> t list [@@dead "+variadic_args"] 
 
   Warning Dead Module
@@ -5422,7 +5410,7 @@
     | _ -> false [@@dead "+not_zero_constant"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_analysis.ml", line 32, characters 0-4220
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_analysis.ml", line 32, characters 0-4204
   +no_side_effects is never used
   <-- line 32
     | Lapply _ -> false [@@dead "+no_side_effects"] 
@@ -6580,7 +6568,7 @@
       ] [@@dead "+wrap_then"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compile_primitive.ml", line 71, characters 0-19216
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compile_primitive.ml", line 71, characters 0-19154
   +translate is never used
   <-- line 71
       | _ -> assert false) [@@dead "+translate"] 
@@ -7417,34 +7405,28 @@
   <-- line 153
     | Pjs_runtime_apply [@dead "t.Pjs_runtime_apply"]  (* [f; [...]] *)
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 169, characters 2-17
-  t.Pis_undefined is a variant case which is never constructed
-  <-- line 169
-    | Pis_undefined [@dead "t.Pis_undefined"]
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 187, characters 0-99
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 186, characters 0-99
   +eq_field_dbg_info is never used
-  <-- line 187
+  <-- line 186
     x = y [@@dead "+eq_field_dbg_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 192, characters 0-111
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 191, characters 0-111
   +eq_set_field_dbg_info is never used
-  <-- line 192
+  <-- line 191
     x = y [@@dead "+eq_set_field_dbg_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 197, characters 0-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 196, characters 0-46
   +eq_tag_info is never used
-  <-- line 197
+  <-- line 196
   let eq_tag_info (x : Lam_tag_info.t) y = x = y [@@dead "+eq_tag_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 199, characters 0-4149
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 198, characters 0-4133
   +eq_primitive_approx is never used
-  <-- line 199
+  <-- line 198
     | Praw_js_code _ -> false [@@dead "+eq_primitive_approx"] 
 
   Warning Dead Type
@@ -7471,30 +7453,24 @@
   <-- line 147
     | Pjs_runtime_apply [@dead "t.Pjs_runtime_apply"]  (* [f; [...]] *)
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.mli", line 159, characters 2-17
-  t.Pis_undefined is a variant case which is never constructed
-  <-- line 159
-    | Pis_undefined [@dead "t.Pis_undefined"]
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.mli", line 177, characters 0-40
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.mli", line 176, characters 0-40
   +eq_primitive_approx is never used
-  <-- line 177
+  <-- line 176
   val eq_primitive_approx : t -> t -> bool [@@dead "+eq_primitive_approx"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 484, characters 0-343
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 483, characters 0-343
   +serialize is never used
-  <-- line 484
+  <-- line 483
     Format.set_margin old [@@dead "+serialize"] 
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 495, characters 0-50
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 494, characters 0-50
   +lambda_to_string is never used and could have side effects
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 497, characters 0-56
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 496, characters 0-56
   +primitive_to_string is never used and could have side effects
 
   Warning Dead Module
@@ -15721,4 +15697,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2756 issues (Warning Dead Module:151, Warning Dead Type:290, Warning Dead Value:2059, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2752 issues (Warning Dead Module:151, Warning Dead Type:288, Warning Dead Value:2057, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)

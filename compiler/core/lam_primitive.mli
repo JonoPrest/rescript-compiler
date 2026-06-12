@@ -156,7 +156,6 @@ type t =
   | Pnull_to_opt
   | Pnull_undefined_to_opt
   | Pis_null
-  | Pis_undefined
   | Pis_null_undefined
   | Pimport
   | Ptypeof
