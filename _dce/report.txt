@@ -10143,78 +10143,6 @@
   <-- line 99
   val has_warnings : bool ref [@@dead "+has_warnings"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.ml", line 76, characters 0-341
-  +app3 is never used
-  <-- line 76
-    } [@@dead "+app3"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.ml", line 106, characters 0-217
-  +const_exp_string is never used
-  <-- line 106
-    } [@@dead "+const_exp_string"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.ml", line 114, characters 0-206
-  +const_exp_int is never used
-  <-- line 114
-    } [@@dead "+const_exp_int"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.ml", line 153, characters 0-104
-  +const_exp_int_list_as_array is never used
-  <-- line 153
-    Ast_helper.Exp.array (Ext_list.map xs (fun x -> const_exp_int x)) [@@dead "+const_exp_int_list_as_array"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.mli", line 31, characters 0-101
-  +const_exp_string is never used
-  <-- line 31
-    ?loc:Location.t -> ?attrs:attrs -> ?delimiter:string -> string -> expression [@@dead "+const_exp_string"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.mli", line 34, characters 0-72
-  +const_exp_int is never used
-  <-- line 34
-  val const_exp_int : ?loc:Location.t -> ?attrs:attrs -> int -> expression [@@dead "+const_exp_int"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.mli", line 36, characters 0-56
-  +const_exp_int_list_as_array is never used
-  <-- line 36
-  val const_exp_int_list_as_array : int list -> expression [@@dead "+const_exp_int_list_as_array"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.mli", line 47, characters 0-126
-  +app3 is never used
-  <-- line 47
-    expression [@@dead "+app3"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_core_type.ml", line 122, characters 0-139
-  +get_uncurry_arity is never used
-  <-- line 122
-    | _ -> None [@@dead "+get_uncurry_arity"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_core_type.ml", line 154, characters 0-178
-  +add_last_obj is never used
-  <-- line 154
-      result [@@dead "+add_last_obj"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_core_type.mli", line 44, characters 0-39
-  +get_uncurry_arity is never used
-  <-- line 44
-  val get_uncurry_arity : t -> int option [@@dead "+get_uncurry_arity"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_core_type.mli", line 53, characters 0-30
-  +add_last_obj is never used
-  <-- line 53
-  val add_last_obj : t -> t -> t [@@dead "+add_last_obj"] 
-
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_derive.ml", line 30, characters 2-71
   gen.expression_gen is a record label never used to read a value
@@ -10226,30 +10154,6 @@
   gen.expression_gen is a record label never used to read a value
   <-- line 30
     expression_gen: (Parsetree.core_type -> Parsetree.expression) option; [@dead "gen.expression_gen"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_exp_handle_external.ml", line 35, characters 0-1188
-  +handle_external is never used
-  <-- line 35
-         empty (Some raw_exp)) [@@dead "+handle_external"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_exp_handle_external.mli", line 25, characters 0-66
-  +handle_external is never used
-  <-- line 25
-  val handle_external : Location.t -> string -> Parsetree.expression [@@dead "+handle_external"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.ml", line 100, characters 0-998
-  +local_extern_cont_to_obj is never used
-  <-- line 100
-          } ) [@@dead "+local_extern_cont_to_obj"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.mli", line 50, characters 0-290
-  +local_extern_cont_to_obj is never used
-  <-- line 50
-    Parsetree.expression_desc [@@dead "+local_extern_cont_to_obj"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 31, characters 0-66
@@ -13753,4 +13657,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2425 issues (Warning Dead Module:146, Warning Dead Type:223, Warning Dead Value:1804, Warning Dead Value With Side Effects:33, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2409 issues (Warning Dead Module:146, Warning Dead Type:223, Warning Dead Value:1788, Warning Dead Value With Side Effects:33, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
