@@ -67,10 +67,10 @@ let nil : t = {expression_desc = Null; comment = None}
 let call ?comment ~info e0 args : t =
   {expression_desc = Call (e0, args, info); comment}
 
-let tagged_template ?comment call_expr string_args value_args : t =
+let tagged_template call_expr string_args value_args : t =
   {
     expression_desc = Tagged_template (call_expr, string_args, value_args);
-    comment;
+    comment = None;
   }
 
 let runtime_var_dot (x : string) (e1 : string) : J.expression =
@@ -87,11 +87,10 @@ let runtime_var_dot (x : string) (e1 : string) : J.expression =
     comment = None;
   }
 
-let ml_var_dot ?comment ?(dynamic_import = false) (id : Ident.t) e :
-    J.expression =
+let ml_var_dot ?(dynamic_import = false) (id : Ident.t) e : J.expression =
   {
     expression_desc = Var (Qualified ({id; kind = Ml; dynamic_import}, Some e));
-    comment;
+    comment = None;
   }
 
 (**
@@ -100,8 +99,8 @@ let ml_var_dot ?comment ?(dynamic_import = false) (id : Ident.t) e :
      var http = require("http")
    ]}
 *)
-let external_var_field ?import_attributes ?comment ~external_name:name
-    (id : Ident.t) ~field ~default : t =
+let external_var_field ?import_attributes ~external_name:name (id : Ident.t)
+    ~field ~default : t =
   {
     expression_desc =
       Var
@@ -112,10 +111,10 @@ let external_var_field ?import_attributes ?comment ~external_name:name
                dynamic_import = false;
              },
              Some field ));
-    comment;
+    comment = None;
   }
 
-let external_var ?import_attributes ?comment ~external_name (id : Ident.t) : t =
+let external_var ?import_attributes ~external_name (id : Ident.t) : t =
   {
     expression_desc =
       Var
@@ -128,13 +127,13 @@ let external_var ?import_attributes ?comment ~external_name (id : Ident.t) : t =
                dynamic_import = false;
              },
              None ));
-    comment;
+    comment = None;
   }
 
-let ml_module_as_var ?comment ?(dynamic_import = false) (id : Ident.t) : t =
+let ml_module_as_var ?(dynamic_import = false) (id : Ident.t) : t =
   {
     expression_desc = Var (Qualified ({id; kind = Ml; dynamic_import}, None));
-    comment;
+    comment = None;
   }
 
 (* Static_index .....................**)
@@ -151,10 +150,10 @@ let pure_runtime_call module_name fn_name args =
 let str ?(delim = J.DNone) ?comment txt : t =
   {expression_desc = Str {txt; delim}; comment}
 
-let raw_js_code ?comment info s : t =
+let raw_js_code info s : t =
   {
     expression_desc = Raw_js_code {code = String.trim s; code_info = info};
-    comment;
+    comment = None;
   }
 
 let array mt es : t = {expression_desc = Array (es, mt); comment = None}
@@ -169,8 +168,8 @@ let optional_not_nest_block e : J.expression =
 (** used in normal property
     like [e.length], no dependency introduced
 *)
-let dot ?comment (e0 : t) (e1 : string) : t =
-  {expression_desc = Static_index (e0, e1, None); comment}
+let dot (e0 : t) (e1 : string) : t =
+  {expression_desc = Static_index (e0, e1, None); comment = None}
 
 let module_access (e : t) (name : string) (pos : int32) =
   let name = Ext_ident.convert name in
@@ -182,23 +181,26 @@ let module_access (e : t) (name : string) (pos : int32) =
       {expression_desc = Static_index (e, name, Some pos); comment = None})
   | _ -> {expression_desc = Static_index (e, name, Some pos); comment = None}
 
-let make_block ?comment (tag : t) (tag_info : J.tag_info) (es : t list)
+let make_block (tag : t) (tag_info : J.tag_info) (es : t list)
     (mutable_flag : J.mutable_flag) : t =
-  {expression_desc = Caml_block (es, mutable_flag, tag, tag_info); comment}
+  {
+    expression_desc = Caml_block (es, mutable_flag, tag, tag_info);
+    comment = None;
+  }
 
 module L = Literals
 
 (* ATTENTION: this is relevant to how we encode string, boolean *)
-let typeof ?comment (e : t) : t =
+let typeof (e : t) : t =
   match e.expression_desc with
-  | Number _ | Length _ -> str ?comment L.js_type_number
-  | Str _ -> str ?comment L.js_type_string
-  | Array _ -> str ?comment L.js_type_object
-  | Bool _ -> str ?comment L.js_type_boolean
-  | _ -> {expression_desc = Typeof e; comment}
+  | Number _ | Length _ -> str L.js_type_number
+  | Str _ -> str L.js_type_string
+  | Array _ -> str L.js_type_object
+  | Bool _ -> str L.js_type_boolean
+  | _ -> {expression_desc = Typeof e; comment = None}
 
-let instanceof ?comment (e0 : t) (e1 : t) : t =
-  {expression_desc = Bin (InstanceOf, e0, e1); comment}
+let instanceof (e0 : t) (e1 : t) : t =
+  {expression_desc = Bin (InstanceOf, e0, e1); comment = None}
 
 let is_array (e0 : t) : t =
   let f = str "Array.isArray" ~delim:DNoQuotes in
@@ -227,7 +229,7 @@ let unit : t = {expression_desc = Undefined {is_unit = true}; comment = None}
    [Js_fun_env.empty] is a mutable state ..
 *)
 
-let ocaml_fun ?comment ?immutable_mask ?directive ~return_unit ~async
+let ocaml_fun ?immutable_mask ?directive ~return_unit ~async
     ~one_unit_arg params body : t =
   let params = if one_unit_arg then [] else params in
   let len = List.length params in
@@ -243,10 +245,10 @@ let ocaml_fun ?comment ?immutable_mask ?directive ~return_unit ~async
           async;
           directive;
         };
-    comment;
+    comment = None;
   }
 
-let method_ ?comment ?immutable_mask ~async ~return_unit params body : t =
+let method_ ~async ~return_unit params body : t =
   let len = List.length params in
   {
     expression_desc =
@@ -255,16 +257,16 @@ let method_ ?comment ?immutable_mask ~async ~return_unit params body : t =
           is_method = true;
           params;
           body;
-          env = Js_fun_env.make ?immutable_mask len;
+          env = Js_fun_env.make len;
           return_unit;
           async;
           directive = None;
         };
-    comment;
+    comment = None;
   }
 
 (** ATTENTION: This is coupuled with {!Caml_obj.caml_update_dummy} *)
-let dummy_obj ?comment (info : Lam_tag_info.t) : t =
+let dummy_obj (info : Lam_tag_info.t) : t =
   (* TODO:
      for record it is [{}]
      for other it is [[]]
@@ -272,9 +274,9 @@ let dummy_obj ?comment (info : Lam_tag_info.t) : t =
   match info with
   | Blk_record _ | Blk_module _ | Blk_constructor _ | Blk_record_inlined _
   | Blk_poly_var _ | Blk_extension | Blk_record_ext _ ->
-    {comment; expression_desc = Object (None, [])}
+    {comment = None; expression_desc = Object (None, [])}
   | Blk_tuple | Blk_module_export _ ->
-    {comment; expression_desc = Array ([], Mutable)}
+    {comment = None; expression_desc = Array ([], Mutable)}
   | Blk_some | Blk_some_not_nested -> assert false
 
 (* TODO: complete
@@ -367,18 +369,18 @@ let float f : t = {expression_desc = Number (Float {f}); comment = None}
 let zero_float_lit : t =
   {expression_desc = Number (Float {f = "0."}); comment = None}
 
-let float_mod ?comment e1 e2 : J.expression =
-  {comment; expression_desc = Bin (Mod, e1, e2)}
+let float_mod e1 e2 : J.expression =
+  {comment = None; expression_desc = Bin (Mod, e1, e2)}
 
-let array_index ?comment (e0 : t) (e1 : t) : t =
+let array_index (e0 : t) (e1 : t) : t =
   match (e0.expression_desc, e1.expression_desc) with
   | Array (l, _), Number (Int {i; _})
   (* Float i -- should not appear here *)
     when no_side_effect e0 -> (
     match Ext_list.nth_opt l (Int32.to_int i) with
-    | None -> {expression_desc = Array_index (e0, e1); comment}
+    | None -> {expression_desc = Array_index (e0, e1); comment = None}
     | Some x -> x (* FIX #3084*))
-  | _ -> {expression_desc = Array_index (e0, e1); comment}
+  | _ -> {expression_desc = Array_index (e0, e1); comment = None}
 
 let array_index_by_int ?comment (e : t) (pos : int32) : t =
   match e.expression_desc with
@@ -463,7 +465,7 @@ let extension_access (e : t) name (pos : int32) : t =
     in
     {expression_desc = Static_index (e, name, Some pos); comment = None}
 
-let assign ?comment e0 e1 : t = {expression_desc = Bin (Eq, e0, e1); comment}
+let assign e0 e1 : t = {expression_desc = Bin (Eq, e0, e1); comment = None}
 
 let record_assign (e : t) (pos : int32) (name : string) (value : t) =
   match e.expression_desc with
@@ -503,26 +505,25 @@ let extension_assign (e : t) (pos : int32) name (value : t) =
 
 (* This is a property access not external module *)
 
-let array_length ?comment (e : t) : t =
+let array_length (e : t) : t =
   match e.expression_desc with
   (* TODO: use array instead? *)
   | (Array (l, _) | Caml_block (l, _, _, _)) when no_side_effect e ->
-    int ?comment (Int32.of_int (List.length l))
-  | _ -> {expression_desc = Length (e, Array); comment}
+    int (Int32.of_int (List.length l))
+  | _ -> {expression_desc = Length (e, Array); comment = None}
 
-let string_length ?comment (e : t) : t =
+let string_length (e : t) : t =
   match e.expression_desc with
-  | Str {txt; delim = DNone} -> int ?comment (Int32.of_int (String.length txt))
+  | Str {txt; delim = DNone} -> int (Int32.of_int (String.length txt))
   (* No optimization for {j||j}*)
-  | _ -> {expression_desc = Length (e, String); comment}
+  | _ -> {expression_desc = Length (e, String); comment = None}
 
-let function_length ?comment (e : t) : t =
+let function_length (e : t) : t =
   match e.expression_desc with
   | Fun {is_method; params} ->
     let params_length = List.length params in
-    int ?comment
-      (Int32.of_int (if is_method then params_length - 1 else params_length))
-  | _ -> {expression_desc = Length (e, Function); comment}
+    int (Int32.of_int (if is_method then params_length - 1 else params_length))
+  | _ -> {expression_desc = Length (e, Function); comment = None}
 
 (** no dependency introduced *)
 (* let js_global_dot ?comment (x : string)  (e1 : string) : t =
@@ -550,8 +551,8 @@ let rec string_append ?comment (e : t) (el : t) : t =
     {(concat a b ~delim) with comment}
   | _, _ -> {comment; expression_desc = String_append (e, el)}
 
-let obj ?comment ?dup properties : t =
-  {expression_desc = Object (dup, properties); comment}
+let obj ?dup properties : t =
+  {expression_desc = Object (dup, properties); comment = None}
 
 let str_equal (txt0 : string) (delim0 : External_arg_spec.delim) txt1 delim1 =
   if delim0 = delim1 then

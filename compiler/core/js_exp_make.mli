@@ -48,13 +48,12 @@ val js_global : string -> t
 (* val runtime_var_vid : string -> string -> J.vident *)
 
 val ml_var_dot :
-  ?comment:string -> ?dynamic_import:bool -> Ident.t -> string -> t
+  ?dynamic_import:bool -> Ident.t -> string -> t
 (** [ml_var_dot ocaml_module name]
 *)
 
 val external_var_field :
   ?import_attributes:External_ffi_types.import_attributes ->
-  ?comment:string ->
   external_name:string ->
   Ident.t ->
   field:string ->
@@ -66,12 +65,11 @@ val external_var_field :
 
 val external_var :
   ?import_attributes:External_ffi_types.import_attributes ->
-  ?comment:string ->
   external_name:string ->
   Ident.t ->
   t
 
-val ml_module_as_var : ?comment:string -> ?dynamic_import:bool -> Ident.t -> t
+val ml_module_as_var : ?dynamic_import:bool -> Ident.t -> t
 
 val runtime_call :
   string ->
@@ -85,7 +83,6 @@ val runtime_call :
 val str : ?delim:J.delim -> ?comment:string -> string -> t
 
 val ocaml_fun :
-  ?comment:string ->
   ?immutable_mask:bool array ->
   ?directive:string ->
   return_unit:bool ->
@@ -96,8 +93,6 @@ val ocaml_fun :
   t
 
 val method_ :
-  ?comment:string ->
-  ?immutable_mask:bool array ->
   async:bool ->
   return_unit:bool ->
   J.ident list ->
@@ -128,15 +123,15 @@ val is_out : ?comment:string -> t -> t -> t
 
 *)
 
-val dot : ?comment:string -> t -> string -> t
+val dot : t -> string -> t
 
 val module_access : t -> string -> int32 -> t
 
-val array_length : ?comment:string -> t -> t
+val array_length : t -> t
 
-val string_length : ?comment:string -> t -> t
+val string_length : t -> t
 
-val function_length : ?comment:string -> t -> t
+val function_length : t -> t
 
 val string_append : ?comment:string -> t -> t -> t
 (**
@@ -151,7 +146,7 @@ val string_append : ?comment:string -> t -> t -> t
 (* val bind_call : ?comment:string -> J.expression -> string -> J.expression list -> t *)
 (* val js_global_dot : ?comment:string -> string -> string -> t *)
 
-val array_index : ?comment:string -> t -> t -> t
+val array_index : t -> t -> t
 
 val array_index_by_int : ?comment:string -> t -> Int32.t -> t
 
@@ -173,7 +168,7 @@ val poly_var_value_access : t -> t
 
 val extension_assign : t -> int32 -> string -> t -> t
 
-val assign : ?comment:string -> t -> t -> t
+val assign : t -> t -> t
 
 val tag_type : Ast_untagged_variants.tag_type -> t
 
@@ -204,7 +199,7 @@ val is_a_literal_case :
 
 val is_type_object : t -> t
 
-val typeof : ?comment:string -> t -> t
+val typeof : t -> t
 val is_array : t -> t
 
 val to_int32 : ?comment:string -> t -> t
@@ -243,7 +238,7 @@ val float_mul : ?comment:string -> t -> t -> t
 
 val float_div : ?comment:string -> t -> t -> t
 
-val float_mod : ?comment:string -> t -> t -> t
+val float_mod : t -> t -> t
 
 val float_pow : ?comment:string -> t -> t -> t
 
@@ -267,7 +262,7 @@ val not : t -> t
 
 val call : ?comment:string -> info:Js_call_info.t -> t -> t list -> t
 
-val tagged_template : ?comment:string -> t -> t list -> t list -> t
+val tagged_template : t -> t list -> t list -> t
 
 val new_ : J.expression -> J.expression list -> t
 
@@ -278,7 +273,6 @@ val optional_block : J.expression -> J.expression
 val optional_not_nest_block : J.expression -> J.expression
 
 val make_block :
-  ?comment:string ->
   J.expression ->
   (* tag *)
   J.tag_info ->
@@ -291,7 +285,7 @@ val seq : ?comment:string -> t -> t -> t
 
 val fuse_to_seq : t -> t list -> t
 
-val obj : ?comment:string -> ?dup:J.expression -> J.property_map -> t
+val obj : ?dup:J.expression -> J.property_map -> t
 
 val true_ : t
 
@@ -321,13 +315,13 @@ val in_ : t -> t -> t
 
 (** we don't expose a general interface, since a general interface is generally not safe *)
 
-val dummy_obj : ?comment:string -> Lam_tag_info.t -> t
+val dummy_obj : Lam_tag_info.t -> t
 (** used combined with [caml_update_dummy]*)
 
 val of_block : ?comment:string -> ?e:J.expression -> J.statement list -> t
 (** convert a block to expresion by using IIFE *)
 
-val raw_js_code : ?comment:string -> Js_raw_info.code_info -> string -> t
+val raw_js_code : Js_raw_info.code_info -> string -> t
 
 val nil : t
 
