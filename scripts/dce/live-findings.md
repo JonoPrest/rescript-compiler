@@ -231,6 +231,26 @@ live after manual validation.
   callers and were removed. The remaining entries are live through cross-module
   compiler and `.cppo.ml` call sites.
 
+### Core JS dumping pipeline
+
+- Report: `Warning Dead Module` / `Warning Dead Value`,
+  `compiler/core/js_cmj_load.ml`, `js_dump.ml`, `js_dump_import_export.ml`,
+  `js_dump_lit.ml`, and `js_dump_program.ml` / `.mli`.
+- Verdict: live; false positive for the remaining reported helpers.
+- Validation: `compiler/core/lam_compile_env.ml` reads
+  `Js_cmj_load.load_unit`. `compiler/core/js_output.ml` calls
+  `Js_dump.string_of_block`, and `compiler/core/js_dump_program.ml` calls
+  `Js_dump.statements`. `compiler/core/js_dump_program.ml` calls
+  `Js_dump_import_export.exports`, `requires`, `imports`, and
+  `esmodule_export`; those helpers use the reported `Js_dump_lit` strings
+  through `module L = Js_dump_lit`. `Js_dump_program.dump_deps_program` is used
+  by `lam_compile_main.cppo.ml`, `dump_program` by `js_pass_debug.cppo.ml`, and
+  `pp_deps_program` by `compiler/jsoo/jsoo_playground_main.ml`.
+- Context: unused `Js_dump_lit` strings and the unused
+  `Js_dump.string_of_expression` signature export were removed. The remaining
+  dumper warnings are cross-module compiler output paths, including `.cppo.ml`
+  and jsoo entry points that this DCE run misses.
+
 ### `File_deps.File_hash` callbacks
 
 - Report: `Warning Dead Module` and `Warning Dead Value`,
