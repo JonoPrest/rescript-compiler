@@ -33,18 +33,19 @@
 
 val is_dir_sep : char -> bool
 
-val chop_extension_maybe : string -> string
-
 (* return an empty string if no extension found *)
 val get_extension_maybe : string -> string
 
 val new_extension : string -> string -> string
 
-val chop_all_extensions_maybe : string -> string
+val chop_all_extensions_maybe : string -> string [@@live]
 
 (* OCaml specific abstraction*)
 val module_name : string -> string
 
-type module_info = {module_name: string; case: bool}
+type module_info = {
+  module_name: string; [@live]
+  case: bool; [@live]
+}
 
-val as_module : basename:string -> module_info option
+val as_module : basename:string -> module_info option [@@live]

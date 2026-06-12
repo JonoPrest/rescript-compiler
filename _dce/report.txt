@@ -7965,78 +7965,6 @@
   <-- line 29
   val is_lower_case : char -> bool [@@dead "+is_lower_case"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.ml", line 31, characters 0-259
-  +chop_extension_maybe is never used
-  <-- line 31
-    search_dot (String.length name - 1) [@@dead "+chop_extension_maybe"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.ml", line 48, characters 0-363
-  +chop_all_extensions_maybe is never used
-  <-- line 48
-    search_dot (String.length name - 1) None [@@dead "+chop_all_extensions_maybe"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.ml", line 89, characters 20-40
-  module_info.module_name is a record label never used to read a value
-  <-- line 89
-  type module_info = {module_name: string; [@dead "module_info.module_name"]  case: bool}
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.ml", line 89, characters 41-51
-  module_info.case is a record label never used to read a value
-  <-- line 89
-  type module_info = {module_name: string; [@dead "module_info.module_name"]  case: bool [@dead "module_info.case"] }
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.ml", line 91, characters 0-277
-  +valid_module_name_aux is never used
-  <-- line 91
-      | _ -> false [@@dead "+valid_module_name_aux"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.ml", line 102, characters 0-338
-  +valid_module_name is never used
-  <-- line 102
-      | _ -> Invalid [@@dead "+valid_module_name"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.ml", line 112, characters 0-796
-  +as_module is never used
-  <-- line 112
-    search_dot (name_len - 1) basename name_len [@@dead "+as_module"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.mli", line 36, characters 0-43
-  +chop_extension_maybe is never used
-  <-- line 36
-  val chop_extension_maybe : string -> string [@@dead "+chop_extension_maybe"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.mli", line 43, characters 0-48
-  +chop_all_extensions_maybe is never used
-  <-- line 43
-  val chop_all_extensions_maybe : string -> string [@@dead "+chop_all_extensions_maybe"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.mli", line 48, characters 20-40
-  module_info.module_name is a record label never used to read a value
-  <-- line 48
-  type module_info = {module_name: string; [@dead "module_info.module_name"]  case: bool}
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.mli", line 48, characters 41-51
-  module_info.case is a record label never used to read a value
-  <-- line 48
-  type module_info = {module_name: string; [@dead "module_info.module_name"]  case: bool [@dead "module_info.case"] }
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.mli", line 50, characters 0-53
-  +as_module is never used
-  <-- line 50
-  val as_module : basename:string -> module_info option [@@dead "+as_module"] 
-
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_fmt.ml", line 1, characters 0-0
   +ext_fmt is a dead module as all its items are dead.
@@ -14159,4 +14087,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2495 issues (Warning Dead Module:151, Warning Dead Type:235, Warning Dead Value:1855, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2483 issues (Warning Dead Module:151, Warning Dead Type:231, Warning Dead Value:1847, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
