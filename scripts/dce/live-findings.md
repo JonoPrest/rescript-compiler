@@ -298,6 +298,26 @@ live after manual validation.
   `type arg_expression = Js_of_lam_variant.arg_expression = ...`, then
   constructs and pattern matches `Splice0`, `Splice1`, and `Splice2`.
 
+### Core JS operators and output state
+
+- Report: constructor warnings in `compiler/core/js_op.ml` for
+  `property.Strict`, `Alias`, `StrictOpt`, and `Variable`; and
+  `Warning Dead Value` entries in `js_op_util.ml` / `.mli` and
+  `js_output.ml` / `.mli`.
+- Verdict: live; false positive for the remaining reported entries.
+- Validation: the property constructors are the shared
+  `Lam_compat.let_kind` constructors used by lambda DCE, conversion, scope, and
+  JS statement generation. `Js_op_util.update_used_stats` is used by
+  `js_pass_flatten_and_mark_dead.ml`, `js_pass_tailcall_inline.ml`, and
+  `js_pass_get_used.ml`; `same_vident` is used by `js_analyzer.ml` and
+  `Js_exp_make`; `of_lam_mutable_flag` is used by `lam_compile_primitive.ml`.
+  `Js_output` is central to `lam_compile.ml`, and `lam_compile_main.cppo.ml`
+  calls `Js_output.concat` and `output_as_block`.
+- Context: unused operator model types/cases (`binop.Bnot`, `int_op`, `level`,
+  `access`, `recursive_info`, and `length_object.Bytes`) were removed, along
+  with the unused `Js_op_util.str_of_used_stats` and `Js_output.to_string`
+  debug exports.
+
 ### `File_deps.File_hash` callbacks
 
 - Report: `Warning Dead Module` and `Warning Dead Value`,
