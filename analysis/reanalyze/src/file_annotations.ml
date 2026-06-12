@@ -38,8 +38,6 @@ let builder_to_list (builder : builder) : (Lexing.position * annotated_as) list
     =
   Pos_hash.fold (fun pos value acc -> (pos, value) :: acc) builder []
 
-let create_from_hashtbl (h : annotated_as Pos_hash.t) : t = h
-
 (* ===== Read-only API ===== *)
 
 let is_annotated_dead (state : t) pos = Pos_hash.find_opt state pos = Some Dead

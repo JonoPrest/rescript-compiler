@@ -44,12 +44,3 @@ let merge_into_builder ~(from : builder) ~(into : builder) =
       in
       File_hash.replace into.deps from_file (File_set.union existing to_files))
     from.deps
-
-(** {2 Builder extraction for reactive merge} *)
-
-let builder_files (builder : builder) : File_set.t = builder.files
-
-let builder_deps_to_list (builder : builder) : (string * File_set.t) list =
-  File_hash.fold
-    (fun from_file to_files acc -> (from_file, to_files) :: acc)
-    builder.deps []

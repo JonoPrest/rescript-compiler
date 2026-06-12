@@ -1154,18 +1154,6 @@
     let compare = Stdlib.compare [@@dead "Path_map.+compare"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/declarations.ml", line 38, characters 0-55
-  +create_from_hashtbl is never used
-  <-- line 38
-  let create_from_hashtbl (h : Decl.t Pos_hash.t) : t = h [@@dead "+create_from_hashtbl"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/declarations.mli", line 33, characters 0-48
-  +create_from_hashtbl is never used
-  <-- line 33
-  val create_from_hashtbl : Decl.t Pos_hash.t -> t [@@dead "+create_from_hashtbl"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/exn.ml", line 3, characters 0-28
   +compare is never used
   <-- line 3
@@ -1176,18 +1164,6 @@
   +compare is never used
   <-- line 3
   val compare : t -> t -> int [@@dead "+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_annotations.ml", line 41, characters 0-61
-  +create_from_hashtbl is never used
-  <-- line 41
-  let create_from_hashtbl (h : annotated_as Pos_hash.t) : t = h [@@dead "+create_from_hashtbl"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_annotations.mli", line 35, characters 0-54
-  +create_from_hashtbl is never used
-  <-- line 35
-  val create_from_hashtbl : annotated_as Pos_hash.t -> t [@@dead "+create_from_hashtbl"] 
 
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.ml", line 6, characters 0-129
@@ -1270,78 +1246,6 @@
     let compare = compare [@@dead "+compare"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.ml", line 14, characters 2-49
-  t.file_deps_map is a record label never used to read a value
-  <-- line 14
-    file_deps_map: (string, File_set.t) Reactive.t; [@dead "t.file_deps_map"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.ml", line 15, characters 2-35
-  t.files is a record label never used to read a value
-  <-- line 15
-    files: (string, unit) Reactive.t; [@dead "t.files"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.ml", line 159, characters 0-199
-  +freeze_decls is never used
-  <-- line 159
-    Declarations.create_from_hashtbl result [@@dead "+freeze_decls"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.ml", line 165, characters 0-217
-  +freeze_annotations is never used
-  <-- line 165
-    File_annotations.create_from_hashtbl result [@@dead "+freeze_annotations"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.ml", line 172, characters 0-1474
-  +freeze_refs is never used
-  <-- line 172
-    References.create ~value_refs_from ~type_refs_from [@@dead "+freeze_refs"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.ml", line 224, characters 0-630
-  +collect_cross_file_items is never used
-  <-- line 224
-    } [@@dead "+collect_cross_file_items"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.mli", line 35, characters 2-49
-  t.file_deps_map is a record label never used to read a value
-  <-- line 35
-    file_deps_map: (string, File_set.t) Reactive.t; [@dead "t.file_deps_map"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.mli", line 36, characters 2-35
-  t.files is a record label never used to read a value
-  <-- line 36
-    files: (string, unit) Reactive.t; [@dead "t.files"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.mli", line 51, characters 0-38
-  +freeze_decls is never used
-  <-- line 51
-  val freeze_decls : t -> Declarations.t [@@dead "+freeze_decls"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.mli", line 54, characters 0-48
-  +freeze_annotations is never used
-  <-- line 54
-  val freeze_annotations : t -> File_annotations.t [@@dead "+freeze_annotations"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.mli", line 57, characters 0-35
-  +freeze_refs is never used
-  <-- line 57
-  val freeze_refs : t -> References.t [@@dead "+freeze_refs"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.mli", line 60, characters 0-54
-  +collect_cross_file_items is never used
-  <-- line 60
-  val collect_cross_file_items : t -> Cross_file_items.t [@@dead "+collect_cross_file_items"] 
-
-  Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_solver.ml", line 30, characters 2-75
   t.annotations is a record label never used to read a value
   <-- line 30
@@ -1352,90 +1256,6 @@
   t.config is a record label never used to read a value
   <-- line 44
     config: Dce_config.t; [@dead "t.config"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_type_deps.ml", line 14, characters 2-27
-  decl_info.pos_end is a record label never used to read a value
-  <-- line 14
-    pos_end: Lexing.position; [@dead "decl_info.pos_end"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_type_deps.ml", line 36, characters 2-56
-  t.decl_by_path is a record label never used to read a value
-  <-- line 36
-    decl_by_path: (Dce_path.t, decl_info list) Reactive.t; [@dead "t.decl_by_path"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_type_deps.ml", line 38, characters 2-58
-  t.same_path_refs is a record label never used to read a value
-  <-- line 38
-    same_path_refs: (Lexing.position, Pos_set.t) Reactive.t; [@dead "t.same_path_refs"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_type_deps.ml", line 39, characters 2-59
-  t.cross_file_refs is a record label never used to read a value
-  <-- line 39
-    cross_file_refs: (Lexing.position, Pos_set.t) Reactive.t; [@dead "t.cross_file_refs"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_type_deps.ml", line 41, characters 2-67
-  t.impl_to_intf_refs_path2 is a record label never used to read a value
-  <-- line 41
-    impl_to_intf_refs_path2: (Lexing.position, Pos_set.t) Reactive.t; [@dead "t.impl_to_intf_refs_path2"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_type_deps.ml", line 42, characters 2-61
-  t.intf_to_impl_refs is a record label never used to read a value
-  <-- line 42
-    intf_to_impl_refs: (Lexing.position, Pos_set.t) Reactive.t; [@dead "t.intf_to_impl_refs"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_type_deps.ml", line 242, characters 0-251
-  +add_to_refs_builder is never used
-  <-- line 242
-      t.all_type_refs [@@dead "+add_to_refs_builder"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_type_deps.mli", line 33, characters 2-56
-  t.decl_by_path is a record label never used to read a value
-  <-- line 33
-    decl_by_path: (Dce_path.t, decl_info list) Reactive.t; [@dead "t.decl_by_path"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_type_deps.mli", line 35, characters 2-58
-  t.same_path_refs is a record label never used to read a value
-  <-- line 35
-    same_path_refs: (Lexing.position, Pos_set.t) Reactive.t; [@dead "t.same_path_refs"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_type_deps.mli", line 36, characters 2-59
-  t.cross_file_refs is a record label never used to read a value
-  <-- line 36
-    cross_file_refs: (Lexing.position, Pos_set.t) Reactive.t; [@dead "t.cross_file_refs"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_type_deps.mli", line 38, characters 2-67
-  t.impl_to_intf_refs_path2 is a record label never used to read a value
-  <-- line 38
-    impl_to_intf_refs_path2: (Lexing.position, Pos_set.t) Reactive.t; [@dead "t.impl_to_intf_refs_path2"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_type_deps.mli", line 39, characters 2-61
-  t.intf_to_impl_refs is a record label never used to read a value
-  <-- line 39
-    intf_to_impl_refs: (Lexing.position, Pos_set.t) Reactive.t; [@dead "t.intf_to_impl_refs"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_type_deps.mli", line 47, characters 2-27
-  decl_info.pos_end is a record label never used to read a value
-  <-- line 47
-    pos_end: Lexing.position; [@dead "decl_info.pos_end"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_type_deps.mli", line 68, characters 0-62
-  +add_to_refs_builder is never used
-  <-- line 68
-  val add_to_refs_builder : t -> refs:References.builder -> unit [@@dead "+add_to_refs_builder"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reanalyze_server.ml", line 74, characters 2-79
@@ -1448,54 +1268,6 @@
   Server.server_state.parse_argv is a record label never used to read a value
   <-- line 108
       parse_argv: string array -> string option; [@dead "Server.server_state.parse_argv"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/references.ml", line 47, characters 0-269
-  +merge_all is never used
-  <-- line 47
-    } [@@dead "+merge_all"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/references.ml", line 77, characters 0-85
-  +create is never used
-  <-- line 77
-    {value_refs_from; type_refs_from} [@@dead "+create"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/references.ml", line 85, characters 0-70
-  +value_refs_from_length is never used
-  <-- line 85
-  let value_refs_from_length (t : t) = Pos_hash.length t.value_refs_from [@@dead "+value_refs_from_length"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/references.ml", line 86, characters 0-68
-  +type_refs_from_length is never used
-  <-- line 86
-  let type_refs_from_length (t : t) = Pos_hash.length t.type_refs_from [@@dead "+type_refs_from_length"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/references.mli", line 35, characters 0-33
-  +merge_all is never used
-  <-- line 35
-  val merge_all : builder list -> t [@@dead "+merge_all"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/references.mli", line 49, characters 0-99
-  +create is never used
-  <-- line 49
-    t [@@dead "+create"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/references.mli", line 65, characters 0-37
-  +value_refs_from_length is never used
-  <-- line 65
-  val value_refs_from_length : t -> int [@@dead "+value_refs_from_length"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/references.mli", line 66, characters 0-36
-  +type_refs_from_length is never used
-  <-- line 66
-  val type_refs_from_length : t -> int [@@dead "+type_refs_from_length"] 
 
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/run_config.ml", line 44, characters 2-12
@@ -16827,4 +16599,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2940 issues (Warning Dead Module:150, Warning Dead Type:380, Warning Dead Value:2154, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2902 issues (Warning Dead Module:150, Warning Dead Type:364, Warning Dead Value:2132, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)

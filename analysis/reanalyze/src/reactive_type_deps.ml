@@ -11,7 +11,6 @@
 
 type decl_info = {
   pos: Lexing.position;
-  pos_end: Lexing.position;
   path: Dce_path.t;
   is_interface: bool;
 }
@@ -26,21 +25,12 @@ let decl_to_info (decl : Decl.t) : decl_info option =
       | module_name_tag :: _ -> (
         try (module_name_tag |> Name.to_string).[0] <> '+' with _ -> true)
     in
-    Some
-      {pos = decl.pos; pos_end = decl.pos_end; path = decl.path; is_interface}
+    Some {pos = decl.pos; path = decl.path; is_interface}
   | _ -> None
 
 (** {1 Reactive Collections} *)
 
 type t = {
-  decl_by_path: (Dce_path.t, decl_info list) Reactive.t;
-  (* refs_to direction: target -> sources *)
-  same_path_refs: (Lexing.position, Pos_set.t) Reactive.t;
-  cross_file_refs: (Lexing.position, Pos_set.t) Reactive.t;
-  all_type_refs: (Lexing.position, Pos_set.t) Reactive.t;
-  impl_to_intf_refs_path2: (Lexing.position, Pos_set.t) Reactive.t;
-  intf_to_impl_refs: (Lexing.position, Pos_set.t) Reactive.t;
-  (* refs_from direction: source -> targets (for forward solver) *)
   all_type_refs_from: (Lexing.position, Pos_set.t) Reactive.t;
 }
 (** All reactive collections for type-label dependencies *)
@@ -198,10 +188,6 @@ let create ~(decls : (Lexing.position, Decl.t) Reactive.t)
      - intf_to_impl_refs *)
   let cross_file_refs = impl_to_intf_refs in
 
-  (* All type refs = same_path_refs + all cross-file sources.
-     We expose these separately and merge in freeze_refs. *)
-  let all_type_refs = same_path_refs in
-
   (* Create refs_from by combining and inverting all refs_to sources.
      We use a single flatMap that iterates all sources once. *)
   let all_type_refs_from =
@@ -226,23 +212,4 @@ let create ~(decls : (Lexing.position, Decl.t) Reactive.t)
       ~merge:Pos_set.union ()
   in
 
-  {
-    decl_by_path;
-    same_path_refs;
-    cross_file_refs;
-    all_type_refs;
-    impl_to_intf_refs_path2;
-    intf_to_impl_refs;
-    all_type_refs_from;
-  }
-
-(** {1 Freezing for solver} *)
-
-(** Add all type refs to a References.builder *)
-let add_to_refs_builder (t : t) ~(refs : References.builder) : unit =
-  Reactive.iter
-    (fun pos_to pos_from_set ->
-      Pos_set.iter
-        (fun pos_from -> References.add_type_ref refs ~pos_to ~pos_from)
-        pos_from_set)
-    t.all_type_refs
+  {all_type_refs_from}

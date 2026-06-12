@@ -32,9 +32,6 @@ val merge_all : builder list -> t
 val builder_to_list : builder -> (Lexing.position * annotated_as) list
 (** Extract all annotations as a list for reactive merge *)
 
-val create_from_hashtbl : annotated_as Pos_hash.t -> t
-(** Create from hashtable for reactive merge *)
-
 (** {2 Read-only API for t - for solver} *)
 
 val is_annotated_dead : t -> Lexing.position -> bool

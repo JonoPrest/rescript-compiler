@@ -44,15 +44,6 @@ let merge_into_builder ~(from : builder) ~(into : builder) =
       |> Pos_set.iter (fun to_pos -> add_set into.type_refs_from pos to_pos))
     from.type_refs_from
 
-let merge_all (builders : builder list) : t =
-  let result = create_builder () in
-  builders
-  |> List.iter (fun builder -> merge_into_builder ~from:builder ~into:result);
-  {
-    value_refs_from = result.value_refs_from;
-    type_refs_from = result.type_refs_from;
-  }
-
 let freeze_builder (builder : builder) : t =
   (* Zero-copy freeze - builder should not be used after this *)
   {
@@ -74,13 +65,7 @@ let builder_type_refs_from_list (builder : builder) :
     (fun pos refs acc -> (pos, refs) :: acc)
     builder.type_refs_from []
 
-let create ~value_refs_from ~type_refs_from : t =
-  {value_refs_from; type_refs_from}
-
 (* ===== Read-only API ===== *)
 
 let iter_value_refs_from (t : t) f = Pos_hash.iter f t.value_refs_from
 let iter_type_refs_from (t : t) f = Pos_hash.iter f t.type_refs_from
-
-let value_refs_from_length (t : t) = Pos_hash.length t.value_refs_from
-let type_refs_from_length (t : t) = Pos_hash.length t.type_refs_from

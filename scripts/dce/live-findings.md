@@ -128,26 +128,28 @@ live after manual validation.
 ### `Reactive_file_collection` live helpers
 
 - Report: `Warning Dead Value`, `analysis/reactive/src/reactive_file_collection.ml`
-  and `.mli`, currently including `length`.
+  and `.mli`, for collection operations used by the reactive analyzer.
 - Verdict: live; false positive.
 - Validation: `analysis/reanalyze/src/reactive_analysis.ml` uses
-  `Reactive_file_collection.create`, `process_files_batch`, `mem`, `iter`,
-  `length`, and `to_collection`; `analysis/reanalyze/src/reanalyze.ml` uses
+  `Reactive_file_collection.create`, `process_files_batch`, `mem`, `iter`, and
+  `to_collection`; `analysis/reanalyze/src/reanalyze.ml` uses
   `process_files_batch` and `remove_batch` directly for churn tests.
 - Context: the single-file/cache-management helpers were removed, but the
   remaining collection operations are part of the live reactive analyzer path.
 
-### Reactive merge freeze helpers
+### Reanalyze collection functor callbacks
 
-- Report: `Warning Dead Value`, `analysis/reanalyze/src/declarations.ml` and
-  `file_annotations.ml`, `create_from_hashtbl`.
+- Report: `Warning Dead Module` and `Warning Dead Value`,
+  `analysis/reanalyze/src/file_hash.ml`, `loc_set.ml`, `pos_hash.ml`,
+  `pos_set.ml`, and `Name.compare` in `name.ml` / `.mli`.
 - Verdict: live; false positive.
-- Validation: `analysis/reanalyze/src/reactive_merge.ml` calls
-  `Declarations.create_from_hashtbl` from `freeze_decls` and
-  `File_annotations.create_from_hashtbl` from `freeze_annotations`.
-- Context: the freeze helpers bridge reactive hashtable aggregation back to the
-  immutable store types. Reanalyze reports them because the caller sits in the
-  reactive pipeline, which is affected by the cross-module liveness blind spot.
+- Validation: `Pos_hash` and `Pos_set` are used throughout the DCE liveness,
+  reference, declaration, annotation, and reactive pipelines. `Loc_set` is used
+  by exception analysis, `File_hash` is the file-keyed table helper, and
+  `module_path.ml` builds `Name_map = Map.Make (Name)`.
+- Context: `hash`, `equal`, and `compare` are callbacks consumed by
+  `Hashtbl.Make`, `Set.Make`, or `Map.Make`. Reanalyze can miss those callback
+  edges and report the callback definitions as ordinary unused values.
 
 ### `File_deps.File_hash` callbacks
 
@@ -155,8 +157,8 @@ live after manual validation.
   `analysis/reanalyze/src/file_deps.ml`, `File_hash.hash` and `File_hash.equal`.
 - Verdict: live; false positive.
 - Validation: `File_deps.create_builder`, `add_file`, `add_dep`,
-  `merge_into_builder`, and the reactive merge extraction helpers all use the
-  `File_hash` table produced by `Hashtbl.Make`.
+  and `merge_into_builder` all use the `File_hash` table produced by
+  `Hashtbl.Make`.
 - Context: `hash` and `equal` are callbacks consumed by the hashtable functor,
   so they can look unreferenced as ordinary values even though table operations
   depend on them.
