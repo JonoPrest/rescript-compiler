@@ -154,8 +154,6 @@ let pure_runtime_call module_name fn_name args =
     (runtime_var_dot module_name fn_name)
     args
 
-let runtime_ref module_name fn_name = runtime_var_dot module_name fn_name
-
 let str ?(delim = J.DNone) ?comment txt : t =
   {expression_desc = Str {txt; delim}; comment}
 
@@ -500,9 +498,6 @@ let assign_by_exp (e : t) index value : t =
     when no_side_effect e && no_side_effect index ->
     value
   | _ -> assign {expression_desc = Array_index (e, index); comment = None} value
-
-let assign_by_int ?comment e0 (index : int32) value =
-  assign_by_exp e0 (int ?comment index) value
 
 let record_assign (e : t) (pos : int32) (name : string) (value : t) =
   match e.expression_desc with

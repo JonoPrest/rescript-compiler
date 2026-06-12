@@ -84,17 +84,6 @@ val runtime_call :
   (* args *)
   t
 
-val pure_runtime_call :
-  string ->
-  (* module_name *)
-  string ->
-  (* fn_name *)
-  t list ->
-  (* args *)
-  t
-
-val runtime_ref : string -> string -> t
-
 val str : ?delim:J.delim -> ?comment:string -> string -> t
 
 val ocaml_fun :
@@ -187,14 +176,6 @@ val poly_var_tag_access : t -> t
 val poly_var_value_access : t -> t
 
 val extension_assign : t -> int32 -> string -> t -> t
-
-val assign_by_int : ?comment:string -> t -> int32 -> t -> t
-(** 
-    [assign_by_int  e i v]
-    if the expression [e] is a temporay block 
-    which has no side effect,
-    write to it does not really make sense, 
-    optimize it away *)
 
 val assign_by_exp : t -> t -> t -> t
 
