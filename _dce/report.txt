@@ -804,16 +804,8 @@
   optional argument from_type of function +unbound_constructor_error is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.mli", line 322, characters 0-62
-  optional argument env of function +free_variables is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3563, characters 0-97
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3553, characters 0-97
   optional argument ctx of function +subtype_error is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 475, characters 0-98
-  optional argument env of function +free_variables is never used
 
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 116, characters 0-90
@@ -14304,159 +14296,159 @@
     | _ -> assert false [@@dead "+hide_private_methods"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 536, characters 2-54
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 526, characters 2-54
   closed_class_failure.CC_Method is a variant case which is never constructed
-  <-- line 536
+  <-- line 526
     | CC_Method of type_expr * bool * string * type_expr [@dead "closed_class_failure.CC_Method"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 537, characters 2-53
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 527, characters 2-53
   closed_class_failure.CC_Value is a variant case which is never constructed
-  <-- line 537
+  <-- line 527
     | CC_Value of type_expr * bool * string * type_expr [@dead "closed_class_failure.CC_Value"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 727, characters 0-64
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 717, characters 0-64
   +generalize_global is never used
-  <-- line 727
+  <-- line 717
   let generalize_global ty = generalize_structure !global_level ty [@@dead "+generalize_global"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 734, characters 0-1352
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 724, characters 0-1352
   +limited_generalize is never used
-  <-- line 734
+  <-- line 724
       graph [@@dead "+limited_generalize"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 997, characters 0-154
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 987, characters 0-154
   +generic_instance is never used
-  <-- line 997
+  <-- line 987
     ty [@@dead "+generic_instance"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 1069, characters 0-219
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 1059, characters 0-219
   +instance_parameterized_type_2 is never used
-  <-- line 1069
+  <-- line 1059
     (ty_args, ty_lst, ty) [@@dead "+instance_parameterized_type_2"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 2829, characters 0-84
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 2819, characters 0-84
   +check_filter_method is never used
-  <-- line 2829
+  <-- line 2819
     ignore (filter_method env name priv ty) [@@dead "+check_filter_method"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 2832, characters 0-230
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 2822, characters 0-230
   +filter_self_method is never used
-  <-- line 2832
+  <-- line 2822
       pair [@@dead "+filter_self_method"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3303, characters 2-20
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3293, characters 2-20
   class_match_failure.CM_Virtual_class is a variant case which is never constructed
-  <-- line 3303
+  <-- line 3293
     | CM_Virtual_class [@dead "class_match_failure.CM_Virtual_class"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3304, characters 2-44
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3294, characters 2-44
   class_match_failure.CM_Parameter_arity_mismatch is a variant case which is never constructed
-  <-- line 3304
+  <-- line 3294
     | CM_Parameter_arity_mismatch of int * int [@dead "class_match_failure.CM_Parameter_arity_mismatch"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3305, characters 2-70
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3295, characters 2-70
   class_match_failure.CM_Type_parameter_mismatch is a variant case which is never constructed
-  <-- line 3305
+  <-- line 3295
     | CM_Type_parameter_mismatch of Env.t * (type_expr * type_expr) list [@dead "class_match_failure.CM_Type_parameter_mismatch"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3306, characters 2-65
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3296, characters 2-65
   class_match_failure.CM_Parameter_mismatch is a variant case which is never constructed
-  <-- line 3306
+  <-- line 3296
     | CM_Parameter_mismatch of Env.t * (type_expr * type_expr) list [@dead "class_match_failure.CM_Parameter_mismatch"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3307, characters 2-73
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3297, characters 2-73
   class_match_failure.CM_Val_type_mismatch is a variant case which is never constructed
-  <-- line 3307
+  <-- line 3297
     | CM_Val_type_mismatch of string * Env.t * (type_expr * type_expr) list [@dead "class_match_failure.CM_Val_type_mismatch"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3308, characters 2-74
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3298, characters 2-74
   class_match_failure.CM_Meth_type_mismatch is a variant case which is never constructed
-  <-- line 3308
+  <-- line 3298
     | CM_Meth_type_mismatch of string * Env.t * (type_expr * type_expr) list [@dead "class_match_failure.CM_Meth_type_mismatch"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3309, characters 2-34
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3299, characters 2-34
   class_match_failure.CM_Non_mutable_value is a variant case which is never constructed
-  <-- line 3309
+  <-- line 3299
     | CM_Non_mutable_value of string [@dead "class_match_failure.CM_Non_mutable_value"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3310, characters 2-35
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3300, characters 2-35
   class_match_failure.CM_Non_concrete_value is a variant case which is never constructed
-  <-- line 3310
+  <-- line 3300
     | CM_Non_concrete_value of string [@dead "class_match_failure.CM_Non_concrete_value"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3311, characters 2-30
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3301, characters 2-30
   class_match_failure.CM_Missing_value is a variant case which is never constructed
-  <-- line 3311
+  <-- line 3301
     | CM_Missing_value of string [@dead "class_match_failure.CM_Missing_value"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3312, characters 2-31
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3302, characters 2-31
   class_match_failure.CM_Missing_method is a variant case which is never constructed
-  <-- line 3312
+  <-- line 3302
     | CM_Missing_method of string [@dead "class_match_failure.CM_Missing_method"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3313, characters 2-28
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3303, characters 2-28
   class_match_failure.CM_Hide_public is a variant case which is never constructed
-  <-- line 3313
+  <-- line 3303
     | CM_Hide_public of string [@dead "class_match_failure.CM_Hide_public"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3314, characters 2-38
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3304, characters 2-38
   class_match_failure.CM_Hide_virtual is a variant case which is never constructed
-  <-- line 3314
+  <-- line 3304
     | CM_Hide_virtual of string * string [@dead "class_match_failure.CM_Hide_virtual"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3315, characters 2-30
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3305, characters 2-30
   class_match_failure.CM_Public_method is a variant case which is never constructed
-  <-- line 3315
+  <-- line 3305
     | CM_Public_method of string [@dead "class_match_failure.CM_Public_method"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3316, characters 2-31
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3306, characters 2-31
   class_match_failure.CM_Private_method is a variant case which is never constructed
-  <-- line 3316
+  <-- line 3306
     | CM_Private_method of string [@dead "class_match_failure.CM_Private_method"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3317, characters 2-31
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3307, characters 2-31
   class_match_failure.CM_Virtual_method is a variant case which is never constructed
-  <-- line 3317
+  <-- line 3307
     | CM_Virtual_method of string [@dead "class_match_failure.CM_Virtual_method"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 4063, characters 0-100
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 4053, characters 0-100
   +arity is never used
-  <-- line 4063
+  <-- line 4053
     | _ -> 0 [@@dead "+arity"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 4376, characters 0-599
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 4366, characters 0-599
   +collapse_conj is never used
-  <-- line 4376
+  <-- line 4366
       | _ -> iter_type_expr (collapse_conj env visited) ty [@@dead "+collapse_conj"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 4395, characters 0-77
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 4385, characters 0-77
   +collapse_conj_params is never used
-  <-- line 4395
+  <-- line 4385
   let collapse_conj_params env params = List.iter (collapse_conj env []) params [@@dead "+collapse_conj_params"] 
 
   Warning Dead Value
@@ -14670,27 +14662,27 @@
   val is_contractive : Env.t -> Path.t -> bool [@@dead "+is_contractive"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.mli", line 328, characters 2-54
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.mli", line 327, characters 2-54
   closed_class_failure.CC_Method is a variant case which is never constructed
-  <-- line 328
+  <-- line 327
     | CC_Method of type_expr * bool * string * type_expr [@dead "closed_class_failure.CC_Method"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.mli", line 329, characters 2-53
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.mli", line 328, characters 2-53
   closed_class_failure.CC_Value is a variant case which is never constructed
-  <-- line 329
+  <-- line 328
     | CC_Value of type_expr * bool * string * type_expr [@dead "closed_class_failure.CC_Value"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.mli", line 332, characters 0-28
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.mli", line 331, characters 0-28
   +arity is never used
-  <-- line 332
+  <-- line 331
   val arity : type_expr -> int [@@dead "+arity"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.mli", line 335, characters 0-58
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.mli", line 334, characters 0-58
   +collapse_conj_params is never used
-  <-- line 335
+  <-- line 334
   val collapse_conj_params : Env.t -> type_expr list -> unit [@@dead "+collapse_conj_params"] 
 
   Warning Dead Value
@@ -16669,4 +16661,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2920 issues (Warning Dead Module:145, Warning Dead Type:368, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:201, Warning Unused Argument:42)
+  Analysis reported 2918 issues (Warning Dead Module:145, Warning Dead Type:368, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:201, Warning Unused Argument:40)

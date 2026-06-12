@@ -319,8 +319,7 @@ val closed_schema : Env.t -> type_expr -> bool
 (* Check whether the given type scheme contains no non-generic
    type variables *)
 
-val free_variables : ?env:Env.t -> type_expr -> type_expr list
-(* If env present, then check for incomplete definitions too *)
+val free_variables : type_expr -> type_expr list
 
 val closed_type_decl : type_declaration -> type_expr option
 val closed_extension_constructor : extension_constructor -> type_expr option
