@@ -7,8 +7,8 @@
 # ReScript cmt format used for .res -> .cmt, so it CANNOT read the compiler's own
 # cmts (fails with Cmi_format.Error). We therefore use the STANDALONE reanalyze
 # built against the host compiler-libs. OCaml 5.3 support comes from
-# rescript-lang/reanalyze#203 (branch `ocaml-5-3`), which is not yet merged, so we
-# pin its commit here.
+# rescript-lang/reanalyze#203 plus follow-up fixes from JonoPrest's
+# `jono/cmt-sourcefile-fallback` branch, so we pin that branch commit here.
 #
 # Usage: scripts/dce/run-dce.sh [output-file]
 #   Output defaults to _dce/report.txt
@@ -17,10 +17,10 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 cd "$REPO_ROOT"
 
-# Pinned standalone reanalyze with OCaml 5.3 support (PR #203).
-REANALYZE_REPO="https://github.com/rescript-lang/reanalyze.git"
-REANALYZE_REF="${REANALYZE_REF:-1327343}" # head of branch ocaml-5-3 at time of writing
-REANALYZE_SRC="${REANALYZE_SRC:-$HOME/.cache/rescript-dce/reanalyze}"
+# Pinned standalone reanalyze with OCaml 5.3 support and cmt source-file fixes.
+REANALYZE_REPO="${REANALYZE_REPO:-https://github.com/JonoPrest/reanalyze.git}"
+REANALYZE_REF="${REANALYZE_REF:-c7ee038f772e5175253527236c5eac44c02f6136}" # jono/cmt-sourcefile-fallback
+REANALYZE_SRC="${REANALYZE_SRC:-$HOME/.cache/rescript-dce/reanalyze-cmt-sourcefile-fallback}"
 
 OUT="${1:-_dce/report.txt}"
 mkdir -p "$(dirname "$OUT")"
