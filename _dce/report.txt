@@ -1133,18 +1133,6 @@
   <-- line 74
       else Function_args.compare x1.function_args x2.function_args [@@dead "Function_call.+compare"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/cross_file_items_store.mli", line 18, characters 0-89
-  +iter_optional_arg_calls is never used
-  <-- line 18
-    t -> (Cross_file_items.optional_arg_call -> unit) -> unit [@@dead "+iter_optional_arg_calls"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/cross_file_items_store.mli", line 22, characters 0-77
-  +iter_function_refs is never used
-  <-- line 22
-  val iter_function_refs : t -> (Cross_file_items.function_ref -> unit) -> unit [@@dead "+iter_function_refs"] 
-
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/dead_code.ml", line 1, characters 0-0
   +dead_code is a dead module as all its items are dead.
@@ -17119,4 +17107,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2989 issues (Warning Dead Module:151, Warning Dead Type:379, Warning Dead Value:2203, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2987 issues (Warning Dead Module:151, Warning Dead Type:379, Warning Dead Value:2201, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
