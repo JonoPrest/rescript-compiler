@@ -181,7 +181,7 @@ val int_equal : t -> t -> t
 
 val int_bnot : t -> t
 
-val string_equal : ?comment:string -> t -> t -> t
+val string_equal : t -> t -> t
 
 val eq_null_undefined_boolean : t -> t -> t
 
@@ -228,27 +228,27 @@ val int32_bxor : t -> t -> t
 
 val int32_band : t -> t -> t
 
-val int32_bor : ?comment:string -> t -> t -> t
+val int32_bor : t -> t -> t
 
-val float_add : ?comment:string -> t -> t -> t
+val float_add : t -> t -> t
 
-val float_minus : ?comment:string -> t -> t -> t
+val float_minus : t -> t -> t
 
-val float_mul : ?comment:string -> t -> t -> t
+val float_mul : t -> t -> t
 
-val float_div : ?comment:string -> t -> t -> t
+val float_div : t -> t -> t
 
 val float_mod : t -> t -> t
 
-val float_pow : ?comment:string -> t -> t -> t
+val float_pow : t -> t -> t
 
 val int_comp : Lam_compat.comparison -> ?comment:string -> t -> t -> t
 
 val bool_comp : Lam_compat.comparison -> t -> t -> t
 
-val string_comp : Lam_compat.comparison -> ?comment:string -> t -> t -> t
+val string_comp : Lam_compat.comparison -> t -> t -> t
 
-val bigint_op : ?comment:string -> Js_op.binop -> t -> t -> t
+val bigint_op : Js_op.binop -> t -> t -> t
 
 val bigint_comp : Lam_compat.comparison -> t -> t -> t
 

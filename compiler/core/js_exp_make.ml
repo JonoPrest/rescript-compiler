@@ -1295,11 +1295,10 @@ let tag ?(name = Js_dump_lit.tag) e : t =
 *)
 
 (* Note that [lsr] or [bor] are js semantics *)
-let rec int32_bor ?comment (e1 : J.expression) (e2 : J.expression) :
-    J.expression =
+let rec int32_bor (e1 : J.expression) (e2 : J.expression) : J.expression =
   match (e1.expression_desc, e2.expression_desc) with
   | Number (Int {i = i1}), Number (Int {i = i2}) ->
-    int ?comment (Int32.logor i1 i2)
+    int (Int32.logor i1 i2)
   | _, Bin (Lsr, e2, {expression_desc = Number (Int {i = 0l}); _}) ->
     int32_bor e1 e2
   | Bin (Lsr, e1, {expression_desc = Number (Int {i = 0l}); _}), _ ->
@@ -1311,22 +1310,22 @@ let rec int32_bor ?comment (e1 : J.expression) (e2 : J.expression) :
   | ( Bin (Bor, e1, {expression_desc = Number (Int {i = 0l}); _}),
       Number (Int {i = 0l}) ) ->
     int32_bor e1 e2
-  | _ -> {comment; expression_desc = Bin (Bor, e1, e2)}
+  | _ -> {comment = None; expression_desc = Bin (Bor, e1, e2)}
 
 let to_int32 (e : J.expression) : J.expression =
   int32_bor e zero_int_literal
 (* TODO: if we already know the input is int32, [x|0] can be reduced into [x] *)
 
-let string_comp (cmp : Lam_compat.comparison) ?comment (e0 : t) (e1 : t) =
+let string_comp (cmp : Lam_compat.comparison) (e0 : t) (e1 : t) =
   match (e0.expression_desc, e1.expression_desc) with
   | Str {txt = a0; delim = d0}, Str {txt = a1; delim = d1} -> (
     match (cmp, str_equal a0 d0 a1 d1) with
     | Ceq, Some b -> bool b
     | Cneq, Some b -> bool (b = false)
-    | _ -> bin ?comment (Lam_compile_util.jsop_of_comp cmp) e0 e1)
-  | _ -> bin ?comment (Lam_compile_util.jsop_of_comp cmp) e0 e1
+    | _ -> bin (Lam_compile_util.jsop_of_comp cmp) e0 e1)
+  | _ -> bin (Lam_compile_util.jsop_of_comp cmp) e0 e1
 
-let string_equal ?comment (e0 : t) (e1 : t) : t = string_comp Ceq ?comment e0 e1
+let string_equal (e0 : t) (e1 : t) : t = string_comp Ceq e0 e1
 
 let is_type_number (e : t) : t = string_equal (typeof e) (str "number")
 
@@ -1471,15 +1470,15 @@ let rec is_out ?comment (e : t) (range : t) : t =
     is_out ?comment e range
   | _, _ -> int_comp ?comment Cgt e range
 
-let rec float_add ?comment (e1 : t) (e2 : t) =
+let rec float_add (e1 : t) (e2 : t) =
   match (e1.expression_desc, e2.expression_desc) with
-  | Number (Int {i; _}), Number (Int {i = j; _}) -> int ?comment (Int32.add i j)
+  | Number (Int {i; _}), Number (Int {i = j; _}) -> int (Int32.add i j)
   | _, Number (Int {i = j; c}) when j < 0l ->
-    float_minus ?comment e1
+    float_minus e1
       {e2 with expression_desc = Number (Int {i = Int32.neg j; c})}
   | ( Bin (Plus, a1, {expression_desc = Number (Int {i = k; _})}),
       Number (Int {i = j; _}) ) ->
-    {comment; expression_desc = Bin (Plus, a1, int (Int32.add k j))}
+    {comment = None; expression_desc = Bin (Plus, a1, int (Int32.add k j))}
   (* bin ?comment Plus a1 (int (k + j)) *)
   (* TODO remove commented code  ?? *)
   (* | Bin(Plus, a0 , ({expression_desc = Number (Int a1)}  )), *)
@@ -1497,14 +1496,14 @@ let rec float_add ?comment (e1 : t) (e2 : t) =
   (* | Number _, _ *)
   (*   ->  *)
   (*     bin ?comment Plus  e2 e1 *)
-  | _ -> {comment; expression_desc = Bin (Plus, e1, e2)}
+  | _ -> {comment = None; expression_desc = Bin (Plus, e1, e2)}
 
 (* bin ?comment Plus e1 e2 *)
 (* associative is error prone due to overflow *)
-and float_minus ?comment (e1 : t) (e2 : t) : t =
+and float_minus (e1 : t) (e2 : t) : t =
   match (e1.expression_desc, e2.expression_desc) with
-  | Number (Int {i; _}), Number (Int {i = j; _}) -> int ?comment (Int32.sub i j)
-  | _ -> {comment; expression_desc = Bin (Minus, e1, e2)}
+  | Number (Int {i; _}), Number (Int {i = j; _}) -> int (Int32.sub i j)
+  | _ -> {comment = None; expression_desc = Bin (Minus, e1, e2)}
 (* bin ?comment Minus e1 e2 *)
 
 let int32_add e1 e2 = to_int32 (float_add e1 e2)
@@ -1514,8 +1513,8 @@ let offset e1 (offset : int) =
 
 let int32_minus e1 e2 : J.expression = to_int32 (float_minus e1 e2)
 
-let float_div ?comment e1 e2 = bin ?comment Div e1 e2
-let float_pow ?comment e1 e2 = bin ?comment Pow e1 e2
+let float_div e1 e2 = bin Div e1 e2
+let float_pow e1 e2 = bin Pow e1 e2
 
 let int32_asr e1 e2 : J.expression =
   {comment = None; expression_desc = Bin (Asr, e1, e2)}
@@ -1540,7 +1539,7 @@ let int32_mod ~checked e1 (e2 : t) : J.expression =
     if checked then runtime_call Primitive_modules.int "mod_" [e1; e2]
     else {comment = None; expression_desc = Bin (Mod, e1, e2)}
 
-let float_mul ?comment e1 e2 = bin ?comment Mul e1 e2
+let float_mul e1 e2 = bin Mul e1 e2
 
 let int32_lsl (e1 : J.expression) (e2 : J.expression) : J.expression =
   match (e1, e2) with
@@ -1609,7 +1608,7 @@ let rec int32_band (e1 : J.expression) (e2 : J.expression) : J.expression =
 (* let int32_bin ?comment op e1 e2 : J.expression =  *)
 (*   {expression_desc = Int32_bin(op,e1, e2); comment} *)
 
-let bigint_op ?comment op (e1 : t) (e2 : t) = bin ?comment op e1 e2
+let bigint_op op (e1 : t) (e2 : t) = bin op e1 e2
 
 let bigint_comp (cmp : Lam_compat.comparison) (e0 : t) (e1 : t) =
   let normalize s =
