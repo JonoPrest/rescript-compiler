@@ -245,6 +245,21 @@ live after manual validation.
   The survivors are cross-module or alias-qualified uses that DCE reports as
   unrooted.
 
+### `Primitive_modules` runtime module names
+
+- Report: `Warning Dead Value`, `compiler/ext/primitive_modules.ml`, for runtime
+  module-name constants such as `bool`, `int`, `float`, `bigint`, `string`,
+  `array`, `object_`, `hash`, and `exceptions`.
+- Verdict: live; false positive for the reported constants.
+- Validation: these names are used directly by lambda and JS lowering. Examples
+  include `lam_compile_primitive.ml` for primitive runtime calls,
+  `js_exp_make.ml` for checked integer/bigint operations and exception
+  creation, and `js_of_lam_option.ml` for option runtime helpers. Syntax and ML
+  frontend code also uses the same module-name table for dictionary, promise,
+  module, pervasives, and utility paths.
+- Context: Reanalyze misses the cross-module roots even though these constants
+  determine generated runtime import names.
+
 ### `Ext_list` production helpers
 
 - Report: remaining `Warning Dead Value` entries in
