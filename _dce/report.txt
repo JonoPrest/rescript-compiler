@@ -7857,42 +7857,6 @@
   <-- line 35
     | Dependency_script_module_dependent_not of string [@dead "error.Dependency_script_module_dependent_not"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/bsc_args.ml", line 29, characters 2-28
-  string_action.String_set is a variant case which is never constructed
-  <-- line 29
-    | String_set of string ref [@dead "string_action.String_set"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/bsc_args.ml", line 35, characters 2-28
-  unit_action.Unit_lazy is a variant case which is never constructed
-  <-- line 35
-    | Unit_lazy of unit lazy_t [@dead "unit_action.Unit_lazy"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/bsc_args.ml", line 39, characters 12-22
-  spec.Unit_dummy is a variant case which is never constructed
-  <-- line 39
-  type spec = Unit_dummy [@dead "spec.Unit_dummy"]  | Unit of unit_action | String of string_action
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/bsc_args.mli", line 29, characters 2-28
-  string_action.String_set is a variant case which is never constructed
-  <-- line 29
-    | String_set of string ref [@dead "string_action.String_set"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/bsc_args.mli", line 35, characters 2-28
-  unit_action.Unit_lazy is a variant case which is never constructed
-  <-- line 35
-    | Unit_lazy of unit lazy_t [@dead "unit_action.Unit_lazy"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/bsc_args.mli", line 39, characters 12-22
-  spec.Unit_dummy is a variant case which is never constructed
-  <-- line 39
-  type spec = Unit_dummy [@dead "spec.Unit_dummy"]  | Unit of unit_action | String of string_action
-
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/config.ml", line 7, characters 0-37
   +cmt_magic_number is never used
@@ -14087,4 +14051,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2483 issues (Warning Dead Module:151, Warning Dead Type:231, Warning Dead Value:1847, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2477 issues (Warning Dead Module:151, Warning Dead Type:225, Warning Dead Value:1847, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
