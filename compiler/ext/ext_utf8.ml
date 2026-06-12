@@ -96,6 +96,7 @@ let decode_utf8_string s =
   in
   decode_utf8_cont s 0 (String.length s);
   List.rev !lst
+[@@live]
 
 (** To decode {j||j} we need verify in the ast so that we have better error 
     location, then we do the decode later

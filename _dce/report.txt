@@ -9092,30 +9092,6 @@
   val is_windows_or_cygwin : bool [@@dead "+is_windows_or_cygwin"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_utf8.ml", line 64, characters 0-250
-  +follow is never used
-  <-- line 64
-      | _ -> raise (Invalid_utf8 "Continuation byte expected") [@@dead "+follow"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_utf8.ml", line 80, characters 0-580
-  +decode_utf8_string is never used
-  <-- line 80
-    List.rev !lst [@@dead "+decode_utf8_string"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_utf8.mli", line 29, characters 0-53
-  +follow is never used
-  <-- line 29
-  val follow : string -> int -> int -> int -> int * int [@@dead "+follow"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_utf8.mli", line 38, characters 0-43
-  +decode_utf8_string is never used
-  <-- line 38
-  val decode_utf8_string : string -> int list [@@dead "+decode_utf8_string"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_util.ml", line 31, characters 0-123
   +power_2_above is never used
   <-- line 31
@@ -14279,4 +14255,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2515 issues (Warning Dead Module:151, Warning Dead Type:235, Warning Dead Value:1875, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2511 issues (Warning Dead Module:151, Warning Dead Type:235, Warning Dead Value:1871, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
