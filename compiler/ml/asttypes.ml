@@ -59,11 +59,11 @@ module Noloc = struct
     | Optional of string (* ~(label=e) => ... *)
 end
 
-let to_arg_label ?(loc = Location.none) lbl =
+let to_arg_label lbl =
   match lbl with
   | Noloc.Nolabel -> Nolabel
-  | Labelled s -> Labelled {loc; txt = s}
-  | Optional s -> Optional {loc; txt = s}
+  | Labelled s -> Labelled {loc = Location.none; txt = s}
+  | Optional s -> Optional {loc = Location.none; txt = s}
 
 let to_noloc = function
   | Nolabel -> Noloc.Nolabel
