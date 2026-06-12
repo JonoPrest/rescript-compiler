@@ -771,10 +771,6 @@
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/type_utils.ml", line 179, characters 0-2146
   optional argument type_arg_context of function +instantiate_type2 is never used
 
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.ml", line 37, characters 0-182
-  optional argument comment of function +block is never used
-
   Warning Redundant Optional Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_driver.ml", line 211, characters 0-399
   optional argument ignore_parse_errors of function +parse_interface is always supplied (1 calls)
@@ -6458,10 +6454,10 @@
     t [@@dead "+if_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 46, characters 0-43
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 46, characters 0-24
   +block is never used
   <-- line 46
-  val block : ?comment:string -> J.block -> t [@@dead "+block"] 
+  val block : J.block -> t [@@dead "+block"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 52, characters 0-161
@@ -16903,4 +16899,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2978 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:208, Warning Unused Argument:91)
+  Analysis reported 2977 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:208, Warning Unused Argument:90)

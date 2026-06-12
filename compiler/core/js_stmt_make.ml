@@ -34,12 +34,12 @@ let empty_stmt : t = {statement_desc = Block []; comment = None}
 let throw_stmt ?comment v : t = {statement_desc = Throw v; comment}
 
 (* avoid nested block *)
-let rec block ?comment (b : J.block) : t =
+let rec block (b : J.block) : t =
   match b with
   | [{statement_desc = Block bs}] -> block bs
   | [b] -> b
   | [] -> empty_stmt
-  | _ -> {statement_desc = Block b; comment}
+  | _ -> {statement_desc = Block b; comment = None}
 
 (* It's a statement, we can discard some values *)
 let rec exp ?comment (e : E.t) : t =

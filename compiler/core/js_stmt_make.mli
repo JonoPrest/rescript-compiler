@@ -43,7 +43,7 @@ val if_ :
   J.block ->
   t
 
-val block : ?comment:string -> J.block -> t
+val block : J.block -> t
 (**   
    turn a block into  a single statement,
    avoid nested block
