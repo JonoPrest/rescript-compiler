@@ -274,6 +274,22 @@ live after manual validation.
   removing its `Js_dump` hook unroots a large live dump-printer subgraph in the
   current DCE report.
 
+### `Js_stmt_make` statement builders
+
+- Report: large `Warning Dead Value` cluster in
+  `compiler/core/js_stmt_make.ml` / `.mli`.
+- Verdict: live; false positive.
+- Validation: the module is imported as `module S = Js_stmt_make` across the JS
+  lowering and pass pipeline. Direct callers cover the reported statement
+  builders in `lam_compile.ml`, `lam_compile_external_obj.ml`,
+  `js_ast_util.ml`, `js_dump.ml`, `js_of_lam_variant.ml`, `js_output.ml`,
+  `js_pass_flatten.ml`, `js_pass_flatten_and_mark_dead.ml`, and
+  `js_pass_tailcall_inline.ml`. `debugger_block` is used for the `Pdebugger`
+  primitive in `lam_compile.ml`.
+- Context: DCE misses the cross-module builder calls through `module S`, so it
+  reports exported constructors even though they are part of normal JS statement
+  generation.
+
 ### Core JS lowering helpers
 
 - Report: `Warning Dead Module`, `Warning Dead Value`, and constructor warnings
