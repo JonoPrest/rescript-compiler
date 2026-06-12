@@ -1316,59 +1316,59 @@
   optional argument from_type of function +unbound_constructor_error is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 116, characters 0-90
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 112, characters 0-90
   optional argument loc of function +lookup_modtype is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 110, characters 0-63
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 106, characters 0-63
   optional argument loc of function +lookup_type is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 105, characters 0-112
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 101, characters 0-112
   optional argument loc of function +lookup_all_labels is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 99, characters 0-124
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 96, characters 0-124
   optional argument loc of function +lookup_all_constructors is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 97, characters 0-89
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 94, characters 0-89
   optional argument loc of function +lookup_constructor is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 95, characters 0-86
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 92, characters 0-86
   optional argument loc of function +lookup_value is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1268, characters 0-295
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1216, characters 0-295
   optional argument loc of function +lookup_all_labels is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1234, characters 0-313
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1190, characters 0-313
   optional argument loc of function +lookup_all_constructors is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1222, characters 0-206
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1178, characters 0-206
   optional argument loc of function +lookup_constructor is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1206, characters 0-137
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1162, characters 0-137
   optional argument loc of function +lookup_type is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1201, characters 0-138
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1157, characters 0-138
   optional argument loc of function +lookup_value is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1145, characters 0-84
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1101, characters 0-84
   optional argument loc of function +lookup_modtype is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1104, characters 0-663
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1060, characters 0-663
   optional argument loc of function +lookup_all_simple is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1092, characters 0-391
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1048, characters 0-391
   optional argument loc of function +lookup is never used
 
   Warning Redundant Optional Argument
@@ -2678,169 +2678,27 @@
     deprecated_text: string; [@dead "deprecated_used.deprecated_text"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 230, characters 2-188
-  Tycomp_tbl.+local_keys is never used
-  <-- line 230
-      | None -> acc [@@dead "Tycomp_tbl.+local_keys"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 236, characters 2-257
-  Tycomp_tbl.+diff_keys is never used
-  <-- line 236
-          with Not_found -> true) [@@dead "Tycomp_tbl.+diff_keys"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 360, characters 2-188
-  Id_tbl.+local_keys is never used
-  <-- line 360
-      | None -> acc [@@dead "Id_tbl.+local_keys"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 377, characters 2-200
-  Id_tbl.+diff_keys is never used
-  <-- line 377
-          with Not_found -> true) [@@dead "Id_tbl.+diff_keys"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 509, characters 0-75
-  +is_ident is never used
-  <-- line 509
-    | Pdot _ | Papply _ -> false [@@dead "+is_ident"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 513, characters 0-90
-  +is_local_ext is never used
-  <-- line 513
-    | _ -> false [@@dead "+is_local_ext"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 517, characters 0-174
-  +diff is never used
-  <-- line 517
-    @ Id_tbl.diff_keys env1.modules env2.modules [@@dead "+diff"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 604, characters 2-28
-  pers_struct.ps_flags is a record label never used to read a value
-  <-- line 604
-    ps_flags: pers_flags list; [@dead "pers_struct.ps_flags"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 762, characters 0-434
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 718, characters 0-434
   +reset_cache_toplevel is never used
-  <-- line 762
+  <-- line 718
     Hashtbl.clear prefixed_sg [@@dead "+reset_cache_toplevel"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1260, characters 0-193
-  +lookup_label is never used
-  <-- line 1260
-      desc [@@dead "+lookup_label"] 
-
-  Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1810, characters 0-57
-  +enter_extension is never used and could have side effects
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1921, characters 0-199
-  +crc_of_unit is never used
-  <-- line 1921
-    | Some crc -> crc [@@dead "+crc_of_unit"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 2071, characters 0-139
-  +summary is never used
-  <-- line 2071
-    else Env_constraints (env.summary, env.local_constraints) [@@dead "+summary"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 2093, characters 0-187
-  +env_of_only_summary is never used
-  <-- line 2093
-    {new_env with local_constraints = env.local_constraints; flags = env.flags} [@@dead "+env_of_only_summary"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 40, characters 0-33
-  +diff is never used
-  <-- line 40
-  val diff : t -> t -> Ident.t list [@@dead "+diff"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 74, characters 0-39
-  +add_functor_arg is never used
-  <-- line 74
-  val add_functor_arg : Ident.t -> t -> t [@@dead "+add_functor_arg"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 104, characters 0-75
-  +lookup_label is never used
-  <-- line 104
-  val lookup_label : ?loc:Location.t -> Longident.t -> t -> label_description [@@dead "+lookup_label"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 166, characters 0-73
-  +enter_extension is never used
-  <-- line 166
-  val enter_extension : string -> extension_constructor -> t -> Ident.t * t [@@dead "+enter_extension"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 176, characters 0-39
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 171, characters 0-39
   +reset_cache_toplevel is never used
-  <-- line 176
+  <-- line 171
   val reset_cache_toplevel : unit -> unit [@@dead "+reset_cache_toplevel"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 196, characters 0-186
-  +save_signature_with_imports is never used
-  <-- line 196
-    Cmi_format.cmi_infos [@@dead "+save_signature_with_imports"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 209, characters 0-36
-  +crc_of_unit is never used
-  <-- line 209
-  val crc_of_unit : string -> Digest.t [@@dead "+crc_of_unit"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 217, characters 0-27
-  +crc_units is never used
-  <-- line 217
-  val crc_units : Consistbl.t [@@dead "+crc_units"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 218, characters 0-31
-  +add_import is never used
-  <-- line 218
-  val add_import : string -> unit [@@dead "+add_import"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 223, characters 0-26
-  +summary is never used
-  <-- line 223
-  val summary : t -> summary [@@dead "+summary"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 230, characters 0-61
-  +env_of_only_summary is never used
-  <-- line 230
-  val env_of_only_summary : (summary -> Subst.t -> t) -> t -> t [@@dead "+env_of_only_summary"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 244, characters 0-45
-  +report_error is never used
-  <-- line 244
-  val report_error : formatter -> error -> unit [@@dead "+report_error"] 
-
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 320, characters 4-21
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 288, characters 4-21
   t.filename is a record label never used to read a value
-  <-- line 320
+  <-- line 288
       filename: string; [@dead "t.filename"]   (** Name of the file containing the signature. *)
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 321, characters 4-30
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 289, characters 4-30
   t.cmi is a record label never used to read a value
-  <-- line 321
+  <-- line 289
       cmi: Cmi_format.cmi_infos; [@dead "t.cmi"] 
 
   Warning Dead Value
@@ -3969,4 +3827,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 781 issues (Warning Dead Module:4, Warning Dead Type:131, Warning Dead Value:292, Warning Dead Value With Side Effects:7, Warning Redundant Optional Argument:198, Warning Unused Argument:149)
+  Analysis reported 757 issues (Warning Dead Module:4, Warning Dead Type:130, Warning Dead Value:270, Warning Dead Value With Side Effects:6, Warning Redundant Optional Argument:198, Warning Unused Argument:149)
