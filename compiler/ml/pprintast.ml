@@ -219,19 +219,15 @@ let option :
 
 let paren :
     'a.
-    ?first:space_formatter ->
-    ?last:space_formatter ->
     bool ->
     (Format.formatter -> 'a -> unit) ->
     Format.formatter ->
     'a ->
     unit =
- fun ?(first = ("" : _ format6)) ?(last = ("" : _ format6)) b fu f x ->
+ fun b fu f x ->
   if b then (
     pp f "(";
-    pp f first;
     fu f x;
-    pp f last;
     pp f ")")
   else fu f x
 

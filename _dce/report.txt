@@ -788,14 +788,6 @@
   optional argument from_type of function Label.+unbound_name_error is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/pprintast.ml", line 220, characters 0-346
-  optional argument first of function +paren is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/pprintast.ml", line 220, characters 0-346
-  optional argument last of function +paren is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typetexp.mli", line 102, characters 0-91
   optional argument from_type of function +unbound_label_error is never used
 
@@ -15690,29 +15682,29 @@
   val heads : t -> Ident.t list [@@dead "+heads"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/pprintast.ml", line 1358, characters 0-60
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/pprintast.ml", line 1354, characters 0-60
   +expression is never used
-  <-- line 1358
+  <-- line 1354
   let expression f x = pp f "@[%a@]" (expression reset_ctxt) x [@@dead "+expression"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/pprintast.ml", line 1360, characters 0-133
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/pprintast.ml", line 1356, characters 0-133
   +string_of_expression is never used
-  <-- line 1360
+  <-- line 1356
     flush_str_formatter () [@@dead "+string_of_expression"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/pprintast.ml", line 1366, characters 0-142
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/pprintast.ml", line 1362, characters 0-142
   +string_of_structure is never used
-  <-- line 1366
+  <-- line 1362
     flush_str_formatter () [@@dead "+string_of_structure"] 
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/pprintast.ml", line 1372, characters 0-36
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/pprintast.ml", line 1368, characters 0-36
   +core_type is never used and could have side effects
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/pprintast.ml", line 1373, characters 0-32
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/pprintast.ml", line 1369, characters 0-32
   +pattern is never used and could have side effects
 
   Warning Dead Value
@@ -16727,4 +16719,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2934 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:205, Warning Unused Argument:51)
+  Analysis reported 2932 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:205, Warning Unused Argument:49)
