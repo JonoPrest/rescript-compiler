@@ -10646,30 +10646,6 @@
       | Bool _ | Float _ | Int _ | BigInt _ | String _ | Null | Undefined -> x [@@dead "Dynamic_checks.+add_runtime_type_check"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/btype.ml", line 412, characters 0-155
-  +copy_kind is never used
-  <-- line 412
-    | Fabsent -> assert false [@@dead "+copy_kind"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/btype.ml", line 489, characters 0-53
-  +mark_type_params is never used
-  <-- line 489
-  let mark_type_params ty = iter_type_expr mark_type ty [@@dead "+mark_type_params"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/btype.mli", line 134, characters 0-40
-  +copy_kind is never used
-  <-- line 134
-  val copy_kind : field_kind -> field_kind [@@dead "+copy_kind"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/btype.mli", line 157, characters 0-40
-  +mark_type_params is never used
-  <-- line 157
-  val mark_type_params : type_expr -> unit [@@dead "+mark_type_params"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/classify_function.ml", line 107, characters 0-210
   +classify_stmt is never used
   <-- line 107
@@ -10680,16 +10656,6 @@
   +classify_stmt is never used
   <-- line 29
   val classify_stmt : string -> Js_raw_info.stmt [@@dead "+classify_stmt"] 
-
-  Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/clflags.ml", line 39, characters 0-27
-  +dump_lambda is never used and could have side effects
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/clflags.mli", line 23, characters 0-26
-  +dump_lambda is never used
-  <-- line 23
-  val dump_lambda : bool ref [@@dead "+dump_lambda"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/cmi_format.ml", line 67, characters 0-369
@@ -13031,4 +12997,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2303 issues (Warning Dead Module:145, Warning Dead Type:201, Warning Dead Value:1709, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2297 issues (Warning Dead Module:145, Warning Dead Type:201, Warning Dead Value:1704, Warning Dead Value With Side Effects:28, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
