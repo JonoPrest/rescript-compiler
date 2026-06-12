@@ -1178,12 +1178,6 @@
   val lambda_to_string : Lam.t -> string [@@dead "+lambda_to_string"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_util.mli", line 62, characters 0-31
-  +is_function is never used
-  <-- line 62
-  val is_function : Lam.t -> bool [@@dead "+is_function"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 166, characters 0-31
   +make_unused is never used
   <-- line 166
@@ -2065,4 +2059,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 420 issues (Warning Dead Module:4, Warning Dead Type:82, Warning Dead Value:111, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:26)
+  Analysis reported 419 issues (Warning Dead Module:4, Warning Dead Type:82, Warning Dead Value:110, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:26)

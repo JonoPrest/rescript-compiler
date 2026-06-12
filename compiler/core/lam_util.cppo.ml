@@ -255,10 +255,6 @@ let dump ext  lam =
 
 
 
-let is_function (lam : Lam.t) = 
-  match lam with 
-  | Lfunction _ -> true | _ -> false
-
 let not_function (lam : Lam.t) = 
   match lam with 
   | Lfunction _ -> false | _ -> true 
