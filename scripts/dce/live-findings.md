@@ -137,6 +137,23 @@ live after manual validation.
 - Context: the single-file/cache-management helpers were removed, but the
   remaining collection operations are part of the live reactive analyzer path.
 
+### `Reactive_fixpoint` internals
+
+- Report: `Warning Dead Value`, `analysis/reactive/src/reactive_fixpoint.ml`
+  and `.mli`, including `analyze_edge_change`, `Metrics.update`,
+  `Invariants.*`, `has_live_predecessor`, and `apply`.
+- Verdict: live; false positive.
+- Validation: `analysis/reactive/src/reactive.ml` implements
+  `Reactive.fixpoint` by calling `Reactive_fixpoint.create`, `initialize`,
+  `apply`, `iter_current`, `get_current`, and `current_length`. The analyzer
+  liveness pipeline calls `Reactive.fixpoint` from
+  `analysis/reanalyze/src/reactive_liveness.ml`, so these private-module helpers
+  run when the reactive analyzer computes live declarations.
+- Context: `reactive_fixpoint` is a private implementation module in the
+  `reactive` library. Reanalyze misses the cross-module root through
+  `Reactive.fixpoint`, so the implementation below `apply` looks dead even
+  though it is the incremental transitive-closure engine.
+
 ### Reanalyze collection functor callbacks
 
 - Report: `Warning Dead Module` and `Warning Dead Value`,
