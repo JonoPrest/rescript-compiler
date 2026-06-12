@@ -173,8 +173,6 @@ val poly_var_value_access : t -> t
 
 val extension_assign : t -> int32 -> string -> t -> t
 
-val assign_by_exp : t -> t -> t -> t
-
 val assign : ?comment:string -> t -> t -> t
 
 val tag_type : Ast_untagged_variants.tag_type -> t

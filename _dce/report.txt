@@ -912,147 +912,147 @@
   optional argument from_type of function Label.+unbound_name_error is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 340, characters 0-49
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 338, characters 0-49
   optional argument comment of function +is_null_undefined is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 336, characters 0-39
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 334, characters 0-39
   optional argument comment of function +is_null is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 332, characters 0-73
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 330, characters 0-73
   optional argument comment of function +raw_js_code is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 329, characters 0-74
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 327, characters 0-74
   optional argument comment of function +of_block is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 326, characters 0-54
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 324, characters 0-54
   optional argument comment of function +dummy_obj is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 320, characters 0-40
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 318, characters 0-40
   optional argument comment of function +or_ is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 318, characters 0-41
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 316, characters 0-41
   optional argument comment of function +and_ is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 316, characters 0-53
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 314, characters 0-53
   optional argument comment of function +obj_length is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 309, characters 0-62
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 307, characters 0-62
   optional argument comment of function +tag is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 296, characters 0-69
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 294, characters 0-69
   optional argument comment of function +obj is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 282, characters 0-147
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 280, characters 0-147
   optional argument comment of function +make_block is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 272, characters 0-67
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 270, characters 0-67
   optional argument comment of function +tagged_template is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 266, characters 0-69
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 264, characters 0-69
   optional argument comment of function +js_comp is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 264, characters 0-63
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 262, characters 0-63
   optional argument comment of function +bigint_mod is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 262, characters 0-63
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 260, characters 0-63
   optional argument comment of function +bigint_div is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 260, characters 0-73
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 258, characters 0-73
   optional argument comment of function +bigint_comp is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 254, characters 0-71
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 252, characters 0-71
   optional argument comment of function +bool_comp is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 248, characters 0-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 246, characters 0-46
   optional argument comment of function +float_mod is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 236, characters 0-47
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 234, characters 0-47
   optional argument comment of function +int32_band is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 234, characters 0-47
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 232, characters 0-47
   optional argument comment of function +int32_bxor is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 232, characters 0-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 230, characters 0-46
   optional argument comment of function +int32_asr is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 228, characters 0-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 226, characters 0-46
   optional argument comment of function +int32_lsl is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 226, characters 0-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 224, characters 0-46
   optional argument comment of function +int32_pow is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 224, characters 0-62
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 222, characters 0-62
   optional argument comment of function +int32_mod is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 222, characters 0-62
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 220, characters 0-62
   optional argument comment of function +int32_div is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 220, characters 0-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 218, characters 0-46
   optional argument comment of function +int32_mul is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 218, characters 0-48
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 216, characters 0-48
   optional argument comment of function +int32_minus is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 214, characters 0-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 212, characters 0-46
   optional argument comment of function +int32_add is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 212, characters 0-40
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 210, characters 0-40
   optional argument comment of function +to_int32 is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 209, characters 0-38
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 207, characters 0-38
   optional argument comment of function +typeof is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 197, characters 0-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 195, characters 0-46
   optional argument comment of function +is_type_number is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 195, characters 0-63
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 193, characters 0-63
   optional argument comment of function +neq_null_undefined_boolean is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 193, characters 0-62
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 191, characters 0-62
   optional argument comment of function +eq_null_undefined_boolean is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 189, characters 0-40
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 187, characters 0-40
   optional argument comment of function +int_bnot is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 187, characters 0-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 185, characters 0-46
   optional argument comment of function +int_equal is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 178, characters 0-43
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 176, characters 0-43
   optional argument comment of function +assign is never used
 
   Warning Unused Argument
@@ -1104,131 +1104,131 @@
   optional argument comment of function +ml_var_dot is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1721, characters 0-605
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1706, characters 0-605
   optional argument comment of function +neq_null_undefined_boolean is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1706, characters 0-605
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1691, characters 0-605
   optional argument comment of function +eq_null_undefined_boolean is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1700, characters 0-216
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1685, characters 0-216
   optional argument comment of function +is_null_undefined is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1694, characters 0-58
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1679, characters 0-58
   optional argument comment of function +is_null is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1670, characters 0-596
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1655, characters 0-596
   optional argument comment of function +of_block is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1663, characters 0-160
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1648, characters 0-160
   optional argument comment of function +bigint_mod is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1659, characters 0-159
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1644, characters 0-159
   optional argument comment of function +bigint_div is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1632, characters 0-992
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1617, characters 0-992
   optional argument comment of function +bigint_comp is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1616, characters 0-384
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1601, characters 0-384
   optional argument comment of function +int32_band is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1606, characters 0-445
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1591, characters 0-445
   optional argument comment of function +int32_bxor is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1600, characters 0-251
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1585, characters 0-251
   optional argument comment of function +int32_pow is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1595, characters 0-179
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1580, characters 0-179
   optional argument comment of function +int_bnot is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1579, characters 0-702
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1564, characters 0-702
   optional argument comment of function +int32_mul is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1562, characters 0-316
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1547, characters 0-316
   optional argument comment of function +int32_lsl is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1552, characters 0-316
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1537, characters 0-316
   optional argument comment of function +int32_mod is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1541, characters 0-482
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1526, characters 0-482
   optional argument comment of function +int32_div is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1537, characters 0-94
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1522, characters 0-94
   optional argument comment of function +int32_asr is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1531, characters 0-87
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1516, characters 0-87
   optional argument comment of function +int32_minus is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1526, characters 0-66
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1511, characters 0-66
   optional argument comment of function +int32_add is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1417, characters 0-89
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1402, characters 0-89
   optional argument comment of function +js_comp is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1390, characters 0-901
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1375, characters 0-901
   optional argument comment of function +bool_comp is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1350, characters 0-94
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1335, characters 0-94
   optional argument comment of function +obj_length is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1345, characters 0-91
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1330, characters 0-91
   optional argument comment of function +is_type_number is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1330, characters 0-97
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1315, characters 0-97
   optional argument comment of function +to_int32 is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1296, characters 0-106
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1281, characters 0-106
   optional argument comment of function +tag is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1232, characters 0-27
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1217, characters 0-27
   optional argument comment of function +int_equal is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1107, characters 0-516
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1092, characters 0-516
   optional argument comment of function +or_ is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1087, characters 0-751
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1072, characters 0-751
   optional argument comment of function +and_ is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 568, characters 0-94
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 553, characters 0-94
   optional argument comment of function +obj is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 534, characters 0-304
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 519, characters 0-304
   optional argument comment of function +function_length is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 528, characters 0-242
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 513, characters 0-242
   optional argument comment of function +string_length is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 521, characters 0-277
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 506, characters 0-277
   optional argument comment of function +array_length is never used
 
   Warning Unused Argument
@@ -1448,42 +1448,6 @@
   +pp_deps_program is never used
   <-- line 28
     unit [@@dead "+pp_deps_program"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 468, characters 0-419
-  +assign_by_exp is never used
-  <-- line 468
-    | _ -> assign {expression_desc = Array_index (e, index); comment = None} value [@@dead "+assign_by_exp"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 176, characters 0-36
-  +assign_by_exp is never used
-  <-- line 176
-  val assign_by_exp : t -> t -> t -> t [@@dead "+assign_by_exp"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_block.ml", line 48, characters 0-40
-  +field_by_exp is never used
-  <-- line 48
-  let field_by_exp e i = E.array_index e i [@@dead "+field_by_exp"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_block.ml", line 57, characters 0-72
-  +set_field_by_exp is never used
-  <-- line 57
-  let set_field_by_exp self index value = E.assign_by_exp self index value [@@dead "+set_field_by_exp"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_block.mli", line 36, characters 0-63
-  +field_by_exp is never used
-  <-- line 36
-  val field_by_exp : J.expression -> J.expression -> J.expression [@@dead "+field_by_exp"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_block.mli", line 45, characters 0-85
-  +set_field_by_exp is never used
-  <-- line 45
-    J.expression -> J.expression -> J.expression -> J.expression [@@dead "+set_field_by_exp"] 
 
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_variant.ml", line 28, characters 22-29
@@ -1760,12 +1724,6 @@
   val is_function : Lam.t -> bool [@@dead "+is_function"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_fmt.ml", line 10, characters 0-54
-  +invalid_argf is never used
-  <-- line 10
-  let invalid_argf fmt = Format.ksprintf invalid_arg fmt [@@dead "+invalid_argf"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 166, characters 0-31
   +make_unused is never used
   <-- line 166
@@ -1788,12 +1746,6 @@
   t.suffix is a record label never used to read a value
   <-- line 26
   type t = {case: case; [@dead "t.case"]  suffix: string [@dead "t.suffix"] } [@@warning "-69"]
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 85, characters 0-56
-  +length_compare is never used
-  <-- line 85
-  val length_compare : 'a list -> int -> [`Gt | `Eq | `Lt] [@@dead "+length_compare"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_namespace.ml", line 59, characters 0-352
@@ -2671,4 +2623,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 563 issues (Warning Dead Module:4, Warning Dead Type:84, Warning Dead Value:126, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:198, Warning Unused Argument:149)
+  Analysis reported 555 issues (Warning Dead Module:4, Warning Dead Type:84, Warning Dead Value:118, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:198, Warning Unused Argument:149)

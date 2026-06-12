@@ -82,8 +82,6 @@ val split_at : 'a list -> int -> 'a list * 'a list
 
 val filter_mapi : 'a list -> ('a -> int -> 'b option) -> 'b list
 
-val length_compare : 'a list -> int -> [`Gt | `Eq | `Lt]
-
 val length_ge : 'a list -> int -> bool
 
 (**

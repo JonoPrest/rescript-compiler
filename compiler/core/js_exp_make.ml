@@ -465,21 +465,6 @@ let extension_access (e : t) name (pos : int32) : t =
 
 let assign ?comment e0 e1 : t = {expression_desc = Bin (Eq, e0, e1); comment}
 
-let assign_by_exp (e : t) index value : t =
-  match e.expression_desc with
-  | Array _
-  (*
-     Temporary block -- address not held
-     Optimize cases like this which is really
-     rare {[
-                  (ref x) :=  3
-                ]}
-             *)
-  | Caml_block _
-    when no_side_effect e && no_side_effect index ->
-    value
-  | _ -> assign {expression_desc = Array_index (e, index); comment = None} value
-
 let record_assign (e : t) (pos : int32) (name : string) (value : t) =
   match e.expression_desc with
   | Array _
