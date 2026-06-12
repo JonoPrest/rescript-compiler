@@ -1184,34 +1184,10 @@
   let create_from_hashtbl (h : annotated_as Pos_hash.t) : t = h [@@dead "+create_from_hashtbl"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_annotations.ml", line 57, characters 0-38
-  +length is never used
-  <-- line 57
-  let length (t : t) = Pos_hash.length t [@@dead "+length"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_annotations.ml", line 59, characters 0-38
-  +iter is never used
-  <-- line 59
-  let iter f (t : t) = Pos_hash.iter f t [@@dead "+iter"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_annotations.mli", line 35, characters 0-54
   +create_from_hashtbl is never used
   <-- line 35
   val create_from_hashtbl : annotated_as Pos_hash.t -> t [@@dead "+create_from_hashtbl"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_annotations.mli", line 43, characters 0-21
-  +length is never used
-  <-- line 43
-  val length : t -> int [@@dead "+length"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_annotations.mli", line 44, characters 0-65
-  +iter is never used
-  <-- line 44
-  val iter : (Lexing.position -> annotated_as -> unit) -> t -> unit [@@dead "+iter"] 
 
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.ml", line 6, characters 0-129
@@ -17031,4 +17007,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2974 issues (Warning Dead Module:150, Warning Dead Type:379, Warning Dead Value:2189, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2970 issues (Warning Dead Module:150, Warning Dead Type:379, Warning Dead Value:2185, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
