@@ -1348,9 +1348,9 @@
   val js_stdout : bool ref [@@dead "+js_stdout"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/j.ml", line 78, characters 65-78
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/j.ml", line 77, characters 65-78
   delim.DBackQuotes is a variant case which is never constructed
-  <-- line 78
+  <-- line 77
   and delim = External_arg_spec.delim = DNone | DStarJ | DNoQuotes | DBackQuotes [@dead "delim.DBackQuotes"] 
 
   Warning Dead Value With Side Effects
@@ -3846,243 +3846,81 @@
   val eval_as_unwrap : J.expression -> J.expression [@@dead "+eval_as_unwrap"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 41, characters 2-8
-  binop.Bnot is a variant case which is never constructed
-  <-- line 41
-    | Bnot [@dead "binop.Bnot"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 92, characters 2-7
-  int_op.Bor is a variant case which is never constructed
-  <-- line 92
-    | Bor [@dead "int_op.Bor"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 93, characters 2-8
-  int_op.Bxor is a variant case which is never constructed
-  <-- line 93
-    | Bxor [@dead "int_op.Bxor"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 94, characters 2-8
-  int_op.Band is a variant case which is never constructed
-  <-- line 94
-    | Band [@dead "int_op.Band"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 95, characters 2-7
-  int_op.Lsl is a variant case which is never constructed
-  <-- line 95
-    | Lsl [@dead "int_op.Lsl"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 96, characters 2-7
-  int_op.Lsr is a variant case which is never constructed
-  <-- line 96
-    | Lsr [@dead "int_op.Lsr"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 97, characters 2-7
-  int_op.Asr is a variant case which is never constructed
-  <-- line 97
-    | Asr [@dead "int_op.Asr"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 98, characters 2-8
-  int_op.Plus is a variant case which is never constructed
-  <-- line 98
-    | Plus [@dead "int_op.Plus"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 102, characters 2-9
-  int_op.Minus is a variant case which is never constructed
-  <-- line 102
-    | Minus [@dead "int_op.Minus"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 104, characters 2-7
-  int_op.Mul is a variant case which is never constructed
-  <-- line 104
-    | Mul [@dead "int_op.Mul"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 106, characters 2-7
-  int_op.Div is a variant case which is never constructed
-  <-- line 106
-    | Div [@dead "int_op.Div"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 108, characters 2-7
-  int_op.Mod is a variant case which is never constructed
-  <-- line 108
-    | Mod [@dead "int_op.Mod"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 110, characters 2-7
-  int_op.Pow is a variant case which is never constructed
-  <-- line 110
-    | Pow [@dead "int_op.Pow"]  (* x ** y | 0 *)
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 119, characters 13-16
-  level.Log is a variant case which is never constructed
-  <-- line 119
-  type level = Log [@dead "level.Log"]  | Info | Warn | Error
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 119, characters 17-23
-  level.Info is a variant case which is never constructed
-  <-- line 119
-  type level = Log [@dead "level.Log"]  | Info [@dead "level.Info"]  | Warn | Error
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 119, characters 24-30
-  level.Warn is a variant case which is never constructed
-  <-- line 119
-  type level = Log [@dead "level.Log"]  | Info [@dead "level.Info"]  | Warn [@dead "level.Warn"]  | Error
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 119, characters 31-38
-  level.Error is a variant case which is never constructed
-  <-- line 119
-  type level = Log [@dead "level.Log"]  | Info [@dead "level.Info"]  | Warn [@dead "level.Warn"]  | Error [@dead "level.Error"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 130, characters 38-44
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 99, characters 38-44
   property.Strict is a variant case which is never constructed
-  <-- line 130
+  <-- line 99
   type property = Lam_compat.let_kind = Strict [@dead "property.Strict"]  | Alias | StrictOpt | Variable
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 130, characters 45-52
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 99, characters 45-52
   property.Alias is a variant case which is never constructed
-  <-- line 130
+  <-- line 99
   type property = Lam_compat.let_kind = Strict [@dead "property.Strict"]  | Alias [@dead "property.Alias"]  | StrictOpt | Variable
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 130, characters 53-64
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 99, characters 53-64
   property.StrictOpt is a variant case which is never constructed
-  <-- line 130
+  <-- line 99
   type property = Lam_compat.let_kind = Strict [@dead "property.Strict"]  | Alias [@dead "property.Alias"]  | StrictOpt [@dead "property.StrictOpt"]  | Variable
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 130, characters 65-75
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 99, characters 65-75
   property.Variable is a variant case which is never constructed
-  <-- line 130
+  <-- line 99
   type property = Lam_compat.let_kind = Strict [@dead "property.Strict"]  | Alias [@dead "property.Alias"]  | StrictOpt [@dead "property.StrictOpt"]  | Variable [@dead "property.Variable"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 134, characters 17-23
-  access.Getter is a variant case which is never constructed
-  <-- line 134
-  type 'a access = Getter [@dead "access.Getter"]  | Setter
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 134, characters 24-32
-  access.Setter is a variant case which is never constructed
-  <-- line 134
-  type 'a access = Getter [@dead "access.Getter"]  | Setter [@dead "access.Setter"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 162, characters 22-37
-  recursive_info.SingleRecursive is a variant case which is never constructed
-  <-- line 162
-  type recursive_info = SingleRecursive [@dead "recursive_info.SingleRecursive"]  | NonRecursie | NA
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 162, characters 38-51
-  recursive_info.NonRecursie is a variant case which is never constructed
-  <-- line 162
-  type recursive_info = SingleRecursive [@dead "recursive_info.SingleRecursive"]  | NonRecursie [@dead "recursive_info.NonRecursie"]  | NA
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 162, characters 52-56
-  recursive_info.NA is a variant case which is never constructed
-  <-- line 162
-  type recursive_info = SingleRecursive [@dead "recursive_info.SingleRecursive"]  | NonRecursie [@dead "recursive_info.NonRecursie"]  | NA [@dead "recursive_info.NA"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 197, characters 36-43
-  length_object.Bytes is a variant case which is never constructed
-  <-- line 197
-  type length_object = Array | String | Bytes [@dead "length_object.Bytes"]  | Function | Caml_block
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 46, characters 0-247
-  +op_int_prec is never used
-  <-- line 46
-    | Pow -> (13, 14, 12) [@@dead "+op_int_prec"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 82, characters 0-242
-  +op_int_str is never used
-  <-- line 82
-    | Pow -> "**" [@@dead "+op_int_str"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 97, characters 0-305
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 71, characters 0-305
   +str_of_used_stats is never used
-  <-- line 97
+  <-- line 71
     | NA -> "NA" [@@dead "+str_of_used_stats"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 108, characters 0-249
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 82, characters 0-249
   +update_used_stats is never used
-  <-- line 108
+  <-- line 82
       ident_info.used_stats <- used_stats [@@dead "+update_used_stats"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 114, characters 0-174
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 88, characters 0-174
   +same_str_opt is never used
-  <-- line 114
+  <-- line 88
     | None, Some _ | Some _, None -> false [@@dead "+same_str_opt"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 120, characters 0-576
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 94, characters 0-576
   +same_vident is never used
-  <-- line 120
+  <-- line 94
     | Id _, Qualified _ | Qualified _, Id _ -> false [@@dead "+same_vident"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 135, characters 0-139
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 109, characters 0-139
   +of_lam_mutable_flag is never used
-  <-- line 135
+  <-- line 109
     | Mutable -> Mutable [@@dead "+of_lam_mutable_flag"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 31, characters 0-49
-  +op_int_prec is never used
-  <-- line 31
-  val op_int_prec : Js_op.int_op -> int * int * int [@@dead "+op_int_prec"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 33, characters 0-39
-  +op_int_str is never used
-  <-- line 33
-  val op_int_str : Js_op.int_op -> string [@@dead "+op_int_str"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 35, characters 0-50
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 31, characters 0-50
   +str_of_used_stats is never used
-  <-- line 35
+  <-- line 31
   val str_of_used_stats : Js_op.used_stats -> string [@@dead "+str_of_used_stats"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 37, characters 0-64
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 33, characters 0-64
   +update_used_stats is never used
-  <-- line 37
+  <-- line 33
   val update_used_stats : J.ident_info -> Js_op.used_stats -> unit [@@dead "+update_used_stats"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 39, characters 0-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 35, characters 0-46
   +same_vident is never used
-  <-- line 39
+  <-- line 35
   val same_vident : J.vident -> J.vident -> bool [@@dead "+same_vident"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 41, characters 0-69
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 37, characters 0-69
   +of_lam_mutable_flag is never used
-  <-- line 41
+  <-- line 37
   val of_lam_mutable_flag : Asttypes.mutable_flag -> Js_op.mutable_flag [@@dead "+of_lam_mutable_flag"] 
 
   Warning Dead Value
@@ -16307,4 +16145,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2854 issues (Warning Dead Module:152, Warning Dead Type:356, Warning Dead Value:2090, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2827 issues (Warning Dead Module:152, Warning Dead Type:333, Warning Dead Value:2086, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)

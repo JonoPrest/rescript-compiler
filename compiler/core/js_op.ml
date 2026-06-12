@@ -38,7 +38,6 @@ type binop =
   | Le
   | Gt
   | Ge
-  | Bnot
   | Bor
   | Bxor
   | Band
@@ -88,36 +87,6 @@ type binop =
    So in Js, [-1 >>>0] will be the largest Uint32, while [-1>>0] will remain [-1]
    and [-1 >>> 0 >> 0 ] will be [-1]
 *)
-type int_op =
-  | Bor
-  | Bxor
-  | Band
-  | Lsl
-  | Lsr
-  | Asr
-  | Plus
-  (* for [+], given two numbers
-     x + y | 0
-  *)
-  | Minus
-  (* x - y | 0 *)
-  | Mul
-  (* *)
-  | Div
-  (* x / y | 0 *)
-  | Mod
-  (* x  % y *)
-  | Pow (* x ** y | 0 *)
-
-(* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Bitwise_operators
-   {[
-     ~
-   ]}
-    ~0xff -> -256
-    design; make sure each operation type is consistent
-*)
-type level = Log | Info | Warn | Error
-
 type kind =
   | Ml
   | Runtime
@@ -130,8 +99,6 @@ type kind =
 type property = Lam_compat.let_kind = Strict | Alias | StrictOpt | Variable
 
 type property_name = Lit of string | Symbol_name
-
-type 'a access = Getter | Setter
 
 (* literal char *)
 type float_lit = {f: string} [@@unboxed]
@@ -152,14 +119,6 @@ type number =
 type mutable_flag = Mutable | Immutable | NA
 
 type direction_flag = Upto | Downto | Up
-
-(*
-    {[
-      let rec x = 1 :: y
-      and y = 1 :: x
-    ]}
-*)
-type recursive_info = SingleRecursive | NonRecursie | NA
 
 type used_stats =
   | Dead_pure
@@ -186,7 +145,6 @@ type used_stats =
   | NA
 
 type ident_info = {
-  (* mutable recursive_info : recursive_info; *)
   mutable used_stats: used_stats;
 }
 
@@ -194,7 +152,7 @@ type exports = Ident.t list
 
 type tag_info = Lam_tag_info.t
 
-type length_object = Array | String | Bytes | Function | Caml_block
+type length_object = Array | String | Function | Caml_block
 
 (** TODO: define constant - for better constant folding  *)
 (* type constant =  *)
