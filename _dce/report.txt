@@ -1154,34 +1154,16 @@
     let compare = Stdlib.compare [@@dead "Path_map.+compare"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/decl.ml", line 57, characters 0-759
-  +compare_using_dependencies is never used
-  <-- line 57
-      (position2, lnum1, bol1, cnum1, kind2) [@@dead "+compare_using_dependencies"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/declarations.ml", line 38, characters 0-55
   +create_from_hashtbl is never used
   <-- line 38
   let create_from_hashtbl (h : Decl.t Pos_hash.t) : t = h [@@dead "+create_from_hashtbl"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/declarations.ml", line 48, characters 0-38
-  +length is never used
-  <-- line 48
-  let length (t : t) = Pos_hash.length t [@@dead "+length"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/declarations.mli", line 33, characters 0-48
   +create_from_hashtbl is never used
   <-- line 33
   val create_from_hashtbl : Decl.t Pos_hash.t -> t [@@dead "+create_from_hashtbl"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/declarations.mli", line 42, characters 0-21
-  +length is never used
-  <-- line 42
-  val length : t -> int [@@dead "+length"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/exn.ml", line 3, characters 0-28
@@ -17085,4 +17067,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2983 issues (Warning Dead Module:150, Warning Dead Type:379, Warning Dead Value:2198, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2980 issues (Warning Dead Module:150, Warning Dead Type:379, Warning Dead Value:2195, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
