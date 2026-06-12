@@ -79,7 +79,7 @@ let tagged_template ?comment call_expr string_args value_args : t =
     comment;
   }
 
-let runtime_var_dot ?comment (x : string) (e1 : string) : J.expression =
+let runtime_var_dot (x : string) (e1 : string) : J.expression =
   {
     expression_desc =
       Var
@@ -90,7 +90,7 @@ let runtime_var_dot ?comment (x : string) (e1 : string) : J.expression =
                dynamic_import = false;
              },
              Some e1 ));
-    comment;
+    comment = None;
   }
 
 let ml_var_dot ?comment ?(dynamic_import = false) (id : Ident.t) e :
@@ -340,8 +340,11 @@ let nine_int_literal : t =
 
 let int ?comment ?c i : t = {expression_desc = Number (Int {i; c}); comment}
 
-let bigint ?comment sign i : t =
-  {expression_desc = Number (BigInt {positive = sign; value = i}); comment}
+let bigint sign i : t =
+  {
+    expression_desc = Number (BigInt {positive = sign; value = i});
+    comment = None;
+  }
 
 let zero_bigint_literal : t =
   {
@@ -367,7 +370,7 @@ let true_ : t = {comment = None; expression_desc = Bool true}
 let false_ : t = {comment = None; expression_desc = Bool false}
 let bool v = if v then true_ else false_
 
-let float ?comment f : t = {expression_desc = Number (Float {f}); comment}
+let float f : t = {expression_desc = Number (Float {f}); comment = None}
 
 let zero_float_lit : t =
   {expression_desc = Number (Float {f = "0."}); comment = None}

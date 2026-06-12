@@ -788,18 +788,6 @@
   optional argument from_type of function Label.+unbound_name_error is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 370, characters 0-74
-  optional argument comment of function +float is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 343, characters 0-108
-  optional argument comment of function +bigint is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 82, characters 0-317
-  optional argument comment of function +runtime_var_dot is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_core.ml", line 5923, characters 0-1468
   optional argument current_type_name_path of function +parse_spread_tail_classified is never used
 
@@ -3270,585 +3258,585 @@
   let fuse_to_seq x xs = if xs = [] then x else Ext_list.fold_left xs x seq [@@dead "+fuse_to_seq"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 346, characters 0-127
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 349, characters 0-127
   +zero_bigint_literal is never used
-  <-- line 346
+  <-- line 349
     } [@@dead "+zero_bigint_literal"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 372, characters 0-88
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 375, characters 0-88
   +zero_float_lit is never used
-  <-- line 372
+  <-- line 375
     {expression_desc = Number (Float {f = "0."}); comment = None} [@@dead "+zero_float_lit"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 375, characters 0-94
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 378, characters 0-94
   +float_mod is never used
-  <-- line 375
+  <-- line 378
     {comment; expression_desc = Bin (Mod, e1, e2)} [@@dead "+float_mod"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 378, characters 0-422
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 381, characters 0-422
   +array_index is never used
-  <-- line 378
+  <-- line 381
     | _ -> {expression_desc = Array_index (e0, e1); comment} [@@dead "+array_index"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 388, characters 0-447
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 391, characters 0-447
   +array_index_by_int is never used
-  <-- line 388
+  <-- line 391
     | _ -> {expression_desc = Array_index (e, int ?comment pos); comment = None} [@@dead "+array_index_by_int"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 399, characters 0-489
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 402, characters 0-489
   +record_access is never used
-  <-- line 399
+  <-- line 402
     | _ -> {expression_desc = Static_index (e, name, Some pos); comment = None} [@@dead "+record_access"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 412, characters 0-40
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 415, characters 0-40
   +inline_record_access is never used
-  <-- line 412
+  <-- line 415
   let inline_record_access = record_access [@@dead "+inline_record_access"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 414, characters 0-99
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 417, characters 0-99
   +variant_access is never used
-  <-- line 414
+  <-- line 417
     inline_record_access e ("_" ^ Int32.to_string pos) pos [@@dead "+variant_access"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 417, characters 0-178
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 420, characters 0-178
   +cons_access is never used
-  <-- line 417
+  <-- line 420
       pos [@@dead "+cons_access"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 425, characters 0-297
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 428, characters 0-297
   +poly_var_tag_access is never used
-  <-- line 425
+  <-- line 428
       } [@@dead "+poly_var_tag_access"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 437, characters 0-304
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 440, characters 0-304
   +poly_var_value_access is never used
-  <-- line 437
+  <-- line 440
       } [@@dead "+poly_var_value_access"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 449, characters 0-665
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 452, characters 0-665
   +extension_access is never used
-  <-- line 449
+  <-- line 452
       {expression_desc = Static_index (e, name, Some pos); comment = None} [@@dead "+extension_access"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 471, characters 0-487
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 474, characters 0-487
   +string_index is never used
-  <-- line 471
+  <-- line 474
     | _ -> {expression_desc = String_index (e0, e1); comment} [@@dead "+string_index"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 484, characters 0-77
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 487, characters 0-77
   +assign is never used
-  <-- line 484
+  <-- line 487
   let assign ?comment e0 e1 : t = {expression_desc = Bin (Eq, e0, e1); comment} [@@dead "+assign"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 486, characters 0-419
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 489, characters 0-419
   +assign_by_exp is never used
-  <-- line 486
+  <-- line 489
     | _ -> assign {expression_desc = Array_index (e, index); comment = None} value [@@dead "+assign_by_exp"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 501, characters 0-99
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 504, characters 0-99
   +assign_by_int is never used
-  <-- line 501
+  <-- line 504
     assign_by_exp e0 (int ?comment index) value [@@dead "+assign_by_int"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 504, characters 0-447
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 507, characters 0-447
   +record_assign is never used
-  <-- line 504
+  <-- line 507
         value [@@dead "+record_assign"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 522, characters 0-457
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 525, characters 0-457
   +extension_assign is never used
-  <-- line 522
+  <-- line 525
         value [@@dead "+extension_assign"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 542, characters 0-277
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 545, characters 0-277
   +array_length is never used
-  <-- line 542
+  <-- line 545
     | _ -> {expression_desc = Length (e, Array); comment} [@@dead "+array_length"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 549, characters 0-242
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 552, characters 0-242
   +string_length is never used
-  <-- line 549
+  <-- line 552
     | _ -> {expression_desc = Length (e, String); comment} [@@dead "+string_length"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 555, characters 0-304
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 558, characters 0-304
   +function_length is never used
-  <-- line 555
+  <-- line 558
     | _ -> {expression_desc = Length (e, Function); comment} [@@dead "+function_length"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 568, characters 0-1023
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 571, characters 0-1023
   +string_append is never used
-  <-- line 568
+  <-- line 571
     | _, _ -> {comment; expression_desc = String_append (e, el)} [@@dead "+string_append"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 589, characters 0-94
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 592, characters 0-94
   +obj is never used
-  <-- line 589
+  <-- line 592
     {expression_desc = Object (dup, properties); comment} [@@dead "+obj"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 592, characters 0-304
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 595, characters 0-304
   +str_equal is never used
-  <-- line 592
+  <-- line 595
     else None [@@dead "+str_equal"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 602, characters 0-824
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 605, characters 0-824
   +triple_equal is never used
-  <-- line 602
+  <-- line 605
     | _ -> {expression_desc = Bin (EqEqEq, e0, e1); comment} [@@dead "+triple_equal"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 623, characters 0-493
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 626, characters 0-493
   +bin is never used
-  <-- line 623
+  <-- line 626
     | _ -> {expression_desc = Bin (op, e0, e1); comment} [@@dead "+bin"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 657, characters 0-17
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 660, characters 0-17
   +debug is never used
-  <-- line 657
+  <-- line 660
   let debug = false [@@dead "+debug"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 673, characters 0-634
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 676, characters 0-634
   +push_negation is never used
-  <-- line 673
+  <-- line 676
     | _ -> None [@@dead "+push_negation"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 690, characters 0-27
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 693, characters 0-27
   +simplify_max_depth is never used
-  <-- line 690
+  <-- line 693
   let simplify_max_depth = 10 [@@dead "+simplify_max_depth"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 732, characters 0-12453
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 735, characters 0-12453
   +simplify_and_ is never used
-  <-- line 732
+  <-- line 735
       res [@@dead "+simplify_and_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1041, characters 0-174
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1044, characters 0-174
   +simplify_and_force is never used
-  <-- line 1041
+  <-- line 1044
     | x -> x [@@dead "+simplify_and_force"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1066, characters 0-818
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1069, characters 0-818
   +simplify_or_ is never used
-  <-- line 1066
+  <-- line 1069
     res [@@dead "+simplify_or_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1095, characters 0-171
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1098, characters 0-171
   +simplify_or_force is never used
-  <-- line 1095
+  <-- line 1098
     | x -> x [@@dead "+simplify_or_force"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1100, characters 0-133
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1103, characters 0-133
   +simplify_and is never used
-  <-- line 1100
+  <-- line 1103
     else None [@@dead "+simplify_and"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1104, characters 0-131
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1107, characters 0-131
   +simplify_or is never used
-  <-- line 1104
+  <-- line 1107
     else None [@@dead "+simplify_or"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1108, characters 0-751
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1111, characters 0-751
   +and_ is never used
-  <-- line 1108
+  <-- line 1111
       | None -> {expression_desc = Bin (And, e1, e2); comment}) [@@dead "+and_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1128, characters 0-516
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1131, characters 0-516
   +or_ is never used
-  <-- line 1128
+  <-- line 1131
       | None -> {expression_desc = Bin (Or, e1, e2); comment}) [@@dead "+or_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1142, characters 0-87
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1145, characters 0-87
   +in_ is never used
-  <-- line 1142
+  <-- line 1145
     {expression_desc = In (prop, obj); comment = None} [@@dead "+in_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1145, characters 0-685
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1148, characters 0-685
   +not is never used
-  <-- line 1145
+  <-- line 1148
       | None -> {expression_desc = Js_not e; comment = None}) [@@dead "+not"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1161, characters 0-124
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1164, characters 0-124
   +not_empty_branch is never used
-  <-- line 1161
+  <-- line 1164
     | _ -> true [@@dead "+not_empty_branch"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1166, characters 0-1851
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1169, characters 0-1851
   +econd is never used
-  <-- line 1166
+  <-- line 1169
     | _ -> default () [@@dead "+econd"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1215, characters 0-1526
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1218, characters 0-1526
   +float_equal is never used
-  <-- line 1215
+  <-- line 1218
     | _ -> {expression_desc = Bin (EqEqEq, e0, e1); comment} [@@dead "+float_equal"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1253, characters 0-27
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1256, characters 0-27
   +int_equal is never used
-  <-- line 1253
+  <-- line 1256
   let int_equal = float_equal [@@dead "+int_equal"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1278, characters 0-636
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1281, characters 0-636
   +emit_check is never used
-  <-- line 1278
+  <-- line 1281
     | Expr x -> x [@@dead "+emit_check"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1298, characters 0-199
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1301, characters 0-199
   +is_a_literal_case is never used
-  <-- line 1298
+  <-- line 1301
     emit_check check [@@dead "+is_a_literal_case"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1305, characters 0-175
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1308, characters 0-175
   +is_int_tag is never used
-  <-- line 1305
+  <-- line 1308
     emit_check check [@@dead "+is_int_tag"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1317, characters 0-106
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1320, characters 0-106
   +tag is never used
-  <-- line 1317
+  <-- line 1320
     {expression_desc = Caml_block_tag (e, name); comment} [@@dead "+tag"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1333, characters 0-726
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1336, characters 0-726
   +int32_bor is never used
-  <-- line 1333
+  <-- line 1336
     | _ -> {comment; expression_desc = Bin (Bor, e1, e2)} [@@dead "+int32_bor"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1351, characters 0-97
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1354, characters 0-97
   +to_int32 is never used
-  <-- line 1351
+  <-- line 1354
     int32_bor ?comment e zero_int_literal [@@dead "+to_int32"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1355, characters 0-434
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1358, characters 0-434
   +string_comp is never used
-  <-- line 1355
+  <-- line 1358
     | _ -> bin ?comment (Lam_compile_util.jsop_of_comp cmp) e0 e1 [@@dead "+string_comp"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1364, characters 0-80
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1367, characters 0-80
   +string_equal is never used
-  <-- line 1364
+  <-- line 1367
   let string_equal ?comment (e0 : t) (e1 : t) : t = string_comp Ceq ?comment e0 e1 [@@dead "+string_equal"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1366, characters 0-91
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1369, characters 0-91
   +is_type_number is never used
-  <-- line 1366
+  <-- line 1369
     string_equal ?comment (typeof e) (str "number") [@@dead "+is_type_number"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1369, characters 0-91
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1372, characters 0-91
   +is_type_string is never used
-  <-- line 1369
+  <-- line 1372
     string_equal ?comment (typeof e) (str "string") [@@dead "+is_type_string"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1372, characters 0-71
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1375, characters 0-71
   +is_type_object is never used
-  <-- line 1372
+  <-- line 1375
   let is_type_object (e : t) : t = string_equal (typeof e) (str "object") [@@dead "+is_type_object"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1374, characters 0-94
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1377, characters 0-94
   +obj_length is never used
-  <-- line 1374
+  <-- line 1377
     to_int32 {expression_desc = Length (e, Caml_block); comment} [@@dead "+obj_length"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1377, characters 0-186
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1380, characters 0-186
   +compare_int_aux is never used
-  <-- line 1377
+  <-- line 1380
     | Cge -> l >= r [@@dead "+compare_int_aux"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1386, characters 0-990
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1389, characters 0-990
   +int_comp is never used
-  <-- line 1386
+  <-- line 1389
     | _ -> bin ?comment (Lam_compile_util.jsop_of_comp cmp) e0 e1 [@@dead "+int_comp"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1414, characters 0-901
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1417, characters 0-901
   +bool_comp is never used
-  <-- line 1414
+  <-- line 1417
     | _, _ -> bin ?comment (Lam_compile_util.jsop_of_comp cmp) e0 e1 [@@dead "+bool_comp"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1441, characters 0-92
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1444, characters 0-92
   +float_comp is never used
-  <-- line 1441
+  <-- line 1444
     bin ?comment (Lam_compile_util.jsop_of_comp cmp) e0 e1 [@@dead "+float_comp"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1444, characters 0-89
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1447, characters 0-89
   +js_comp is never used
-  <-- line 1444
+  <-- line 1447
     bin ?comment (Lam_compile_util.jsop_of_comp cmp) e0 e1 [@@dead "+js_comp"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1447, characters 0-555
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1450, characters 0-555
   +int32_lsr is never used
-  <-- line 1447
+  <-- line 1450
     | _, _ -> {comment; expression_desc = Bin (Lsr, e1, e2)} [@@dead "+int32_lsr"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1463, characters 0-1966
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1466, characters 0-1966
   +is_out is never used
-  <-- line 1463
+  <-- line 1466
     | _, _ -> int_comp ?comment Cgt e range [@@dead "+is_out"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1517, characters 0-1244
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1520, characters 0-1244
   +float_add is never used
-  <-- line 1517
+  <-- line 1520
     | _ -> {comment; expression_desc = Bin (Plus, e1, e2)} [@@dead "+float_add"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1547, characters 0-241
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1550, characters 0-241
   +float_minus is never used
-  <-- line 1547
+  <-- line 1550
     | _ -> {comment; expression_desc = Bin (Minus, e1, e2)} [@@dead "+float_minus"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1553, characters 0-65
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1556, characters 0-65
   +unchecked_int32_add is never used
-  <-- line 1553
+  <-- line 1556
   let unchecked_int32_add ?comment e1 e2 = float_add ?comment e1 e2 [@@dead "+unchecked_int32_add"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1554, characters 0-66
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1557, characters 0-66
   +int32_add is never used
-  <-- line 1554
+  <-- line 1557
   let int32_add ?comment e1 e2 = to_int32 (float_add ?comment e1 e2) [@@dead "+int32_add"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1556, characters 0-91
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1559, characters 0-91
   +offset is never used
-  <-- line 1556
+  <-- line 1559
     if offset = 0 then e1 else int32_add e1 (small_int offset) [@@dead "+offset"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1559, characters 0-87
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1562, characters 0-87
   +int32_minus is never used
-  <-- line 1559
+  <-- line 1562
     to_int32 (float_minus ?comment e1 e2) [@@dead "+int32_minus"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1562, characters 0-86
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1565, characters 0-86
   +unchecked_int32_minus is never used
-  <-- line 1562
+  <-- line 1565
     float_minus ?comment e1 e2 [@@dead "+unchecked_int32_minus"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1565, characters 0-53
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1568, characters 0-53
   +float_div is never used
-  <-- line 1565
+  <-- line 1568
   let float_div ?comment e1 e2 = bin ?comment Div e1 e2 [@@dead "+float_div"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1566, characters 0-53
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1569, characters 0-53
   +float_pow is never used
-  <-- line 1566
+  <-- line 1569
   let float_pow ?comment e1 e2 = bin ?comment Pow e1 e2 [@@dead "+float_pow"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1567, characters 0-62
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1570, characters 0-62
   +float_notequal is never used
-  <-- line 1567
+  <-- line 1570
   let float_notequal ?comment e1 e2 = bin ?comment NotEqEq e1 e2 [@@dead "+float_notequal"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1569, characters 0-94
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1572, characters 0-94
   +int32_asr is never used
-  <-- line 1569
+  <-- line 1572
     {comment; expression_desc = Bin (Asr, e1, e2)} [@@dead "+int32_asr"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1573, characters 0-482
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1576, characters 0-482
   +int32_div is never used
-  <-- line 1573
+  <-- line 1576
       else to_int32 (float_div ?comment e1 e2) [@@dead "+int32_div"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1584, characters 0-316
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1587, characters 0-316
   +int32_mod is never used
-  <-- line 1584
+  <-- line 1587
       else {comment; expression_desc = Bin (Mod, e1, e2)} [@@dead "+int32_mod"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1592, characters 0-53
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1595, characters 0-53
   +float_mul is never used
-  <-- line 1592
+  <-- line 1595
   let float_mul ?comment e1 e2 = bin ?comment Mul e1 e2 [@@dead "+float_mul"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1594, characters 0-316
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1597, characters 0-316
   +int32_lsl is never used
-  <-- line 1594
+  <-- line 1597
     | _ -> {comment; expression_desc = Bin (Lsl, e1, e2)} [@@dead "+int32_lsl"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1601, characters 0-253
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1604, characters 0-253
   +is_pos_pow is never used
-  <-- line 1601
+  <-- line 1604
     try aux 0 n with E -> -1 [@@dead "+is_pos_pow"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1611, characters 0-702
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1614, characters 0-702
   +int32_mul is never used
-  <-- line 1611
+  <-- line 1614
     | _ -> to_int32 (float_mul ?comment e1 e2) [@@dead "+int32_mul"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1627, characters 0-104
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1630, characters 0-104
   +unchecked_int32_mul is never used
-  <-- line 1627
+  <-- line 1630
     {comment; expression_desc = Bin (Mul, e1, e2)} [@@dead "+unchecked_int32_mul"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1630, characters 0-179
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1633, characters 0-179
   +int_bnot is never used
-  <-- line 1630
+  <-- line 1633
     | _ -> {comment; expression_desc = Js_bnot e} [@@dead "+int_bnot"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1635, characters 0-251
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1638, characters 0-251
   +int32_pow is never used
-  <-- line 1635
+  <-- line 1638
     | _ -> to_int32 (float_pow ?comment e1 e2) [@@dead "+int32_pow"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1641, characters 0-445
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1644, characters 0-445
   +int32_bxor is never used
-  <-- line 1641
+  <-- line 1644
     | _ -> {comment; expression_desc = Bin (Bxor, e1, e2)} [@@dead "+int32_bxor"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1651, characters 0-384
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1654, characters 0-384
   +int32_band is never used
-  <-- line 1651
+  <-- line 1654
     | _ -> {comment; expression_desc = Bin (Band, e1, e2)} [@@dead "+int32_band"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1665, characters 0-67
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1668, characters 0-67
   +bigint_op is never used
-  <-- line 1665
+  <-- line 1668
   let bigint_op ?comment op (e1 : t) (e2 : t) = bin ?comment op e1 e2 [@@dead "+bigint_op"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1667, characters 0-992
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1670, characters 0-992
   +bigint_comp is never used
-  <-- line 1667
+  <-- line 1670
     | _ -> bin ?comment (Lam_compile_util.jsop_of_comp cmp) e0 e1 [@@dead "+bigint_comp"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1694, characters 0-159
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1697, characters 0-159
   +bigint_div is never used
-  <-- line 1694
+  <-- line 1697
     else bigint_op ?comment Div e0 e1 [@@dead "+bigint_div"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1698, characters 0-160
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1701, characters 0-160
   +bigint_mod is never used
-  <-- line 1698
+  <-- line 1701
     else bigint_op ?comment Mod e0 e1 [@@dead "+bigint_mod"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1705, characters 0-596
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1708, characters 0-596
   +of_block is never used
-  <-- line 1705
+  <-- line 1708
       [] [@@dead "+of_block"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1729, characters 0-58
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1732, characters 0-58
   +is_null is never used
-  <-- line 1729
+  <-- line 1732
   let is_null ?comment (x : t) = triple_equal ?comment x nil [@@dead "+is_null"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1730, characters 0-59
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1733, characters 0-59
   +is_undef is never used
-  <-- line 1730
+  <-- line 1733
   let is_undef ?comment x = triple_equal ?comment x undefined [@@dead "+is_undef"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1732, characters 0-117
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1735, characters 0-117
   +is_null_undefined_constant is never used
-  <-- line 1732
+  <-- line 1735
     | _ -> false [@@dead "+is_null_undefined_constant"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1737, characters 0-216
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1740, characters 0-216
   +is_null_undefined is never used
-  <-- line 1737
+  <-- line 1740
     | _ -> {comment; expression_desc = Is_null_or_undefined x} [@@dead "+is_null_undefined"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1743, characters 0-605
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1746, characters 0-605
   +eq_null_undefined_boolean is never used
-  <-- line 1743
+  <-- line 1746
     | _ -> {expression_desc = Bin (EqEqEq, a, b); comment} [@@dead "+eq_null_undefined_boolean"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1758, characters 0-605
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1761, characters 0-605
   +neq_null_undefined_boolean is never used
-  <-- line 1758
+  <-- line 1761
     | _ -> {expression_desc = Bin (NotEqEq, a, b); comment} [@@dead "+neq_null_undefined_boolean"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1773, characters 0-106
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1776, characters 0-106
   +make_exception is never used
-  <-- line 1773
+  <-- line 1776
     pure_runtime_call Primitive_modules.exceptions Literals.create [str s] [@@dead "+make_exception"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1776, characters 0-173
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 1779, characters 0-173
   +variadic_args is never used
-  <-- line 1776
+  <-- line 1779
     | arg :: args -> arg :: variadic_args args [@@dead "+variadic_args"] 
 
   Warning Dead Value
@@ -3858,10 +3846,10 @@
   val remove_pure_sub_exp : t -> t option [@@dead "+remove_pure_sub_exp"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 48, characters 0-62
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 48, characters 0-43
   +runtime_var_dot is never used
   <-- line 48
-  val runtime_var_dot : ?comment:string -> string -> string -> t [@@dead "+runtime_var_dot"] 
+  val runtime_var_dot : string -> string -> t [@@dead "+runtime_var_dot"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 52, characters 0-84
@@ -3930,16 +3918,16 @@
   val small_int : int -> t [@@dead "+small_int"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 126, characters 0-51
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 126, characters 0-32
   +bigint is never used
   <-- line 126
-  val bigint : ?comment:string -> bool -> string -> t [@@dead "+bigint"] 
+  val bigint : bool -> string -> t [@@dead "+bigint"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 128, characters 0-42
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 128, characters 0-23
   +float is never used
   <-- line 128
-  val float : ?comment:string -> string -> t [@@dead "+float"] 
+  val float : string -> t [@@dead "+float"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 132, characters 0-24
@@ -16803,4 +16791,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2953 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:206, Warning Unused Argument:69)
+  Analysis reported 2950 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:206, Warning Unused Argument:66)

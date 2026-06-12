@@ -45,7 +45,7 @@ val var : J.ident -> t
 
 val js_global : string -> t
 
-val runtime_var_dot : ?comment:string -> string -> string -> t
+val runtime_var_dot : string -> string -> t
 
 (* val runtime_var_vid : string -> string -> J.vident *)
 
@@ -123,9 +123,9 @@ val int : ?comment:string -> ?c:int -> int32 -> t
 
 val small_int : int -> t
 
-val bigint : ?comment:string -> bool -> string -> t
+val bigint : bool -> string -> t
 
-val float : ?comment:string -> string -> t
+val float : string -> t
 
 (* val empty_string_literal : t  *)
 (* TODO: we can do hash consing for small integers *)
