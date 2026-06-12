@@ -7958,118 +7958,16 @@
       done [@@dead "+reverse_range"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 38, characters 0-59
-  +reverse_in_place is never used
-  <-- line 38
-  let reverse_in_place a = reverse_range a 0 (Array.length a) [@@dead "+reverse_in_place"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 40, characters 0-217
-  +reverse is never used
-  <-- line 40
-      b [@@dead "+reverse"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 63, characters 0-241
-  +filter is never used
-  <-- line 63
-    aux [] 0 [@@dead "+filter"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 73, characters 0-295
-  +filter_map is never used
-  <-- line 73
-    aux [] 0 [@@dead "+filter_map"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 85, characters 0-303
-  +filter_mapi is never used
-  <-- line 85
-    aux [] 0 [@@dead "+filter_mapi"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 97, characters 0-126
-  +range is never used
-  <-- line 97
-    else Array.init (to_ - from + 1) (fun i -> i + from) [@@dead "+range"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 101, characters 0-171
-  +map2i is never used
-  <-- line 101
-    else Array.mapi (fun i a -> f i a (Array.unsafe_get b i)) a [@@dead "+map2i"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 114, characters 0-159
-  +tolist_aux is never used
-  <-- line 114
-        | None -> res) [@@dead "+tolist_aux"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 122, characters 0-60
-  +to_list_map is never used
-  <-- line 122
-  let to_list_map a f = tolist_aux a f (Array.length a - 1) [] [@@dead "+to_list_map"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 124, characters 0-69
-  +to_list_map_acc is never used
-  <-- line 124
-  let to_list_map_acc a acc f = tolist_aux a f (Array.length a - 1) acc [@@dead "+to_list_map_acc"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 126, characters 0-1053
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 59, characters 0-1053
   +of_list_map is never used
-  <-- line 126
+  <-- line 59
       fill 5 tl [@@dead "+of_list_map"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 186, characters 0-194
-  +rfind_with_index is never used
-  <-- line 186
-    aux (len - 1) [@@dead "+rfind_with_index"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 197, characters 0-201
-  +find_with_index is never used
-  <-- line 197
-    aux 0 len [@@dead "+find_with_index"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 206, characters 0-191
-  +find_and_split is never used
-  <-- line 206
-      Split (Array.sub arr 0 i, Array.sub arr (i + 1) (Array.length arr - i - 1)) [@@dead "+find_and_split"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 223, characters 0-39
-  +is_empty is never used
-  <-- line 223
-  let is_empty arr = Array.length arr = 0 [@@dead "+is_empty"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 225, characters 0-180
-  +unsafe_loop is never used
-  <-- line 225
-      && unsafe_loop (succ index) len p xs ys [@@dead "+unsafe_loop"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 240, characters 0-147
-  +for_all2_no_exn is never used
-  <-- line 240
-    len_xs = len_ys && unsafe_loop 0 len_xs p xs ys [@@dead "+for_all2_no_exn"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 262, characters 0-135
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 144, characters 0-135
   +fold_left is never used
-  <-- line 262
+  <-- line 144
     !r [@@dead "+fold_left"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 270, characters 0-96
-  +get_or is never used
-  <-- line 270
-    if i >= 0 && i < Array.length arr then Array.unsafe_get arr i else cb () [@@dead "+get_or"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 25, characters 0-50
@@ -8078,100 +7976,16 @@
   val reverse_range : 'a array -> int -> int -> unit [@@dead "+reverse_range"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 28, characters 0-39
-  +reverse_in_place is never used
-  <-- line 28
-  val reverse_in_place : 'a array -> unit [@@dead "+reverse_in_place"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 30, characters 0-34
-  +reverse is never used
-  <-- line 30
-  val reverse : 'a array -> 'a array [@@dead "+reverse"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 34, characters 0-49
-  +filter is never used
-  <-- line 34
-  val filter : 'a array -> ('a -> bool) -> 'a array [@@dead "+filter"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 36, characters 0-58
-  +filter_map is never used
-  <-- line 36
-  val filter_map : 'a array -> ('a -> 'b option) -> 'b array [@@dead "+filter_map"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 38, characters 0-66
-  +filter_mapi is never used
-  <-- line 38
-  val filter_mapi : 'a array -> (int -> 'a -> 'b option) -> 'b array [@@dead "+filter_mapi"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 40, characters 0-35
-  +range is never used
-  <-- line 40
-  val range : int -> int -> int array [@@dead "+range"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 42, characters 0-71
-  +map2i is never used
-  <-- line 42
-  val map2i : (int -> 'a -> 'b -> 'c) -> 'a array -> 'b array -> 'c array [@@dead "+map2i"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 46, characters 0-58
-  +to_list_map is never used
-  <-- line 46
-  val to_list_map : 'a array -> ('a -> 'b option) -> 'b list [@@dead "+to_list_map"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 48, characters 0-73
-  +to_list_map_acc is never used
-  <-- line 48
-  val to_list_map_acc : 'a array -> 'b list -> ('a -> 'b option) -> 'b list [@@dead "+to_list_map_acc"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 50, characters 0-51
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 32, characters 0-51
   +of_list_map is never used
-  <-- line 50
+  <-- line 32
   val of_list_map : 'a list -> ('a -> 'b) -> 'b array [@@dead "+of_list_map"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 52, characters 0-66
-  +rfind_with_index is never used
-  <-- line 52
-  val rfind_with_index : 'a array -> ('a -> 'b -> bool) -> 'b -> int [@@dead "+rfind_with_index"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 56, characters 0-69
-  +find_and_split is never used
-  <-- line 56
-  val find_and_split : 'a array -> ('a -> 'b -> bool) -> 'b -> 'a split [@@dead "+find_and_split"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 60, characters 0-31
-  +is_empty is never used
-  <-- line 60
-  val is_empty : 'a array -> bool [@@dead "+is_empty"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 62, characters 0-72
-  +for_all2_no_exn is never used
-  <-- line 62
-  val for_all2_no_exn : 'a array -> 'b array -> ('a -> 'b -> bool) -> bool [@@dead "+for_all2_no_exn"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 70, characters 0-56
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 42, characters 0-56
   +fold_left is never used
-  <-- line 70
+  <-- line 42
   val fold_left : 'b array -> 'a -> ('a -> 'b -> 'a) -> 'a [@@dead "+fold_left"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 72, characters 0-50
-  +get_or is never used
-  <-- line 72
-  val get_or : 'a array -> int -> (unit -> 'a) -> 'a [@@dead "+get_or"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.ml", line 42, characters 0-31
@@ -14847,4 +14661,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2610 issues (Warning Dead Module:151, Warning Dead Type:265, Warning Dead Value:1939, Warning Dead Value With Side Effects:36, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2579 issues (Warning Dead Module:151, Warning Dead Type:265, Warning Dead Value:1908, Warning Dead Value With Side Effects:36, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
