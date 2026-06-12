@@ -31,9 +31,6 @@ module E = Js_exp_make
 
 let const_char (i : int) = E.int ~c:i (Int32.of_int @@ i)
 
-(* string [s[i]] expects to return a [ocaml_char] *)
-let ref_string e e1 = E.string_index e e1
-
 (**
    Note that [String.fromCharCode] also works, but it only 
    work for small arrays, however, for {bytes_to_string} it is likely the bytes 

@@ -45,8 +45,6 @@ val var : J.ident -> t
 
 val js_global : string -> t
 
-val runtime_var_dot : string -> string -> t
-
 (* val runtime_var_vid : string -> string -> J.vident *)
 
 val ml_var_dot :
@@ -153,8 +151,6 @@ val string_append : ?comment:string -> t -> t -> t
 (* val bind_call : ?comment:string -> J.expression -> string -> J.expression list -> t *)
 (* val js_global_dot : ?comment:string -> string -> string -> t *)
 
-val string_index : ?comment:string -> t -> t -> t
-
 val array_index : ?comment:string -> t -> t -> t
 
 val array_index_by_int : ?comment:string -> t -> Int32.t -> t
@@ -188,8 +184,6 @@ val emit_check : t Ast_untagged_variants.Dynamic_checks.t -> t
 val triple_equal : ?comment:string -> t -> t -> t
 (* TODO: reduce [triple_equal] use *)
 
-val float_equal : ?comment:string -> t -> t -> t
-
 val int_equal : ?comment:string -> t -> t -> t
 
 val int_bnot : ?comment:string -> t -> t
@@ -210,29 +204,20 @@ val is_a_literal_case :
   t ->
   t
 
-val is_type_string : ?comment:string -> t -> t
-
 val is_type_object : t -> t
 
 val typeof : ?comment:string -> t -> t
-val instanceof : ?comment:string -> t -> t -> t
 val is_array : t -> t
 
 val to_int32 : ?comment:string -> t -> t
-
-val unchecked_int32_add : ?comment:string -> t -> t -> t
 
 val int32_add : ?comment:string -> t -> t -> t
 
 val offset : t -> int -> t
 
-val unchecked_int32_minus : ?comment:string -> t -> t -> t
-
 val int32_minus : ?comment:string -> t -> t -> t
 
 val int32_mul : ?comment:string -> t -> t -> t
-
-val unchecked_int32_mul : ?comment:string -> t -> t -> t
 
 val int32_div : checked:bool -> ?comment:string -> t -> t -> t
 
@@ -260,8 +245,6 @@ val float_mul : ?comment:string -> t -> t -> t
 
 val float_div : ?comment:string -> t -> t -> t
 
-val float_notequal : ?comment:string -> t -> t -> t
-
 val float_mod : ?comment:string -> t -> t -> t
 
 val float_pow : ?comment:string -> t -> t -> t
@@ -271,8 +254,6 @@ val int_comp : Lam_compat.comparison -> ?comment:string -> t -> t -> t
 val bool_comp : Lam_compat.comparison -> ?comment:string -> t -> t -> t
 
 val string_comp : Lam_compat.comparison -> ?comment:string -> t -> t -> t
-
-val float_comp : Lam_compat.comparison -> ?comment:string -> t -> t -> t
 
 val bigint_op : ?comment:string -> Js_op.binop -> t -> t -> t
 
@@ -287,8 +268,6 @@ val js_comp : Lam_compat.comparison -> ?comment:string -> t -> t -> t
 val not : t -> t
 
 val call : ?comment:string -> info:Js_call_info.t -> t -> t list -> t
-
-val flat_call : ?comment:string -> t -> t -> t
 
 val tagged_template : ?comment:string -> t -> t list -> t list -> t
 

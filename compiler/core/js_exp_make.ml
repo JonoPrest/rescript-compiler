@@ -67,12 +67,6 @@ let nil : t = {expression_desc = Null; comment = None}
 let call ?comment ~info e0 args : t =
   {expression_desc = Call (e0, args, info); comment}
 
-(* TODO: optimization when es is known at compile time
-    to be an array
-*)
-let flat_call ?comment e0 es : t =
-  {expression_desc = FlatCall (e0, es); comment}
-
 let tagged_template ?comment call_expr string_args value_args : t =
   {
     expression_desc = Tagged_template (call_expr, string_args, value_args);
@@ -468,19 +462,6 @@ let extension_access (e : t) name (pos : int32) : t =
       | None -> "_" ^ Int32.to_string pos
     in
     {expression_desc = Static_index (e, name, Some pos); comment = None}
-
-let string_index ?comment (e0 : t) (e1 : t) : t =
-  match (e0.expression_desc, e1.expression_desc) with
-  | Str {txt}, Number (Int {i; _}) ->
-    (* Don't optimize {j||j} *)
-    let i = Int32.to_int i in
-    if i >= 0 && i < String.length txt then
-      (* TODO: check exception when i is out of range..
-         RangeError?
-      *)
-      str (String.make 1 txt.[i])
-    else {expression_desc = String_index (e0, e1); comment}
-  | _ -> {expression_desc = String_index (e0, e1); comment}
 
 let assign ?comment e0 e1 : t = {expression_desc = Bin (Eq, e0, e1); comment}
 
@@ -1364,9 +1345,6 @@ let string_equal ?comment (e0 : t) (e1 : t) : t = string_comp Ceq ?comment e0 e1
 let is_type_number ?comment (e : t) : t =
   string_equal ?comment (typeof e) (str "number")
 
-let is_type_string ?comment (e : t) : t =
-  string_equal ?comment (typeof e) (str "string")
-
 let is_type_object (e : t) : t = string_equal (typeof e) (str "object")
 
 let obj_length ?comment e : t =
@@ -1435,9 +1413,6 @@ let bool_comp (cmp : Lam_compat.comparison) ?comment (e0 : t) (e1 : t) =
     | Clt | Cge | Ceq | Cneq ->
       bin ?comment (Lam_compile_util.jsop_of_comp cmp) e0 e1)
   | _, _ -> bin ?comment (Lam_compile_util.jsop_of_comp cmp) e0 e1
-
-let float_comp cmp ?comment e0 e1 =
-  bin ?comment (Lam_compile_util.jsop_of_comp cmp) e0 e1
 
 let js_comp cmp ?comment e0 e1 =
   bin ?comment (Lam_compile_util.jsop_of_comp cmp) e0 e1
@@ -1548,7 +1523,6 @@ and float_minus ?comment (e1 : t) (e2 : t) : t =
   | _ -> {comment; expression_desc = Bin (Minus, e1, e2)}
 (* bin ?comment Minus e1 e2 *)
 
-let unchecked_int32_add ?comment e1 e2 = float_add ?comment e1 e2
 let int32_add ?comment e1 e2 = to_int32 (float_add ?comment e1 e2)
 
 let offset e1 (offset : int) =
@@ -1557,12 +1531,8 @@ let offset e1 (offset : int) =
 let int32_minus ?comment e1 e2 : J.expression =
   to_int32 (float_minus ?comment e1 e2)
 
-let unchecked_int32_minus ?comment e1 e2 : J.expression =
-  float_minus ?comment e1 e2
-
 let float_div ?comment e1 e2 = bin ?comment Div e1 e2
 let float_pow ?comment e1 e2 = bin ?comment Pow e1 e2
-let float_notequal ?comment e1 e2 = bin ?comment NotEqEq e1 e2
 
 let int32_asr ?comment e1 e2 : J.expression =
   {comment; expression_desc = Bin (Asr, e1, e2)}
@@ -1621,9 +1591,6 @@ let int32_mul ?comment (e1 : J.expression) (e2 : J.expression) : J.expression =
     if i >= 0 then int32_lsl e (small_int i)
     else to_int32 (float_mul ?comment e1 e2)
   | _ -> to_int32 (float_mul ?comment e1 e2)
-
-let unchecked_int32_mul ?comment e1 e2 : J.expression =
-  {comment; expression_desc = Bin (Mul, e1, e2)}
 
 let int_bnot ?comment (e : t) : J.expression =
   match e.expression_desc with
