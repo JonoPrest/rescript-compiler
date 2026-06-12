@@ -272,6 +272,18 @@ live after manual validation.
 - Context: the truly unused `stats_to_string` debug helper was removed. The
   remaining warning is a cross-module utility edge missed by DCE.
 
+### `Ext_buffer` production and test helpers
+
+- Report: `Warning Dead Value`, `compiler/ext/ext_buffer.ml` / `.mli`, for
+  `is_empty`, `not_equal`, and the `add_int_*` helpers.
+- Verdict: live or intentionally retained.
+- Validation: `Ext_buffer.is_empty` is used by `ext_modulename.ml` while
+  deriving JavaScript identifier names. `not_equal` and `add_int_1` through
+  `add_int_4` are unit-test support helpers exercised by the string/util OUnit
+  suites, so they are marked live rather than removing the unit-test surface.
+- Context: unused `clear` and `digest` were removed. The remaining production
+  warning depends on the known `Ext_modulename` cross-module false positive.
+
 ### `Ext_list` production helpers
 
 - Report: remaining `Warning Dead Value` entries in
