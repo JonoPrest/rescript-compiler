@@ -363,6 +363,21 @@ live after manual validation.
 - Context: unused `Ext_obj` debug helpers (`dump_endline`, `pp_any`, `bt`) were
   removed. `Ext_scc.graph` remains production-live through `lam_scc.ml`.
 
+### `Ident`, `Identifiable`, and SCC vector helpers
+
+- Report: `Warning Dead Value` / `Warning Dead Module`,
+  `compiler/ext/ident.ml` / `.mli`, `identifiable.ml` / `.mli`,
+  `int_vec_util.ml` / `.mli`, and `int_vec_vec.ml` / `.mli`.
+- Verdict: live; false positive for the remaining reported identifiers.
+- Validation: `Ident.unique_name` is used in module-inclusion diagnostics,
+  `Ident.is_predef_exn` is used by lambda conversion, `Ident.print` is used by
+  lambda and typed-tree printers, and `Ident.compare` / `equal` are used by path
+  comparison, type checking, maps, and hash tables. `Identifiable.Make` builds
+  the `Ident` set/map/table helpers. `Int_vec_util.mem` and `Int_vec_vec` are
+  used by `lam_scc.ml` and `ext_scc.ml`.
+- Context: the unused `Identifiable.Pair` functor was removed. The remaining
+  warnings are cross-module/functor-signature edges missed by DCE.
+
 ### `Ext_list` production helpers
 
 - Report: remaining `Warning Dead Value` entries in
