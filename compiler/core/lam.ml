@@ -114,69 +114,13 @@ module Types = struct
   (* | Lsend of Lam_compat.meth_kind * t * t * t list * Location.t *)
 end
 
-module X = struct
-  type lambda_switch = Types.lambda_switch = {
-    sw_consts_full: bool;
-    sw_consts: (int * t) list;
-    sw_blocks_full: bool;
-    sw_blocks: (int * t) list;
-    sw_failaction: t option;
-    sw_names: Ast_untagged_variants.switch_names option;
-  }
-
-  and prim_info = Types.prim_info = {
-    primitive: Lam_primitive.t;
-    args: t list;
-    loc: Location.t;
-  }
-
-  and apply = Types.apply = {
-    ap_func: t;
-    ap_args: t list;
-    ap_info: ap_info;
-    ap_transformed_jsx: bool;
-  }
-
-  and lfunction = Types.lfunction = {
-    arity: int;
-    params: ident list;
-    body: t;
-    attr: Lambda.function_attribute;
-  }
-
-  and t = Types.t =
-    | Lvar of ident
-    | Lglobal_module of ident * bool
-    | Lconst of Lam_constant.t
-    | Lapply of apply
-    | Lfunction of lfunction
-    | Llet of Lam_compat.let_kind * ident * t * t
-    | Lletrec of (ident * t) list * t
-    | Lprim of prim_info
-    | Lswitch of t * lambda_switch
-    | Lstringswitch of t * (string * t) list * t option
-    | Lstaticraise of int * t list
-    | Lstaticcatch of t * (int * ident list) * t
-    | Ltrywith of t * ident * t
-    | Lifthenelse of t * t * t
-    | Lsequence of t * t
-    | Lbreak
-    | Lcontinue
-    | Lwhile of t * t
-    | Lfor of ident * t * t * Asttypes.direction_flag * t
-    | Lfor_of of ident * t * t
-    | Lfor_await_of of ident * t * t
-    | Lassign of ident * t
-  (* | Lsend of Lam_compat.meth_kind * t * t * t list * Location.t *)
-end
-
 include Types
 
 (** apply [f] to direct successor which has type [Lam.t] *)
 
-let inner_map (l : t) (f : t -> X.t) : X.t =
+let inner_map (l : t) (f : t -> t) : t =
   match l with
-  | Lvar (_ : ident) | Lconst (_ : Lam_constant.t) -> ((* Obj.magic *) l : X.t)
+  | Lvar (_ : ident) | Lconst (_ : Lam_constant.t) -> l
   | Lapply {ap_func; ap_args; ap_info; ap_transformed_jsx} ->
     let ap_func = f ap_func in
     let ap_args = Ext_list.map ap_args f in
@@ -192,7 +136,7 @@ let inner_map (l : t) (f : t -> X.t) : X.t =
     let body = f body in
     let decl = Ext_list.map_snd decl f in
     Lletrec (decl, body)
-  | Lglobal_module _ -> (l : X.t)
+  | Lglobal_module _ -> l
   | Lprim {args; primitive; loc} ->
     let args = Ext_list.map args f in
     Lprim {args; primitive; loc}
