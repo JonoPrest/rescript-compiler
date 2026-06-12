@@ -266,18 +266,6 @@ live after manual validation.
   analysis, environment consistency, variance checks, match compilation, or
   exhaustiveness analysis.
 
-### `Shared_types.package.rescript_version`
-
-- Report: `Warning Dead Type`, `analysis/src/shared_types.ml`,
-  `package.rescript_version`.
-- Verdict: live compatibility state; leave in place for now.
-- Validation: `analysis/src/packages.ml` populates this from
-  `Packages.get_rescript_version`, which honors `RESCRIPT_VERSION` and the
-  analysis-test `// ^ve+` / `// ^ve-` commands parsed in `analysis/src/cli.ml`.
-- Context: no current reader was found, but removing the field cascades into the
-  version override test-command surface. Keep this documented until the version
-  override path is intentionally retired or reconnected to feature gating.
-
 ### Compiler-common cross-module hooks
 
 - Report: `Warning Dead Value` / `Warning Dead Module`,
