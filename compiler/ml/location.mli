@@ -76,16 +76,13 @@ exception Error of error
 val error : ?loc:t -> ?sub:error list -> ?if_highlight:string -> string -> error
 
 val errorf :
-  ?loc:t ->
+  loc:t ->
   ?sub:error list ->
-  ?if_highlight:string ->
   ('a, Format.formatter, unit, error) format4 ->
   'a
 
 val raise_errorf :
   ?loc:t ->
-  ?sub:error list ->
-  ?if_highlight:string ->
   ('a, Format.formatter, unit, 'b) format4 ->
   'a
 

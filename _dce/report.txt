@@ -860,56 +860,20 @@
   optional argument loc of function +lookup is never used
 
   Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 106, characters 0-108
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 103, characters 0-108
   optional argument custom_intro of function +report_error is always supplied (1 calls)
 
   Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 106, characters 0-108
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 103, characters 0-108
   optional argument src of function +report_error is always supplied (1 calls)
 
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 85, characters 0-128
-  optional argument if_highlight of function +raise_errorf is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 85, characters 0-128
-  optional argument sub of function +raise_errorf is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 78, characters 0-125
-  optional argument if_highlight of function +errorf is never used
-
   Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 78, characters 0-125
-  optional argument loc of function +errorf is always supplied (3 calls)
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.ml", line 297, characters 0-177
-  optional argument if_highlight of function +raise_errorf is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.ml", line 297, characters 0-177
-  optional argument sub of function +raise_errorf is never used
-
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.ml", line 255, characters 0-108
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.ml", line 253, characters 0-108
   optional argument custom_intro of function +report_error is always supplied (1 calls)
 
   Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.ml", line 255, characters 0-108
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.ml", line 253, characters 0-108
   optional argument src of function +report_error is always supplied (1 calls)
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.ml", line 205, characters 0-167
-  optional argument if_highlight of function +errorf is never used
-
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.ml", line 205, characters 0-167
-  optional argument loc of function +errorf is always supplied (3 calls)
-
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.ml", line 183, characters 0-326
-  optional argument before of function +pp_ksprintf is always supplied (2 calls)
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reactive/src/reactive.ml", line 18, characters 0-24
@@ -15924,15 +15888,15 @@
   val default_warning_printer : t -> formatter -> Warnings.t -> unit [@@dead "+default_warning_printer"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 113, characters 0-118
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 110, characters 0-118
   +error_reporter is never used
-  <-- line 113
+  <-- line 110
     ref [@@dead "+error_reporter"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 122, characters 0-118
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 119, characters 0-118
   +default_error_reporter is never used
-  <-- line 122
+  <-- line 119
     unit [@@dead "+default_error_reporter"] 
 
   Warning Dead Value
@@ -17361,4 +17325,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 3033 issues (Warning Dead Module:153, Warning Dead Type:379, Warning Dead Value:2236, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:198, Warning Unused Argument:30)
+  Analysis reported 3024 issues (Warning Dead Module:153, Warning Dead Type:379, Warning Dead Value:2236, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
