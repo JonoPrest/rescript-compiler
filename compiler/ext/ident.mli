@@ -17,7 +17,8 @@
 
 type t = {stamp: int; name: string; mutable flags: int}
 
-include Identifiable.S with type t := t
+val print : Format.formatter -> t -> unit
+val equal : t -> t -> bool
 (* Notes:
    - [equal] compares identifiers by name
    - [compare x y] is 0 if [same x y] is true.
@@ -29,7 +30,6 @@ val create_persistent : string -> t
 val create_predef_exn : string -> t
 val rename : t -> t
 val name : t -> string
-val unique_name : t -> string
 val unique_toplevel_name : t -> string
 val persistent : t -> bool
 val same : t -> t -> bool

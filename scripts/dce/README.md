@@ -70,8 +70,7 @@ sensitive to the missing-roots problem and are the best first targets:
   e.g. `transl_apply`'s `~inlined`/`~transformed_jsx` (`compiler/ml/translcore.ml`),
   `Typ.poly`'s `~loc` (`compiler/ml/ast_helper`). Can be made mandatory.
 - **Unused Argument** — optional arg *never used* in the body, e.g.
-  `type_open_`'s `~used_slot` (`compiler/ml/typemod.ml`),
-  `disjoint_union`'s `~eq`/`~print` (`compiler/ext/identifiable.ml`).
+  `type_open_`'s `~used_slot` (`compiler/ml/typemod.ml`).
 
 ## Relationship to the manual "unreachable OCaml variant" survey
 

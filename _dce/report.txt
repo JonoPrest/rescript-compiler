@@ -1279,40 +1279,6 @@
   <-- line 45
   val length : 'a t -> int [@@dead "+length"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 50, characters 0-35
-  +equal is never used
-  <-- line 50
-  let equal i1 i2 = i1.name = i2.name [@@dead "+equal"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 229, characters 0-26
-  +original_equal is never used
-  <-- line 229
-  let original_equal = equal [@@dead "+original_equal"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 238, characters 0-26
-  +equal is never used
-  <-- line 238
-  let equal = original_equal [@@dead "+equal"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.mli", line 32, characters 0-29
-  +unique_name is never used
-  <-- line 32
-  val unique_name : t -> string [@@dead "+unique_name"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 98, characters 26-46
-  identifiable.Make.Tbl is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 98, characters 26-46
-  Make.Tbl.+map is never used
-  <-- line 98
-  module Make (T : Thing) : S with type t := T.t [@@dead "Make.Tbl.+map"] 
-
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/map_gen.ml", line 72, characters 2-9
   t.Empty is a variant case which is never constructed
@@ -2035,4 +2001,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 415 issues (Warning Dead Module:4, Warning Dead Type:82, Warning Dead Value:106, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:26)
+  Analysis reported 409 issues (Warning Dead Module:3, Warning Dead Type:82, Warning Dead Value:101, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:26)
