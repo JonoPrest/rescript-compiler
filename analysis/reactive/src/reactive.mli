@@ -18,9 +18,6 @@ type ('k, 'v) delta =
 val set : 'k -> 'v -> 'k * 'v option
 (** Create a batch entry that sets a key *)
 
-val remove : 'k -> 'k * 'v option
-(** Create a batch entry that removes a key *)
-
 val delta_to_entries : ('k, 'v) delta -> ('k * 'v option) list
 (** Convert delta to batch entries *)
 
@@ -72,12 +69,6 @@ module Scheduler : sig
 
   val is_propagating : unit -> bool
   (** Returns true if currently in a propagation wave *)
-
-  val wave_count : unit -> int
-  (** Number of propagation waves executed *)
-
-  val reset_wave_count : unit -> unit
-  (** Reset the wave counter *)
 end
 
 (** {1 Collection Interface} *)
@@ -97,7 +88,6 @@ val iter : ('k -> 'v -> unit) -> ('k, 'v) t -> unit
 val get : ('k, 'v) t -> 'k -> 'v option
 val length : ('k, 'v) t -> int
 val stats : ('k, 'v) t -> stats
-val level : ('k, 'v) t -> int
 val name : ('k, 'v) t -> string
 
 (** {1 Source Collection} *)

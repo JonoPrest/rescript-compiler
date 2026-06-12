@@ -15,7 +15,6 @@ type ('k, 'v) delta =
   | Batch of ('k * 'v option) list
 
 let set k v = (k, Some v)
-let remove k = (k, None)
 
 let delta_to_entries = function
   | Set (k, v) -> [(k, Some v)]
@@ -437,8 +436,6 @@ module Scheduler = struct
            !processed_nodes wave_elapsed_ms);
       propagating := false)
 
-  let wave_count () = !wave_counter
-  let reset_wave_count () = wave_counter := 0
 end
 
 (** {1 Collection Interface} *)
@@ -457,7 +454,6 @@ let iter f t = t.iter f
 let get t k = t.get k
 let length t = t.length ()
 let stats t = t.stats
-let level t = t.level
 let name t = t.name
 
 (** {1 Source Collection} *)
