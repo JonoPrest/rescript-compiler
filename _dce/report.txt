@@ -5012,439 +5012,427 @@
   val debugger_block : t list [@@dead "+debugger_block"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 121, characters 0-2578
-  +inner_map is never used
-  <-- line 121
-      Lassign (id, e) [@@dead "+inner_map"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 239, characters 0-513
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 138, characters 0-513
   +is_eta_conversion_exn is never used
-  <-- line 239
+  <-- line 138
     | _, _, _ -> raise_notrace Not_simple_form [@@dead "+is_eta_conversion_exn"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 254, characters 0-2145
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 153, characters 0-2145
   +apply is never used
-  <-- line 254
+  <-- line 153
     | _ -> Lapply {ap_func = fn; ap_args = args; ap_info; ap_transformed_jsx} [@@dead "+apply"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 309, characters 0-1950
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 208, characters 0-1950
   +eq_approx is never used
-  <-- line 309
+  <-- line 208
       false [@@dead "+eq_approx"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 373, characters 0-148
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 272, characters 0-148
   +eq_option is never used
-  <-- line 373
+  <-- line 272
       | None -> false) [@@dead "+eq_option"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 381, characters 0-69
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 280, characters 0-69
   +eq_approx_list is never used
-  <-- line 381
+  <-- line 280
   and eq_approx_list ls ls1 = Ext_list.for_all2_no_exn ls ls1 eq_approx [@@dead "+eq_approx_list"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 383, characters 0-596
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 282, characters 0-596
   +switch is never used
-  <-- line 383
+  <-- line 282
     | _ -> Lswitch (lam, lam_switch) [@@dead "+switch"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 397, characters 0-217
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 296, characters 0-217
   +stringswitch is never used
-  <-- line 397
+  <-- line 296
     | _ -> Lstringswitch (lam, cases, default) [@@dead "+stringswitch"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 403, characters 0-36
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 302, characters 0-36
   +true_ is never used
-  <-- line 403
+  <-- line 302
   let true_ : t = Lconst Const_js_true [@@dead "+true_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 404, characters 0-38
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 303, characters 0-38
   +false_ is never used
-  <-- line 404
+  <-- line 303
   let false_ : t = Lconst Const_js_false [@@dead "+false_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 405, characters 0-59
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 304, characters 0-59
   +unit is never used
-  <-- line 405
+  <-- line 304
   let unit : t = Lconst (Const_js_undefined {is_unit = true}) [@@dead "+unit"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 406, characters 0-22
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 305, characters 0-22
   +break is never used
-  <-- line 406
+  <-- line 305
   let break : t = Lbreak [@@dead "+break"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 407, characters 0-28
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 306, characters 0-28
   +continue is never used
-  <-- line 407
+  <-- line 306
   let continue : t = Lcontinue [@@dead "+continue"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 409, characters 0-253
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 308, characters 0-253
   +seq is never used
-  <-- line 409
+  <-- line 308
     | _ -> Lsequence (a, b) [@@dead "+seq"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 417, characters 0-24
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 316, characters 0-24
   +var is never used
-  <-- line 417
+  <-- line 316
   let var id : t = Lvar id [@@dead "+var"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 418, characters 0-86
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 317, characters 0-86
   +global_module is never used
-  <-- line 418
+  <-- line 317
     Lglobal_module (id, dynamic_import) [@@dead "+global_module"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 420, characters 0-28
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 319, characters 0-28
   +const is never used
-  <-- line 420
+  <-- line 319
   let const ct : t = Lconst ct [@@dead "+const"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 422, characters 0-86
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 321, characters 0-86
   +function_ is never used
-  <-- line 422
+  <-- line 321
     Lfunction {arity; params; body; attr} [@@dead "+function_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 425, characters 0-54
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 324, characters 0-54
   +let_ is never used
-  <-- line 425
+  <-- line 324
   let let_ kind id e body : t = Llet (kind, id, e, body) [@@dead "+let_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 426, characters 0-55
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 325, characters 0-55
   +letrec is never used
-  <-- line 426
+  <-- line 325
   let letrec bindings body : t = Lletrec (bindings, body) [@@dead "+letrec"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 427, characters 0-34
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 326, characters 0-34
   +while_ is never used
-  <-- line 427
+  <-- line 326
   let while_ a b : t = Lwhile (a, b) [@@dead "+while_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 428, characters 0-59
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 327, characters 0-59
   +try_ is never used
-  <-- line 428
+  <-- line 327
   let try_ body id handler : t = Ltrywith (body, id, handler) [@@dead "+try_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 429, characters 0-55
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 328, characters 0-55
   +for_ is never used
-  <-- line 429
+  <-- line 328
   let for_ v e1 e2 dir e3 : t = Lfor (v, e1, e2, dir, e3) [@@dead "+for_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 430, characters 0-44
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 329, characters 0-44
   +for_of is never used
-  <-- line 430
+  <-- line 329
   let for_of v e1 e2 : t = Lfor_of (v, e1, e2) [@@dead "+for_of"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 431, characters 0-56
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 330, characters 0-56
   +for_await_of is never used
-  <-- line 431
+  <-- line 330
   let for_await_of v e1 e2 : t = Lfor_await_of (v, e1, e2) [@@dead "+for_await_of"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 432, characters 0-35
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 331, characters 0-35
   +assign is never used
-  <-- line 432
+  <-- line 331
   let assign v l : t = Lassign (v, l) [@@dead "+assign"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 433, characters 0-50
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 332, characters 0-50
   +staticcatch is never used
-  <-- line 433
+  <-- line 332
   let staticcatch a b c : t = Lstaticcatch (a, b, c) [@@dead "+staticcatch"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 434, characters 0-45
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 333, characters 0-45
   +staticraise is never used
-  <-- line 434
+  <-- line 333
   let staticraise a b : t = Lstaticraise (a, b) [@@dead "+staticraise"] 
 
   Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 436, characters 0-286
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 335, characters 0-286
   +lam.Lift is a dead module as all its items are dead.
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 437, characters 2-56
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 336, characters 2-56
   Lift.+int is never used
-  <-- line 437
+  <-- line 336
     let int i : t = Lconst (Const_int {i; comment = None}) [@@dead "Lift.+int"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 442, characters 2-42
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 341, characters 2-42
   Lift.+bool is never used
-  <-- line 442
+  <-- line 341
     let bool b = if b then true_ else false_ [@@dead "Lift.+bool"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 444, characters 2-60
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 343, characters 2-60
   Lift.+string is never used
-  <-- line 444
+  <-- line 343
     let string s : t = Lconst (Const_string {s; delim = None}) [@@dead "Lift.+string"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 446, characters 2-40
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 345, characters 2-40
   Lift.+char is never used
-  <-- line 446
+  <-- line 345
     let char b : t = Lconst (Const_char b) [@@dead "Lift.+char"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 449, characters 0-4192
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 348, characters 0-4192
   +prim is never used
-  <-- line 449
+  <-- line 348
       | _ -> default ()) [@@dead "+prim"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 554, characters 0-177
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 453, characters 0-177
   +not_ is never used
-  <-- line 554
+  <-- line 453
     | _ -> prim ~primitive:Pnot ~args:[x] loc [@@dead "+not_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 560, characters 0-308
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 459, characters 0-308
   +has_boolean_type is never used
-  <-- line 560
+  <-- line 459
     | _ -> None [@@dead "+has_boolean_type"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 576, characters 0-233
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 475, characters 0-233
   +complete_range is never used
-  <-- line 576
+  <-- line 475
       && complete_range rest ~start:(start + 1) ~finish [@@dead "+complete_range"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 583, characters 0-384
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 482, characters 0-384
   +eval_const_as_bool is never used
-  <-- line 583
+  <-- line 482
     | Const_some b -> eval_const_as_bool b [@@dead "+eval_const_as_bool"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 595, characters 0-2862
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 494, characters 0-2862
   +if_ is never used
-  <-- line 595
+  <-- line 494
         | _ -> Lifthenelse (a, b, c))) [@@dead "+if_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 677, characters 0-30
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 576, characters 0-30
   +sequor is never used
-  <-- line 677
+  <-- line 576
   let sequor l r = if_ l true_ r [@@dead "+sequor"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 680, characters 0-32
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 579, characters 0-32
   +sequand is never used
-  <-- line 680
+  <-- line 579
   let sequand l r = if_ l r false_ [@@dead "+sequand"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 682, characters 0-369
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 581, characters 0-369
   +result_wrap is never used
-  <-- line 682
+  <-- line 581
     | Return_unset | Return_identity -> result [@@dead "+result_wrap"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 690, characters 0-352
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.ml", line 589, characters 0-352
   +handle_bs_non_obj_ffi is never used
-  <-- line 690
+  <-- line 589
          ~args loc) [@@dead "+handle_bs_non_obj_ffi"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 94, characters 0-34
-  +inner_map is never used
-  <-- line 94
-  val inner_map : t -> (t -> t) -> t [@@dead "+inner_map"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 96, characters 0-230
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 94, characters 0-230
   +handle_bs_non_obj_ffi is never used
-  <-- line 96
+  <-- line 94
     t [@@dead "+handle_bs_non_obj_ffi"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 109, characters 0-20
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 107, characters 0-20
   +var is never used
-  <-- line 109
+  <-- line 107
   val var : ident -> t [@@dead "+var"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 112, characters 0-54
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 110, characters 0-54
   +global_module is never used
-  <-- line 112
+  <-- line 110
   val global_module : ?dynamic_import:bool -> ident -> t [@@dead "+global_module"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 114, characters 0-31
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 112, characters 0-31
   +const is never used
-  <-- line 114
+  <-- line 112
   val const : Lam_constant.t -> t [@@dead "+const"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 116, characters 0-67
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 114, characters 0-67
   +apply is never used
-  <-- line 116
+  <-- line 114
   val apply : ?ap_transformed_jsx:bool -> t -> t list -> ap_info -> t [@@dead "+apply"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 118, characters 0-105
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 116, characters 0-105
   +function_ is never used
-  <-- line 118
+  <-- line 116
     t [@@dead "+function_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 125, characters 0-54
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 123, characters 0-54
   +let_ is never used
-  <-- line 125
+  <-- line 123
   val let_ : Lam_compat.let_kind -> ident -> t -> t -> t [@@dead "+let_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 127, characters 0-39
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 125, characters 0-39
   +letrec is never used
-  <-- line 127
+  <-- line 125
   val letrec : (ident * t) list -> t -> t [@@dead "+letrec"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 129, characters 0-26
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 127, characters 0-26
   +if_ is never used
-  <-- line 129
+  <-- line 127
   val if_ : t -> t -> t -> t [@@dead "+if_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 132, characters 0-36
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 130, characters 0-36
   +switch is never used
-  <-- line 132
+  <-- line 130
   val switch : t -> lambda_switch -> t [@@dead "+switch"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 135, characters 0-58
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 133, characters 0-58
   +stringswitch is never used
-  <-- line 135
+  <-- line 133
   val stringswitch : t -> (string * t) list -> t option -> t [@@dead "+stringswitch"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 139, characters 0-14
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 137, characters 0-14
   +false_ is never used
-  <-- line 139
+  <-- line 137
   val false_ : t [@@dead "+false_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 141, characters 0-12
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 139, characters 0-12
   +unit is never used
-  <-- line 141
+  <-- line 139
   val unit : t [@@dead "+unit"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 143, characters 0-24
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 141, characters 0-24
   +sequor is never used
-  <-- line 143
+  <-- line 141
   val sequor : t -> t -> t [@@dead "+sequor"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 146, characters 0-25
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 144, characters 0-25
   +sequand is never used
-  <-- line 146
+  <-- line 144
   val sequand : t -> t -> t [@@dead "+sequand"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 149, characters 0-31
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 147, characters 0-31
   +not_ is never used
-  <-- line 149
+  <-- line 147
   val not_ : Location.t -> t -> t [@@dead "+not_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 152, characters 0-21
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 150, characters 0-21
   +seq is never used
-  <-- line 152
+  <-- line 150
   val seq : t -> t -> t [@@dead "+seq"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 155, characters 0-13
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 153, characters 0-13
   +break is never used
-  <-- line 155
+  <-- line 153
   val break : t [@@dead "+break"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 157, characters 0-16
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 155, characters 0-16
   +continue is never used
-  <-- line 157
+  <-- line 155
   val continue : t [@@dead "+continue"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 159, characters 0-24
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 157, characters 0-24
   +while_ is never used
-  <-- line 159
+  <-- line 157
   val while_ : t -> t -> t [@@dead "+while_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 162, characters 0-31
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 160, characters 0-31
   +try_ is never used
-  <-- line 162
+  <-- line 160
   val try_ : t -> ident -> t -> t [@@dead "+try_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 164, characters 0-28
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 162, characters 0-28
   +assign is never used
-  <-- line 164
+  <-- line 162
   val assign : ident -> t -> t [@@dead "+assign"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 166, characters 0-70
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 164, characters 0-70
   +prim is never used
-  <-- line 166
+  <-- line 164
   val prim : primitive:Lam_primitive.t -> args:t list -> Location.t -> t [@@dead "+prim"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 169, characters 0-49
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 167, characters 0-49
   +staticcatch is never used
-  <-- line 169
+  <-- line 167
   val staticcatch : t -> int * ident list -> t -> t [@@dead "+staticcatch"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 171, characters 0-36
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 169, characters 0-36
   +staticraise is never used
-  <-- line 171
+  <-- line 169
   val staticraise : int -> t list -> t [@@dead "+staticraise"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 173, characters 0-63
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 171, characters 0-63
   +for_ is never used
-  <-- line 173
+  <-- line 171
   val for_ : ident -> t -> t -> Asttypes.direction_flag -> t -> t [@@dead "+for_"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 175, characters 0-33
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 173, characters 0-33
   +for_of is never used
-  <-- line 175
+  <-- line 173
   val for_of : ident -> t -> t -> t [@@dead "+for_of"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 177, characters 0-39
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 175, characters 0-39
   +for_await_of is never used
-  <-- line 177
+  <-- line 175
   val for_await_of : ident -> t -> t -> t [@@dead "+for_await_of"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 181, characters 0-30
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 179, characters 0-30
   +eq_approx is never used
-  <-- line 181
+  <-- line 179
   val eq_approx : t -> t -> bool [@@dead "+eq_approx"] 
 
   Warning Dead Module
@@ -15835,4 +15823,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2775 issues (Warning Dead Module:151, Warning Dead Type:294, Warning Dead Value:2074, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2773 issues (Warning Dead Module:151, Warning Dead Type:294, Warning Dead Value:2072, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
