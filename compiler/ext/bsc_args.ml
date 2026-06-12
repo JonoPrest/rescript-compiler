@@ -96,9 +96,10 @@ let stop_raise ~usage ~(error : error) (speclist : t) =
   usage_b b ~usage speclist;
   bad_arg (Ext_buffer.contents b)
 
-let parse_exn ~usage ~argv ?(start = 1) ?(finish = Array.length argv)
-    (speclist : t) (anonfun : rev_args:string list -> unit) =
+let parse_exn ~usage ~argv ?(start = 1) (speclist : t)
+    (anonfun : rev_args:string list -> unit) =
   let current = ref start in
+  let finish = Array.length argv in
   let rev_list = ref [] in
   while !current < finish do
     let s = argv.(!current) in

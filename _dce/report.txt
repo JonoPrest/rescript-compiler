@@ -760,10 +760,6 @@
   optional argument loc of function Typ.+any is always supplied (1 calls)
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/bsc_args.mli", line 47, characters 0-139
-  optional argument finish of function +parse_exn is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/type_utils.ml", line 1277, characters 0-1082
   optional argument pos_of_dot of function +filter_pipeable_functions is never used
 
@@ -790,10 +786,6 @@
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.ml", line 37, characters 0-182
   optional argument comment of function +block is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/bsc_args.ml", line 99, characters 0-1158
-  optional argument finish of function +parse_exn is never used
 
   Warning Redundant Optional Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_driver.ml", line 211, characters 0-399
@@ -16923,4 +16915,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2983 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:210, Warning Unused Argument:94)
+  Analysis reported 2981 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:210, Warning Unused Argument:92)
