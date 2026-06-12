@@ -7964,103 +7964,69 @@
   let is_js_or_global (i : Ident.t) = i.flags land (8 lor 1) <> 0 [@@dead "+is_js_or_global"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 41, characters 0-65
-  +is_js_object is never used
-  <-- line 41
-  let is_js_object (i : Ident.t) = i.flags land js_object_flag <> 0 [@@dead "+is_js_object"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 43, characters 0-72
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 41, characters 0-72
   +make_js_object is never used
-  <-- line 43
+  <-- line 41
   let make_js_object (i : Ident.t) = i.flags <- i.flags lor js_object_flag [@@dead "+make_js_object"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 53, characters 0-54
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 51, characters 0-54
   +create_tmp is never used
-  <-- line 53
+  <-- line 51
   let create_tmp ?(name = Literals.tmp) () = create name [@@dead "+create_tmp"] 
 
-  Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 55, characters 0-67
-  +js_module_table is never used and could have side effects
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 170, characters 0-31
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 166, characters 0-31
   +make_unused is never used
-  <-- line 170
+  <-- line 166
   let make_unused () = create "_" [@@dead "+make_unused"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 172, characters 0-48
-  +reset is never used
-  <-- line 172
-  let reset () = Hash_string.clear js_module_table [@@dead "+reset"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 178, characters 0-128
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 172, characters 0-128
   +compare is never used
-  <-- line 178
+  <-- line 172
     if u = 0 then Ext_string.compare x.name y.name else u [@@dead "+compare"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 182, characters 0-116
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 176, characters 0-116
   +equal is never used
-  <-- line 182
+  <-- line 176
     if x.stamp <> 0 then x.stamp = y.stamp else y.stamp = 0 && x.name = y.name [@@dead "+equal"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 29, characters 0-34
-  +is_js_object is never used
-  <-- line 29
-  val is_js_object : Ident.t -> bool [@@dead "+is_js_object"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 36, characters 0-36
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 34, characters 0-36
   +make_js_object is never used
-  <-- line 36
+  <-- line 34
   val make_js_object : Ident.t -> unit [@@dead "+make_js_object"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 38, characters 0-24
-  +reset is never used
-  <-- line 38
-  val reset : unit -> unit [@@dead "+reset"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 40, characters 0-48
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 36, characters 0-48
   +create_tmp is never used
-  <-- line 40
+  <-- line 36
   val create_tmp : ?name:string -> unit -> Ident.t [@@dead "+create_tmp"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 42, characters 0-33
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 38, characters 0-33
   +make_unused is never used
-  <-- line 42
+  <-- line 38
   val make_unused : unit -> Ident.t [@@dead "+make_unused"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 46, characters 0-40
-  +is_uppercase_exotic is never used
-  <-- line 46
-  val is_uppercase_exotic : string -> bool [@@dead "+is_uppercase_exotic"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 55, characters 0-37
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 49, characters 0-37
   +is_js_or_global is never used
-  <-- line 55
+  <-- line 49
   val is_js_or_global : Ident.t -> bool [@@dead "+is_js_or_global"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 57, characters 0-39
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 51, characters 0-39
   +compare is never used
-  <-- line 57
+  <-- line 51
   val compare : Ident.t -> Ident.t -> int [@@dead "+compare"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 58, characters 0-38
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 52, characters 0-38
   +equal is never used
-  <-- line 58
+  <-- line 52
   val equal : Ident.t -> Ident.t -> bool [@@dead "+equal"] 
 
   Warning Dead Module
@@ -8727,117 +8693,29 @@
   <-- line 53
   val parse_nat_of_string : string -> int ref -> int [@@dead "+parse_nat_of_string"] 
 
-  Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp.ml", line 31, characters 0-46
-  +indent_length is never used and could have side effects
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp.ml", line 42, characters 0-217
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp.ml", line 40, characters 0-217
   +from_channel is never used
-  <-- line 42
+  <-- line 40
     } [@@dead "+from_channel"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp.ml", line 93, characters 0-45
-  +nspace is never used
-  <-- line 93
-  let nspace t n = string t (String.make n ' ') [@@dead "+nspace"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp.ml", line 166, characters 0-67
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp.ml", line 162, characters 0-67
   +brace_group is never used
-  <-- line 166
+  <-- line 162
   let brace_group st n action = group st n (fun _ -> brace st action) [@@dead "+brace_group"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp.mli", line 38, characters 0-23
-  +indent_length is never used
-  <-- line 38
-  val indent_length : int [@@dead "+indent_length"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp.mli", line 44, characters 0-29
-  +nspace is never used
-  <-- line 44
-  val nspace : t -> int -> unit [@@dead "+nspace"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp.mli", line 63, characters 0-48
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp.mli", line 59, characters 0-48
   +brace_group is never used
-  <-- line 63
+  <-- line 59
   val brace_group : t -> int -> (unit -> 'a) -> 'a [@@dead "+brace_group"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp.mli", line 75, characters 0-35
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp.mli", line 71, characters 0-35
   +from_channel is never used
-  <-- line 75
+  <-- line 71
   val from_channel : out_channel -> t [@@dead "+from_channel"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp_scope.ml", line 32, characters 0-172
-  +print is never used
-  <-- line 32
-    Format.fprintf fmt "}@]" [@@dead "+print"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp_scope.ml", line 38, characters 0-88
-  +print_int_map is never used
-  <-- line 38
-    Map_int.iter m (fun k v -> Format.fprintf fmt "%d - %d" k v) [@@dead "+print_int_map"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp_scope.mli", line 36, characters 0-41
-  +print is never used
-  <-- line 36
-  val print : Format.formatter -> t -> unit [@@dead "+print"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ref.ml", line 25, characters 0-99
-  +non_exn_protect is never used
-  <-- line 25
-    res [@@dead "+non_exn_protect"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ref.ml", line 43, characters 0-160
-  +non_exn_protect2 is never used
-  <-- line 43
-    res [@@dead "+non_exn_protect2"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ref.ml", line 53, characters 0-226
-  +protect2 is never used
-  <-- line 53
-      raise x [@@dead "+protect2"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ref.ml", line 68, characters 0-301
-  +protect_list is never used
-  <-- line 68
-      raise e [@@dead "+protect_list"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ref.mli", line 29, characters 0-56
-  +non_exn_protect is never used
-  <-- line 29
-  val non_exn_protect : 'a ref -> 'a -> (unit -> 'b) -> 'b [@@dead "+non_exn_protect"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ref.mli", line 33, characters 0-65
-  +protect2 is never used
-  <-- line 33
-  val protect2 : 'a ref -> 'b ref -> 'a -> 'b -> (unit -> 'c) -> 'c [@@dead "+protect2"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ref.mli", line 35, characters 0-73
-  +non_exn_protect2 is never used
-  <-- line 35
-  val non_exn_protect2 : 'a ref -> 'b ref -> 'a -> 'b -> (unit -> 'c) -> 'c [@@dead "+non_exn_protect2"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ref.mli", line 40, characters 0-59
-  +protect_list is never used
-  <-- line 40
-  val protect_list : ('a ref * 'a) list -> (unit -> 'b) -> 'b [@@dead "+protect_list"] 
 
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_scc.ml", line 1, characters 0-0
@@ -14051,4 +13929,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2477 issues (Warning Dead Module:151, Warning Dead Type:225, Warning Dead Value:1847, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2456 issues (Warning Dead Module:151, Warning Dead Type:225, Warning Dead Value:1828, Warning Dead Value With Side Effects:33, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
