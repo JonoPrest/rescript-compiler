@@ -42,8 +42,6 @@ let setter_suffix = "#="
 
 let setter_suffix_len = String.length setter_suffix
 
-let debugger = "debugger"
-
 let suffix_cmj = ".cmj"
 
 let suffix_cmi = ".cmi"

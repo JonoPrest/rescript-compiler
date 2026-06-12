@@ -377,15 +377,14 @@ live after manual validation.
 
 - Report: remaining `Warning Dead Value` entries in
   `compiler/ext/literals.ml`, including `js_type_*`, `param`, `partial_arg`,
-  `tmp`, `create`, `setter_suffix_len`, `debugger`, node path constants, and
-  `pure`.
+  `tmp`, `create`, `setter_suffix_len`, node path constants, and `pure`.
 - Verdict: live; false positive for the remaining reported constants.
 - Validation: `compiler/core/js_exp_make.ml` imports
-  `module L = Literals` and reads the `js_type_*` constants; `js_dump.ml`
-  imports the same alias for `debugger`. `Lam_eta_conversion` uses `param` and
-  `partial_arg`, `Ext_ident.create_tmp` uses `tmp`, `Js_exp_make` uses `create`
-  and `pure`, `Lam_convert` uses `setter_suffix_len`, and `Ext_path` uses
-  `node_sep`, `node_parent`, and `node_current`.
+  `module L = Literals` and reads the `js_type_*` constants.
+  `Lam_eta_conversion` uses `param` and `partial_arg`,
+  `Ext_ident.create_tmp` uses `tmp`, `Js_exp_make` uses `create` and `pure`,
+  `Lam_convert` uses `setter_suffix_len`, and `Ext_path` uses `node_sep`,
+  `node_parent`, and `node_current`.
 - Context: unused constants with no `Literals.*` or alias callers were removed.
   The survivors are cross-module or alias-qualified uses that DCE reports as
   unrooted.
