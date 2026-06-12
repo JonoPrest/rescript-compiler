@@ -462,10 +462,11 @@ live after manual validation.
   were removed. The remaining entries are cross-module pass plumbing and local
   helper chains under live pass functions.
 
-### `Lam_compat` aliases and comparisons
+### `Lam_compat` aliases, comparisons, and field comments
 
 - Report: constructor warnings for `field_dbg_info` and `set_field_dbg_info` in
-  `compiler/core/lam_compat.ml` / `.mli`, plus comparison helpers.
+  `compiler/core/lam_compat.ml` / `.mli`, plus comparison helpers and
+  `str_of_field_info`.
 - Verdict: live; false positive for the remaining reported entries.
 - Validation: `Lam_compat.field_dbg_info` and `set_field_dbg_info` are
   manifest aliases of `Lambda` types. Their constructors are produced in the ML
@@ -473,11 +474,29 @@ live after manual validation.
   consumed by core lowering in `lam_convert.ml`, `lam_util.cppo.ml`,
   `lam_arity_analysis.ml`, `lam_analysis.ml`, `lam_pass_remove_alias.ml`,
   `lam_compile.ml`, `lam_print.ml`, `polyvar_pattern_match.ml`, and
-  `js_of_lam_block.ml`. `cmp_int32` and `cmp_float` are called by `Lam.prim`;
-  `eq_comparison` is called by `lam_primitive.ml`.
+  `js_of_lam_block.ml`. `str_of_field_info` is used by `lam_print.ml` and by
+  `js_of_lam_block.ml` to preserve record-field comments in generated JS.
+  `cmp_int32` and `cmp_float` are called by `Lam.prim`; `eq_comparison` is
+  called by `lam_primitive.ml`.
 - Context: unused `cmp_int` was removed. The remaining constructor warnings come
   from constructors being built through the aliased `Lambda` type rather than
   directly through `Lam_compat`.
+
+### `Lam_print` lambda printers
+
+- Report: `Warning Dead Value` entries in `compiler/core/lam_print.ml` / `.mli`,
+  including `lambda`, `primitive`, `serialize`, and `lambda_to_string`.
+- Verdict: live false positives, except `primitive_to_string`, which had no
+  callers and was removed.
+- Validation: `Lam_group.pp` calls `Lam_print.lambda`,
+  `lam_util.cppo.ml` calls `Lam_print.serialize`, and
+  `compiler/jsoo/jsoo_playground_main.ml` calls `Lam_print.lambda_to_string`
+  when rendering playground lambda output. The `primitive` printer is reached
+  from the live lambda printer.
+- Context: these are debug/inspection printers reached through cross-module and
+  `.cppo.ml` paths that the DCE report does not root correctly. The playground
+  call site is not covered by `dune build @check`, so this warning must stay
+  documented rather than removed.
 
 ### Lambda-to-JS compilation pipeline
 
