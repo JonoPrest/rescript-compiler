@@ -452,6 +452,22 @@ live after manual validation.
   `block_is_object` were removed. The remaining warnings are a cross-module
   pipeline edge from ML variant analysis into JS lowering.
 
+### Untagged switch defaults and declarations
+
+- Report: `Warning Unused Argument`, `compiler/core/lam_compile.ml`, optional
+  arguments `default` and `declaration` on the local `switch` helper inside
+  `compile_untagged_cases`.
+- Verdict: live; false positive.
+- Validation: `compile_general_cases` calls its switch callback as
+  `switch ?default ?declaration switch_exp body`. The untagged-variant callback
+  partitions `instanceof` clauses away from `typeof` clauses, then forwards
+  `?default` and `?declaration` to `S.string_switch (E.typeof e)` from its
+  `typeof_switch` closure. The `default` body is also read directly when the
+  helper inserts null/array guards before the typeof switch.
+- Context: reanalyze appears to lose the optional-label flow through the local
+  callback and nested closure. Removing these labels would drop default handling
+  or declaration threading for generated untagged-variant switch code.
+
 ### GenType map/set helpers
 
 - Report: `Warning Dead Module` / `Warning Dead Value`,
