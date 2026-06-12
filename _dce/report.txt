@@ -7948,100 +7948,10 @@
   let is_empty b = b.position = 0 [@@dead "+is_empty"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.ml", line 44, characters 0-29
-  +clear is never used
-  <-- line 44
-  let clear b = b.position <- 0 [@@dead "+clear"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.ml", line 128, characters 0-50
-  +digest is never used
-  <-- line 128
-  let digest b = unsafe_string b.buffer 0 b.position [@@dead "+digest"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.ml", line 130, characters 0-173
-  +not_equal_aux is never used
-  <-- line 130
-      || not_equal_aux b s (i + 1) len [@@dead "+not_equal_aux"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.ml", line 137, characters 0-150
-  +not_equal is never used
-  <-- line 137
-    b_len <> s_len || not_equal_aux b.buffer s 0 s_len [@@dead "+not_equal"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.ml", line 146, characters 0-199
-  +add_int_1 is never used
-  <-- line 146
-    b.position <- pos + 1 [@@dead "+add_int_1"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.ml", line 153, characters 0-328
-  +add_int_2 is never used
-  <-- line 153
-    b.position <- pos + 2 [@@dead "+add_int_2"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.ml", line 163, characters 0-423
-  +add_int_3 is never used
-  <-- line 163
-    b.position <- pos + 3 [@@dead "+add_int_3"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.ml", line 175, characters 0-518
-  +add_int_4 is never used
-  <-- line 175
-    b.position <- pos + 4 [@@dead "+add_int_4"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.mli", line 48, characters 0-24
   +is_empty is never used
   <-- line 48
   val is_empty : t -> bool [@@dead "+is_empty"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.mli", line 50, characters 0-21
-  +clear is never used
-  <-- line 50
-  val clear : t -> unit [@@dead "+clear"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.mli", line 86, characters 0-26
-  +digest is never used
-  <-- line 86
-  val digest : t -> Digest.t [@@dead "+digest"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.mli", line 88, characters 0-35
-  +not_equal is never used
-  <-- line 88
-  val not_equal : t -> string -> bool [@@dead "+not_equal"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.mli", line 90, characters 0-32
-  +add_int_1 is never used
-  <-- line 90
-  val add_int_1 : t -> int -> unit [@@dead "+add_int_1"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.mli", line 92, characters 0-32
-  +add_int_2 is never used
-  <-- line 92
-  val add_int_2 : t -> int -> unit [@@dead "+add_int_2"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.mli", line 94, characters 0-32
-  +add_int_3 is never used
-  <-- line 94
-  val add_int_3 : t -> int -> unit [@@dead "+add_int_3"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.mli", line 96, characters 0-32
-  +add_int_4 is never used
-  <-- line 96
-  val add_int_4 : t -> int -> unit [@@dead "+add_int_4"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_char.ml", line 34, characters 0-114
@@ -14249,4 +14159,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2510 issues (Warning Dead Module:151, Warning Dead Type:235, Warning Dead Value:1870, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2495 issues (Warning Dead Module:151, Warning Dead Type:235, Warning Dead Value:1855, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
