@@ -29,14 +29,6 @@ val predef_option : Longident.t
 module Lid : sig
   type t = Longident.t
 
-  val val_unit : t
-
-  val type_unit : t
-
-  val type_int : t
-
-  val pervasives : t
-
   val js_oo : t
 
   val js_meth_callback : t

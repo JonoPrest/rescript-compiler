@@ -10144,45 +10144,15 @@
   val has_warnings : bool ref [@@dead "+has_warnings"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 42, characters 2-58
-  Lid.+pervasives is never used
-  <-- line 42
-    let pervasives : t = Lident Primitive_modules.pervasives [@@dead "Lid.+pervasives"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 50, characters 2-49
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 48, characters 2-74
   Lid.+ignore_id is never used
-  <-- line 50
-    let ignore_id : t = Ldot (pervasives, "ignore") [@@dead "Lid.+ignore_id"] 
+  <-- line 48
+    let ignore_id : t = Ldot (Lident Primitive_modules.pervasives, "ignore") [@@dead "Lid.+ignore_id"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 32, characters 2-18
-  Lid.+val_unit is never used
-  <-- line 32
-    val val_unit : t [@@dead "Lid.+val_unit"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 34, characters 2-19
-  Lid.+type_unit is never used
-  <-- line 34
-    val type_unit : t [@@dead "Lid.+type_unit"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 36, characters 2-18
-  Lid.+type_int is never used
-  <-- line 36
-    val type_int : t [@@dead "Lid.+type_int"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 38, characters 2-20
-  Lid.+pervasives is never used
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 38, characters 2-19
+  Lid.+ignore_id is never used
   <-- line 38
-    val pervasives : t [@@dead "Lid.+pervasives"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 46, characters 2-19
-  Lid.+ignore_id is never used
-  <-- line 46
     val ignore_id : t [@@dead "Lid.+ignore_id"] 
 
   Warning Dead Value
@@ -13467,4 +13437,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2376 issues (Warning Dead Module:146, Warning Dead Type:221, Warning Dead Value:1761, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2371 issues (Warning Dead Module:146, Warning Dead Type:221, Warning Dead Value:1756, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)

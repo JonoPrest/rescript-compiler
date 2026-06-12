@@ -39,15 +39,13 @@ module Lid = struct
 
   let type_bool : t = Lident "bool" (* use *predef* *)
 
-  let pervasives : t = Lident Primitive_modules.pervasives
-
   (* FIXME: Use primitive module *)
   let js_oo : t = Lident "Js_OO"
 
   (* FIXME: Use primitive module *)
   let js_meth_callback : t = Ldot (js_oo, "Callback")
 
-  let ignore_id : t = Ldot (pervasives, "ignore")
+  let ignore_id : t = Ldot (Lident Primitive_modules.pervasives, "ignore")
 
   let hidden_field n : t = Lident ("I" ^ n)
 
