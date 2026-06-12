@@ -245,6 +245,25 @@ live after manual validation.
   The survivors are cross-module or alias-qualified uses that DCE reports as
   unrooted.
 
+### `Ext_list` production helpers
+
+- Report: remaining `Warning Dead Value` entries in
+  `compiler/ext/ext_list.ml` / `.mli`, including `map_snd`, `append`,
+  `append_one`, `fold_right3`, `split_at`, `length_ge`,
+  `length_larger_than_n`, `stable_group`, `nth_opt`, `iter_snd`,
+  `exists_snd`, `fold_left2`, and `singleton_exn`.
+- Verdict: live; false positive for the remaining reported helpers.
+- Validation: the remaining helpers have production callers across the lambda
+  and JS pipelines. Examples include `Lam_convert` using `append_one`,
+  `length_ge`, `length_larger_than_n`, and `singleton_exn`;
+  `Lam_eta_conversion`, `Lam_compile`, and `Lam_pass_alpha_conversion` using
+  `split_at`; `Js_fun_env` using `filter_mapi`; `Js_pass_tailcall_inline` using
+  `fold_right3`; and many lambda/JS passes using `map_snd`, `iter_snd`,
+  `exists_snd`, `nth_opt`, and `fold_left2`.
+- Context: helper functions with no production callers were removed, along with
+  unit tests that only exercised that dead helper surface. The remaining
+  warnings are ordinary cross-module `Ext_list.*` uses missed by DCE.
+
 ### Core JS analyzer and delimiters
 
 - Report: `Warning Dead Type`, `compiler/core/j.ml`, `delim.DBackQuotes`; and
