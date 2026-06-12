@@ -24,19 +24,16 @@
 
 type constructor_tag = {
   cstr_name: Ast_untagged_variants.tag;
-  const: int;
-  non_const: int;
 }
 
 type pointer_info =
   | None
   | Pt_constructor of constructor_tag
   | Pt_assertfalse
-  | Some of string
 
 let string_of_pointer_info (x : pointer_info) : string option =
   match x with
-  | Some name | Pt_constructor {cstr_name = {name}; _} -> Some name
+  | Pt_constructor {cstr_name = {name}} -> Some name
   | Pt_assertfalse -> Some "assert_false"
   | None -> None
 

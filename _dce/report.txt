@@ -6620,7 +6620,7 @@
   +lam_constant_convert is a dead module as all its items are dead.
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_constant_convert.ml", line 25, characters 0-2504
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_constant_convert.ml", line 25, characters 0-2474
   +convert_constant is never used
   <-- line 25
         | _ -> assert false)) [@@dead "+convert_constant"] 
@@ -10173,136 +10173,58 @@
   <-- line 38
   val simple_comparison : string -> bool [@@dead "+simple_comparison"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/bs_syntaxerr.ml", line 25, characters 24-38
-  untagged_variant.OnlyOneUnknown is a variant case which is never constructed
-  <-- line 25
-  type untagged_variant = OnlyOneUnknown [@dead "untagged_variant.OnlyOneUnknown"]  | AtMostOneObject | AtMostOneArray
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/bs_syntaxerr.ml", line 25, characters 39-56
-  untagged_variant.AtMostOneObject is a variant case which is never constructed
-  <-- line 25
-  type untagged_variant = OnlyOneUnknown [@dead "untagged_variant.OnlyOneUnknown"]  | AtMostOneObject [@dead "untagged_variant.AtMostOneObject"]  | AtMostOneArray
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/bs_syntaxerr.ml", line 25, characters 57-73
-  untagged_variant.AtMostOneArray is a variant case which is never constructed
-  <-- line 25
-  type untagged_variant = OnlyOneUnknown [@dead "untagged_variant.OnlyOneUnknown"]  | AtMostOneObject [@dead "untagged_variant.AtMostOneObject"]  | AtMostOneArray [@dead "untagged_variant.AtMostOneArray"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/bs_syntaxerr.mli", line 25, characters 24-38
-  untagged_variant.OnlyOneUnknown is a variant case which is never constructed
-  <-- line 25
-  type untagged_variant = OnlyOneUnknown [@dead "untagged_variant.OnlyOneUnknown"]  | AtMostOneObject | AtMostOneArray
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/bs_syntaxerr.mli", line 25, characters 39-56
-  untagged_variant.AtMostOneObject is a variant case which is never constructed
-  <-- line 25
-  type untagged_variant = OnlyOneUnknown [@dead "untagged_variant.OnlyOneUnknown"]  | AtMostOneObject [@dead "untagged_variant.AtMostOneObject"]  | AtMostOneArray
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/bs_syntaxerr.mli", line 25, characters 57-73
-  untagged_variant.AtMostOneArray is a variant case which is never constructed
-  <-- line 25
-  type untagged_variant = OnlyOneUnknown [@dead "untagged_variant.OnlyOneUnknown"]  | AtMostOneObject [@dead "untagged_variant.AtMostOneObject"]  | AtMostOneArray [@dead "untagged_variant.AtMostOneArray"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/external_arg_spec.mli", line 60, characters 0-23
-  +empty_label is never used
-  <-- line 60
-  val empty_label : label [@@dead "+empty_label"] 
-
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/external_ffi_types.mli", line 95, characters 0-29
   +from_string is never used
   <-- line 95
   val from_string : string -> t [@@dead "+from_string"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.ml", line 27, characters 2-13
-  constructor_tag.const is a record label never used to read a value
-  <-- line 27
-    const: int; [@dead "constructor_tag.const"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.ml", line 28, characters 2-17
-  constructor_tag.non_const is a record label never used to read a value
-  <-- line 28
-    non_const: int; [@dead "constructor_tag.non_const"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.ml", line 35, characters 2-18
-  pointer_info.Some is a variant case which is never constructed
-  <-- line 35
-    | Some of string [@dead "pointer_info.Some"] 
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.ml", line 37, characters 0-205
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.ml", line 34, characters 0-190
   +string_of_pointer_info is never used
-  <-- line 37
+  <-- line 34
     | None -> None [@@dead "+string_of_pointer_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.ml", line 61, characters 0-1153
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.ml", line 58, characters 0-1153
   +eq_approx is never used
-  <-- line 61
+  <-- line 58
       | _ -> false) [@@dead "+eq_approx"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.ml", line 102, characters 0-55
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.ml", line 99, characters 0-55
   +lam_none is never used
-  <-- line 102
+  <-- line 99
   let lam_none : t = Const_js_undefined {is_unit = false} [@@dead "+lam_none"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.ml", line 104, characters 0-324
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.ml", line 101, characters 0-324
   +is_allocating is never used
-  <-- line 104
+  <-- line 101
       false [@@dead "+is_allocating"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.mli", line 27, characters 2-13
-  constructor_tag.const is a record label never used to read a value
-  <-- line 27
-    const: int; [@dead "constructor_tag.const"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.mli", line 28, characters 2-17
-  constructor_tag.non_const is a record label never used to read a value
-  <-- line 28
-    non_const: int; [@dead "constructor_tag.non_const"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.mli", line 35, characters 2-18
-  pointer_info.Some is a variant case which is never constructed
-  <-- line 35
-    | Some of string [@dead "pointer_info.Some"] 
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.mli", line 37, characters 0-58
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.mli", line 34, characters 0-58
   +string_of_pointer_info is never used
-  <-- line 37
+  <-- line 34
   val string_of_pointer_info : pointer_info -> string option [@@dead "+string_of_pointer_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.mli", line 57, characters 0-30
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.mli", line 54, characters 0-30
   +eq_approx is never used
-  <-- line 57
+  <-- line 54
   val eq_approx : t -> t -> bool [@@dead "+eq_approx"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.mli", line 59, characters 0-16
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.mli", line 56, characters 0-16
   +lam_none is never used
-  <-- line 59
+  <-- line 56
   val lam_none : t [@@dead "+lam_none"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.mli", line 61, characters 0-29
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/lam_constant.mli", line 58, characters 0-29
   +is_allocating is never used
-  <-- line 61
+  <-- line 58
   val is_allocating : t -> bool [@@dead "+is_allocating"] 
 
   Warning Dead Module
@@ -13437,4 +13359,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2371 issues (Warning Dead Module:146, Warning Dead Type:221, Warning Dead Value:1756, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2358 issues (Warning Dead Module:146, Warning Dead Type:209, Warning Dead Value:1755, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
