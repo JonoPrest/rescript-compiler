@@ -61,3 +61,18 @@ live after manual validation.
 - Context: the warning only says all known callers supply the option. The option
   itself is behaviorally live and part of the syntax driver surface used by the
   compiler entry point.
+
+### `from_type` in unbound name errors
+
+- Report: `Warning Unused Argument`, `compiler/ml/typecore.ml` and
+  `compiler/ml/typetexp.ml`, optional argument `from_type` on label and
+  constructor unbound-name error helpers.
+- Verdict: live for labels; intentionally shared/ignored for constructors.
+- Validation: `compiler/ml/typecore.ml` calls `Label.disambiguate
+  ~from_type:ty_exp` for field access, and `compiler/ml/typetexp.ml` stores that
+  value in `Unbound_label`. The error printer uses it to emit the specific
+  option-unwrapping diagnostic when the attempted field access is on an
+  `option`.
+- Context: constructors share the `Name_choice` functor interface but currently
+  ignore `from_type`. Splitting that interface for DCE would risk the shared
+  lookup/error plumbing for little practical cleanup.
