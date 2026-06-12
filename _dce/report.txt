@@ -1261,23 +1261,49 @@
   <-- line 523
     rescript_version: int * int; [@dead "package.rescript_version"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.ml", line 31, characters 0-28
-  +is_ghost is never used
-  <-- line 31
-  let is_ghost x = x.loc_ghost [@@dead "+is_ghost"] 
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.ml", line 1, characters 0-0
+  +bs_loc is a dead module as all its items are dead.
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.ml", line 33, characters 0-210
-  +merge is never used
-  <-- line 33
-        {loc_start; loc_end; loc_ghost = false} [@@dead "+merge"] 
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.ml", line 26, characters 2-29
+  t.loc_start is a record label never used to read a value
+  <-- line 26
+    loc_start: Lexing.position; [@dead "t.loc_start"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.mli", line 32, characters 0-23
-  +merge is never used
-  <-- line 32
-  val merge : t -> t -> t [@@dead "+merge"] 
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.ml", line 27, characters 2-27
+  t.loc_end is a record label never used to read a value
+  <-- line 27
+    loc_end: Lexing.position; [@dead "t.loc_end"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.ml", line 28, characters 2-18
+  t.loc_ghost is a record label never used to read a value
+  <-- line 28
+    loc_ghost: bool; [@dead "t.loc_ghost"] 
+
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.mli", line 1, characters 0-0
+  bs_loc is a dead module as all its items are dead.
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.mli", line 26, characters 2-29
+  t.loc_start is a record label never used to read a value
+  <-- line 26
+    loc_start: Lexing.position; [@dead "t.loc_start"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.mli", line 27, characters 2-27
+  t.loc_end is a record label never used to read a value
+  <-- line 27
+    loc_end: Lexing.position; [@dead "t.loc_end"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.mli", line 28, characters 2-18
+  t.loc_ghost is a record label never used to read a value
+  <-- line 28
+    loc_ghost: bool; [@dead "t.loc_ghost"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_version.ml", line 25, characters 0-62
@@ -1311,26 +1337,14 @@
   <-- line 35
   val dwarn : ?__POS__:string * int * int * int -> 'a logging [@@dead "+dwarn"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/js_config.ml", line 43, characters 0-49
-  +get_check_div_by_zero is never used
-  <-- line 43
-  let get_check_div_by_zero () = !check_div_by_zero [@@dead "+get_check_div_by_zero"] 
-
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/js_config.ml", line 55, characters 0-24
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/js_config.ml", line 54, characters 0-24
   +js_stdout is never used and could have side effects
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/js_config.mli", line 60, characters 0-40
-  +get_check_div_by_zero is never used
-  <-- line 60
-  val get_check_div_by_zero : unit -> bool [@@dead "+get_check_div_by_zero"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/js_config.mli", line 87, characters 0-24
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/js_config.mli", line 85, characters 0-24
   +js_stdout is never used
-  <-- line 87
+  <-- line 85
   val js_stdout : bool ref [@@dead "+js_stdout"] 
 
   Warning Dead Type
@@ -16485,4 +16499,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2883 issues (Warning Dead Module:150, Warning Dead Type:354, Warning Dead Value:2123, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2886 issues (Warning Dead Module:152, Warning Dead Type:360, Warning Dead Value:2118, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)

@@ -175,6 +175,24 @@ live after manual validation.
   version override test-command surface. Keep this documented until the version
   override path is intentionally retired or reconnected to feature gating.
 
+### Compiler-common cross-module hooks
+
+- Report: `Warning Dead Value` / `Warning Dead Module`,
+  `compiler/common/bs_loc.ml` and `.mli` (`t` fields),
+  `compiler/common/bs_version.ml` and `.mli` (`header`),
+  `compiler/common/ext_log.ml` and `.mli` (`dwarn`), and
+  `compiler/common/js_config.ml` and `.mli` (`js_stdout`).
+- Verdict: live; false positive.
+- Validation: `compiler/frontend/ast_external_process.ml` and `.mli` use
+  `Bs_loc.t`; `compiler/core/js_dump_program.ml` emits `Bs_version.header`;
+  `compiler/core/lam_compile_main.cppo.ml`, `lam_util.cppo.ml`,
+  `lam_stats_export.ml`, and `js_pass_debug.cppo.ml` call `Ext_log.dwarn`;
+  `compiler/core/lam_compile_main.cppo.ml` and `lam_compile_primitive.ml` read
+  `Js_config.js_stdout`.
+- Context: these are cross-module and, for several callers, `.cppo.ml` paths.
+  They are live in the compiler pipeline even though the current DCE report
+  misses those edges.
+
 ### `File_deps.File_hash` callbacks
 
 - Report: `Warning Dead Module` and `Warning Dead Value`,
