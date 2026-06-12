@@ -10259,24 +10259,6 @@
   <-- line 13
         | false -> compare rest1 rest2) [@@dead "Name_set.+compare"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/annot.ml", line 18, characters 12-16
-  call.Tail is a variant case which is never constructed
-  <-- line 18
-  type call = Tail [@dead "call.Tail"]  | Stack | Inline
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/annot.ml", line 18, characters 17-24
-  call.Stack is a variant case which is never constructed
-  <-- line 18
-  type call = Tail [@dead "call.Tail"]  | Stack [@dead "call.Stack"]  | Inline
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/annot.ml", line 18, characters 25-33
-  call.Inline is a variant case which is never constructed
-  <-- line 18
-  type call = Tail [@dead "call.Tail"]  | Stack [@dead "call.Stack"]  | Inline [@dead "call.Inline"] 
-
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper.ml", line 28, characters 0-182
   +with_default_loc is never used
@@ -12831,76 +12813,64 @@
   <-- line 35
     | Ti_class of unit [@dead "annotation.Ti_class"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 37, characters 2-38
-  annotation.An_call is a variant case which is never constructed
-  <-- line 37
-    | An_call of Location.t * Annot.call [@dead "annotation.An_call"] 
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 62, characters 0-176
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 60, characters 0-176
   +cmp_loc_inner_first is never used
-  <-- line 62
+  <-- line 60
     | x -> x [@@dead "+cmp_loc_inner_first"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 66, characters 0-92
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 64, characters 0-92
   +cmp_ti_inner_first is never used
-  <-- line 66
+  <-- line 64
     cmp_loc_inner_first (get_location ti1) (get_location ti2) [@@dead "+cmp_ti_inner_first"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 69, characters 0-333
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 67, characters 0-333
   +print_position is never used
-  <-- line 69
+  <-- line 67
       output_int pp pos.pos_cnum) [@@dead "+print_position"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 81, characters 0-116
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 79, characters 0-116
   +print_location is never used
-  <-- line 81
+  <-- line 79
     print_position pp loc.loc_end [@@dead "+print_location"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 86, characters 0-406
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 84, characters 0-406
   +sort_filter_phrases is never used
-  <-- line 86
+  <-- line 84
     phrases := loop [] Location.none ph [@@dead "+sort_filter_phrases"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 100, characters 0-208
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 98, characters 0-208
   +printtyp_reset_maybe is never used
-  <-- line 100
+  <-- line 98
     | _ -> () [@@dead "+printtyp_reset_maybe"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 108, characters 0-102
-  +call_kind_string is never used
-  <-- line 108
-    | Inline -> "inline" [@@dead "+call_kind_string"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 114, characters 0-448
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 106, characters 0-448
   +print_ident_annot is never used
-  <-- line 114
+  <-- line 106
       output_char pp '\n' [@@dead "+print_ident_annot"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 135, characters 0-1140
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 127, characters 0-914
   +print_info is never used
-  <-- line 135
+  <-- line 127
       loc [@@dead "+print_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 171, characters 0-108
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 155, characters 0-108
   +get_info is never used
-  <-- line 171
+  <-- line 155
     info [@@dead "+get_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 176, characters 0-423
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 160, characters 0-423
   +dump is never used
-  <-- line 176
+  <-- line 160
     else annotations := [] [@@dead "+dump"] 
 
   Warning Dead Type
@@ -12909,28 +12879,22 @@
   <-- line 25
     | Ti_class of unit [@dead "annotation.Ti_class"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.mli", line 27, characters 2-38
-  annotation.An_call is a variant case which is never constructed
-  <-- line 27
-    | An_call of Location.t * Annot.call [@dead "annotation.An_call"] 
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.mli", line 32, characters 0-32
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.mli", line 31, characters 0-32
   +dump is never used
-  <-- line 32
+  <-- line 31
   val dump : string option -> unit [@@dead "+dump"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.mli", line 34, characters 0-43
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.mli", line 33, characters 0-43
   +get_location is never used
-  <-- line 34
+  <-- line 33
   val get_location : annotation -> Location.t [@@dead "+get_location"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.mli", line 35, characters 0-38
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.mli", line 34, characters 0-38
   +get_info is never used
-  <-- line 35
+  <-- line 34
   val get_info : unit -> annotation list [@@dead "+get_info"] 
 
   Warning Dead Value
@@ -13347,4 +13311,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2356 issues (Warning Dead Module:146, Warning Dead Type:208, Warning Dead Value:1754, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2350 issues (Warning Dead Module:146, Warning Dead Type:203, Warning Dead Value:1753, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)

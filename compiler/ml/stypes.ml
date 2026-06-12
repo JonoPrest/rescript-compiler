@@ -34,7 +34,6 @@ type annotation =
   | Ti_expr of expression
   | Ti_class of unit
   | Ti_mod of module_expr
-  | An_call of Location.t * Annot.call
   | An_ident of Location.t * string * Annot.ident
 
 let get_location ti =
@@ -43,7 +42,6 @@ let get_location ti =
   | Ti_expr e -> e.exp_loc
   | Ti_class () -> assert false
   | Ti_mod m -> m.mod_loc
-  | An_call (l, _k) -> l
   | An_ident (l, _s, _k) -> l
 
 let annotations = ref ([] : annotation list)
@@ -105,12 +103,6 @@ let rec printtyp_reset_maybe loc =
     printtyp_reset_maybe loc
   | _ -> ()
 
-let call_kind_string k =
-  match k with
-  | Tail -> "tail"
-  | Stack -> "stack"
-  | Inline -> "inline"
-
 let print_ident_annot pp str k =
   match k with
   | Idef l ->
@@ -150,14 +142,6 @@ let print_info pp prev_loc ti =
     let s = Format.flush_str_formatter () in
     output_string pp s;
     output_string pp ")\n";
-    loc
-  | An_call (loc, k) ->
-    if loc <> prev_loc then (
-      print_location pp loc;
-      output_char pp '\n');
-    output_string pp "call(\n  ";
-    output_string pp (call_kind_string k);
-    output_string pp "\n)\n";
     loc
   | An_ident (loc, str, k) ->
     if loc <> prev_loc then (
