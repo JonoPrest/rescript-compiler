@@ -334,6 +334,23 @@ live after manual validation.
   were removed. The remaining entries are cross-module pass plumbing and local
   helper chains under live pass functions.
 
+### `Lam_compat` aliases and comparisons
+
+- Report: constructor warnings for `field_dbg_info` and `set_field_dbg_info` in
+  `compiler/core/lam_compat.ml` / `.mli`, plus comparison helpers.
+- Verdict: live; false positive for the remaining reported entries.
+- Validation: `Lam_compat.field_dbg_info` and `set_field_dbg_info` are
+  manifest aliases of `Lambda` types. Their constructors are produced in the ML
+  lambda layer (`lambda.ml`, `translcore.ml`, `translmod.ml`, `matching.ml`) and
+  consumed by core lowering in `lam_convert.ml`, `lam_util.cppo.ml`,
+  `lam_arity_analysis.ml`, `lam_analysis.ml`, `lam_pass_remove_alias.ml`,
+  `lam_compile.ml`, `lam_print.ml`, `polyvar_pattern_match.ml`, and
+  `js_of_lam_block.ml`. `cmp_int32` and `cmp_float` are called by `Lam.prim`;
+  `eq_comparison` is called by `lam_primitive.ml`.
+- Context: unused `cmp_int` was removed. The remaining constructor warnings come
+  from constructors being built through the aliased `Lambda` type rather than
+  directly through `Lam_compat`.
+
 ### Core JS lowering helpers
 
 - Report: `Warning Dead Module`, `Warning Dead Value`, and constructor warnings
