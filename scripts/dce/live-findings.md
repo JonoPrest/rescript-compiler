@@ -260,6 +260,23 @@ live after manual validation.
 - Context: Reanalyze misses the cross-module roots even though these constants
   determine generated runtime import names.
 
+### Frontend literal and UTF-8 helpers
+
+- Report: `Warning Dead Value`, `compiler/frontend/ast_literal.ml` / `.mli`,
+  `Lid.ignore_id`; and `compiler/frontend/ast_utf8_string.ml` / `.mli`,
+  `check_no_escapes_or_unicode` and `simple_comparison`.
+- Verdict: live; false positives for the remaining reported entries.
+- Validation: `compiler/frontend/ast_comb.ml` uses
+  `Ast_literal.Lid.ignore_id` to build calls to the compiler's ignore
+  primitive. `compiler/core/js_exp_make.ml` calls
+  `Ast_utf8_string.simple_comparison` from `str_equal` so string literal
+  equality can be folded only when there are no escape or unicode surprises; the
+  private `check_no_escapes_or_unicode` helper feeds that exported function.
+- Context: stale `Ast_literal.Lid` exports, unused literal constructors,
+  orphaned frontend helpers, and the `Ast_utf8_string.pp_error` export were
+  removed. `Ast_utf8_string.transform_test` is retained as a unit-test support
+  hook and marked `[@@live]`.
+
 ### `Ext_util` table helpers
 
 - Report: `Warning Dead Value`, `compiler/ext/ext_util.ml` / `.mli`, for
