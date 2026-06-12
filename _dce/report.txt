@@ -10530,18 +10530,6 @@
   val get_cookie : string -> Parsetree.expression option [@@dead "+get_cookie"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper_from0.ml", line 79, characters 0-31
-  +map_snd is never used
-  <-- line 79
-  let map_snd f (x, y) = (x, f y) [@@dead "+map_snd"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper_to0.ml", line 73, characters 0-31
-  +map_snd is never used
-  <-- line 73
-  let map_snd f (x, y) = (x, f y) [@@dead "+map_snd"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_payload.ml", line 42, characters 0-341
   +is_single_string_as_ast is never used
   <-- line 42
@@ -13133,4 +13121,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2320 issues (Warning Dead Module:145, Warning Dead Type:203, Warning Dead Value:1724, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2318 issues (Warning Dead Module:145, Warning Dead Type:203, Warning Dead Value:1722, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
