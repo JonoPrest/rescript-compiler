@@ -34,6 +34,23 @@ live after manual validation.
   changing this helper API for locally redundant labels is higher risk than the
   DCE warning suggests.
 
+### `Ast_mapper` PPX compatibility API
+
+- Report: `Warning Dead Value` / `Warning Dead Module`,
+  `compiler/ml/ast_mapper.ml` / `.mli`, including `attribute_of_warning`,
+  `String_map`, `get_cookie`, `set_cookie`, `tool_name`, `apply`,
+  `run_main`, `register_function`, `register`, and convenience exports.
+- Verdict: live compatibility surface; do not remove as part of this DCE pass.
+- Validation: compiler code uses the core mapper through
+  `compiler/syntax/src/jsx_v4.ml`, `jsx_ppx.ml`, and `compiler/ml/subst.ml`.
+  `compiler/core/cmd_ppx_apply.ml` uses the ppx context add/drop helpers around
+  external mapper execution. The remaining API is the documented standalone
+  `-ppx` mapper surface in `ast_mapper.mli`, including registration and cookie
+  functions for mapper authors/drivers.
+- Context: reanalyze sees repository-internal roots but not external compiler
+  library consumers. This module intentionally mirrors the OCaml PPX mapper API,
+  so pruning apparently unused public functions would risk breaking ppx tooling.
+
 ### `Type_utils` type argument contexts
 
 - Report: `Warning Unused Argument`, `analysis/src/type_utils.ml`, optional
