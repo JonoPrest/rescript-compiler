@@ -81,7 +81,7 @@ let js_module_table : Ident.t Hash_string.t = Hash_string.create 31
     | v -> (* v *) Ident.rename v
 *)
 
-let[@inline] convert ?(op = false) (c : char) : string =
+let[@inline] convert_char ~op (c : char) : string =
   match c with
   | '*' -> "$star"
   | '\'' -> "$p"
@@ -146,7 +146,7 @@ let name_mangle name =
     for j = 0 to len - 1 do
       let c = String.unsafe_get name j in
       if no_escape c then Ext_buffer.add_char buffer c
-      else Ext_buffer.add_string buffer (convert ~op:(i = 0) c)
+      else Ext_buffer.add_string buffer (convert_char ~op:(i = 0) c)
     done;
     Ext_buffer.contents buffer
 
