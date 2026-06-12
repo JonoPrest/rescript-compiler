@@ -260,6 +260,18 @@ live after manual validation.
 - Context: Reanalyze misses the cross-module roots even though these constants
   determine generated runtime import names.
 
+### `Ext_util` table helpers
+
+- Report: `Warning Dead Value`, `compiler/ext/ext_util.ml` / `.mli`, for
+  `power_2_above`.
+- Verdict: live; false positive.
+- Validation: `Ext_util.power_2_above` sizes compiler hash tables in
+  `hash_gen.ml`, `hash_set_gen.ml`, `hash_set_ident_mask.ml`, and
+  `ordered_hash_map_gen.ml`. `string_of_int_as_char` is also live through
+  `lam_print.ml`, `js_dump.ml`, and `pprintast.ml`.
+- Context: the truly unused `stats_to_string` debug helper was removed. The
+  remaining warning is a cross-module utility edge missed by DCE.
+
 ### `Ext_list` production helpers
 
 - Report: remaining `Warning Dead Value` entries in
