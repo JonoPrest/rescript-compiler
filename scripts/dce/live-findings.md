@@ -350,7 +350,9 @@ live after manual validation.
 - Report: `Warning Dead Module` / `Warning Dead Value` clusters in
   `compiler/core/lam_analysis.ml`, `lam_arity.ml`, `lam_arity_analysis.ml`,
   `lam_beta_reduce.ml`, `lam_beta_reduce_util.ml`, `lam_bounded_vars.ml`,
-  `lam_check.ml`, and `lam_closure.ml` plus their `.mli` files.
+  `lam_check.ml`, `lam_closure.ml`, `lam_exit_count.ml`,
+  `lam_free_variables.ml`, `lam_group.ml`, and `lam_hit.ml` plus their `.mli`
+  files.
 - Verdict: live; false positive for the remaining reported helpers.
 - Validation: `Lam_analysis` is used by lambda DCE/count/remove-alias passes,
   `lam_compile_main.cppo.ml`, `lam_compile.ml`, `lam_stats_export.ml`,
@@ -363,6 +365,12 @@ live after manual validation.
   `Lam_bounded_vars.rewrite`. `Lam_check.check` is called by
   `lam_compile_main.cppo.ml`. `Lam_closure` is used by
   `lam_pass_remove_alias.ml`, `lam_stats_export.ml`, and `lam_compile.ml`.
+  `Lam_exit_count` is called by `lam_pass_exits.ml`; `Lam_free_variables` is
+  used by `lam_dce.ml` and `lam_compile.ml`; `Lam_group` is used by
+  `lam_pass_deep_flatten.ml`, `lam_coercion.ml`, `lam_dce.ml`, and
+  `lam_compile_main.cppo.ml`; and `Lam_hit` is used by
+  `lam_pass_eliminate_ref.ml`, `lam_scc.ml`, `lam_pass_remove_alias.ml`,
+  `lam_convert.ml`, `lam_pass_deep_flatten.ml`, and `lam_util.cppo.ml`.
 - Context: unused `Lam_arity.equal`, `print`, and `print_arities_tbl` exports
   were removed. The remaining entries are cross-module pass plumbing and local
   helper chains under live pass functions.
