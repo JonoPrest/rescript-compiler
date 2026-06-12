@@ -10648,594 +10648,66 @@
   val concat_or_join : ('a, 'b) t -> 'a -> 'b option -> ('a, 'b) t -> ('a, 'b) t [@@dead "+concat_or_join"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 25, characters 0-55
-  +fatal_errorf is never used
-  <-- line 25
-  let fatal_errorf fmt = Format.kasprintf fatal_error fmt [@@dead "+fatal_errorf"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 61, characters 0-117
-  +map_left_right is never used
-  <-- line 61
-      res :: map_left_right f tl [@@dead "+map_left_right"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 67, characters 0-156
-  +for_all2 is never used
-  <-- line 67
-    | _, _ -> false [@@dead "+for_all2"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 76, characters 0-107
-  +list_remove is never used
-  <-- line 76
-    | hd :: tl -> if hd = x then tl else hd :: list_remove x tl [@@dead "+list_remove"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 92, characters 0-361
-  +find_in_path is never used
-  <-- line 92
-      try_dir path [@@dead "+find_in_path"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 104, characters 0-477
-  +find_in_path_rel is never used
-  <-- line 104
-    try_dir path [@@dead "+find_in_path_rel"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 156, characters 0-203
-  +copy_file is never used
-  <-- line 156
-    copy () [@@dead "+copy_file"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 167, characters 0-282
-  +copy_file_chunk is never used
-  <-- line 167
-    copy len [@@dead "+copy_file_chunk"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 180, characters 0-267
-  +string_of_file is never used
-  <-- line 180
-    copy () [@@dead "+string_of_file"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 192, characters 0-191
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 107, characters 0-191
   +output_to_bin_file_directly is never used
-  <-- line 192
+  <-- line 107
       raise e [@@dead "+output_to_bin_file_directly"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 202, characters 0-1080
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 117, characters 0-1080
   +output_to_file_via_temporary is never used
-  <-- line 202
+  <-- line 117
       raise exn [@@dead "+output_to_file_via_temporary"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 234, characters 0-57
-  +log2 is never used
-  <-- line 234
-  let rec log2 n = if n <= 1 then 0 else 1 + log2 (n asr 1) [@@dead "+log2"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 236, characters 0-65
-  +align is never used
-  <-- line 236
-  let align n a = if n >= 0 then (n + a - 1) land -a else n land -a [@@dead "+align"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 238, characters 0-64
-  +no_overflow_add is never used
-  <-- line 238
-  let no_overflow_add a b = a lxor b lor (a lxor lnot (a + b)) < 0 [@@dead "+no_overflow_add"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 240, characters 0-64
-  +no_overflow_sub is never used
-  <-- line 240
-  let no_overflow_sub a b = a lxor lnot b lor (b lxor (a - b)) < 0 [@@dead "+no_overflow_sub"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 242, characters 0-49
-  +no_overflow_mul is never used
-  <-- line 242
-  let no_overflow_mul a b = b <> 0 && a * b / b = a [@@dead "+no_overflow_mul"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 244, characters 0-99
-  +no_overflow_lsl is never used
-  <-- line 244
-    0 <= k && k < Sys.word_size && min_int asr k <= a && a <= max_int asr k [@@dead "+no_overflow_lsl"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 253, characters 2-55
-  Int_literal_converter.+int32 is never used
-  <-- line 253
-    let int32 s = cvt_int_aux s Int32.neg Int32.of_string [@@dead "Int_literal_converter.+int32"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 254, characters 2-55
-  Int_literal_converter.+int64 is never used
-  <-- line 254
-    let int64 s = cvt_int_aux s Int64.neg Int64.of_string [@@dead "Int_literal_converter.+int64"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 259, characters 0-361
-  +chop_extensions is never used
-  <-- line 259
-    with Not_found -> file [@@dead "+chop_extensions"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 269, characters 0-260
-  +search_substring is never used
-  <-- line 269
-    search start 0 [@@dead "+search_substring"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 278, characters 0-417
-  +replace_substring is never used
-  <-- line 278
-    String.concat after (search [] 0) [@@dead "+replace_substring"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 290, characters 0-468
-  +rev_split_words is never used
-  <-- line 290
-    split1 [] 0 [@@dead "+rev_split_words"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 312, characters 0-22
-  +fst3 is never used
-  <-- line 312
-  let fst3 (x, _, _) = x [@@dead "+fst3"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 313, characters 0-22
-  +snd3 is never used
-  <-- line 313
-  let snd3 (_, x, _) = x [@@dead "+snd3"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 314, characters 0-22
-  +thd3 is never used
-  <-- line 314
-  let thd3 (_, _, x) = x [@@dead "+thd3"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 316, characters 0-25
-  +fst4 is never used
-  <-- line 316
-  let fst4 (x, _, _, _) = x [@@dead "+fst4"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 318, characters 0-25
-  +thd4 is never used
-  <-- line 318
-  let thd4 (_, _, x, _) = x [@@dead "+thd4"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 319, characters 0-25
-  +for4 is never used
-  <-- line 319
-  let for4 (_, _, _, x) = x [@@dead "+for4"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 400, characters 0-123
-  +cut_at is never used
-  <-- line 400
-    (String.sub s 0 pos, String.sub s (pos + 1) (String.length s - pos - 1)) [@@dead "+cut_at"] 
-
   Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 404, characters 0-83
-  +misc.String_set is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 406, characters 2-23
-  String_set.+compare is never used
-  <-- line 406
-    let compare = compare [@@dead "String_set.+compare"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 408, characters 0-83
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 243, characters 0-83
   +misc.String_map is a dead module as all its items are dead.
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 410, characters 2-23
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 245, characters 2-23
   String_map.+compare is never used
-  <-- line 410
+  <-- line 245
     let compare = compare [@@dead "String_map.+compare"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 416, characters 15-20
-  Color.color.Black is a variant case which is never constructed
-  <-- line 416
-    type color = Black [@dead "Color.color.Black"]  | Red | Green | Yellow | Blue | Magenta | Cyan | White
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 416, characters 27-34
-  Color.color.Green is a variant case which is never constructed
-  <-- line 416
-    type color = Black [@dead "Color.color.Black"]  | Red | Green [@dead "Color.color.Green"]  | Yellow | Blue | Magenta | Cyan | White
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 416, characters 44-50
-  Color.color.Blue is a variant case which is never constructed
-  <-- line 416
-    type color = Black [@dead "Color.color.Black"]  | Red | Green [@dead "Color.color.Green"]  | Yellow | Blue [@dead "Color.color.Blue"]  | Magenta | Cyan | White
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 416, characters 68-75
-  Color.color.White is a variant case which is never constructed
-  <-- line 416
-    type color = Black [@dead "Color.color.Black"]  | Red | Green [@dead "Color.color.Green"]  | Yellow | Blue [@dead "Color.color.Blue"]  | Magenta | Cyan | White [@dead "Color.color.White"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 420, characters 4-17
-  Color.style.BG is a variant case which is never constructed
-  <-- line 420
-      | BG of color [@dead "Color.style.BG"]  (* background *)
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 247, characters 0-83
+  +misc.String_set is a dead module as all its items are dead.
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 457, characters 2-33
-  Color.+get_styles is never used
-  <-- line 457
-    let get_styles () = !cur_styles [@@dead "Color.+get_styles"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 458, characters 2-36
-  Color.+set_styles is never used
-  <-- line 458
-    let set_styles s = cur_styles := s [@@dead "Color.+set_styles"] 
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 249, characters 2-23
+  String_set.+compare is never used
+  <-- line 249
+    let compare = compare [@@dead "String_set.+compare"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 512, characters 17-21
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 343, characters 17-21
   Color.setting.Auto is a variant case which is never constructed
-  <-- line 512
+  <-- line 343
     type setting = Auto [@dead "Color.setting.Auto"]  | Always | Never
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 512, characters 22-30
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 343, characters 22-30
   Color.setting.Always is a variant case which is never constructed
-  <-- line 512
+  <-- line 343
     type setting = Auto [@dead "Color.setting.Auto"]  | Always [@dead "Color.setting.Always"]  | Never
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 512, characters 31-38
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 343, characters 31-38
   Color.setting.Never is a variant case which is never constructed
-  <-- line 512
+  <-- line 343
     type setting = Auto [@dead "Color.setting.Auto"]  | Always [@dead "Color.setting.Always"]  | Never [@dead "Color.setting.Never"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 541, characters 0-824
-  +delete_eol_spaces is never used
-  <-- line 541
-    Bytes.sub_string dst 0 stop [@@dead "+delete_eol_spaces"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 576, characters 0-47
-  +raise_direct_hook_exn is never used
-  <-- line 576
-  let raise_direct_hook_exn e = raise (HookExn e) [@@dead "+raise_direct_hook_exn"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 19, characters 0-65
-  +fatal_errorf is never used
-  <-- line 19
-  val fatal_errorf : ('a, Format.formatter, unit, 'b) format4 -> 'a [@@dead "+fatal_errorf"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 27, characters 0-53
-  +map_left_right is never used
-  <-- line 27
-  val map_left_right : ('a -> 'b) -> 'a list -> 'b list [@@dead "+map_left_right"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 30, characters 0-63
-  +for_all2 is never used
-  <-- line 30
-  val for_all2 : ('a -> 'b -> bool) -> 'a list -> 'b list -> bool [@@dead "+for_all2"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 39, characters 0-42
-  +list_remove is never used
-  <-- line 39
-  val list_remove : 'a -> 'a list -> 'a list [@@dead "+list_remove"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 56, characters 0-50
-  +find_in_path is never used
-  <-- line 56
-  val find_in_path : string list -> string -> string [@@dead "+find_in_path"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 59, characters 0-54
-  +find_in_path_rel is never used
-  <-- line 59
-  val find_in_path_rel : string list -> string -> string [@@dead "+find_in_path_rel"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 78, characters 0-49
-  +copy_file is never used
-  <-- line 78
-  val copy_file : in_channel -> out_channel -> unit [@@dead "+copy_file"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 82, characters 0-62
-  +copy_file_chunk is never used
-  <-- line 82
-  val copy_file_chunk : in_channel -> out_channel -> int -> unit [@@dead "+copy_file_chunk"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 87, characters 0-41
-  +string_of_file is never used
-  <-- line 87
-  val string_of_file : in_channel -> string [@@dead "+string_of_file"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 91, characters 0-79
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 59, characters 0-79
   +output_to_bin_file_directly is never used
-  <-- line 91
+  <-- line 59
   val output_to_bin_file_directly : string -> (string -> out_channel -> 'a) -> 'a [@@dead "+output_to_bin_file_directly"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 93, characters 0-106
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 61, characters 0-106
   +output_to_file_via_temporary is never used
-  <-- line 93
+  <-- line 61
     ?mode:open_flag list -> string -> (string -> out_channel -> 'a) -> 'a [@@dead "+output_to_file_via_temporary"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 102, characters 0-21
-  +log2 is never used
-  <-- line 102
-  val log2 : int -> int [@@dead "+log2"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 106, characters 0-29
-  +align is never used
-  <-- line 106
-  val align : int -> int -> int [@@dead "+align"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 110, characters 0-40
-  +no_overflow_add is never used
-  <-- line 110
-  val no_overflow_add : int -> int -> bool [@@dead "+no_overflow_add"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 114, characters 0-40
-  +no_overflow_sub is never used
-  <-- line 114
-  val no_overflow_sub : int -> int -> bool [@@dead "+no_overflow_sub"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 118, characters 0-40
-  +no_overflow_mul is never used
-  <-- line 118
-  val no_overflow_mul : int -> int -> bool [@@dead "+no_overflow_mul"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 122, characters 0-40
-  +no_overflow_lsl is never used
-  <-- line 122
-  val no_overflow_lsl : int -> int -> bool [@@dead "+no_overflow_lsl"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 128, characters 2-29
-  Int_literal_converter.+int32 is never used
-  <-- line 128
-    val int32 : string -> int32 [@@dead "Int_literal_converter.+int32"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 129, characters 2-29
-  Int_literal_converter.+int64 is never used
-  <-- line 129
-    val int64 : string -> int64 [@@dead "Int_literal_converter.+int64"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 132, characters 0-38
-  +chop_extensions is never used
-  <-- line 132
-  val chop_extensions : string -> string [@@dead "+chop_extensions"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 139, characters 0-53
-  +search_substring is never used
-  <-- line 139
-  val search_substring : string -> string -> int -> int [@@dead "+search_substring"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 145, characters 0-73
-  +replace_substring is never used
-  <-- line 145
-  val replace_substring : before:string -> after:string -> string -> string [@@dead "+replace_substring"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 150, characters 0-43
-  +rev_split_words is never used
-  <-- line 150
-  val rev_split_words : string -> string list [@@dead "+rev_split_words"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 158, characters 0-29
-  +fst3 is never used
-  <-- line 158
-  val fst3 : 'a * 'b * 'c -> 'a [@@dead "+fst3"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 159, characters 0-29
-  +snd3 is never used
-  <-- line 159
-  val snd3 : 'a * 'b * 'c -> 'b [@@dead "+snd3"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 160, characters 0-29
-  +thd3 is never used
-  <-- line 160
-  val thd3 : 'a * 'b * 'c -> 'c [@@dead "+thd3"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 162, characters 0-34
-  +fst4 is never used
-  <-- line 162
-  val fst4 : 'a * 'b * 'c * 'd -> 'a [@@dead "+fst4"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 164, characters 0-34
-  +thd4 is never used
-  <-- line 164
-  val thd4 : 'a * 'b * 'c * 'd -> 'c [@@dead "+thd4"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 165, characters 0-34
-  +for4 is never used
-  <-- line 165
-  val for4 : 'a * 'b * 'c * 'd -> 'd [@@dead "+for4"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 167, characters 0-57
-  +edit_distance is never used
-  <-- line 167
-  val edit_distance : string -> string -> int -> int option [@@dead "+edit_distance"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 198, characters 0-46
-  +cut_at is never used
-  <-- line 198
-  val cut_at : string -> char -> string * string [@@dead "+cut_at"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 216, characters 15-20
-  color.Black is a variant case which is never constructed
-  <-- line 216
-    type color = Black [@dead "color.Black"]  | Red | Green | Yellow | Blue | Magenta | Cyan | White
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 216, characters 21-26
-  color.Red is a variant case which is never constructed
-  <-- line 216
-    type color = Black [@dead "color.Black"]  | Red [@dead "color.Red"]  | Green | Yellow | Blue | Magenta | Cyan | White
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 216, characters 27-34
-  color.Green is a variant case which is never constructed
-  <-- line 216
-    type color = Black [@dead "color.Black"]  | Red [@dead "color.Red"]  | Green [@dead "color.Green"]  | Yellow | Blue | Magenta | Cyan | White
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 216, characters 35-43
-  color.Yellow is a variant case which is never constructed
-  <-- line 216
-    type color = Black [@dead "color.Black"]  | Red [@dead "color.Red"]  | Green [@dead "color.Green"]  | Yellow [@dead "color.Yellow"]  | Blue | Magenta | Cyan | White
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 216, characters 44-50
-  color.Blue is a variant case which is never constructed
-  <-- line 216
-    type color = Black [@dead "color.Black"]  | Red [@dead "color.Red"]  | Green [@dead "color.Green"]  | Yellow [@dead "color.Yellow"]  | Blue [@dead "color.Blue"]  | Magenta | Cyan | White
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 216, characters 51-60
-  color.Magenta is a variant case which is never constructed
-  <-- line 216
-    type color = Black [@dead "color.Black"]  | Red [@dead "color.Red"]  | Green [@dead "color.Green"]  | Yellow [@dead "color.Yellow"]  | Blue [@dead "color.Blue"]  | Magenta [@dead "color.Magenta"]  | Cyan | White
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 216, characters 61-67
-  color.Cyan is a variant case which is never constructed
-  <-- line 216
-    type color = Black [@dead "color.Black"]  | Red [@dead "color.Red"]  | Green [@dead "color.Green"]  | Yellow [@dead "color.Yellow"]  | Blue [@dead "color.Blue"]  | Magenta [@dead "color.Magenta"]  | Cyan [@dead "color.Cyan"]  | White
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 216, characters 68-75
-  color.White is a variant case which is never constructed
-  <-- line 216
-    type color = Black [@dead "color.Black"]  | Red [@dead "color.Red"]  | Green [@dead "color.Green"]  | Yellow [@dead "color.Yellow"]  | Blue [@dead "color.Blue"]  | Magenta [@dead "color.Magenta"]  | Cyan [@dead "color.Cyan"]  | White [@dead "color.White"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 219, characters 4-17
-  style.FG is a variant case which is never constructed
-  <-- line 219
-      | FG of color [@dead "style.FG"]  (* foreground *)
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 220, characters 4-17
-  style.BG is a variant case which is never constructed
-  <-- line 220
-      | BG of color [@dead "style.BG"]  (* background *)
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 221, characters 4-10
-  style.Bold is a variant case which is never constructed
-  <-- line 221
-      | Bold [@dead "style.Bold"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 222, characters 4-11
-  style.Reset is a variant case which is never constructed
-  <-- line 222
-      | Reset [@dead "style.Reset"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 223, characters 4-9
-  style.Dim is a variant case which is never constructed
-  <-- line 223
-      | Dim [@dead "style.Dim"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 225, characters 2-44
-  Color.+ansi_of_style_l is never used
-  <-- line 225
-    val ansi_of_style_l : style list -> string [@@dead "Color.+ansi_of_style_l"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 228, characters 17-35
-  styles.error is a record label never used to read a value
-  <-- line 228
-    type styles = {error: style list; [@dead "styles.error"]  warning: style list; loc: style list}
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 228, characters 36-56
-  styles.warning is a record label never used to read a value
-  <-- line 228
-    type styles = {error: style list; [@dead "styles.error"]  warning: style list; [@dead "styles.warning"]  loc: style list}
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 228, characters 57-72
-  styles.loc is a record label never used to read a value
-  <-- line 228
-    type styles = {error: style list; [@dead "styles.error"]  warning: style list; [@dead "styles.warning"]  loc: style list [@dead "styles.loc"] }
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 230, characters 2-29
-  Color.+default_styles is never used
-  <-- line 230
-    val default_styles : styles [@@dead "Color.+default_styles"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 231, characters 2-33
-  Color.+get_styles is never used
-  <-- line 231
-    val get_styles : unit -> styles [@@dead "Color.+get_styles"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 232, characters 2-33
-  Color.+set_styles is never used
-  <-- line 232
-    val set_styles : styles -> unit [@@dead "Color.+set_styles"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 250, characters 0-40
-  +delete_eol_spaces is never used
-  <-- line 250
-  val delete_eol_spaces : string -> string [@@dead "+delete_eol_spaces"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 270, characters 0-37
-  +raise_direct_hook_exn is never used
-  <-- line 270
-  val raise_direct_hook_exn : exn -> 'a [@@dead "+raise_direct_hook_exn"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ordered_hash_map_gen.ml", line 75, characters 0-135
@@ -15685,4 +15157,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2750 issues (Warning Dead Module:151, Warning Dead Type:286, Warning Dead Value:2057, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2662 issues (Warning Dead Module:151, Warning Dead Type:265, Warning Dead Value:1990, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
