@@ -131,17 +131,23 @@ live after manual validation.
   following for this report, so the exported reset hook and loader payload fields
   look dead even though they are part of the live compiler setup.
 
-### `Experimental_features.reset`
+### Experimental feature set and reset hook
 
-- Report: `Warning Dead Value`, `compiler/ml/experimental_features.ml` and
-  `.mli`, for `reset`.
+- Report: `Warning Dead Module` / `Warning Dead Value`,
+  `compiler/ml/experimental_features.ml` and `.mli`, for `Feature_set`,
+  `Feature_set.compare`, and `reset`.
 - Verdict: live; false positive.
-- Validation: `compiler/jsoo/jsoo_playground_main.ml` calls
+- Validation: `compiler/bsc/rescript_compiler_main.ml` enables feature flags
+  through `Experimental_features.enable_from_string`, while
+  `compiler/frontend/bs_builtin_ppx.ml` and `compiler/ml/typecore.ml` query
+  `Experimental_features.is_enabled`. `Feature_set.add`, `mem`, and `empty`
+  back that state. `compiler/jsoo/jsoo_playground_main.ml` calls
   `Experimental_features.reset` from the playground compiler reset path, next to
   other global compiler-state resets.
-- Context: the playground entry point is outside the roots used for this report.
-  Removing this hook would let experimental feature flags leak between
-  playground compilations.
+- Context: the playground entry point and several frontend/type-checker call
+  sites are outside the roots followed by this DCE report. The `compare`
+  callback is consumed by `Set.Make`, and removing the reset hook would let
+  experimental feature flags leak between playground compilations.
 
 ### `Location.report_error ?custom_intro ?src`
 
@@ -241,6 +247,34 @@ live after manual validation.
 - Context: `equal` and `hash` are callbacks consumed by `Hashtbl.Make`, so they
   can look unreferenced as ordinary values even though every generated table
   operation depends on them.
+
+### ML collection and variance callbacks
+
+- Report: `Warning Dead Module`, `Warning Dead Value`, and constructor warnings
+  in `compiler/ml/depend.ml`, `env.ml`, `experimental_features.ml`,
+  `matching.ml`, `parmatch.ml`, `path.ml` / `.mli`, `switch.ml`,
+  `typedecl.ml`, `typemod.ml`, and `types.ml` / `.mli`.
+- Verdict: live; false positives.
+- Validation: `Depend.String_set`, `Env.String_set`, `Typedecl.String_set`,
+  and `Typemod.String_set` are all local set helpers whose generated `empty`,
+  `add`, `mem`, `union`, `fold`, or `elements` functions are used in those
+  modules. `Types.Type_ops` feeds `Btype.Type_set`, `Type_map`, and
+  `Type_hash`; `Types.Ordered_string` feeds `Meths`, `Vars`, and `Concr`.
+  `Path.compare` is consumed by `Map.Make (Path)` / `Set.Make (Path)` in
+  `env.ml`, `mtype.ml`, `printtyp.ml`, and `subst.ml`, while `Path.heads` is
+  called by the `Typedtree_iter.Make_iterator` instance in `parmatch.ml`.
+  `Switch.Store.A_map` is the action-sharing map used by `Switch.Store`, and
+  `matching.ml` instantiates that functor as `Store_exp`. The same module
+  instantiates `Switch.Make (S_arg)` and calls the resulting `Switcher`
+  functions from pattern-matching compilation. `Parmatch.Constructor_tag_hashtbl`
+  is used by constructor-coverage checks, and the local `enter_expression` /
+  `leave_expression` callbacks are invoked by `Typedtree_iter.Make_iterator`.
+  `Types.Variance.May_weak` is set and queried by `typedecl.ml`, `typemod.ml`,
+  and `ctype.ml` while computing weak variance for type declarations.
+- Context: these warnings are all callback, functor-instantiation, manifest
+  signature, or cross-module edges. Removing them would break dependency
+  analysis, environment consistency, variance checks, match compilation, or
+  exhaustiveness analysis.
 
 ### `Shared_types.package.rescript_version`
 
@@ -876,11 +910,16 @@ live after manual validation.
   and `Lam_compile_primitive.translate` are called by `lam_compile.ml`.
   `Lam_module_ident.t` is a manifest alias of `J.module_id`; `dynamic_import`
   is filled by `Lam_module_ident.of_ml` and read by `js_dump_program.ml` when
-  emitting dynamic imports. The reported helper functions in those modules are
-  local dependencies of those exported lowering entry points.
+  emitting dynamic imports. `Lam_module_ident.Cmp` is passed to `Hash.Make` and
+  `Hash_set.Make`; the resulting tables and sets are used by
+  `lam_compile_env.ml` for module dependency caching and hard-dependency
+  collection. The reported helper functions in those modules are local
+  dependencies of those exported lowering entry points.
 - Context: `lam_compile_external_call.arg_expression` is a manifest alias of
   `Js_of_lam_variant.arg_expression`; constructor warnings there are false
   positives for the same aliasing reason documented in the JS lowering section.
+  `Cmp.equal` and `Cmp.hash` are functor callbacks consumed by generated hash
+  modules, so they can look unused as standalone values.
 
 ### Core JS lowering helpers
 
@@ -899,12 +938,18 @@ live after manual validation.
   string, and variant lowering helpers are called from `lam_compile.ml`,
   `lam_compile_const.ml`, `lam_compile_primitive.ml`,
   `lam_compile_external_obj.ml`, and `lam_compile_external_call.ml`.
+  `Polyvar_pattern_match.Coll` is the hash table used by
+  `Polyvar_pattern_match.convert` while coalescing variant tag actions; its
+  generated operations are reached through the switcher hooks installed by
+  `compiler/core/bs_conditional_initial.ml`.
 - Context: `Js_of_lam_option.option_unwrap_time` and `undef_to_opt` had no
   callers and were removed. The `Js_of_lam_variant.arg_expression` constructor
   warnings are false positives: `lam_compile_external_call.ml` re-exports the
   same constructors with
   `type arg_expression = Js_of_lam_variant.arg_expression = ...`, then
   constructs and pattern matches `Splice0`, `Splice1`, and `Splice2`.
+  `Polyvar_pattern_match.Coll.equal` and `hash` are callbacks consumed by the
+  hash-table functor.
 
 ### Core JS operators and output state
 
