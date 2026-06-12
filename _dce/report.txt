@@ -1681,24 +1681,6 @@
   <-- line 188
   val get_cookie : string -> Parsetree.expression option [@@dead "+get_cookie"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/cmt_format.mli", line 73, characters 0-67
-  +read is never used
-  <-- line 73
-  val read : string -> Cmi_format.cmi_infos option * cmt_infos option [@@dead "+read"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/cmt_format.mli", line 104, characters 0-44
-  +read_magic_number is never used
-  <-- line 104
-  val read_magic_number : in_channel -> string [@@dead "+read_magic_number"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/cmt_format.mli", line 115, characters 0-228
-  +record_deprecated_used is never used
-  <-- line 115
-    unit [@@dead "+record_deprecated_used"] 
-
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/cmt_utils.ml", line 5, characters 2-26
   deprecated_used.deprecated_text is a record label never used to read a value
@@ -1963,4 +1945,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 402 issues (Warning Dead Module:3, Warning Dead Type:81, Warning Dead Value:97, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:193, Warning Unused Argument:26)
+  Analysis reported 399 issues (Warning Dead Module:3, Warning Dead Type:81, Warning Dead Value:94, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:193, Warning Unused Argument:26)

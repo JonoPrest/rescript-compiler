@@ -310,7 +310,8 @@ live after manual validation.
   deprecation hook is installed from `cmt_format.cppo.ml` into
   `Cmt_utils.record_deprecated_used` and invoked through
   `compiler/ml/builtin_attributes.ml`, with `deprecated_text` carried in the
-  recorded payload.
+  recorded payload. Unused public `Cmt_format` signature exports for internal
+  reader helpers and the hook installer were removed.
 
 ### Typedtree iterators
 
