@@ -1881,18 +1881,6 @@
   <-- line 60
     | Splice2 of E.t * E.t [@dead "arg_expression.Splice2"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_iter.ml", line 29, characters 0-1404
-  +inner_iter is never used
-  <-- line 29
-    | Lassign (_id, e) -> f e [@@dead "+inner_iter"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_iter.mli", line 25, characters 0-49
-  +inner_iter is never used
-  <-- line 25
-  val inner_iter : Lam.t -> (Lam.t -> unit) -> unit [@@dead "+inner_iter"] 
-
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_module_ident.ml", line 25, characters 55-75
   t.dynamic_import is a record label never used to read a value
@@ -1917,24 +1905,6 @@
   <-- line 34
   val id : t -> Ident.t [@@dead "+id"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_pass_count.ml", line 39, characters 0-94
-  +pp_info is never used
-  <-- line 39
-    Format.fprintf fmt "(<captured:%b>:%d)" x.captured x.times [@@dead "+pp_info"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_pass_count.ml", line 42, characters 0-123
-  +pp_occ_tbl is never used
-  <-- line 42
-        Format.fprintf fmt "@[%a@ %a@]@." Ident.print k pp_info v) [@@dead "+pp_occ_tbl"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_pass_count.mli", line 30, characters 0-52
-  +pp_occ_tbl is never used
-  <-- line 30
-  val pp_occ_tbl : Format.formatter -> occ_tbl -> unit [@@dead "+pp_occ_tbl"] 
-
   Warning Dead Value With Side Effects
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 493, characters 0-50
   +lambda_to_string is never used and could have side effects
@@ -1956,12 +1926,6 @@
   +is_function is never used
   <-- line 62
   val is_function : Lam.t -> bool [@@dead "+is_function"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/depends/binary_ast.mli", line 29, characters 0-25
-  +magic_sep_char is never used
-  <-- line 29
-  val magic_sep_char : char [@@dead "+magic_sep_char"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_fmt.ml", line 10, characters 0-54
@@ -2845,4 +2809,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 592 issues (Warning Dead Module:4, Warning Dead Type:84, Warning Dead Value:155, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:198, Warning Unused Argument:149)
+  Analysis reported 586 issues (Warning Dead Module:4, Warning Dead Type:84, Warning Dead Value:149, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:198, Warning Unused Argument:149)

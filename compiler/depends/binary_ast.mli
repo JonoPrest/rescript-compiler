@@ -26,8 +26,6 @@ type _ kind = Ml : Parsetree.structure kind | Mli : Parsetree.signature kind
 
 val read_ast_exn : fname:string -> 'a kind -> 'a
 
-val magic_sep_char : char
-
 val write_ast : sourcefile:string -> output:string -> 'a kind -> 'a -> unit
 (**
    Check out {!Bsb_depfile_gen} for set decoding
