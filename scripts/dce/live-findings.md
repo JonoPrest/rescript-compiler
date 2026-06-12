@@ -124,3 +124,15 @@ live after manual validation.
   blind spot: reanalyze does not mark the exported combinators live from their
   users, so the implementation below them looks dead even though it runs in the
   analyzer's reactive mode.
+
+### `Reactive_file_collection` live helpers
+
+- Report: `Warning Dead Value`, `analysis/reactive/src/reactive_file_collection.ml`
+  and `.mli`, currently including `length`.
+- Verdict: live; false positive.
+- Validation: `analysis/reanalyze/src/reactive_analysis.ml` uses
+  `Reactive_file_collection.create`, `process_files_batch`, `mem`, `iter`,
+  `length`, and `to_collection`; `analysis/reanalyze/src/reanalyze.ml` uses
+  `process_files_batch` and `remove_batch` directly for churn tests.
+- Context: the single-file/cache-management helpers were removed, but the
+  remaining collection operations are part of the live reactive analyzer path.
