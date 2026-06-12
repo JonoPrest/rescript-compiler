@@ -1,9 +1,5 @@
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/cmt_viewer.ml", line 19, characters 0-4249
-  optional argument filter of function +dump is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_implementation.mli", line 50, characters 0-131
   optional argument outputprefix of function +implementation is never used
 
@@ -2718,24 +2714,6 @@
   snapshot.unsuppress is a record label never used to read a value
   <-- line 49
     unsuppress: string list; [@dead "snapshot.unsuppress"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/cmt_viewer.ml", line 1, characters 0-598
-  +filter_by_cursor is never used
-  <-- line 1
-      line_in && col_in [@@dead "+filter_by_cursor"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/cmt_viewer.ml", line 17, characters 14-35
-  filter.Cursor is a variant case which is never constructed
-  <-- line 17
-  type filter = Cursor of (int * int) [@dead "filter.Cursor"]  | Loc of Loc.t
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/cmt_viewer.ml", line 17, characters 36-50
-  filter.Loc is a variant case which is never constructed
-  <-- line 17
-  type filter = Cursor of (int * int) [@dead "filter.Cursor"]  | Loc of Loc.t [@dead "filter.Loc"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/completion_back_end.ml", line 903, characters 0-252
@@ -17291,4 +17269,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 3073 issues (Warning Dead Module:145, Warning Dead Type:371, Warning Dead Value:2129, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:2, Warning Redundant Optional Argument:214, Warning Unused Argument:175)
+  Analysis reported 3069 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2128, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:2, Warning Redundant Optional Argument:214, Warning Unused Argument:174)
