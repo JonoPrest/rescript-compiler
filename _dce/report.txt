@@ -5564,159 +5564,117 @@
   val safe_to_inline : Lam.t -> bool [@@dead "+safe_to_inline"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 35, characters 0-228
-  +equal is never used
-  <-- line 35
-      | Arity_na -> false) [@@dead "+equal"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 44, characters 0-23
-  +pp is never used
-  <-- line 44
-  let pp = Format.fprintf [@@dead "+pp"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 46, characters 0-323
-  +print is never used
-  <-- line 46
-      pp fmt "]@]" [@@dead "+print"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 59, characters 0-210
-  +print_arities_tbl is never used
-  <-- line 59
-      arities_tbl () [@@dead "+print_arities_tbl"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 65, characters 0-144
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 35, characters 0-144
   +merge is never used
-  <-- line 65
+  <-- line 35
     | Arity_info (xs, tail) -> Arity_info (n :: xs, tail) [@@dead "+merge"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 70, characters 0-52
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 40, characters 0-52
   +non_function_arity_info is never used
-  <-- line 70
+  <-- line 40
   let non_function_arity_info = Arity_info ([], false) [@@dead "+non_function_arity_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 72, characters 0-44
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 42, characters 0-44
   +raise_arity_info is never used
-  <-- line 72
+  <-- line 42
   let raise_arity_info = Arity_info ([], true) [@@dead "+raise_arity_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 74, characters 0-17
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 44, characters 0-17
   +na is never used
-  <-- line 74
+  <-- line 44
   let na = Arity_na [@@dead "+na"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 76, characters 0-40
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 46, characters 0-40
   +info is never used
-  <-- line 76
+  <-- line 46
   let info args b1 = Arity_info (args, b1) [@@dead "+info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 78, characters 0-100
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 48, characters 0-100
   +first_arity_na is never used
-  <-- line 78
+  <-- line 48
     | _ -> false [@@dead "+first_arity_na"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 83, characters 0-123
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 53, characters 0-123
   +get_first_arity is never used
-  <-- line 83
+  <-- line 53
     | Arity_info (x :: _, _) -> Some x [@@dead "+get_first_arity"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 88, characters 0-90
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 58, characters 0-90
   +extract_arity is never used
-  <-- line 88
+  <-- line 58
     | Arity_info (xs, _) -> xs [@@dead "+extract_arity"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 95, characters 0-451
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 65, characters 0-451
   +merge_arities_aux is never used
-  <-- line 95
+  <-- line 65
     | _, _ -> info (List.rev acc) false [@@dead "+merge_arities_aux"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 104, characters 0-62
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.ml", line 74, characters 0-62
   +merge_arities is never used
-  <-- line 104
+  <-- line 74
   let merge_arities xs ys t t2 = merge_arities_aux [] xs ys t t2 [@@dead "+merge_arities"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 35, characters 0-26
-  +equal is never used
-  <-- line 35
-  val equal : t -> t -> bool [@@dead "+equal"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 37, characters 0-41
-  +print is never used
-  <-- line 37
-  val print : Format.formatter -> t -> unit [@@dead "+print"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 39, characters 0-78
-  +print_arities_tbl is never used
-  <-- line 39
-  val print_arities_tbl : Format.formatter -> (Ident.t, t ref) Hashtbl.t -> unit [@@dead "+print_arities_tbl"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 41, characters 0-25
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 35, characters 0-25
   +merge is never used
-  <-- line 41
+  <-- line 35
   val merge : int -> t -> t [@@dead "+merge"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 43, characters 0-31
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 37, characters 0-31
   +non_function_arity_info is never used
-  <-- line 43
+  <-- line 37
   val non_function_arity_info : t [@@dead "+non_function_arity_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 45, characters 0-24
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 39, characters 0-24
   +raise_arity_info is never used
-  <-- line 45
+  <-- line 39
   val raise_arity_info : t [@@dead "+raise_arity_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 47, characters 0-10
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 41, characters 0-10
   +na is never used
-  <-- line 47
+  <-- line 41
   val na : t [@@dead "+na"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 49, characters 0-32
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 43, characters 0-32
   +info is never used
-  <-- line 49
+  <-- line 43
   val info : int list -> bool -> t [@@dead "+info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 51, characters 0-30
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 45, characters 0-30
   +first_arity_na is never used
-  <-- line 51
+  <-- line 45
   val first_arity_na : t -> bool [@@dead "+first_arity_na"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 53, characters 0-37
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 47, characters 0-37
   +get_first_arity is never used
-  <-- line 53
+  <-- line 47
   val get_first_arity : t -> int option [@@dead "+get_first_arity"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 55, characters 0-33
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 49, characters 0-33
   +extract_arity is never used
-  <-- line 55
+  <-- line 49
   val extract_arity : t -> int list [@@dead "+extract_arity"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 58, characters 0-61
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_arity.mli", line 52, characters 0-61
   +merge_arities is never used
-  <-- line 58
+  <-- line 52
   val merge_arities : int list -> int list -> bool -> bool -> t [@@dead "+merge_arities"] 
 
   Warning Dead Module
@@ -15823,4 +15781,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2773 issues (Warning Dead Module:151, Warning Dead Type:294, Warning Dead Value:2072, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2766 issues (Warning Dead Module:151, Warning Dead Type:294, Warning Dead Value:2065, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)

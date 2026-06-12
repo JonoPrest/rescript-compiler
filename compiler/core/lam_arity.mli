@@ -32,12 +32,6 @@ type t = private
   *)
   | Arity_na
 
-val equal : t -> t -> bool
-
-val print : Format.formatter -> t -> unit
-
-val print_arities_tbl : Format.formatter -> (Ident.t, t ref) Hashtbl.t -> unit
-
 val merge : int -> t -> t
 
 val non_function_arity_info : t
