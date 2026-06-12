@@ -21,8 +21,9 @@ live after manual validation.
 
 - Report: many `Warning Dead Value`, `Warning Dead Module`, and
   `Warning Redundant Optional Argument` entries in `compiler/ml/ast_helper0.ml`
-  / `.mli`, including helper submodules such as `Const`, `Typ`, `Pat`, `Exp`,
-  `Mty`, `Mod`, and `Te`, plus optional labels on `Te.constructor`, `Te.mk`,
+  / `.mli`, plus frozen v0 constructors in `compiler/ml/parsetree0.ml`,
+  including helper submodules such as `Const`, `Typ`, `Pat`, `Exp`, `Mty`,
+  `Mod`, and `Te`, plus optional labels on `Te.constructor`, `Te.mk`,
   `Type.field`, and `Type.constructor`.
 - Verdict: live compatibility surface; do not remove as part of this DCE pass.
 - Validation: `compiler/ml/ast_mapper_to0.ml` opens `Ast_helper0` and uses these
@@ -30,9 +31,10 @@ live after manual validation.
   locations, attributes, privacy flags, constructor arguments, and similar data
   from the source tree.
 - Context: `Ast_helper0` mirrors the helper shape for the frozen v0 parsetree.
-  The repository guidance says v0 PPX compatibility must be preserved, so
-  changing this helper API for locally redundant labels is higher risk than the
-  DCE warning suggests.
+  The repository guidance says `parsetree0.ml` must not be modified and v0 PPX
+  compatibility must be preserved, so changing this helper API or pruning v0
+  AST constructors for locally redundant labels is higher risk than the DCE
+  warning suggests.
 
 ### `Ast_mapper` PPX compatibility API
 
