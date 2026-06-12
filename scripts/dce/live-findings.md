@@ -296,6 +296,24 @@ live after manual validation.
   and the unconstructed `Lam_constant.pointer_info.Some` case were removed.
   What remains is cross-module compiler-core use that reanalyze does not root.
 
+### GenType map/set helpers
+
+- Report: `Warning Dead Module` / `Warning Dead Value`,
+  `compiler/gentype/gen_ident.ml`, `module_name.ml` / `.mli`, and
+  `resolved_name.ml`, for `Int_map`, `Module_name.compare`, and
+  `Resolved_name.Name_set`.
+- Verdict: live; false positives.
+- Validation: `compiler/gentype/gen_ident.ml` uses `Int_map.empty`, `find`, and
+  `add` to assign stable generated names for anonymous type ids.
+  `Gentype_config.Module_name_map`, `module_resolver.ml`, and `emit_js.ml` build
+  maps with `Module_name` as the ordered key module, so `Module_name.compare` is
+  consumed by `Map.Make`. `Resolved_name.Name_set` is used by
+  `apply_equations_to_elements`, which is reached from
+  `compiler/gentype/translation.ml` through `Resolved_name.apply_equations`.
+- Context: the unused `Paths.concat` alias and the stored-but-unread
+  `Gentype_config.t.bsb_project_root` field were removed. The remaining
+  warnings are callback/cross-module edges missed by DCE.
+
 ### `Ext_util` table helpers
 
 - Report: `Warning Dead Value`, `compiler/ext/ext_util.ml` / `.mli`, for
