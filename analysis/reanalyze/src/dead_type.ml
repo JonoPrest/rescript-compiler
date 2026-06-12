@@ -42,17 +42,15 @@ let add_declaration ~config ~decls ~file ~(module_path : Module_path.t)
   | Type_variant decls ->
     List.iteri
       (fun i {Types.cd_id; cd_loc; cd_args} ->
-        let _handle_inline_records =
-          match cd_args with
-          | Cstr_record lbls ->
-            List.iter
-              (fun {Types.ld_id; ld_loc} ->
-                Ident.name cd_id ^ "." ^ Ident.name ld_id
-                |> Name.create
-                |> process_type_label ~decl_kind:RecordLabel ~loc:ld_loc)
-              lbls
-          | Cstr_tuple _ -> ()
-        in
+        (match cd_args with
+        | Cstr_record lbls ->
+          List.iter
+            (fun {Types.ld_id; ld_loc} ->
+              Ident.name cd_id ^ "." ^ Ident.name ld_id
+              |> Name.create
+              |> process_type_label ~decl_kind:RecordLabel ~loc:ld_loc)
+            lbls
+        | Cstr_tuple _ -> ());
         let pos_adjustment =
           (* In Res the variant loc can include the | and spaces after it *)
           let is_res =
