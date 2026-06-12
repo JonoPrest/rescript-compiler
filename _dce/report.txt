@@ -1245,66 +1245,6 @@
   <-- line 7
     let compare = compare [@@dead "+compare"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_solver.ml", line 30, characters 2-75
-  t.annotations is a record label never used to read a value
-  <-- line 30
-    annotations: (Lexing.position, File_annotations.annotated_as) Reactive.t; [@dead "t.annotations"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_solver.ml", line 44, characters 2-23
-  t.config is a record label never used to read a value
-  <-- line 44
-    config: Dce_config.t; [@dead "t.config"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reanalyze_server.ml", line 74, characters 2-79
-  Server.+let* is never used
-  <-- line 74
-      | Error _ as e -> e [@@dead "Server.+let*"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reanalyze_server.ml", line 108, characters 4-46
-  Server.server_state.parse_argv is a record label never used to read a value
-  <-- line 108
-      parse_argv: string array -> string option; [@dead "Server.server_state.parse_argv"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/run_config.ml", line 44, characters 2-12
-  snapshot.dce is a record label never used to read a value
-  <-- line 44
-    dce: bool; [@dead "snapshot.dce"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/run_config.ml", line 45, characters 2-19
-  snapshot.exception_ is a record label never used to read a value
-  <-- line 45
-    exception_: bool; [@dead "snapshot.exception_"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/run_config.ml", line 46, characters 2-24
-  snapshot.suppress is a record label never used to read a value
-  <-- line 46
-    suppress: string list; [@dead "snapshot.suppress"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/run_config.ml", line 47, characters 2-20
-  snapshot.termination is a record label never used to read a value
-  <-- line 47
-    termination: bool; [@dead "snapshot.termination"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/run_config.ml", line 48, characters 2-19
-  snapshot.transitive is a record label never used to read a value
-  <-- line 48
-    transitive: bool; [@dead "snapshot.transitive"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/run_config.ml", line 49, characters 2-26
-  snapshot.unsuppress is a record label never used to read a value
-  <-- line 49
-    unsuppress: string list; [@dead "snapshot.unsuppress"] 
-
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/completion_back_end.ml", line 903, characters 0-252
   +completions_get_type_env is never used
@@ -16599,4 +16539,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2902 issues (Warning Dead Module:150, Warning Dead Type:364, Warning Dead Value:2132, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2892 issues (Warning Dead Module:150, Warning Dead Type:355, Warning Dead Value:2131, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
