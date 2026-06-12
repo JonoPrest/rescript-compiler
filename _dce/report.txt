@@ -1385,35 +1385,23 @@
   <-- line 53
   val concat_or_join : ('a, 'b) t -> 'a -> 'b option -> ('a, 'b) t -> ('a, 'b) t [@@dead "+concat_or_join"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 117, characters 0-1080
-  +output_to_file_via_temporary is never used
-  <-- line 117
-      raise exn [@@dead "+output_to_file_via_temporary"] 
-
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 343, characters 17-21
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 313, characters 17-21
   Color.setting.Auto is a variant case which is never constructed
-  <-- line 343
+  <-- line 313
     type setting = Auto [@dead "Color.setting.Auto"]  | Always | Never
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 343, characters 22-30
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 313, characters 22-30
   Color.setting.Always is a variant case which is never constructed
-  <-- line 343
+  <-- line 313
     type setting = Auto [@dead "Color.setting.Auto"]  | Always [@dead "Color.setting.Always"]  | Never
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 343, characters 31-38
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 313, characters 31-38
   Color.setting.Never is a variant case which is never constructed
-  <-- line 343
+  <-- line 313
     type setting = Auto [@dead "Color.setting.Auto"]  | Always [@dead "Color.setting.Always"]  | Never [@dead "Color.setting.Never"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.mli", line 61, characters 0-106
-  +output_to_file_via_temporary is never used
-  <-- line 61
-    ?mode:open_flag list -> string -> (string -> out_channel -> 'a) -> 'a [@@dead "+output_to_file_via_temporary"] 
 
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/set_gen.ml", line 48, characters 2-9
@@ -2047,4 +2035,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 417 issues (Warning Dead Module:4, Warning Dead Type:82, Warning Dead Value:108, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:26)
+  Analysis reported 415 issues (Warning Dead Module:4, Warning Dead Type:82, Warning Dead Value:106, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:26)

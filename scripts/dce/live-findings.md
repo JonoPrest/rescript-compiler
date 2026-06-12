@@ -359,16 +359,15 @@ live after manual validation.
 
 - Report: remaining `Warning Dead Value`, `Warning Dead Module`, and constructor
   warnings in `compiler/ext/misc.ml` / `.mli`, including
-  `output_to_bin_file_directly`, `output_to_file_via_temporary`, `String_map`,
-  `String_set`, and `Color.setting`.
+  `output_to_bin_file_directly`, `String_map`, `String_set`, and
+  `Color.setting`.
 - Verdict: live; false positive for the remaining reported entries.
 - Validation: `compiler/ml/cmt_format.cppo.ml` calls
-  `Misc.output_to_bin_file_directly`, and `compiler/ml/stypes.ml` calls
-  `Misc.output_to_file_via_temporary`. `Misc.String_map` is used by the
-  analysis package metadata and completion paths; `Misc.String_set` is used
-  through `open Misc` in `compiler/ml/printtyp.ml`. `Color.Auto`, `Always`, and
-  `Never` are constructed by `compiler/ml/clflags.ml`, while `Color.setup` is
-  used by `compiler/ml/location.ml` and `analysis/reanalyze/src/log_.ml`.
+  `Misc.output_to_bin_file_directly`. `Misc.String_map` is used by the analysis
+  package metadata and completion paths; `Misc.String_set` is used through
+  `open Misc` in `compiler/ml/printtyp.ml`. `Color.Auto`, `Always`, and `Never`
+  are constructed by `compiler/ml/clflags.ml`, while `Color.setup` is used by
+  `compiler/ml/location.ml` and `analysis/reanalyze/src/log_.ml`.
 - Context: the truly unused inherited helpers were removed. The survivors are
   `.cppo.ml`, open-module, functor-callback, or cross-module edges that the DCE
   report does not root correctly.
