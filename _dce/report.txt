@@ -4,10 +4,6 @@
   optional argument file_stats of function +run_analysis is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typemod.mli", line 43, characters 0-163
-  optional argument used_slot of function +type_open_ is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/completion_back_end.ml", line 1595, characters 2-50
   optional argument additional_text_edits of function +create is never used
 
@@ -34,10 +30,6 @@
   Warning Redundant Optional Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/translcore.ml", line 991, characters 0-2785
   optional argument transformed_jsx of function +transl_apply is always supplied (2 calls)
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typemod.ml", line 88, characters 0-346
-  optional argument used_slot of function +type_open_ is never used
 
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_derive_js_mapper.ml", line 136, characters 0-30
@@ -892,23 +884,23 @@
   optional argument pval_attributes of function +local_external_apply is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 4621, characters 0-76
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 4616, characters 0-76
   optional argument unif of function +super_report_unification_error is never used
 
   Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 1743, characters 0-231
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 1738, characters 0-231
   optional argument lev of function +check_unused is always supplied (1 calls)
 
   Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 1714, characters 0-492
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 1709, characters 0-492
   optional argument explode of function +partial_pred is always supplied (2 calls)
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 1150, characters 2-61
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 1145, characters 2-61
   optional argument from_type of function Constructor.+unbound_name_error is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 972, characters 2-55
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 967, characters 2-55
   optional argument from_type of function Label.+unbound_name_error is never used
 
   Warning Incorrect Annotation
@@ -15160,35 +15152,35 @@
   +enter_extension is never used and could have side effects
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1922, characters 0-199
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1921, characters 0-199
   +crc_of_unit is never used
-  <-- line 1922
+  <-- line 1921
     | Some crc -> crc [@@dead "+crc_of_unit"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 2072, characters 0-139
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 2071, characters 0-139
   +summary is never used
-  <-- line 2072
+  <-- line 2071
     else Env_constraints (env.summary, env.local_constraints) [@@dead "+summary"] 
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 2076, characters 0-24
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 2075, characters 0-24
   +last_env is never used and could have side effects
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 2077, characters 0-32
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 2076, characters 0-32
   +last_reduced_env is never used and could have side effects
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 2079, characters 0-314
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 2078, characters 0-314
   +keep_only_summary is never used
-  <-- line 2079
+  <-- line 2078
       new_env [@@dead "+keep_only_summary"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 2094, characters 0-187
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 2093, characters 0-187
   +env_of_only_summary is never used
-  <-- line 2094
+  <-- line 2093
     {new_env with local_constraints = env.local_constraints; flags = env.flags} [@@dead "+env_of_only_summary"] 
 
   Warning Dead Value
@@ -15210,81 +15202,81 @@
   val lookup_label : ?loc:Location.t -> Longident.t -> t -> label_description [@@dead "+lookup_label"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 167, characters 0-73
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 166, characters 0-73
   +enter_extension is never used
-  <-- line 167
+  <-- line 166
   val enter_extension : string -> extension_constructor -> t -> Ident.t * t [@@dead "+enter_extension"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 177, characters 0-39
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 176, characters 0-39
   +reset_cache_toplevel is never used
-  <-- line 177
+  <-- line 176
   val reset_cache_toplevel : unit -> unit [@@dead "+reset_cache_toplevel"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 197, characters 0-186
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 196, characters 0-186
   +save_signature_with_imports is never used
-  <-- line 197
+  <-- line 196
     Cmi_format.cmi_infos [@@dead "+save_signature_with_imports"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 210, characters 0-36
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 209, characters 0-36
   +crc_of_unit is never used
-  <-- line 210
+  <-- line 209
   val crc_of_unit : string -> Digest.t [@@dead "+crc_of_unit"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 214, characters 0-53
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 213, characters 0-53
   +imports is never used
-  <-- line 214
+  <-- line 213
   val imports : unit -> (string * Digest.t option) list [@@dead "+imports"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 218, characters 0-27
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 217, characters 0-27
   +crc_units is never used
-  <-- line 218
+  <-- line 217
   val crc_units : Consistbl.t [@@dead "+crc_units"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 219, characters 0-31
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 218, characters 0-31
   +add_import is never used
-  <-- line 219
+  <-- line 218
   val add_import : string -> unit [@@dead "+add_import"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 224, characters 0-26
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 223, characters 0-26
   +summary is never used
-  <-- line 224
+  <-- line 223
   val summary : t -> summary [@@dead "+summary"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 230, characters 0-30
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 229, characters 0-30
   +keep_only_summary is never used
-  <-- line 230
+  <-- line 229
   val keep_only_summary : t -> t [@@dead "+keep_only_summary"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 231, characters 0-61
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 230, characters 0-61
   +env_of_only_summary is never used
-  <-- line 231
+  <-- line 230
   val env_of_only_summary : (summary -> Subst.t -> t) -> t -> t [@@dead "+env_of_only_summary"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 245, characters 0-45
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 244, characters 0-45
   +report_error is never used
-  <-- line 245
+  <-- line 244
   val report_error : formatter -> error -> unit [@@dead "+report_error"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 321, characters 4-21
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 320, characters 4-21
   t.filename is a record label never used to read a value
-  <-- line 321
+  <-- line 320
       filename: string; [@dead "t.filename"]   (** Name of the file containing the signature. *)
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 322, characters 4-30
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 321, characters 4-30
   t.cmi is a record label never used to read a value
-  <-- line 322
+  <-- line 321
       cmi: Cmi_format.cmi_infos; [@dead "t.cmi"] 
 
   Warning Dead Value
@@ -16464,9 +16456,9 @@
   val report_error : Env.t -> Location.t -> formatter -> error -> unit [@@dead "+report_error"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.mli", line 162, characters 0-70
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.mli", line 157, characters 0-70
   +constant is never used
-  <-- line 162
+  <-- line 157
   val constant : Parsetree.constant -> (Asttypes.constant, error) result [@@dead "+constant"] 
 
   Warning Dead Type
@@ -16670,15 +16662,15 @@
   val check_nongen_schemes : Env.t -> Types.signature -> unit [@@dead "+check_nongen_schemes"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typemod.mli", line 51, characters 0-47
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typemod.mli", line 50, characters 0-47
   +simplify_signature is never used
-  <-- line 51
+  <-- line 50
   val simplify_signature : signature -> signature [@@dead "+simplify_signature"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typemod.mli", line 53, characters 0-59
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typemod.mli", line 52, characters 0-59
   +path_of_module is never used
-  <-- line 53
+  <-- line 52
   val path_of_module : Typedtree.module_expr -> Path.t option [@@dead "+path_of_module"] 
 
   Warning Dead Module
@@ -16975,4 +16967,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2996 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:212, Warning Unused Argument:105)
+  Analysis reported 2994 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:212, Warning Unused Argument:103)

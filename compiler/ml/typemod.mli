@@ -41,7 +41,6 @@ val type_implementation_more :
 val transl_signature : Env.t -> Parsetree.signature -> Typedtree.signature
 val check_nongen_schemes : Env.t -> Types.signature -> unit
 val type_open_ :
-  ?used_slot:bool ref ->
   ?toplevel:bool ->
   Asttypes.override_flag ->
   Env.t ->

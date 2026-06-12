@@ -1879,8 +1879,7 @@ let open_signature slot root env0 =
 
 (* Open a signature from a file *)
 
-let open_signature ?(used_slot = ref false) ?(loc = Location.none)
-    ?(toplevel = false) ovf root env =
+let open_signature ?(loc = Location.none) ?(toplevel = false) ovf root env =
   if
     (not toplevel) && ovf = Asttypes.Fresh
     && (not loc.Location.loc_ghost)
@@ -1888,7 +1887,7 @@ let open_signature ?(used_slot = ref false) ?(loc = Location.none)
        || Warnings.is_active (Warnings.Open_shadow_identifier ("", ""))
        || Warnings.is_active (Warnings.Open_shadow_label_constructor ("", "")))
   then (
-    let used = used_slot in
+    let used = ref false in
     Delayed_checks.add_delayed_check (fun () ->
         if not !used then (
           used := true;

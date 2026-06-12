@@ -111,14 +111,9 @@ let type_module =
 (* Forward declaration, to be filled in by Typemod.type_open *)
 
 let type_open :
-    (?used_slot:bool ref ->
-    override_flag ->
-    Env.t ->
-    Location.t ->
-    Longident.t loc ->
-    Path.t * Env.t)
+    (override_flag -> Env.t -> Location.t -> Longident.t loc -> Path.t * Env.t)
     ref =
-  ref (fun ?used_slot:_ _ -> assert false)
+  ref (fun _ -> assert false)
 
 (* Forward declaration, to be filled in by Typemod.type_package *)
 

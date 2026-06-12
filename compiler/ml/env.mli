@@ -147,7 +147,6 @@ val add_signature : signature -> t -> t
    Used to implement open. Returns None if the path refers to a functor,
    not a structure. *)
 val open_signature :
-  ?used_slot:bool ref ->
   ?loc:Location.t ->
   ?toplevel:bool ->
   Asttypes.override_flag ->
