@@ -351,6 +351,18 @@ live after manual validation.
 - Context: `with_file_as_chan` from the same module is production-live through
   `.cppo.ml` callers.
 
+### `Ext_obj` and `Ext_scc` unit-test helpers
+
+- Report: `Warning Dead Module` / `Warning Dead Value`,
+  `compiler/ext/ext_obj.ml` / `.mli` and `compiler/ext/ext_scc.ml` / `.mli`,
+  for object dumping and SCC graph checking helpers.
+- Verdict: intentionally retained unit-test helper surface where still used.
+- Validation: `Ext_obj.dump` is the shared OUnit printer in several unit-test
+  modules, and `Ext_scc.graph_check` is used only by `ounit_scc_tests.ml`.
+  Both are marked live while unit tests are excluded from DCE roots.
+- Context: unused `Ext_obj` debug helpers (`dump_endline`, `pp_any`, `bt`) were
+  removed. `Ext_scc.graph` remains production-live through `lam_scc.ml`.
+
 ### `Ext_list` production helpers
 
 - Report: remaining `Warning Dead Value` entries in
