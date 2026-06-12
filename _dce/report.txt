@@ -1172,46 +1172,10 @@
   let compare = String.compare [@@dead "+compare"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/exn.ml", line 7, characters 0-31
-  +end_of_file is never used
-  <-- line 7
-  let end_of_file = "End_of_file" [@@dead "+end_of_file"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/exn.ml", line 8, characters 0-17
-  +exit is never used
-  <-- line 8
-  let exit = "exit" [@@dead "+exit"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/exn.ml", line 14, characters 0-27
-  +sys_error is never used
-  <-- line 14
-  let sys_error = "Sys_error" [@@dead "+sys_error"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/exn.mli", line 3, characters 0-27
   +compare is never used
   <-- line 3
   val compare : t -> t -> int [@@dead "+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/exn.mli", line 7, characters 0-19
-  +end_of_file is never used
-  <-- line 7
-  val end_of_file : t [@@dead "+end_of_file"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/exn.mli", line 8, characters 0-12
-  +exit is never used
-  <-- line 8
-  val exit : t [@@dead "+exit"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/exn.mli", line 16, characters 0-17
-  +sys_error is never used
-  <-- line 16
-  val sys_error : t [@@dead "+sys_error"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_annotations.ml", line 41, characters 0-61
@@ -17067,4 +17031,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2980 issues (Warning Dead Module:150, Warning Dead Type:379, Warning Dead Value:2195, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2974 issues (Warning Dead Module:150, Warning Dead Type:379, Warning Dead Value:2189, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
