@@ -47,7 +47,7 @@ let newty2 level desc =
   incr new_id;
   {desc; level; id = !new_id}
 let newgenty desc = newty2 generic_level desc
-let newgenvar ?name () = newgenty (Tvar name)
+let newgenvar () = newgenty (Tvar None)
 (*
 let newmarkedvar level =
   incr new_id; { desc = Tvar; level = pivot_level - level; id = !new_id }
