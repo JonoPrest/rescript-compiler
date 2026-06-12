@@ -1592,7 +1592,11 @@ let rec complete_typed_value ?(type_arg_context : type_arg_context option)
     (t : Shared_types.completion_type) =
   let empty_case = empty_case ~mode in
   let print_constructor_args = print_constructor_args ~mode in
-  let create = Completion.create ?type_arg_context in
+  let create ?deprecated ?(docstring = []) ?(includes_snippets = false)
+      ?insert_text ?sort_text name ~kind ~env =
+    Completion.create ?type_arg_context ?deprecated ~docstring ~includes_snippets
+      ?insert_text ?sort_text name ~kind ~env
+  in
   let get_record_completions ~env ~fields ~extracted_type =
     (* As we're completing for a record, we'll need a hint (completionContext)
        here to figure out whether we should complete for a record field, or

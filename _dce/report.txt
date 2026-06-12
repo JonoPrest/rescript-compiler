@@ -3,26 +3,6 @@
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reanalyze.ml", line 199, characters 0-11133
   optional argument file_stats of function +run_analysis is never used
 
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/completion_back_end.ml", line 1595, characters 2-50
-  optional argument additional_text_edits of function +create is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/completion_back_end.ml", line 1595, characters 2-50
-  optional argument data of function +create is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/completion_back_end.ml", line 1595, characters 2-50
-  optional argument detail of function +create is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/completion_back_end.ml", line 1595, characters 2-50
-  optional argument filter_text of function +create is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/completion_back_end.ml", line 1595, characters 2-50
-  optional argument synthetic of function +create is never used
-
   Warning Redundant Optional Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/translcore.ml", line 991, characters 0-2785
   optional argument inlined of function +transl_apply is always supplied (2 calls)
@@ -16967,4 +16947,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2994 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:212, Warning Unused Argument:103)
+  Analysis reported 2989 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:212, Warning Unused Argument:98)
