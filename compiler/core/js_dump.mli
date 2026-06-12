@@ -24,6 +24,3 @@ val statements : bool -> Ext_pp_scope.t -> Ext_pp.t -> J.block -> Ext_pp_scope.t
 (** Print JS IR to vanilla Javascript code 
     Called by module {!Js_dump_program}
 *)
-
-val string_of_block : J.block -> string
-(** Only used for debugging *)

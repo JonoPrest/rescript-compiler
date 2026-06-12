@@ -133,9 +133,6 @@ val switch : t -> lambda_switch -> t
 val stringswitch : t -> (string * t) list -> t option -> t
 (** constant folding*)
 
-(* val true_ : t  *)
-val false_ : t
-
 val unit : t
 
 val sequor : t -> t -> t

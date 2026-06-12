@@ -1387,146 +1387,6 @@
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.ml", line 253, characters 0-108
   optional argument src of function +report_error is always supplied (1 calls)
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/arnold.ml", line 33, characters 2-134
-  Function_args.+compare_arg is never used
-  <-- line 33
-      if n <> 0 then n else compare a1.function_name a2.function_name [@@dead "Function_args.+compare_arg"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/arnold.ml", line 37, characters 2-217
-  Function_args.+compare is never used
-  <-- line 37
-        if n <> 0 then n else compare l1 l2 [@@dead "Function_args.+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/arnold.ml", line 74, characters 2-170
-  Function_call.+compare is never used
-  <-- line 74
-      else Function_args.compare x1.function_args x2.function_args [@@dead "Function_call.+compare"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/dead_exception.ml", line 3, characters 0-93
-  +dead_exception.Path_map is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/dead_exception.ml", line 6, characters 2-30
-  Path_map.+compare is never used
-  <-- line 6
-    let compare = Stdlib.compare [@@dead "Path_map.+compare"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/dead_type.ml", line 69, characters 0-93
-  +dead_type.Path_map is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/dead_type.ml", line 72, characters 2-30
-  Path_map.+compare is never used
-  <-- line 72
-    let compare = Stdlib.compare [@@dead "Path_map.+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/exn.ml", line 3, characters 0-28
-  +compare is never used
-  <-- line 3
-  let compare = String.compare [@@dead "+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/exn.mli", line 3, characters 0-27
-  +compare is never used
-  <-- line 3
-  val compare : t -> t -> int [@@dead "+compare"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.ml", line 6, characters 0-129
-  +file_deps.File_hash is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.ml", line 9, characters 2-35
-  File_hash.+hash is never used
-  <-- line 9
-    let hash (x : t) = Hashtbl.hash x [@@dead "File_hash.+hash"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.ml", line 10, characters 2-29
-  File_hash.+equal is never used
-  <-- line 10
-    let equal (x : t) y = x = y [@@dead "File_hash.+equal"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_hash.ml", line 1, characters 0-0
-  +file_hash is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_hash.ml", line 6, characters 2-35
-  +hash is never used
-  <-- line 6
-    let hash (x : t) = Hashtbl.hash x [@@dead "+hash"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_hash.ml", line 7, characters 2-29
-  +equal is never used
-  <-- line 7
-    let equal (x : t) y = x = y [@@dead "+equal"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/loc_set.ml", line 1, characters 0-0
-  +loc_set is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/loc_set.ml", line 4, characters 2-23
-  +compare is never used
-  <-- line 4
-    let compare = compare [@@dead "+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/name.ml", line 3, characters 0-28
-  +compare is never used
-  <-- line 3
-  let compare = String.compare [@@dead "+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/name.mli", line 3, characters 0-27
-  +compare is never used
-  <-- line 3
-  val compare : t -> t -> int [@@dead "+compare"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/pos_hash.ml", line 1, characters 0-0
-  +pos_hash is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/pos_hash.ml", line 7, characters 2-106
-  +hash is never used
-  <-- line 7
-      Hashtbl.hash (x.Lexing.pos_cnum, s) [@@dead "+hash"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/pos_hash.ml", line 11, characters 2-29
-  +equal is never used
-  <-- line 11
-    let equal (x : t) y = x = y [@@dead "+equal"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/pos_set.ml", line 1, characters 0-0
-  +pos_set is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/pos_set.ml", line 7, characters 2-23
-  +compare is never used
-  <-- line 7
-    let compare = compare [@@dead "+compare"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 488, characters 0-149
-  +shared_types.Location_set is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 491, characters 2-43
-  Location_set.+compare is never used
-  <-- line 491
-    let compare loc1 loc2 = compare loc2 loc1 [@@dead "Location_set.+compare"] 
-
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 523, characters 2-30
   package.rescript_version is a record label never used to read a value
@@ -1582,24 +1442,6 @@
   delim.DBackQuotes is a variant case which is never constructed
   <-- line 77
   and delim = External_arg_spec.delim = DNone | DStarJ | DNoQuotes | DBackQuotes [@dead "delim.DBackQuotes"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_analyzer.mli", line 58, characters 0-53
-  +eq_statement is never used
-  <-- line 58
-  val eq_statement : J.statement -> J.statement -> bool [@@dead "+eq_statement"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump.ml", line 1715, characters 0-213
-  +string_of_block is never used
-  <-- line 1715
-    Buffer.contents buffer [@@dead "+string_of_block"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump.mli", line 28, characters 0-39
-  +string_of_block is never used
-  <-- line 28
-  val string_of_block : J.block -> string [@@dead "+string_of_block"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_program.mli", line 28, characters 0-124
@@ -1726,12 +1568,6 @@
   +deps_program is never used
   <-- line 311
     {program = _x0; modules = _x1; side_effect = _x2} [@@dead "+deps_program"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam.mli", line 137, characters 0-14
-  +false_ is never used
-  <-- line 137
-  val false_ : t [@@dead "+false_"] 
 
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.ml", line 57, characters 2-69
@@ -1895,22 +1731,6 @@
   <-- line 25
   type t = J.module_id = {id: Ident.t; kind: Js_op.kind; dynamic_import: bool [@dead "t.dynamic_import"] }
 
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_module_ident.ml", line 36, characters 0-1115
-  +lam_module_ident.Cmp is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_module_ident.ml", line 39, characters 2-317
-  Cmp.+equal is never used
-  <-- line 39
-      | Ml | Runtime -> Ext_ident.equal x.id y.id [@@dead "Cmp.+equal"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_module_ident.ml", line 61, characters 2-266
-  Cmp.+hash is never used
-  <-- line 61
-        Bs_hash_stubs.hash_stamp_and_name x_id.stamp x_id.name [@@dead "Cmp.+hash"] 
-
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_module_ident.mli", line 31, characters 2-23
   t.dynamic_import is a record label never used to read a value
@@ -1938,22 +1758,6 @@
   +is_function is never used
   <-- line 62
   val is_function : Lam.t -> bool [@@dead "+is_function"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/polyvar_pattern_match.ml", line 33, characters 0-106
-  +polyvar_pattern_match.Coll is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/polyvar_pattern_match.ml", line 36, characters 2-26
-  Coll.+equal is never used
-  <-- line 36
-    let equal = Stdlib.( = ) [@@dead "Coll.+equal"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/polyvar_pattern_match.ml", line 38, characters 2-25
-  Coll.+hash is never used
-  <-- line 38
-    let hash = Hashtbl.hash [@@dead "Coll.+hash"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_fmt.ml", line 10, characters 0-54
@@ -2088,76 +1892,16 @@
   val length : 'a t -> int [@@dead "+length"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 44, characters 0-56
-  +unique_name is never used
-  <-- line 44
-  let unique_name i = i.name ^ "_" ^ string_of_int i.stamp [@@dead "+unique_name"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 50, characters 0-35
   +equal is never used
   <-- line 50
   let equal i1 i2 = i1.name = i2.name [@@dead "+equal"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 74, characters 0-178
-  +print is never used
-  <-- line 74
-    | n -> fprintf ppf "%s/%i%s" i.name n (if global i then "g" else "") [@@dead "+print"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 219, characters 0-161
-  +compare is never used
-  <-- line 219
-      if c <> 0 then c else compare x.flags y.flags [@@dead "+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 226, characters 0-52
-  +output is never used
-  <-- line 226
-  let output oc id = output_string oc (unique_name id) [@@dead "+output"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 227, characters 0-46
-  +hash is never used
-  <-- line 227
-  let hash i = Char.code i.name.[0] lxor i.stamp [@@dead "+hash"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 229, characters 0-26
   +original_equal is never used
   <-- line 229
   let original_equal = equal [@@dead "+original_equal"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 232, characters 2-23
-  +compare is never used
-  <-- line 232
-    let compare = compare [@@dead "+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 233, characters 2-21
-  +output is never used
-  <-- line 233
-    let output = output [@@dead "+output"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 234, characters 2-19
-  +print is never used
-  <-- line 234
-    let print = print [@@dead "+print"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 235, characters 2-17
-  +hash is never used
-  <-- line 235
-    let hash = hash [@@dead "+hash"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 236, characters 2-18
-  +equal is never used
-  <-- line 236
-    let equal = same [@@dead "+equal"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 238, characters 0-26
@@ -2171,24 +1915,6 @@
   <-- line 32
   val unique_name : t -> string [@@dead "+unique_name"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.mli", line 42, characters 0-27
-  +compare is never used
-  <-- line 42
-  val compare : t -> t -> int [@@dead "+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.ml", line 20, characters 10-45
-  Make.+hash is never used
-  <-- line 20
-    include Hashtbl.HashedType with type t := t [@@dead "Make.+hash"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.ml", line 21, characters 10-42
-  Make.+compare is never used
-  <-- line 21
-    include Map.OrderedType with type t := t [@@dead "Make.+compare"] 
-
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 98, characters 26-46
   identifiable.Make.Tbl is a dead module as all its items are dead.
@@ -2198,14 +1924,6 @@
   Make.Tbl.+map is never used
   <-- line 98
   module Make (T : Thing) : S with type t := T.t [@@dead "Make.Tbl.+map"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/int_vec_vec.ml", line 1, characters 0-0
-  +int_vec_vec is a dead module as all its items are dead.
-
-  Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/int_vec_vec.ml", line 28, characters 2-29
-  +null is never used and could have side effects
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 45, characters 0-25
@@ -2290,26 +2008,6 @@
   +output_to_file_via_temporary is never used
   <-- line 117
       raise exn [@@dead "+output_to_file_via_temporary"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 243, characters 0-83
-  +misc.String_map is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 245, characters 2-23
-  String_map.+compare is never used
-  <-- line 245
-    let compare = compare [@@dead "String_map.+compare"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 247, characters 0-83
-  +misc.String_set is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 249, characters 2-23
-  String_set.+compare is never used
-  <-- line 249
-    let compare = compare [@@dead "String_set.+compare"] 
 
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 343, characters 17-21
@@ -2424,38 +2122,6 @@
   Lid.+ignore_id is never used
   <-- line 38
     val ignore_id : t [@@dead "Lid.+ignore_id"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/gentype/gen_ident.ml", line 1, characters 0-102
-  +gen_ident.Int_map is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/gentype/gen_ident.ml", line 4, characters 2-47
-  Int_map.+compare is never used
-  <-- line 4
-    let compare (x : int) (y : int) = compare x y [@@dead "Int_map.+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/gentype/module_name.ml", line 27, characters 0-44
-  +compare is never used
-  <-- line 27
-  let compare (s1 : string) s2 = compare s1 s2 [@@dead "+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/gentype/module_name.mli", line 3, characters 0-27
-  +compare is never used
-  <-- line 3
-  val compare : t -> t -> int [@@dead "+compare"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/gentype/resolved_name.ml", line 10, characters 0-336
-  +resolved_name.Name_set is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/gentype/resolved_name.ml", line 13, characters 2-275
-  Name_set.+compare is never used
-  <-- line 13
-        | false -> compare rest1 rest2) [@@dead "Name_set.+compare"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 28, characters 0-182
@@ -2623,16 +2289,6 @@
   <-- line 529
       PStr [Str.eval ~loc (Exp.constant (Pconst_string (s, None)))] ) [@@dead "+attribute_of_warning"] 
 
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.ml", line 533, characters 0-83
-  +ast_mapper.String_map is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.ml", line 535, characters 2-23
-  String_map.+compare is never used
-  <-- line 535
-    let compare = compare [@@dead "String_map.+compare"] 
-
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.ml", line 540, characters 0-81
   +get_cookie is never used
@@ -2757,42 +2413,6 @@
   <-- line 5
     deprecated_text: string; [@dead "deprecated_used.deprecated_text"] 
 
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 206, characters 0-176
-  +ctype.Type_pairs is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 208, characters 2-56
-  Type_pairs.+equal is never used
-  <-- line 208
-    let equal (t1, t1') (t2, t2') = t1 == t2 && t1' == t2' [@@dead "Type_pairs.+equal"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 209, characters 2-40
-  Type_pairs.+hash is never used
-  <-- line 209
-    let hash (t, t') = t.id + (93 * t'.id) [@@dead "Type_pairs.+hash"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/depend.ml", line 21, characters 0-83
-  +depend.String_set is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/depend.ml", line 23, characters 2-23
-  String_set.+compare is never used
-  <-- line 23
-    let compare = compare [@@dead "String_set.+compare"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 572, characters 0-90
-  +env.String_set is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 574, characters 2-30
-  String_set.+compare is never used
-  <-- line 574
-    let compare = String.compare [@@dead "String_set.+compare"] 
-
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 718, characters 0-434
   +reset_cache_toplevel is never used
@@ -2816,16 +2436,6 @@
   t.cmi is a record label never used to read a value
   <-- line 289
       cmi: Cmi_format.cmi_infos; [@dead "t.cmi"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/experimental_features.ml", line 12, characters 0-85
-  +experimental_features.Feature_set is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/experimental_features.ml", line 14, characters 2-23
-  Feature_set.+compare is never used
-  <-- line 14
-    let compare = compare [@@dead "Feature_set.+compare"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/experimental_features.ml", line 23, characters 0-52
@@ -2881,156 +2491,6 @@
   <-- line 119
     unit [@@dead "+default_error_reporter"] 
 
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 442, characters 0-143
-  +matching.Store_exp is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 445, characters 2-27
-  Store_exp.+compare_key is never used
-  <-- line 445
-    let compare_key = compare [@@dead "Store_exp.+compare_key"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 446, characters 2-32
-  Store_exp.+make_key is never used
-  <-- line 446
-    let make_key = Lambda.make_key [@@dead "Store_exp.+make_key"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1613, characters 0-1398
-  +matching.S_arg is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1616, characters 2-26
-  S_arg.+eqint is never used
-  <-- line 1616
-    let eqint = Pintcomp Ceq [@@dead "S_arg.+eqint"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1617, characters 2-27
-  S_arg.+neint is never used
-  <-- line 1617
-    let neint = Pintcomp Cneq [@@dead "S_arg.+neint"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1618, characters 2-26
-  S_arg.+leint is never used
-  <-- line 1618
-    let leint = Pintcomp Cle [@@dead "S_arg.+leint"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1619, characters 2-26
-  S_arg.+ltint is never used
-  <-- line 1619
-    let ltint = Pintcomp Clt [@@dead "S_arg.+ltint"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1620, characters 2-26
-  S_arg.+geint is never used
-  <-- line 1620
-    let geint = Pintcomp Cge [@@dead "S_arg.+geint"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1621, characters 2-26
-  S_arg.+gtint is never used
-  <-- line 1621
-    let gtint = Pintcomp Cgt [@@dead "S_arg.+gtint"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1625, characters 2-55
-  S_arg.+make_prim is never used
-  <-- line 1625
-    let make_prim p args = Lprim (p, args, Location.none) [@@dead "S_arg.+make_prim"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1626, characters 2-111
-  S_arg.+make_offset is never used
-  <-- line 1626
-      | _ -> Lprim (Poffsetint n, [arg], Location.none) [@@dead "S_arg.+make_offset"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1631, characters 2-232
-  S_arg.+bind is never used
-  <-- line 1631
-      bind Alias newvar arg (body newarg) [@@dead "S_arg.+bind"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1640, characters 2-54
-  S_arg.+make_const is never used
-  <-- line 1640
-    let make_const i = Lconst (Const_base (Const_int i)) [@@dead "S_arg.+make_const"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1641, characters 2-64
-  S_arg.+make_isout is never used
-  <-- line 1641
-    let make_isout h arg = Lprim (Pisout, [h; arg], Location.none) [@@dead "S_arg.+make_isout"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1642, characters 2-71
-  S_arg.+make_isin is never used
-  <-- line 1642
-    let make_isin h arg = Lprim (Pnot, [make_isout h arg], Location.none) [@@dead "S_arg.+make_isin"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1643, characters 2-63
-  S_arg.+make_if is never used
-  <-- line 1643
-    let make_if cond ifso ifnot = Lifthenelse (cond, ifso, ifnot) [@@dead "S_arg.+make_if"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1644, characters 2-419
-  S_arg.+make_switch is never used
-  <-- line 1644
-          loc ) [@@dead "S_arg.+make_switch"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1660, characters 2-37
-  S_arg.+make_catch is never used
-  <-- line 1660
-    let make_catch = make_catch_delayed [@@dead "S_arg.+make_catch"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1661, characters 2-27
-  S_arg.+make_exit is never used
-  <-- line 1661
-    let make_exit = make_exit [@@dead "S_arg.+make_exit"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 902, characters 0-147
-  +parmatch.Constructor_tag_hashtbl is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 904, characters 2-25
-  Constructor_tag_hashtbl.+hash is never used
-  <-- line 904
-    let hash = Hashtbl.hash [@@dead "Constructor_tag_hashtbl.+hash"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 905, characters 2-29
-  Constructor_tag_hashtbl.+equal is never used
-  <-- line 905
-    let equal = Types.equal_tag [@@dead "Constructor_tag_hashtbl.+equal"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 2534, characters 4-193
-  +enter_expression is never used
-  <-- line 2534
-        | _ -> () [@@dead "+enter_expression"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 2542, characters 4-103
-  +is_unpack is never used
-  <-- line 2542
-        List.exists (fun (attr, _) -> attr.txt = "#modulepat") exp.exp_attributes [@@dead "+is_unpack"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 2545, characters 4-493
-  +leave_expression is never used
-  <-- line 2545
-          | _ -> assert false [@@dead "+leave_expression"] 
-
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parsetree0.ml", line 98, characters 2-22
   core_type_desc.Ptyp_class is a variant case which is never constructed
@@ -3072,50 +2532,6 @@
   structure_item_desc.Pstr_class_type is a variant case which is never constructed
   <-- line 577
     | Pstr_class_type of unit [@dead "structure_item_desc.Pstr_class_type"]  (* Dummy AST node *)
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/path.ml", line 27, characters 0-449
-  +compare is never used
-  <-- line 27
-    | (Pdot _ | Papply _), (Pident _ | Pdot _) -> 1 [@@dead "+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/path.ml", line 71, characters 0-190
-  +heads is never used
-  <-- line 71
-    heads p [] [@@dead "+heads"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/path.mli", line 21, characters 0-27
-  +compare is never used
-  <-- line 21
-  val compare : t -> t -> int [@@dead "+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/path.mli", line 33, characters 0-29
-  +heads is never used
-  <-- line 33
-  val heads : t -> Ident.t list [@@dead "+heads"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/switch.ml", line 34, characters 2-91
-  +switch.Store.A_map is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/switch.ml", line 36, characters 4-31
-  Store.A_map.+compare is never used
-  <-- line 36
-      let compare = A.compare_key [@@dead "Store.A_map.+compare"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedecl.ml", line 202, characters 0-97
-  +typedecl.String_set is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedecl.ml", line 204, characters 2-37
-  String_set.+compare is never used
-  <-- line 204
-    let compare (x : t) y = compare x y [@@dead "String_set.+compare"] 
 
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree.ml", line 281, characters 2-23
@@ -3249,74 +2665,10 @@
   <-- line 70
     val iter_pattern : pattern -> unit [@@dead "Make_iterator.+iter_pattern"] 
 
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typemod.ml", line 606, characters 0-104
-  +typemod.String_set is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typemod.ml", line 608, characters 2-44
-  String_set.+compare is never used
-  <-- line 608
-    let compare (x : t) y = String.compare x y [@@dead "String_set.+compare"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/types.ml", line 66, characters 0-134
-  +types.Type_ops is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/types.ml", line 68, characters 2-35
-  Type_ops.+compare is never used
-  <-- line 68
-    let compare t1 t2 = t1.id - t2.id [@@dead "Type_ops.+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/types.ml", line 69, characters 2-19
-  Type_ops.+hash is never used
-  <-- line 69
-    let hash t = t.id [@@dead "Type_ops.+hash"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/types.ml", line 70, characters 2-28
-  Type_ops.+equal is never used
-  <-- line 70
-    let equal t1 t2 = t1 == t2 [@@dead "Type_ops.+equal"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/types.ml", line 75, characters 0-90
-  +types.Ordered_string is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/types.ml", line 77, characters 2-37
-  Ordered_string.+compare is never used
-  <-- line 77
-    let compare (x : t) y = compare x y [@@dead "Ordered_string.+compare"] 
-
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/types.ml", line 99, characters 29-39
   Variance.f.May_weak is a variant case which is never constructed
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/types.mli", line 206, characters 0-127
-  types.Type_ops is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/types.mli", line 208, characters 2-29
-  Type_ops.+compare is never used
-  <-- line 208
-    val compare : t -> t -> int [@@dead "Type_ops.+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/types.mli", line 209, characters 2-28
-  Type_ops.+equal is never used
-  <-- line 209
-    val equal : t -> t -> bool [@@dead "Type_ops.+equal"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/types.mli", line 210, characters 2-21
-  Type_ops.+hash is never used
-  <-- line 210
-    val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 681 issues (Warning Dead Module:33, Warning Dead Type:84, Warning Dead Value:214, Warning Dead Value With Side Effects:3, Warning Redundant Optional Argument:198, Warning Unused Argument:149)
+  Analysis reported 563 issues (Warning Dead Module:4, Warning Dead Type:84, Warning Dead Value:126, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:198, Warning Unused Argument:149)
