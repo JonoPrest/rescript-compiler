@@ -1008,30 +1008,6 @@
       Registry.register ~name ~level:my_level ~process ~stats:my_stats [@@dead "+_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reactive/src/reactive.mli", line 21, characters 0-62
-  +delta_to_entries is never used
-  <-- line 21
-  val delta_to_entries : ('k, 'v) delta -> ('k * 'v option) list [@@dead "+delta_to_entries"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reactive/src/reactive.mli", line 45, characters 0-32
-  +create_stats is never used
-  <-- line 45
-  val create_stats : unit -> stats [@@dead "+create_stats"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reactive/src/reactive_file_collection.ml", line 77, characters 0-43
-  +length is never used
-  <-- line 77
-  let length t = Reactive.length t.collection [@@dead "+length"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reactive/src/reactive_file_collection.mli", line 55, characters 0-32
-  +length is never used
-  <-- line 55
-  val length : ('raw, 'v) t -> int [@@dead "+length"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reactive/src/reactive_fixpoint.ml", line 16, characters 0-674
   +analyze_edge_change is never used
   <-- line 16
@@ -7010,39 +6986,21 @@
   type element = NA [@dead "element.NA"]  | SimpleForm of Lam.t [@dead "element.SimpleForm"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_id_kind.ml", line 36, characters 22-31
-  boxed_nullable.Undefined is a variant case which is never constructed
-  <-- line 36
-  type boxed_nullable = Undefined [@dead "boxed_nullable.Undefined"]  | Null | Null_undefined
-
-  Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_id_kind.ml", line 41, characters 2-35
   t.ImmutableBlock is a variant case which is never constructed
   <-- line 41
     | ImmutableBlock of element array [@dead "t.ImmutableBlock"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_id_kind.ml", line 42, characters 2-33
-  t.MutableBlock is a variant case which is never constructed
-  <-- line 42
-    | MutableBlock of element array [@dead "t.MutableBlock"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_id_kind.ml", line 52, characters 2-13
-  t.Exception is a variant case which is never constructed
-  <-- line 52
-    | Exception [@dead "t.Exception"] 
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_id_kind.ml", line 61, characters 0-23
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_id_kind.ml", line 59, characters 0-23
   +pp is never used
-  <-- line 61
+  <-- line 59
   let pp = Format.fprintf [@@dead "+pp"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_id_kind.ml", line 63, characters 0-590
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_id_kind.ml", line 61, characters 0-434
   +print is never used
-  <-- line 63
+  <-- line 61
     | NA -> pp fmt "NA" [@@dead "+print"] 
 
   Warning Dead Type
@@ -7058,33 +7016,15 @@
   type element = NA [@dead "element.NA"]  | SimpleForm of Lam.t [@dead "element.SimpleForm"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_id_kind.mli", line 36, characters 22-31
-  boxed_nullable.Undefined is a variant case which is never constructed
-  <-- line 36
-  type boxed_nullable = Undefined [@dead "boxed_nullable.Undefined"]  | Null | Null_undefined
-
-  Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_id_kind.mli", line 53, characters 2-35
   t.ImmutableBlock is a variant case which is never constructed
   <-- line 53
     | ImmutableBlock of element array [@dead "t.ImmutableBlock"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_id_kind.mli", line 54, characters 2-33
-  t.MutableBlock is a variant case which is never constructed
-  <-- line 54
-    | MutableBlock of element array [@dead "t.MutableBlock"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_id_kind.mli", line 61, characters 2-13
-  t.Exception is a variant case which is never constructed
-  <-- line 61
-    | Exception [@dead "t.Exception"] 
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_id_kind.mli", line 70, characters 0-41
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_id_kind.mli", line 68, characters 0-41
   +print is never used
-  <-- line 70
+  <-- line 68
   val print : Format.formatter -> t -> unit [@@dead "+print"] 
 
   Warning Dead Module
@@ -7426,7 +7366,7 @@
   val simplify_lets : Lam.t -> Lam.t [@@dead "+simplify_lets"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_pass_remove_alias.ml", line 27, characters 0-692
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_pass_remove_alias.ml", line 27, characters 0-653
   +id_is_for_sure_true_in_boolean is never used
   <-- line 27
       Eval_unknown [@@dead "+id_is_for_sure_true_in_boolean"] 
@@ -7438,7 +7378,7 @@
     | _ -> false [@@dead "+is_const_some"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_pass_remove_alias.ml", line 50, characters 0-9886
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_pass_remove_alias.ml", line 50, characters 0-9666
   +simplify_alias is never used
   <-- line 50
     simpl lam [@@dead "+simplify_alias"] 
@@ -7476,6 +7416,12 @@
   t.Pjs_runtime_apply is a variant case which is never constructed
   <-- line 153
     | Pjs_runtime_apply [@dead "t.Pjs_runtime_apply"]  (* [f; [...]] *)
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 169, characters 2-17
+  t.Pis_undefined is a variant case which is never constructed
+  <-- line 169
+    | Pis_undefined [@dead "t.Pis_undefined"]
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 187, characters 0-99
@@ -7524,6 +7470,12 @@
   t.Pjs_runtime_apply is a variant case which is never constructed
   <-- line 147
     | Pjs_runtime_apply [@dead "t.Pjs_runtime_apply"]  (* [f; [...]] *)
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.mli", line 159, characters 2-17
+  t.Pis_undefined is a variant case which is never constructed
+  <-- line 159
+    | Pis_undefined [@dead "t.Pis_undefined"]
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.mli", line 177, characters 0-40
@@ -15769,4 +15721,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2764 issues (Warning Dead Module:151, Warning Dead Type:294, Warning Dead Value:2063, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2756 issues (Warning Dead Module:151, Warning Dead Type:290, Warning Dead Value:2059, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
