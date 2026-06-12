@@ -1,9 +1,5 @@
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/bsc/rescript_compiler_main.ml", line 55, characters 0-1591
-  optional argument kind of function +process_file is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/cmt_viewer.ml", line 19, characters 0-4249
   optional argument filter of function +dump is never used
 
@@ -17295,4 +17291,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 3074 issues (Warning Dead Module:145, Warning Dead Type:371, Warning Dead Value:2129, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:2, Warning Redundant Optional Argument:214, Warning Unused Argument:176)
+  Analysis reported 3073 issues (Warning Dead Module:145, Warning Dead Type:371, Warning Dead Value:2129, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:2, Warning Redundant Optional Argument:214, Warning Unused Argument:175)

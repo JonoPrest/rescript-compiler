@@ -52,7 +52,7 @@ let setup_outcome_printer () = Lazy.force Res_outcome_printer.setup
 
 let setup_runtime_path path = Runtime_package.path := path
 
-let process_file sourcefile ?kind ppf =
+let process_file sourcefile ppf =
   (* This is a better default then "", it will be changed later
      The {!Location.input_name} relies on that we write the binary ast
      properly
@@ -60,11 +60,8 @@ let process_file sourcefile ?kind ppf =
   setup_outcome_printer ();
   Error_message_utils_support.setup ();
   let kind =
-    match kind with
-    | None ->
-      Ext_file_extensions.classify_input
-        (Ext_filename.get_extension_maybe sourcefile)
-    | Some kind -> kind
+    Ext_file_extensions.classify_input
+      (Ext_filename.get_extension_maybe sourcefile)
   in
   let res =
     match kind with
