@@ -80,7 +80,7 @@ val runtime_call :
   (* args *)
   t
 
-val str : ?delim:J.delim -> ?comment:string -> string -> t
+val str : ?delim:J.delim -> string -> t
 
 val ocaml_fun :
   ?immutable_mask:bool array ->
@@ -177,17 +177,17 @@ val emit_check : t Ast_untagged_variants.Dynamic_checks.t -> t
 val triple_equal : ?comment:string -> t -> t -> t
 (* TODO: reduce [triple_equal] use *)
 
-val int_equal : ?comment:string -> t -> t -> t
+val int_equal : t -> t -> t
 
-val int_bnot : ?comment:string -> t -> t
+val int_bnot : t -> t
 
 val string_equal : ?comment:string -> t -> t -> t
 
-val eq_null_undefined_boolean : ?comment:string -> t -> t -> t
+val eq_null_undefined_boolean : t -> t -> t
 
-val neq_null_undefined_boolean : ?comment:string -> t -> t -> t
+val neq_null_undefined_boolean : t -> t -> t
 
-val is_type_number : ?comment:string -> t -> t
+val is_type_number : t -> t
 
 val is_int_tag : ?has_null_undefined_other:bool * bool * bool -> t -> t
 
@@ -202,31 +202,31 @@ val is_type_object : t -> t
 val typeof : t -> t
 val is_array : t -> t
 
-val to_int32 : ?comment:string -> t -> t
+val to_int32 : t -> t
 
-val int32_add : ?comment:string -> t -> t -> t
+val int32_add : t -> t -> t
 
 val offset : t -> int -> t
 
-val int32_minus : ?comment:string -> t -> t -> t
+val int32_minus : t -> t -> t
 
-val int32_mul : ?comment:string -> t -> t -> t
+val int32_mul : t -> t -> t
 
-val int32_div : checked:bool -> ?comment:string -> t -> t -> t
+val int32_div : checked:bool -> t -> t -> t
 
-val int32_mod : checked:bool -> ?comment:string -> t -> t -> t
+val int32_mod : checked:bool -> t -> t -> t
 
-val int32_pow : ?comment:string -> t -> t -> t
+val int32_pow : t -> t -> t
 
-val int32_lsl : ?comment:string -> t -> t -> t
+val int32_lsl : t -> t -> t
 
 val int32_lsr : ?comment:string -> t -> t -> t
 
-val int32_asr : ?comment:string -> t -> t -> t
+val int32_asr : t -> t -> t
 
-val int32_bxor : ?comment:string -> t -> t -> t
+val int32_bxor : t -> t -> t
 
-val int32_band : ?comment:string -> t -> t -> t
+val int32_band : t -> t -> t
 
 val int32_bor : ?comment:string -> t -> t -> t
 
@@ -244,19 +244,19 @@ val float_pow : ?comment:string -> t -> t -> t
 
 val int_comp : Lam_compat.comparison -> ?comment:string -> t -> t -> t
 
-val bool_comp : Lam_compat.comparison -> ?comment:string -> t -> t -> t
+val bool_comp : Lam_compat.comparison -> t -> t -> t
 
 val string_comp : Lam_compat.comparison -> ?comment:string -> t -> t -> t
 
 val bigint_op : ?comment:string -> Js_op.binop -> t -> t -> t
 
-val bigint_comp : Lam_compat.comparison -> ?comment:string -> t -> t -> t
+val bigint_comp : Lam_compat.comparison -> t -> t -> t
 
-val bigint_div : checked:bool -> ?comment:string -> t -> t -> t
+val bigint_div : checked:bool -> t -> t -> t
 
-val bigint_mod : checked:bool -> ?comment:string -> t -> t -> t
+val bigint_mod : checked:bool -> t -> t -> t
 
-val js_comp : Lam_compat.comparison -> ?comment:string -> t -> t -> t
+val js_comp : Lam_compat.comparison -> t -> t -> t
 
 val not : t -> t
 
@@ -298,18 +298,18 @@ val unit : t
 
 val undefined : t
 
-val tag : ?comment:string -> ?name:string -> J.expression -> t
+val tag : ?name:string -> J.expression -> t
 
 (** Note that this is coupled with how we encode block, if we use the 
     `Object.defineProperty(..)` since the array already hold the length,
     this should be a nop 
 *)
 
-val obj_length : ?comment:string -> J.expression -> t
+val obj_length : J.expression -> t
 
-val and_ : ?comment:string -> t -> t -> t
+val and_ : t -> t -> t
 
-val or_ : ?comment:string -> t -> t -> t
+val or_ : t -> t -> t
 
 val in_ : t -> t -> t
 
@@ -318,18 +318,18 @@ val in_ : t -> t -> t
 val dummy_obj : Lam_tag_info.t -> t
 (** used combined with [caml_update_dummy]*)
 
-val of_block : ?comment:string -> ?e:J.expression -> J.statement list -> t
+val of_block : ?e:J.expression -> J.statement list -> t
 (** convert a block to expresion by using IIFE *)
 
 val raw_js_code : Js_raw_info.code_info -> string -> t
 
 val nil : t
 
-val is_null : ?comment:string -> t -> t
+val is_null : t -> t
 
 val is_null_undefined_constant : J.expression -> bool
 
-val is_null_undefined : ?comment:string -> t -> t
+val is_null_undefined : t -> t
 
 val make_exception : string -> t
 
