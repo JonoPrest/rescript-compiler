@@ -369,6 +369,26 @@ live after manual validation.
 - Context: DCE does not root the `.cppo.ml` entry point and therefore treats the
   compiler backend and its local helper chains as dead.
 
+### Lambda compile environment and FFI lowering
+
+- Report: `Warning Dead Value` / `Warning Dead Module` clusters in
+  `compiler/core/lam_compile_env.ml`, `lam_compile_external_call.ml`,
+  `lam_compile_external_obj.ml`, and `lam_compile_primitive.ml` plus their
+  `.mli` files.
+- Verdict: live; false positive.
+- Validation: `Lam_compile_env` is used by `lam_compile.ml`,
+  `lam_pass_remove_alias.ml`, `lam_arity_analysis.ml`,
+  `lam_stats_export.ml`, `js_implementation.ml`, `js_name_of_module_id.cppo.ml`,
+  and `lam_compile_main.cppo.ml`. `Lam_compile_external_call.translate_ffi` is
+  called by `lam_compile_primitive.ml`, and `ocaml_to_js_eff` is used by
+  `lam_compile_external_obj.ml`. `Lam_compile_external_obj.assemble_obj_args`
+  and `Lam_compile_primitive.translate` are called by `lam_compile.ml`. The
+  reported helper functions in those modules are local dependencies of those
+  exported lowering entry points.
+- Context: `lam_compile_external_call.arg_expression` is a manifest alias of
+  `Js_of_lam_variant.arg_expression`; constructor warnings there are false
+  positives for the same aliasing reason documented in the JS lowering section.
+
 ### Core JS lowering helpers
 
 - Report: `Warning Dead Module`, `Warning Dead Value`, and constructor warnings
