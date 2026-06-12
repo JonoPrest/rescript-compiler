@@ -779,58 +779,6 @@
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/type_utils.ml", line 179, characters 0-2146
   optional argument type_arg_context of function +instantiate_type2 is never used
 
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 160, characters 0-54
-  optional argument comment of function +return_stmt is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 151, characters 0-100
-  optional argument comment of function +try_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 151, characters 0-100
-  optional argument finally of function +try_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 148, characters 0-97
-  optional argument comment of function +for_await_of is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 145, characters 0-91
-  optional argument comment of function +for_of is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 135, characters 0-172
-  optional argument comment of function +for_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 133, characters 0-78
-  optional argument comment of function +while_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 107, characters 0-60
-  optional argument comment of function +assign is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 92, characters 0-137
-  optional argument ident_info of function +define_variable is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 75, characters 0-191
-  optional argument comment of function +string_switch is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 52, characters 0-161
-  optional argument comment of function +int_switch is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 35, characters 0-262
-  optional argument comment of function +if_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.mli", line 33, characters 0-53
-  optional argument comment of function +throw_stmt is never used
-
   Warning Redundant Optional Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_driver.ml", line 192, characters 0-399
   optional argument ignore_parse_errors of function +parse_interface is always supplied (1 calls)
@@ -838,58 +786,6 @@
   Warning Redundant Optional Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_driver.ml", line 181, characters 0-409
   optional argument ignore_parse_errors of function +parse_implementation is always supplied (1 calls)
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.ml", line 335, characters 0-101
-  optional argument comment of function +try_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.ml", line 335, characters 0-101
-  optional argument finally of function +try_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.ml", line 332, characters 0-152
-  optional argument comment of function +for_await_of is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.ml", line 329, characters 0-141
-  optional argument comment of function +for_of is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.ml", line 320, characters 0-245
-  optional argument comment of function +for_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.ml", line 317, characters 0-108
-  optional argument comment of function +while_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.ml", line 314, characters 0-90
-  optional argument comment of function +assign is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.ml", line 233, characters 0-3141
-  optional argument comment of function +if_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.ml", line 136, characters 0-1581
-  optional argument comment of function +string_switch is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.ml", line 91, characters 0-1408
-  optional argument comment of function +int_switch is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.ml", line 67, characters 0-483
-  optional argument ident_info of function +define_variable is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.ml", line 34, characters 0-67
-  optional argument comment of function +throw_stmt is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_stmt_make.ml", line 29, characters 0-69
-  optional argument comment of function +return_stmt is never used
 
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 1145, characters 2-61
@@ -2575,4 +2471,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 546 issues (Warning Dead Module:4, Warning Dead Type:84, Warning Dead Value:112, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:149)
+  Analysis reported 520 issues (Warning Dead Module:4, Warning Dead Type:84, Warning Dead Value:112, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:123)
