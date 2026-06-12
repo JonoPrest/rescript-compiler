@@ -354,5 +354,4 @@ let init () =
                 []
             in
             Ext_list.flat_map tdcls handle_tdcl);
-        expression_gen = None;
       })

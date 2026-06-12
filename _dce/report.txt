@@ -10143,18 +10143,6 @@
   <-- line 99
   val has_warnings : bool ref [@@dead "+has_warnings"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_derive.ml", line 30, characters 2-71
-  gen.expression_gen is a record label never used to read a value
-  <-- line 30
-    expression_gen: (Parsetree.core_type -> Parsetree.expression) option; [@dead "gen.expression_gen"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_derive.mli", line 30, characters 2-71
-  gen.expression_gen is a record label never used to read a value
-  <-- line 30
-    expression_gen: (Parsetree.core_type -> Parsetree.expression) option; [@dead "gen.expression_gen"] 
-
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 42, characters 2-58
   Lid.+pervasives is never used
@@ -10196,66 +10184,6 @@
   Lid.+ignore_id is never used
   <-- line 46
     val ignore_id : t [@@dead "Lid.+ignore_id"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_pat.ml", line 27, characters 0-130
-  +is_unit_cont is never used
-  <-- line 27
-    | _ -> no [@@dead "+is_unit_cont"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_pat.ml", line 35, characters 0-383
-  +arity_of_fun is never used
-  <-- line 35
-    is_unit_cont ~yes:0 ~no:1 pat + aux e [@@dead "+arity_of_fun"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_pat.ml", line 46, characters 0-149
-  +labels_of_fun is never used
-  <-- line 46
-    | _ -> [] [@@dead "+labels_of_fun"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_pat.mli", line 27, characters 0-45
-  +is_unit_cont is never used
-  <-- line 27
-  val is_unit_cont : yes:'a -> no:'a -> t -> 'a [@@dead "+is_unit_cont"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_pat.mli", line 29, characters 0-51
-  +arity_of_fun is never used
-  <-- line 29
-  val arity_of_fun : t -> Parsetree.expression -> int [@@dead "+arity_of_fun"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_pat.mli", line 33, characters 0-67
-  +labels_of_fun is never used
-  <-- line 33
-  val labels_of_fun : Parsetree.expression -> Asttypes.arg_label list [@@dead "+labels_of_fun"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_polyvar.ml", line 44, characters 0-594
-  +map_constructor_declarations_into_ints is never used
-  <-- line 44
-    | `complex -> `New (List.rev acc) [@@dead "+map_constructor_declarations_into_ints"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_polyvar.mli", line 29, characters 0-124
-  +map_constructor_declarations_into_ints is never used
-  <-- line 29
-    Parsetree.constructor_declaration list -> [`Offset of int | `New of int list] [@@dead "+map_constructor_declarations_into_ints"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_structure.ml", line 53, characters 0-72
-  +dummy_item is never used
-  <-- line 53
-  let dummy_item loc : item = Str.eval ~loc (Ast_literal.val_unit ~loc ()) [@@dead "+dummy_item"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_structure.mli", line 40, characters 0-35
-  +dummy_item is never used
-  <-- line 40
-  val dummy_item : Location.t -> item [@@dead "+dummy_item"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string.ml", line 184, characters 0-157
@@ -13557,4 +13485,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2391 issues (Warning Dead Module:146, Warning Dead Type:223, Warning Dead Value:1774, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2379 issues (Warning Dead Module:146, Warning Dead Type:221, Warning Dead Value:1764, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
