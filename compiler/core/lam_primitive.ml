@@ -26,13 +26,6 @@
 
 type ident = Ident.t
 
-type record_representation =
-  | Record_regular
-  | Record_inlined of {tag: int; name: string; num_nonconsts: int}
-    (* Inlined record *)
-  | Record_extension
-(* Inlined record under extension *)
-
 type t =
   (* Operations on heap blocks *)
   | Pmakeblock of int * Lam_tag_info.t * Asttypes.mutable_flag

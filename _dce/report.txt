@@ -7381,70 +7381,34 @@
   <-- line 38
   val simplify_alias : Lam_stats.t -> Lam.t -> Lam.t [@@dead "+simplify_alias"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 30, characters 2-18
-  record_representation.Record_regular is a variant case which is never constructed
-  <-- line 30
-    | Record_regular [@dead "record_representation.Record_regular"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 31, characters 2-66
-  record_representation.Record_inlined is a variant case which is never constructed
-  <-- line 31
-    | Record_inlined of {tag: int; name: string; num_nonconsts: int} [@dead "record_representation.Record_inlined"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 33, characters 2-20
-  record_representation.Record_extension is a variant case which is never constructed
-  <-- line 33
-    | Record_extension [@dead "record_representation.Record_extension"] 
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 185, characters 0-99
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 178, characters 0-99
   +eq_field_dbg_info is never used
-  <-- line 185
+  <-- line 178
     x = y [@@dead "+eq_field_dbg_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 190, characters 0-111
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 183, characters 0-111
   +eq_set_field_dbg_info is never used
-  <-- line 190
+  <-- line 183
     x = y [@@dead "+eq_set_field_dbg_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 195, characters 0-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 188, characters 0-46
   +eq_tag_info is never used
-  <-- line 195
+  <-- line 188
   let eq_tag_info (x : Lam_tag_info.t) y = x = y [@@dead "+eq_tag_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 197, characters 0-4113
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 190, characters 0-4113
   +eq_primitive_approx is never used
-  <-- line 197
+  <-- line 190
     | Praw_js_code _ -> false [@@dead "+eq_primitive_approx"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.mli", line 28, characters 2-18
-  record_representation.Record_regular is a variant case which is never constructed
-  <-- line 28
-    | Record_regular [@dead "record_representation.Record_regular"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.mli", line 29, characters 2-66
-  record_representation.Record_inlined is a variant case which is never constructed
-  <-- line 29
-    | Record_inlined of {tag: int; name: string; num_nonconsts: int} [@dead "record_representation.Record_inlined"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.mli", line 31, characters 2-20
-  record_representation.Record_extension is a variant case which is never constructed
-  <-- line 31
-    | Record_extension [@dead "record_representation.Record_extension"] 
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.mli", line 175, characters 0-40
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.mli", line 168, characters 0-40
   +eq_primitive_approx is never used
-  <-- line 175
+  <-- line 168
   val eq_primitive_approx : t -> t -> bool [@@dead "+eq_primitive_approx"] 
 
   Warning Dead Value
@@ -7456,10 +7420,6 @@
   Warning Dead Value With Side Effects
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 493, characters 0-50
   +lambda_to_string is never used and could have side effects
-
-  Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 495, characters 0-56
-  +primitive_to_string is never used and could have side effects
 
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.mli", line 1, characters 0-0
@@ -7488,12 +7448,6 @@
   +lambda_to_string is never used
   <-- line 31
   val lambda_to_string : Lam.t -> string [@@dead "+lambda_to_string"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.mli", line 33, characters 0-51
-  +primitive_to_string is never used
-  <-- line 33
-  val primitive_to_string : Lam_primitive.t -> string [@@dead "+primitive_to_string"] 
 
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_scc.ml", line 1, characters 0-0
@@ -14661,4 +14615,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2579 issues (Warning Dead Module:151, Warning Dead Type:265, Warning Dead Value:1908, Warning Dead Value With Side Effects:36, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2571 issues (Warning Dead Module:151, Warning Dead Type:259, Warning Dead Value:1907, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
