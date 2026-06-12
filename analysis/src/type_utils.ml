@@ -449,8 +449,7 @@ let rec extract_type ?(print_opening_debug = true)
       |> List.map (fun (label, field) ->
              {
                name = label;
-               display_name =
-                 Utils.print_maybe_exotic_ident ~allow_uident:true label;
+               display_name = Utils.print_maybe_exotic_ident label;
                args =
                  (* Multiple arguments are represented as a Ttuple, while a single argument is just the type expression itself. *)
                  (match field with
