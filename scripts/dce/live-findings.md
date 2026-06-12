@@ -378,6 +378,25 @@ live after manual validation.
 - Context: the unused `Identifiable.Pair` functor was removed. The remaining
   warnings are cross-module/functor-signature edges missed by DCE.
 
+### Runtime package, warnings, and hash collections
+
+- Report: `Warning Dead Value` and `Warning Dead Module` entries in
+  `compiler/ext/runtime_package.ml` / `.mli`, `warnings.ml` / `.mli`,
+  `hash_gen.ml`, `hash_set_gen.ml`, `hash_set_ident_mask.ml` / `.mli`, and
+  `hash_set_poly.mli`.
+- Verdict: live; false positive for the remaining production callers, with
+  some unit-test-only hash-set exports retained while unit tests are not being
+  edited.
+- Validation: `Runtime_package.name` and `path` are used by compiler package
+  path resolution and JS package-info generation. `Warnings.reset_fatal` is used
+  by the playground entry point, and `Warnings.has_warnings` is used by
+  `lam_compile_main.cppo.ml`. `Hash_gen` / `Hash_set_gen` are wrapped by
+  `hash.cppo.ml` and `hash_set.cppo.ml`; `Hash_set_ident_mask` is used by
+  `lam_scc.ml`; `Hash_set_poly` is used by `used_attributes.ml` and covered by
+  unit tests for the extra collection operations.
+- Context: unused `Warnings.Bad_module_name`, `mk_lazy`, and unused interface
+  exports were removed.
+
 ### `Ext_list` production helpers
 
 - Report: remaining `Warning Dead Value` entries in
