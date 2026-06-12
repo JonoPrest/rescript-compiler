@@ -7,18 +7,6 @@
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compile.ml", line 820, characters 4-2265
   optional argument default of function +switch is never used
 
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compile.ml", line 272, characters 2-2044
-  optional argument dynamic_import of function +compile_external_field_apply is always supplied (1 calls)
-
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compile.ml", line 235, characters 2-511
-  optional argument dynamic_import of function +compile_external_field is always supplied (1 calls)
-
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_pass_alpha_conversion.ml", line 26, characters 2-955
-  optional argument ap_transformed_jsx of function +populate_apply_info is always supplied (1 calls)
-
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reanalyze.ml", line 199, characters 0-11133
   optional argument file_stats of function +run_analysis is never used
@@ -2587,4 +2575,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 549 issues (Warning Dead Module:4, Warning Dead Type:84, Warning Dead Value:112, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:198, Warning Unused Argument:149)
+  Analysis reported 546 issues (Warning Dead Module:4, Warning Dead Type:84, Warning Dead Value:112, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:149)

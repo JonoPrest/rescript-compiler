@@ -233,8 +233,8 @@ type initialization = J.block
 
 let compile output_prefix =
   let rec compile_external_field (* Like [List.empty]*)
-      ?(dynamic_import = false) (lamba_cxt : Lam_compile_context.t)
-      (id : Ident.t) name : Js_output.t =
+      ~dynamic_import (lamba_cxt : Lam_compile_context.t) (id : Ident.t) name :
+      Js_output.t =
     match Lam_compile_env.query_external_id_info ~dynamic_import id name with
     | {persistent_closed_lambda = Some lam} when Lam_util.not_function lam ->
       compile_lambda lamba_cxt lam
@@ -269,7 +269,7 @@ let compile output_prefix =
       for the function, generative module or functor can be a function,
       however it can not be global -- global can only module
   *)
-  and compile_external_field_apply ?(dynamic_import = false)
+  and compile_external_field_apply ~dynamic_import
       (appinfo : Lam.apply) (module_id : Ident.t) (field_name : string)
       (lambda_cxt : Lam_compile_context.t) : Js_output.t =
     let ident_info =
