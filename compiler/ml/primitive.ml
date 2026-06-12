@@ -59,4 +59,4 @@ let print p osig_val_decl =
     if p.prim_native_name <> "" then [p.prim_name; p.prim_native_name]
     else [p.prim_name]
   in
-  {osig_val_decl with oval_prims = prims; oval_attributes = []}
+  {osig_val_decl with oval_prims = prims}

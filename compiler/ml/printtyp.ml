@@ -1039,9 +1039,7 @@ let tree_of_value_description id decl =
   (* Format.eprintf "@[%a@]@." raw_type_expr decl.val_type; *)
   let id = Ident.name id in
   let ty = tree_of_type_scheme decl.val_type in
-  let vd =
-    {oval_name = id; oval_type = ty; oval_prims = []; oval_attributes = []}
-  in
+  let vd = {oval_name = id; oval_type = ty; oval_prims = []} in
   let vd =
     match decl.val_kind with
     | Val_prim p -> Primitive.print p vd

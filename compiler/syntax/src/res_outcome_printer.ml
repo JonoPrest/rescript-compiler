@@ -14,34 +14,6 @@ module Printer = Res_printer
  * We don't support custom operators. *)
 let parenthesized_ident _name = true
 
-(* TODO: better allocation strategy for the buffer *)
-let escape_string_contents s =
-  let len = String.length s in
-  let b = Buffer.create len in
-  for i = 0 to len - 1 do
-    let c = (String.get [@doesNotRaise]) s i in
-    if c = '\008' then (
-      Buffer.add_char b '\\';
-      Buffer.add_char b 'b')
-    else if c = '\009' then (
-      Buffer.add_char b '\\';
-      Buffer.add_char b 't')
-    else if c = '\010' then (
-      Buffer.add_char b '\\';
-      Buffer.add_char b 'n')
-    else if c = '\013' then (
-      Buffer.add_char b '\\';
-      Buffer.add_char b 'r')
-    else if c = '\034' then (
-      Buffer.add_char b '\\';
-      Buffer.add_char b '"')
-    else if c = '\092' then (
-      Buffer.add_char b '\\';
-      Buffer.add_char b '\\')
-    else Buffer.add_char b c
-  done;
-  Buffer.contents b
-
 (* let rec print_ident fmt ident = match ident with
    | Outcometree.Oide_ident s -> Format.pp_print_string fmt s
    | Oide_dot (id, s) ->
@@ -64,20 +36,6 @@ let rec print_out_ident_doc ?(allow_uident = true)
     Doc.concat
       [
         print_out_ident_doc call; Doc.lparen; print_out_ident_doc arg; Doc.rparen;
-      ]
-
-let print_out_attribute_doc (out_attribute : Outcometree.out_attribute) =
-  Doc.concat [Doc.text "@"; Doc.text out_attribute.oattr_name]
-
-let print_out_attributes_doc (attrs : Outcometree.out_attribute list) =
-  match attrs with
-  | [] -> Doc.nil
-  | attrs ->
-    Doc.concat
-      [
-        Doc.group
-          (Doc.join ~sep:Doc.line (List.map print_out_attribute_doc attrs));
-        Doc.line;
       ]
 
 let rec collect_arrow_args (out_type : Outcometree.out_type) args =
@@ -146,10 +104,6 @@ let rec print_out_type_doc (out_type : Outcometree.out_type) =
     Doc.concat [Doc.text ("'" ^ if ng then "_" else ""); Doc.text s]
   | Otyp_object (fields, rest) -> print_object_fields fields rest
   | Otyp_class _ -> Doc.nil
-  | Otyp_attribute (typ, attribute) ->
-    Doc.group
-      (Doc.concat
-         [print_out_attribute_doc attribute; Doc.line; print_out_type_doc typ])
   (* example: Red | Blue | Green | CustomColour(float, float, float) *)
   | Otyp_sum constructors -> print_out_constructors_doc constructors
   (* example: {"name": string, "age": int} *)
@@ -490,13 +444,11 @@ let print_type_parameter_doc (typ, (co, cn)) =
 let rec print_out_sig_item_doc ?(print_name_as_is = false)
     (out_sig_item : Outcometree.out_sig_item) =
   match out_sig_item with
-  | Osig_class _ | Osig_class_type _ -> Doc.nil
   | Osig_ellipsis -> Doc.dotdotdot
   | Osig_value value_decl ->
     Doc.group
       (Doc.concat
          [
-           print_out_attributes_doc value_decl.oval_attributes;
            Doc.text
              (match value_decl.oval_prims with
              | [] -> "let "
@@ -849,226 +801,6 @@ let print_out_signature fmt signature =
   Format.pp_print_string fmt
     (Doc.to_string ~width:80 (print_out_signature_doc signature))
 
-let valid_float_lexeme s =
-  let l = String.length s in
-  let rec loop i =
-    if i >= l then s ^ "."
-    else
-      match s.[i] [@doesNotRaise] with
-      | '0' .. '9' | '-' -> loop (i + 1)
-      | _ -> s
-  in
-  loop 0
-
-let float_repres f =
-  match classify_float f with
-  | FP_nan -> "nan"
-  | FP_infinite -> if f < 0.0 then "neg_infinity" else "infinity"
-  | _ ->
-    let float_val =
-      let s1 = Printf.sprintf "%.12g" f in
-      if f = (float_of_string [@doesNotRaise]) s1 then s1
-      else
-        let s2 = Printf.sprintf "%.15g" f in
-        if f = (float_of_string [@doesNotRaise]) s2 then s2
-        else Printf.sprintf "%.18g" f
-    in
-    valid_float_lexeme float_val
-
-let rec print_out_value_doc (out_value : Outcometree.out_value) =
-  match out_value with
-  | Oval_array out_values ->
-    Doc.group
-      (Doc.concat
-         [
-           Doc.lbracket;
-           Doc.indent
-             (Doc.concat
-                [
-                  Doc.soft_line;
-                  Doc.join
-                    ~sep:(Doc.concat [Doc.comma; Doc.line])
-                    (List.map print_out_value_doc out_values);
-                ]);
-           Doc.trailing_comma;
-           Doc.soft_line;
-           Doc.rbracket;
-         ])
-  | Oval_char c -> Doc.text ("'" ^ Char.escaped c ^ "'")
-  | Oval_constr (out_ident, out_values) ->
-    Doc.group
-      (Doc.concat
-         [
-           print_out_ident_doc out_ident;
-           Doc.lparen;
-           Doc.indent
-             (Doc.concat
-                [
-                  Doc.soft_line;
-                  Doc.join
-                    ~sep:(Doc.concat [Doc.comma; Doc.line])
-                    (List.map print_out_value_doc out_values);
-                ]);
-           Doc.trailing_comma;
-           Doc.soft_line;
-           Doc.rparen;
-         ])
-  | Oval_ellipsis -> Doc.text "..."
-  | Oval_int i -> Doc.text (Format.sprintf "%i" i)
-  | Oval_int32 i -> Doc.text (Format.sprintf "%lil" i)
-  | Oval_int64 i -> Doc.text (Format.sprintf "%LiL" i)
-  | Oval_nativeint i -> Doc.text (Format.sprintf "%nin" i)
-  | Oval_float f -> Doc.text (float_repres f)
-  | Oval_list out_values ->
-    Doc.group
-      (Doc.concat
-         [
-           Doc.text "list[";
-           Doc.indent
-             (Doc.concat
-                [
-                  Doc.soft_line;
-                  Doc.join
-                    ~sep:(Doc.concat [Doc.comma; Doc.line])
-                    (List.map print_out_value_doc out_values);
-                ]);
-           Doc.trailing_comma;
-           Doc.soft_line;
-           Doc.rbracket;
-         ])
-  | Oval_printer fn ->
-    let fmt = Format.str_formatter in
-    fn fmt;
-    let str = Format.flush_str_formatter () in
-    Doc.text str
-  | Oval_record rows ->
-    Doc.group
-      (Doc.concat
-         [
-           Doc.lparen;
-           Doc.indent
-             (Doc.concat
-                [
-                  Doc.soft_line;
-                  Doc.join
-                    ~sep:(Doc.concat [Doc.comma; Doc.line])
-                    (List.map
-                       (fun (out_ident, out_value) ->
-                         Doc.group
-                           (Doc.concat
-                              [
-                                print_out_ident_doc out_ident;
-                                Doc.text ": ";
-                                print_out_value_doc out_value;
-                              ]))
-                       rows);
-                ]);
-           Doc.trailing_comma;
-           Doc.soft_line;
-           Doc.rparen;
-         ])
-  | Oval_string (txt, _sizeToPrint, _kind) ->
-    Doc.text (escape_string_contents txt)
-  | Oval_stuff txt -> Doc.text txt
-  | Oval_tuple out_values ->
-    Doc.group
-      (Doc.concat
-         [
-           Doc.lparen;
-           Doc.indent
-             (Doc.concat
-                [
-                  Doc.soft_line;
-                  Doc.join
-                    ~sep:(Doc.concat [Doc.comma; Doc.line])
-                    (List.map print_out_value_doc out_values);
-                ]);
-           Doc.trailing_comma;
-           Doc.soft_line;
-           Doc.rparen;
-         ])
-  (* Not supported by ReScript *)
-  | Oval_variant _ -> Doc.nil
-
-let print_out_exception_doc exc out_value =
-  match exc with
-  | Sys.Break -> Doc.text "Interrupted."
-  | Out_of_memory -> Doc.text "Out of memory during evaluation."
-  | Stack_overflow ->
-    Doc.text "Stack overflow during evaluation (looping recursion?)."
-  | _ ->
-    Doc.group
-      (Doc.indent
-         (Doc.concat
-            [Doc.text "Exception:"; Doc.line; print_out_value_doc out_value]))
-
-let print_out_phrase_signature signature =
-  let rec loop signature acc =
-    match signature with
-    | [] -> List.rev acc
-    | (Outcometree.Osig_typext (ext, Oext_first), None) :: signature ->
-      (* Gather together extension constructors *)
-      let rec gather_extensions acc items =
-        match items with
-        | (Outcometree.Osig_typext (ext, Oext_next), None) :: items ->
-          gather_extensions
-            ((ext.oext_name, ext.oext_args, ext.oext_ret_type, ext.oext_repr)
-            :: acc)
-            items
-        | _ -> (List.rev acc, items)
-      in
-      let exts, signature =
-        gather_extensions
-          [(ext.oext_name, ext.oext_args, ext.oext_ret_type, ext.oext_repr)]
-          signature
-      in
-      let te =
-        {
-          Outcometree.otyext_name = ext.oext_type_name;
-          otyext_params = ext.oext_type_params;
-          otyext_constructors = exts;
-          otyext_private = ext.oext_private;
-        }
-      in
-      let doc = print_out_type_extension_doc te in
-      loop signature (doc :: acc)
-    | (sig_item, opt_out_value) :: signature ->
-      let doc =
-        match opt_out_value with
-        | None -> print_out_sig_item_doc sig_item
-        | Some out_value ->
-          Doc.group
-            (Doc.concat
-               [
-                 print_out_sig_item_doc sig_item;
-                 Doc.text " = ";
-                 print_out_value_doc out_value;
-               ])
-      in
-      loop signature (doc :: acc)
-  in
-  Doc.breakable_group ~force_break:true
-    (Doc.join ~sep:Doc.line (loop signature []))
-
-let print_out_phrase_doc (out_phrase : Outcometree.out_phrase) =
-  match out_phrase with
-  | Ophr_eval (out_value, out_type) ->
-    Doc.group
-      (Doc.concat
-         [
-           Doc.text "- : ";
-           print_out_type_doc out_type;
-           Doc.text " =";
-           Doc.indent (Doc.concat [Doc.line; print_out_value_doc out_value]);
-         ])
-  | Ophr_signature [] -> Doc.nil
-  | Ophr_signature signature -> print_out_phrase_signature signature
-  | Ophr_exception (exc, out_value) -> print_out_exception_doc exc out_value
-
-let print_out_phrase fmt out_phrase =
-  Format.pp_print_string fmt
-    (Doc.to_string ~width:80 (print_out_phrase_doc out_phrase))
-
 let print_out_module_type fmt out_module_type =
   Format.pp_print_string fmt
     (Doc.to_string ~width:80 (print_out_module_type_doc out_module_type))
@@ -1077,18 +809,10 @@ let print_out_type_extension fmt type_extension =
   Format.pp_print_string fmt
     (Doc.to_string ~width:80 (print_out_type_extension_doc type_extension))
 
-let print_out_value fmt out_value =
-  Format.pp_print_string fmt
-    (Doc.to_string ~width:80 (print_out_value_doc out_value))
-
-(* Not supported in ReScript *)
-(* Oprint.out_class_type *)
 let setup =
   lazy
-    (Oprint.out_value := print_out_value;
-     Oprint.out_type := print_out_type;
+    (Oprint.out_type := print_out_type;
      Oprint.out_module_type := print_out_module_type;
      Oprint.out_sig_item := print_out_sig_item;
      Oprint.out_signature := print_out_signature;
-     Oprint.out_type_extension := print_out_type_extension;
-     Oprint.out_phrase := print_out_phrase)
+     Oprint.out_type_extension := print_out_type_extension)
