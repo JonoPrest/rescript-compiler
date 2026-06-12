@@ -295,6 +295,62 @@ live after manual validation.
   remains available while DCE ignores test modules.
 - Context: the fully unused `chop_extension_maybe` helper was removed.
 
+### `Ext_fmt` and `Ext_ident` compiler helpers
+
+- Report: `Warning Dead Module`, `Warning Dead Value`, and
+  `Warning Dead Value With Side Effects`, `compiler/ext/ext_fmt.ml` and
+  `compiler/ext/ext_ident.ml` / `.mli`, for formatting helpers, JavaScript
+  identifier flags, temporary identifiers, and identifier comparison helpers.
+- Verdict: live; false positive for cross-module and `.cppo.ml` callers.
+- Validation: `Ext_fmt.with_file_as_pp` is called from
+  `lam_compile_main.cppo.ml`, while `Ext_fmt.failwithf` is used by
+  `lam_dce.ml` and `ext_path.ml`. `Ext_ident.create_tmp`, `make_js_object`,
+  `make_unused`, and `is_js_or_global` are used throughout lambda and JS
+  lowering (`lam_compile*.ml`, `js_ast_util.ml`, `js_dump.ml`, and
+  `lam_dce.ml`). `Ext_ident.compare` and `equal` feed identity maps, hash sets,
+  and module identifier equality.
+- Context: Reanalyze does not root these references through the cross-module
+  compiler pipeline. The unused `is_js_object`, `reset`, JS-module table, and
+  public `is_uppercase_exotic` export were removed.
+
+### `compiler/ext` cross-module helpers
+
+- Report: `Warning Dead Module`, `Warning Dead Type`, and
+  `Warning Dead Value` entries across `compiler/ext/config.ml`,
+  `ext_char.ml`, `ext_int.ml`, `ext_js_file_kind.ml`, `ext_modulename.ml`,
+  `ext_namespace.ml`, `ext_option.ml`, `ext_path.ml`, `ext_pervasives.ml`,
+  `ext_pp.ml`, `ext_scc.ml`, and `ext_sys.mli`.
+- Verdict: live; false positive for production callers hidden behind
+  `.cppo.ml`, module aliases, or public type signatures.
+- Validation: `Config.cmt_magic_number` is used by `cmt_format.cppo.ml`;
+  `Ext_char.is_lower_case`, `Ext_path.package_dir`, and
+  `Ext_pervasives.with_file_as_chan` are used by `lam_compile_main.cppo.ml`;
+  `Ext_int` feeds the integer map/hash/set functors and JS int32 lowering;
+  `Ext_js_file_kind.case` is stored in CMJ data and lambda compile env
+  signatures; `Ext_modulename.js_id_name_of_hint_name` is used by
+  `lam_compile_env.ml`; `Ext_namespace` is used by JS module-name lowering and
+  outcome printing; `Ext_option.map` / `exists` are used throughout lambda
+  passes; `Ext_path.node_rebase_file` is used by `js_name_of_module_id.cppo.ml`;
+  `Ext_pp.from_channel` and `brace_group` drive JS dumping; `Ext_scc.graph` is
+  used by `lam_scc.ml`; and `Ext_sys.is_windows_or_cygwin` is used by JS module
+  path generation.
+- Context: several helper implementations are reported only because their
+  exported wrapper is itself reported as dead; the wrapper has a production
+  caller. Dead pretty-printer scope/debug helpers and extra `Ext_ref` protect
+  variants were removed.
+
+### `Ext_pervasives` unit-test number parsers
+
+- Report: `Warning Dead Value`, `compiler/ext/ext_pervasives.ml` / `.mli`, for
+  `nat_of_string_exn`, `parse_nat_of_string`, and their local helper.
+- Verdict: intentionally retained unit-test-covered utility surface for now.
+- Validation: the number parsers are exercised only by
+  `ounit_util_tests.ml`. Since unit tests are excluded from the DCE roots and
+  this pass is avoiding unit-test edits, they are documented rather than
+  removed in this batch.
+- Context: `with_file_as_chan` from the same module is production-live through
+  `.cppo.ml` callers.
+
 ### `Ext_list` production helpers
 
 - Report: remaining `Warning Dead Value` entries in
