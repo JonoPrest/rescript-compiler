@@ -149,19 +149,24 @@ live after manual validation.
   callback is consumed by `Set.Make`, and removing the reset hook would let
   experimental feature flags leak between playground compilations.
 
-### `Location.report_error ?custom_intro ?src`
+### `Location` diagnostic hooks
 
 - Report: `Warning Redundant Optional Argument`, `compiler/ml/location.ml` and
   `compiler/ml/location.mli`, optional arguments `custom_intro` and `src` on
-  `report_error`.
+  `report_error`; and `Warning Dead Value`, `compiler/ml/location.mli`, for
+  warning-printer hook exports such as `warning_printer`,
+  `formatter_for_warnings`, and `default_warning_printer`.
 - Verdict: live; false positive.
 - Validation: `compiler/syntax/src/res_diagnostics.ml` calls
   `Location.report_error ~custom_intro ~src:(Some src)` when rendering syntax
   diagnostics, and `compiler/jsoo/jsoo_playground_main.ml` uses the default
   wrapper form. The local exception reporter also passes explicit `None` values.
+  The playground entry point installs a custom `formatter_for_warnings` and
+  `warning_printer`, and calls `default_warning_printer` from its custom hook.
 - Context: these labels select syntax-error intro text and source rendering for
-  diagnostics. Reanalyze only counts the local wrapper call, so it misses the
-  cross-module diagnostic call that supplies real values.
+  diagnostics. The warning hooks are public so the playground can intercept
+  compiler warnings. Reanalyze only counts the local wrapper call and misses the
+  jsoo cross-module diagnostic hooks.
 
 ### Reactive combinator internals
 
