@@ -4073,65 +4073,29 @@
   <-- line 69
   let map (x : t) cb = Ext_list.map x.module_systems cb [@@dead "+map"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.ml", line 91, characters 0-120
-  +string_of_module_system is never used
-  <-- line 91
-    | Esmodule -> "ESModule" [@@dead "+string_of_module_system"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.ml", line 102, characters 0-190
-  +dump_package_info is never used
-  <-- line 102
-    Format.fprintf fmt "@[%s@ %s@ %s@]" (string_of_module_system ms) name suffix [@@dead "+dump_package_info"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.ml", line 106, characters 0-217
-  +dump_package_name is never used
-  <-- line 106
-    | Pkg_runtime -> Format.pp_print_string fmt "@runtime" [@@dead "+dump_package_name"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.ml", line 112, characters 0-268
-  +dump_packages_info is never used
-  <-- line 112
-      ls [@@dead "+dump_packages_info"] 
-
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.ml", line 121, characters 2-19
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.ml", line 98, characters 2-19
   package_found_info.rel_path is a record label never used to read a value
-  <-- line 121
+  <-- line 98
     rel_path: string; [@dead "package_found_info.rel_path"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.ml", line 122, characters 2-23
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.ml", line 99, characters 2-23
   package_found_info.pkg_rel_path is a record label never used to read a value
-  <-- line 122
+  <-- line 99
     pkg_rel_path: string; [@dead "package_found_info.pkg_rel_path"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.ml", line 123, characters 2-17
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.ml", line 100, characters 2-17
   package_found_info.suffix is a record label never used to read a value
-  <-- line 123
+  <-- line 100
     suffix: string; [@dead "package_found_info.suffix"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.ml", line 133, characters 0-884
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.ml", line 110, characters 0-884
   +query_package_infos is never used
-  <-- line 133
+  <-- line 110
       | None -> Package_not_found) [@@dead "+query_package_infos"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.ml", line 159, characters 0-228
-  +get_js_path is never used
-  <-- line 159
-    | None -> assert false [@@dead "+get_js_path"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.ml", line 170, characters 0-121
-  +get_output_dir is never used
-  <-- line 170
-    Filename.concat package_dir (get_js_path info module_system) [@@dead "+get_output_dir"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.mli", line 27, characters 0-58
@@ -4169,40 +4133,28 @@
   <-- line 43
   val map : t -> (package_info -> 'a) -> 'a list [@@dead "+map"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.mli", line 51, characters 0-54
-  +dump_packages_info is never used
-  <-- line 51
-  val dump_packages_info : Format.formatter -> t -> unit [@@dead "+dump_packages_info"] 
-
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.mli", line 59, characters 2-19
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.mli", line 57, characters 2-19
   package_found_info.rel_path is a record label never used to read a value
-  <-- line 59
+  <-- line 57
     rel_path: string; [@dead "package_found_info.rel_path"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.mli", line 60, characters 2-23
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.mli", line 58, characters 2-23
   package_found_info.pkg_rel_path is a record label never used to read a value
-  <-- line 60
+  <-- line 58
     pkg_rel_path: string; [@dead "package_found_info.pkg_rel_path"] 
 
   Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.mli", line 61, characters 2-17
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.mli", line 59, characters 2-17
   package_found_info.suffix is a record label never used to read a value
-  <-- line 61
+  <-- line 59
     suffix: string; [@dead "package_found_info.suffix"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.mli", line 69, characters 0-71
-  +get_output_dir is never used
-  <-- line 69
-  val get_output_dir : t -> package_dir:string -> module_system -> string [@@dead "+get_output_dir"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.mli", line 71, characters 0-58
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.mli", line 67, characters 0-58
   +query_package_infos is never used
-  <-- line 71
+  <-- line 67
   val query_package_infos : t -> module_system -> info_query [@@dead "+query_package_infos"] 
 
   Warning Dead Value
@@ -16121,4 +16073,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2823 issues (Warning Dead Module:152, Warning Dead Type:333, Warning Dead Value:2082, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2815 issues (Warning Dead Module:152, Warning Dead Type:333, Warning Dead Value:2074, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
