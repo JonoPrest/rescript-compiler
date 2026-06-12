@@ -262,8 +262,10 @@ live after manual validation.
 
 - Report: `Warning Dead Value` / `Warning Dead Type`,
   `compiler/ml/classify_function.ml` / `.mli`,
-  `compiler/ml/cmi_format.ml` / `.mli`, `compiler/ml/cmt_format.mli`, and
-  `compiler/ml/cmt_utils.ml`.
+  `compiler/ml/cmi_format.ml` / `.mli`, `compiler/ml/cmt_format.mli`,
+  `compiler/ml/cmt_utils.ml`, and typedtree artifact fields such as
+  `open_description.open_loc`, `package_type.pack_type`, `package_type.pack_txt`,
+  `type_extension.tyext_txt`, and `extension_constructor.ext_name`.
 - Verdict: live; false positives for compiler, GenType, and analysis tooling.
 - Validation: `compiler/core/lam_convert.ml` calls
   `Classify_function.classify_stmt` when lowering raw JavaScript statement
@@ -272,7 +274,10 @@ live after manual validation.
   writing `.cmi`, `.cmt`, and `.cmti` artifacts. `analysis/src/*`,
   `analysis/reanalyze/src/*`, and `compiler/gentype/*` call
   `Cmt_format.read_cmt`, inspect `Partial_interface` / `Packed` typed
-  artifacts, and traverse `Partial_class_expr` where present.
+  artifacts, and traverse `Partial_class_expr` where present. The reported
+  typedtree fields are filled by `typemod.ml`, `typetexp.ml`, and
+  `typedecl.ml`, then carried in the typedtree payload serialized into `.cmt`
+  files.
 - Context: the reported `cmt_infos` fields are serialized into typed artifact
   files by `cmt_format.cppo.ml` and are part of the reader/writer schema even
   when a specific field is not read back by current in-repo code. The
@@ -280,6 +285,22 @@ live after manual validation.
   `Cmt_utils.record_deprecated_used` and invoked through
   `compiler/ml/builtin_attributes.ml`, with `deprecated_text` carried in the
   recorded payload.
+
+### Typedtree iterators
+
+- Report: `Warning Dead Value`, `compiler/ml/typedtree_iter.ml` / `.mli`, for
+  `Make_iterator` and traversal callbacks such as `iter_structure_item`,
+  `iter_signature_item_desc`, `iter_module_expr_desc`, `iter_class_expr_desc`,
+  and `iter_expression_desc`.
+- Verdict: live; false positive.
+- Validation: `compiler/jsoo/jsoo_playground_main.ml` instantiates
+  `Typedtree_iter.Make_iterator` with `Default_iterator_argument` and calls
+  `Iter.iter_structure_item` while building playground type hints.
+  `compiler/ml/parmatch.ml` also instantiates the functor to collect expression
+  identifiers for pattern-match analysis.
+- Context: reanalyze does not root these callbacks through functor
+  instantiation and the jsoo playground entry point, so the generated iterator
+  methods look unused even though they run in live compiler tooling.
 
 ### `Misc` live utility surface
 
