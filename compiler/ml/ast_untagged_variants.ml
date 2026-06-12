@@ -538,7 +538,6 @@ module Dynamic_checks = struct
   let bin op x y = BinOp (op, x, y)
   let tag_type t = TagType t
   let typeof x = TypeOf x
-  let str s = String s |> tag_type
   let is_instance i x = IsInstanceOf (i, x)
   let not x = Not x
   let nil = Null |> tag_type
