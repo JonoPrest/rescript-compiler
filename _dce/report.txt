@@ -787,10 +787,6 @@
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 967, characters 2-55
   optional argument from_type of function Label.+unbound_name_error is never used
 
-  Warning Incorrect Annotation
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_io.mli", line 7, characters 0-82
-  +write_file  is annotated @dead but is live
-
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 370, characters 0-74
   optional argument comment of function +float is never used
@@ -16807,4 +16803,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2954 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:206, Warning Unused Argument:69)
+  Analysis reported 2953 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:206, Warning Unused Argument:69)
