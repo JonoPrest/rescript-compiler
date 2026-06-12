@@ -337,6 +337,25 @@ live after manual validation.
   were removed. The remaining warnings are `.cppo.ml` call sites and record
   fields read by package path generation.
 
+### Core JS pass pipeline and traversals
+
+- Report: `Warning Dead Module` / `Warning Dead Value` clusters in
+  `compiler/core/js_pass_debug.mli`, `js_pass_external_shadow.ml`,
+  `js_pass_flatten.ml`, `js_pass_flatten_and_mark_dead.ml`,
+  `js_pass_get_used.ml`, `js_pass_scope.ml`, `js_pass_tailcall_inline.ml`, and
+  the generated traversal helpers `js_record_fold.ml`, `js_record_iter.ml`, and
+  `js_record_map.ml`.
+- Verdict: live; false positive.
+- Validation: `compiler/core/lam_compile_main.cppo.ml` runs the JS pass
+  pipeline through `Js_pass_debug.dump`, `Js_pass_flatten.program`,
+  `Js_pass_external_shadow.program`, `Js_pass_tailcall_inline.tailcall_inline`,
+  `Js_pass_flatten_and_mark_dead.program`, and `Js_pass_scope.program`.
+  `js_pass_tailcall_inline.ml` calls `Js_pass_get_used.get_stats`. These passes
+  instantiate and call the `Js_record_*` traversal records, so the large helper
+  clusters under the traversal modules are live through the pass pipeline.
+- Context: the DCE report misses `.cppo.ml` roots and therefore treats entire
+  passes and their generated traversal helper methods as dead.
+
 ### `File_deps.File_hash` callbacks
 
 - Report: `Warning Dead Module` and `Warning Dead Value`,
