@@ -1262,12 +1262,6 @@
   val parse_nat_of_string : string -> int ref -> int [@@dead "+parse_nat_of_string"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_sys.mli", line 25, characters 0-40
-  +is_directory_no_exn is never used
-  <-- line 25
-  val is_directory_no_exn : string -> bool [@@dead "+is_directory_no_exn"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_poly.mli", line 29, characters 0-24
   +clear is never used
   <-- line 29
@@ -2083,4 +2077,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 423 issues (Warning Dead Module:4, Warning Dead Type:84, Warning Dead Value:112, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:26)
+  Analysis reported 422 issues (Warning Dead Module:4, Warning Dead Type:84, Warning Dead Value:111, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:26)

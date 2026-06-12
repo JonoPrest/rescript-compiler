@@ -22,15 +22,5 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. *)
 
-(** TODO: not exported yet, wait for Windows Fix*)
-#ifdef BROWSER
-let is_directory_no_exn f =
-  try Sys.is_directory f with _ -> false  
-#else
-external is_directory_no_exn : string -> bool = "caml_sys_is_directory_no_exn"
-#endif
-
-
 let is_windows_or_cygwin = Sys.win32 || Sys.cygwin
-
 
