@@ -312,6 +312,28 @@ live after manual validation.
   smart constructors used cross-module, which this DCE run does not root
   correctly.
 
+### Core lambda analysis and rewrite passes
+
+- Report: `Warning Dead Module` / `Warning Dead Value` clusters in
+  `compiler/core/lam_analysis.ml`, `lam_arity.ml`, `lam_arity_analysis.ml`,
+  `lam_beta_reduce.ml`, `lam_beta_reduce_util.ml`, `lam_bounded_vars.ml`,
+  `lam_check.ml`, and `lam_closure.ml` plus their `.mli` files.
+- Verdict: live; false positive for the remaining reported helpers.
+- Validation: `Lam_analysis` is used by lambda DCE/count/remove-alias passes,
+  `lam_compile_main.cppo.ml`, `lam_compile.ml`, `lam_stats_export.ml`,
+  `lam_beta_reduce.ml`, `lam_dce.ml`, `lam_util.cppo.ml`, and
+  `lam_var_stats.ml`. `Lam_arity` and `Lam_arity_analysis` feed
+  `lam_pass_alpha_conversion.ml`, `lam_stats_export.ml`, `lam_coercion.ml`,
+  and `lam_pass_collect.ml`. `Lam_beta_reduce` is called from
+  `lam_pass_lets_dce.ml`, `lam_pass_count.ml`, `lam_pass_remove_alias.ml`, and
+  `lam_compile.ml`; it calls `Lam_beta_reduce_util.simple_beta_reduce` and
+  `Lam_bounded_vars.rewrite`. `Lam_check.check` is called by
+  `lam_compile_main.cppo.ml`. `Lam_closure` is used by
+  `lam_pass_remove_alias.ml`, `lam_stats_export.ml`, and `lam_compile.ml`.
+- Context: unused `Lam_arity.equal`, `print`, and `print_arities_tbl` exports
+  were removed. The remaining entries are cross-module pass plumbing and local
+  helper chains under live pass functions.
+
 ### Core JS lowering helpers
 
 - Report: `Warning Dead Module`, `Warning Dead Value`, and constructor warnings
