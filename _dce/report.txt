@@ -1760,12 +1760,6 @@
   val string_of_block : J.block -> string [@@dead "+string_of_block"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump.mli", line 31, characters 0-49
-  +string_of_expression is never used
-  <-- line 31
-  val string_of_expression : J.expression -> string [@@dead "+string_of_expression"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_import_export.ml", line 30, characters 0-38
   +es_module is never used
   <-- line 30
@@ -1874,106 +1868,10 @@
   let exports = "exports" [@@dead "+exports"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 77, characters 0-19
-  +array is never used
-  <-- line 77
-  let array = "Array" [@@dead "+array"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 81, characters 0-19
-  +plusplus is never used
-  <-- line 81
-  let plusplus = "++" [@@dead "+plusplus"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 83, characters 0-21
-  +minusminus is never used
-  <-- line 83
-  let minusminus = "--" [@@dead "+minusminus"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 109, characters 0-17
-  +json is never used
-  <-- line 109
-  let json = "JSON" [@@dead "+json"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 111, characters 0-27
-  +stringify is never used
-  <-- line 111
-  let stringify = "stringify" [@@dead "+stringify"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 113, characters 0-23
-  +console is never used
-  <-- line 113
-  let console = "console" [@@dead "+console"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 115, characters 0-21
-  +define is never used
-  <-- line 115
-  let define = "define" [@@dead "+define"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 123, characters 0-38
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 109, characters 0-38
   +strict_directive is never used
-  <-- line 123
+  <-- line 109
   let strict_directive = "'use strict';" [@@dead "+strict_directive"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 133, characters 0-17
-  +bind is never used
-  <-- line 133
-  let bind = "bind" [@@dead "+bind"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 135, characters 0-17
-  +math is never used
-  <-- line 135
-  let math = "Math" [@@dead "+math"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 143, characters 0-25
-  +string_cap is never used
-  <-- line 143
-  let string_cap = "String" [@@dead "+string_cap"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 145, characters 0-34
-  +from_charcode is never used
-  <-- line 145
-  let from_charcode = "fromCharCode" [@@dead "+from_charcode"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 155, characters 0-12
-  +gt is never used
-  <-- line 155
-  let gt = ">" [@@dead "+gt"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 162, characters 0-28
-  +caml_block_create is never used
-  <-- line 162
-  let caml_block_create = "__" [@@dead "+caml_block_create"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 166, characters 0-30
-  +block_poly_var is never used
-  <-- line 166
-  let block_poly_var = "polyVar" [@@dead "+block_poly_var"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 168, characters 0-29
-  +block_variant is never used
-  <-- line 168
-  let block_variant = "variant" [@@dead "+block_variant"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_lit.ml", line 170, characters 0-42
-  +block_simple_variant is never used
-  <-- line 170
-  let block_simple_variant = "simpleVariant" [@@dead "+block_simple_variant"] 
 
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_program.ml", line 1, characters 0-0
@@ -16475,4 +16373,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2882 issues (Warning Dead Module:152, Warning Dead Type:360, Warning Dead Value:2114, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2865 issues (Warning Dead Module:152, Warning Dead Type:360, Warning Dead Value:2097, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
