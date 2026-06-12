@@ -136,3 +136,17 @@ live after manual validation.
   `process_files_batch` and `remove_batch` directly for churn tests.
 - Context: the single-file/cache-management helpers were removed, but the
   remaining collection operations are part of the live reactive analyzer path.
+
+### `Arnold` ordered-set compare callbacks
+
+- Report: `Warning Dead Value`, `analysis/reanalyze/src/arnold.ml`,
+  `Function_args.compare_arg`, `Function_args.compare`, and
+  `Function_call.compare`.
+- Verdict: live; false positive.
+- Validation: `Function_call_set = Set.Make (Function_call)` uses
+  `Function_call.compare`, which delegates to `Function_args.compare`. The set is
+  used in the termination analyzer call stack (`Call_stack.to_set`,
+  `Function_call_set.mem`, `Function_call_set.union`, and
+  `Function_call_set.empty`).
+- Context: compare functions supplied to functors can look unreferenced as plain
+  values even though the generated set module calls them.
