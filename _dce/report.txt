@@ -1652,63 +1652,51 @@
     let _digest = Digest.input ic [@@dead "+_digest"]  in
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 77, characters 0-173
-  +from_file_with_digest is never used
-  <-- line 77
-    (v, digest) [@@dead "+from_file_with_digest"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 84, characters 0-63
-  +from_string is never used
-  <-- line 84
-  let from_string s : t = Marshal.from_string s Ext_digest.length [@@dead "+from_string"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 86, characters 0-238
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 77, characters 0-238
   +for_sure_not_changed is never used
-  <-- line 86
+  <-- line 77
     else false [@@dead "+for_sure_not_changed"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 97, characters 0-315
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 88, characters 0-315
   +to_file is never used
-  <-- line 97
+  <-- line 88
       close_out oc) [@@dead "+to_file"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 107, characters 0-61
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 98, characters 0-61
   +key_comp is never used
-  <-- line 107
+  <-- line 98
   let key_comp (a : string) b = Map_string.compare_key a b.name [@@dead "+key_comp"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 109, characters 0-86
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 100, characters 0-86
   +not_found is never used
-  <-- line 109
+  <-- line 100
     {name = key; arity = single_na; persistent_closed_lambda = None} [@@dead "+not_found"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 112, characters 0-320
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 103, characters 0-320
   +get_result is never used
-  <-- line 112
+  <-- line 103
       else {mid_val with persistent_closed_lambda = None} [@@dead "+get_result"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 123, characters 0-658
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 114, characters 0-658
   +binary_search_aux is never used
-  <-- line 123
+  <-- line 114
     else binary_search_aux arr mid hi key [@@dead "+binary_search_aux"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 142, characters 0-435
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 133, characters 0-435
   +binary_search is never used
-  <-- line 142
+  <-- line 133
         if c2 > 0 then not_found key else binary_search_aux sorted 0 (len - 1) key [@@dead "+binary_search"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 157, characters 0-121
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.ml", line 148, characters 0-121
   +query_by_name is never used
-  <-- line 157
+  <-- line 148
     binary_search values name [@@dead "+query_by_name"] 
 
   Warning Dead Value
@@ -1730,21 +1718,9 @@
   val single_na : arity [@@dead "+single_na"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.mli", line 83, characters 0-50
-  +from_file_with_digest is never used
-  <-- line 83
-  val from_file_with_digest : string -> t * Digest.t [@@dead "+from_file_with_digest"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.mli", line 85, characters 0-29
-  +from_string is never used
-  <-- line 85
-  val from_string : string -> t [@@dead "+from_string"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.mli", line 90, characters 0-54
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_cmj_format.mli", line 86, characters 0-54
   +to_file is never used
-  <-- line 90
+  <-- line 86
   val to_file : string -> check_exists:bool -> t -> unit [@@dead "+to_file"] 
 
   Warning Dead Value With Side Effects
@@ -16499,4 +16475,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2886 issues (Warning Dead Module:152, Warning Dead Type:360, Warning Dead Value:2118, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2882 issues (Warning Dead Module:152, Warning Dead Type:360, Warning Dead Value:2114, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
