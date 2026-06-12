@@ -588,9 +588,8 @@ live after manual validation.
   `nat_of_string_exn`, `parse_nat_of_string`, and their local helper.
 - Verdict: intentionally retained unit-test-covered utility surface for now.
 - Validation: the number parsers are exercised only by
-  `ounit_util_tests.ml`. Since unit tests are excluded from the DCE roots and
-  this pass is avoiding unit-test edits, they are documented rather than
-  removed in this batch.
+  `ounit_util_tests.ml`. Removing them breaks `dune build @check` while those
+  unit tests remain in the build, so they are documented rather than removed.
 - Context: `with_file_as_chan` from the same module is production-live through
   `.cppo.ml` callers.
 
