@@ -154,7 +154,8 @@ live after manual validation.
 - Report: `Warning Dead Value`, `analysis/reanalyze/src/arnold.ml`,
   `Function_args.compare_arg`, `Function_args.compare`, and
   `Function_call.compare`; same pattern for `Path_map.compare` in
-  `analysis/reanalyze/src/dead_exception.ml` and `dead_type.ml`.
+  `analysis/reanalyze/src/dead_exception.ml` and `dead_type.ml`, and
+  `Exn.compare` in `analysis/reanalyze/src/exn.ml`.
 - Verdict: live; false positive.
 - Validation: `Function_call_set = Set.Make (Function_call)` uses
   `Function_call.compare`, which delegates to `Function_args.compare`. The set is
@@ -162,6 +163,7 @@ live after manual validation.
   `Function_call_set.mem`, `Function_call_set.union`, and
   `Function_call_set.empty`). `dead_exception.ml` and `dead_type.ml` both build
   `Path_map = Map.Make (...)`, then use `Path_map.add`, `find_opt`, and `iter`
-  for exception and type-label indexes.
+  for exception and type-label indexes. `exceptions.ml` and `issue.ml` build
+  `Set.Make (Exn)`, which requires `Exn.compare`.
 - Context: compare functions supplied to functors can look unreferenced as plain
   values even though the generated set module calls them.
