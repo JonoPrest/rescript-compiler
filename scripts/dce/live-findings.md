@@ -290,6 +290,28 @@ live after manual validation.
   reports exported constructors even though they are part of normal JS statement
   generation.
 
+### `Lam` smart constructors
+
+- Report: `Warning Dead Value` cluster in `compiler/core/lam.ml` / `.mli`,
+  including `apply`, `eq_approx`, `switch`, `stringswitch`, `prim`, `if_`,
+  sequence/control-flow constructors, and local helper chains.
+- Verdict: live; false positive for the remaining reported helpers.
+- Validation: the reported `Lam.*` smart constructors are used throughout lambda
+  conversion and optimization passes, including `lam_convert.ml`,
+  `lam_pass_lets_dce.ml`, `lam_bounded_vars.ml`,
+  `lam_pass_eliminate_ref.ml`, `lam_pass_remove_alias.ml`,
+  `lam_pass_exits.ml`, `lam_pass_deep_flatten.ml`, `lam_subst.ml`,
+  `lam_eta_conversion.ml`, `lam_pass_alpha_conversion.ml`, `lam_analysis.ml`,
+  `lam_compile.ml`, and `lam_util.cppo.ml`. Local helpers are live through those
+  constructors: `is_eta_conversion_exn` through `apply`, `eq_option` and
+  `eq_approx_list` through `eq_approx`, `Lift.*` through `prim`,
+  `has_boolean_type`, `complete_range`, and `eval_const_as_bool` through `if_`,
+  and `result_wrap` through `handle_bs_non_obj_ffi`.
+- Context: the duplicate `Lam.X` type alias module and the unused public
+  `inner_map` helper were removed. The remaining `Lam` warnings are exported
+  smart constructors used cross-module, which this DCE run does not root
+  correctly.
+
 ### Core JS lowering helpers
 
 - Report: `Warning Dead Module`, `Warning Dead Value`, and constructor warnings
