@@ -1,13 +1,5 @@
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_implementation.mli", line 50, characters 0-131
-  optional argument outputprefix of function +implementation is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_implementation.mli", line 27, characters 0-126
-  optional argument outputprefix of function +interface is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.ml", line 111, characters 2-544
   optional argument eq of function Make.Tbl.T_map.+disjoint_union is never used
 
@@ -270,14 +262,6 @@
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_util_tests.ml", line 3, characters 0-53
   optional argument pp_diff of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_implementation.ml", line 157, characters 0-517
-  optional argument outputprefix of function +implementation is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_implementation.ml", line 70, characters 0-502
-  optional argument outputprefix of function +interface is never used
 
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_tests_util.ml", line 7, characters 0-423
@@ -17269,4 +17253,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 3069 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2128, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:2, Warning Redundant Optional Argument:214, Warning Unused Argument:174)
+  Analysis reported 3065 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2128, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:2, Warning Redundant Optional Argument:214, Warning Unused Argument:170)
