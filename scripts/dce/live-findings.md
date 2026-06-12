@@ -137,6 +137,18 @@ live after manual validation.
 - Context: the single-file/cache-management helpers were removed, but the
   remaining collection operations are part of the live reactive analyzer path.
 
+### Reactive merge freeze helpers
+
+- Report: `Warning Dead Value`, `analysis/reanalyze/src/declarations.ml` and
+  `file_annotations.ml`, `create_from_hashtbl`.
+- Verdict: live; false positive.
+- Validation: `analysis/reanalyze/src/reactive_merge.ml` calls
+  `Declarations.create_from_hashtbl` from `freeze_decls` and
+  `File_annotations.create_from_hashtbl` from `freeze_annotations`.
+- Context: the freeze helpers bridge reactive hashtable aggregation back to the
+  immutable store types. Reanalyze reports them because the caller sits in the
+  reactive pipeline, which is affected by the cross-module liveness blind spot.
+
 ### `Arnold` ordered-set compare callbacks
 
 - Report: `Warning Dead Value`, `analysis/reanalyze/src/arnold.ml`,
