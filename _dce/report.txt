@@ -1,8 +1,4 @@
 
-  Warning Incorrect Annotation
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_multi_printer.mli", line 3, characters 0-75
-  +print  is annotated @dead but is live
-
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_array_tests.ml", line 32, characters 11-69
   optional argument cmp of function +=~ is never used
@@ -17245,4 +17241,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 3063 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2128, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:2, Warning Redundant Optional Argument:214, Warning Unused Argument:168)
+  Analysis reported 3062 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2128, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:214, Warning Unused Argument:168)
