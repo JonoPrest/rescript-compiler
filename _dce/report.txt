@@ -1,21 +1,5 @@
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_utf8_test.ml", line 6, characters 0-31
-  optional argument cmp of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_utf8_test.ml", line 6, characters 0-31
-  optional argument msg of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_utf8_test.ml", line 6, characters 0-31
-  optional argument pp_diff of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_utf8_test.ml", line 6, characters 0-31
-  optional argument printer of function +=~ is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_util_tests.ml", line 3, characters 0-53
   optional argument cmp of function +=~ is never used
 
@@ -17011,4 +16995,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 3005 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:213, Warning Unused Argument:113)
+  Analysis reported 3001 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:213, Warning Unused Argument:109)
