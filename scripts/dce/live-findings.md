@@ -76,3 +76,19 @@ live after manual validation.
 - Context: constructors share the `Name_choice` functor interface but currently
   ignore `from_type`. Splitting that interface for DCE would risk the shared
   lookup/error plumbing for little practical cleanup.
+
+### `Env.lookup_* ?loc`
+
+- Report: `Warning Unused Argument`, `compiler/ml/env.ml` and
+  `compiler/ml/env.mli`, optional argument `loc` on the generic lookup helpers
+  and value/type/constructor/label/modtype wrappers.
+- Verdict: live; false positive.
+- Validation: `compiler/ml/typetexp.ml` passes `~loc` through `find_component`
+  into `Env.lookup_type`, `Env.lookup_constructor`,
+  `Env.lookup_all_constructors`, `Env.lookup_all_labels`, `Env.lookup_value`,
+  `Env.lookup_module`, and `Env.lookup_modtype`. For dotted paths, the generic
+  Env lookup helpers forward `?loc` into `lookup_module_descr`, which uses it
+  for deprecated-module warnings.
+- Context: `compiler/ml/env.mli` documents that `?loc` reports deprecated-module
+  warnings. Removing the labels from the wrappers would drop source locations for
+  those diagnostics even though reanalyze does not see the cross-module flow.
