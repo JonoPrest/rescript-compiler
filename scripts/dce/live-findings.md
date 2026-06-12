@@ -209,6 +209,28 @@ live after manual validation.
   is consistent with the known DCE limitation where anything referenced only
   across modules can appear dead.
 
+### Core JS utility and CMJ helpers
+
+- Report: `Warning Dead Module` / `Warning Dead Value`,
+  `compiler/core/js_arr.ml`, `js_ast_util.ml`, `js_block_runtime.ml`,
+  `js_call_info.ml`, and `js_cmj_format.ml` / `.mli`.
+- Verdict: live; false positive for the remaining reported helpers.
+- Validation: `Js_arr.ref_array` and `set_array` are used by
+  `compiler/core/lam_compile_external_call.ml`. `Js_ast_util.named_expression`
+  is used by `lam_compile_external_obj.ml` and `lam_compile.ml`.
+  `Js_block_runtime.check_additional_id` is used by `js_fold_basic.ml` and
+  `js_pass_scope.ml`; its reported local ids feed that exported helper.
+  `Js_call_info.dummy`, `ml_full_call`, and `na_full_call` are used by
+  `lam_compile.ml`, `js_exp_make.ml`, and `lam_compile_external_call.ml`.
+  `Js_cmj_format.single_na`, `make`, `to_file`, and `query_by_name` are used by
+  `lam_stats_export.ml`, `lam_compile_main.cppo.ml`, and
+  `lam_compile_env.ml`; the binary-search helpers are local dependencies of
+  `query_by_name`, and `for_sure_not_changed` is a local dependency of
+  `to_file`.
+- Context: `Js_cmj_format.from_file_with_digest` and `from_string` had no
+  callers and were removed. The remaining entries are live through cross-module
+  compiler and `.cppo.ml` call sites.
+
 ### `File_deps.File_hash` callbacks
 
 - Report: `Warning Dead Module` and `Warning Dead Value`,
