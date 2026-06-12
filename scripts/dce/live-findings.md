@@ -31,3 +31,18 @@ live after manual validation.
   The repository guidance says v0 PPX compatibility must be preserved, so
   changing this helper API for locally redundant labels is higher risk than the
   DCE warning suggests.
+
+### `Type_utils` type argument contexts
+
+- Report: `Warning Unused Argument`, `analysis/src/type_utils.ml`, optional
+  arguments on `instantiate_type2` and the local `extract_type` binding inside
+  `resolve_nested`.
+- Verdict: live; false positive.
+- Validation: `instantiate_type2` immediately matches `type_arg_context` and uses
+  its `type_args` and `type_params` to substitute type variables. `extract_type`
+  forwards `type_arg_context_from_type_manifest` into `maybe_set_type_arg_ctx`,
+  and recursive calls use `print_opening_debug:false` to avoid repeated verbose
+  logging.
+- Context: reanalyze appears to lose this through optional forwarding/local
+  aliasing in the recursive type-extraction helpers. Removing these labels would
+  break generic type instantiation and manifest traversal.
