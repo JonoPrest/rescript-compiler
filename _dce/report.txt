@@ -3870,57 +3870,45 @@
   type property = Lam_compat.let_kind = Strict [@dead "property.Strict"]  | Alias [@dead "property.Alias"]  | StrictOpt [@dead "property.StrictOpt"]  | Variable [@dead "property.Variable"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 71, characters 0-305
-  +str_of_used_stats is never used
-  <-- line 71
-    | NA -> "NA" [@@dead "+str_of_used_stats"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 82, characters 0-249
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 71, characters 0-249
   +update_used_stats is never used
-  <-- line 82
+  <-- line 71
       ident_info.used_stats <- used_stats [@@dead "+update_used_stats"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 88, characters 0-174
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 77, characters 0-174
   +same_str_opt is never used
-  <-- line 88
+  <-- line 77
     | None, Some _ | Some _, None -> false [@@dead "+same_str_opt"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 94, characters 0-576
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 83, characters 0-576
   +same_vident is never used
-  <-- line 94
+  <-- line 83
     | Id _, Qualified _ | Qualified _, Id _ -> false [@@dead "+same_vident"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 109, characters 0-139
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.ml", line 98, characters 0-139
   +of_lam_mutable_flag is never used
-  <-- line 109
+  <-- line 98
     | Mutable -> Mutable [@@dead "+of_lam_mutable_flag"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 31, characters 0-50
-  +str_of_used_stats is never used
-  <-- line 31
-  val str_of_used_stats : Js_op.used_stats -> string [@@dead "+str_of_used_stats"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 33, characters 0-64
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 31, characters 0-64
   +update_used_stats is never used
-  <-- line 33
+  <-- line 31
   val update_used_stats : J.ident_info -> Js_op.used_stats -> unit [@@dead "+update_used_stats"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 35, characters 0-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 33, characters 0-46
   +same_vident is never used
-  <-- line 35
+  <-- line 33
   val same_vident : J.vident -> J.vident -> bool [@@dead "+same_vident"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 37, characters 0-69
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op_util.mli", line 35, characters 0-69
   +of_lam_mutable_flag is never used
-  <-- line 37
+  <-- line 35
   val of_lam_mutable_flag : Asttypes.mutable_flag -> Js_op.mutable_flag [@@dead "+of_lam_mutable_flag"] 
 
   Warning Dead Value
@@ -3990,12 +3978,6 @@
     Ext_list.fold_right xs dummy (fun x acc -> append_output x acc) [@@dead "+concat"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_output.ml", line 144, characters 0-61
-  +to_string is never used
-  <-- line 144
-  let to_string x = Js_dump.string_of_block (output_as_block x) [@@dead "+to_string"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_output.mli", line 41, characters 0-75
   +make is never used
   <-- line 41
@@ -4042,12 +4024,6 @@
   +concat is never used
   <-- line 77
   val concat : t list -> t [@@dead "+concat"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_output.mli", line 79, characters 0-27
-  +to_string is never used
-  <-- line 79
-  val to_string : t -> string [@@dead "+to_string"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_packages_info.ml", line 31, characters 0-143
@@ -16145,4 +16121,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2827 issues (Warning Dead Module:152, Warning Dead Type:333, Warning Dead Value:2086, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2823 issues (Warning Dead Module:152, Warning Dead Type:333, Warning Dead Value:2082, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
