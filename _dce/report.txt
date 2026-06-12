@@ -10012,257 +10012,85 @@
   val is_js_special_word : string -> bool [@@dead "+is_js_special_word"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 25, characters 0-27
-  +js_array_ctor is never used
-  <-- line 25
-  let js_array_ctor = "Array" [@@dead "+js_array_ctor"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 27, characters 0-29
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 25, characters 0-29
   +js_type_number is never used
-  <-- line 27
+  <-- line 25
   let js_type_number = "number" [@@dead "+js_type_number"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 29, characters 0-29
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 27, characters 0-29
   +js_type_string is never used
-  <-- line 29
+  <-- line 27
   let js_type_string = "string" [@@dead "+js_type_string"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 31, characters 0-29
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 29, characters 0-29
   +js_type_object is never used
-  <-- line 31
+  <-- line 29
   let js_type_object = "object" [@@dead "+js_type_object"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 33, characters 0-31
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 31, characters 0-31
   +js_type_boolean is never used
-  <-- line 33
+  <-- line 31
   let js_type_boolean = "boolean" [@@dead "+js_type_boolean"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 35, characters 0-30
-  +js_undefined is never used
-  <-- line 35
-  let js_undefined = "undefined" [@@dead "+js_undefined"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 37, characters 0-29
-  +js_prop_length is never used
-  <-- line 37
-  let js_prop_length = "length" [@@dead "+js_prop_length"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 39, characters 0-17
-  +prim is never used
-  <-- line 39
-  let prim = "prim" [@@dead "+prim"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 41, characters 0-19
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 33, characters 0-19
   +param is never used
-  <-- line 41
+  <-- line 33
   let param = "param" [@@dead "+param"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 43, characters 0-31
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 35, characters 0-31
   +partial_arg is never used
-  <-- line 43
+  <-- line 35
   let partial_arg = "partial_arg" [@@dead "+partial_arg"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 45, characters 0-15
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 37, characters 0-15
   +tmp is never used
-  <-- line 45
+  <-- line 37
   let tmp = "tmp" [@@dead "+tmp"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 47, characters 0-21
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 39, characters 0-21
   +create is never used
-  <-- line 47
+  <-- line 39
   let create = "create" [@@dead "+create"]  (* {!Caml_exceptions.create}*)
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 49, characters 0-23
-  +runtime is never used
-  <-- line 49
-  let runtime = "runtime" [@@dead "+runtime"]  (* runtime directory *)
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 51, characters 0-21
-  +stdlib is never used
-  <-- line 51
-  let stdlib = "stdlib" [@@dead "+stdlib"] 
-
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 55, characters 0-51
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 43, characters 0-51
   +setter_suffix_len is never used and could have side effects
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 57, characters 0-25
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 45, characters 0-25
   +debugger is never used
-  <-- line 57
+  <-- line 45
   let debugger = "debugger" [@@dead "+debugger"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 59, characters 0-21
-  +fn_run is never used
-  <-- line 59
-  let fn_run = "fn_run" [@@dead "+fn_run"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 61, characters 0-29
-  +method_run is never used
-  <-- line 61
-  let method_run = "method_run" [@@dead "+method_run"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 63, characters 0-27
-  +fn_method is never used
-  <-- line 63
-  let fn_method = "fn_method" [@@dead "+fn_method"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 65, characters 0-19
-  +fn_mk is never used
-  <-- line 65
-  let fn_mk = "fn_mk" [@@dead "+fn_mk"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 69, characters 0-33
-  +node_modules is never used
-  <-- line 69
-  let node_modules = "node_modules" [@@dead "+node_modules"] 
-
-  Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 71, characters 0-54
-  +node_modules_length is never used and could have side effects
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 73, characters 0-33
-  +package_json is never used
-  <-- line 73
-  let package_json = "package.json" [@@dead "+package_json"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 76, characters 0-24
-  +library_file is never used
-  <-- line 76
-  let library_file = "lib" [@@dead "+library_file"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 78, characters 0-19
-  +suffix_a is never used
-  <-- line 78
-  let suffix_a = ".a" [@@dead "+suffix_a"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 82, characters 0-23
-  +suffix_cmo is never used
-  <-- line 82
-  let suffix_cmo = ".cmo" [@@dead "+suffix_cmo"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 84, characters 0-23
-  +suffix_cma is never used
-  <-- line 84
-  let suffix_cma = ".cma" [@@dead "+suffix_cma"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 88, characters 0-23
-  +suffix_cmx is never used
-  <-- line 88
-  let suffix_cmx = ".cmx" [@@dead "+suffix_cmx"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 90, characters 0-25
-  +suffix_cmxa is never used
-  <-- line 90
-  let suffix_cmxa = ".cmxa" [@@dead "+suffix_cmxa"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 92, characters 0-23
-  +suffix_mll is never used
-  <-- line 92
-  let suffix_mll = ".mll" [@@dead "+suffix_mll"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 100, characters 0-23
-  +suffix_cmt is never used
-  <-- line 100
-  let suffix_cmt = ".cmt" [@@dead "+suffix_cmt"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 102, characters 0-25
-  +suffix_cmti is never used
-  <-- line 102
-  let suffix_cmti = ".cmti" [@@dead "+suffix_cmti"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 108, characters 0-19
-  +suffix_d is never used
-  <-- line 108
-  let suffix_d = ".d" [@@dead "+suffix_d"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 112, characters 0-29
-  +suffix_gen_js is never used
-  <-- line 112
-  let suffix_gen_js = ".gen.js" [@@dead "+suffix_gen_js"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 114, characters 0-31
-  +suffix_gen_tsx is never used
-  <-- line 114
-  let suffix_gen_tsx = ".gen.tsx" [@@dead "+suffix_gen_tsx"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 116, characters 0-25
-  +esmodule is never used
-  <-- line 116
-  let esmodule = "esmodule" [@@dead "+esmodule"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 118, characters 0-25
-  +commonjs is never used
-  <-- line 118
-  let commonjs = "commonjs" [@@dead "+commonjs"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 120, characters 0-42
-  +unused_attribute is never used
-  <-- line 120
-  let unused_attribute = "Unused attribute " [@@dead "+unused_attribute"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 123, characters 0-18
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 64, characters 0-18
   +node_sep is never used
-  <-- line 123
+  <-- line 64
   let node_sep = "/" [@@dead "+node_sep"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 125, characters 0-22
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 66, characters 0-22
   +node_parent is never used
-  <-- line 125
+  <-- line 66
   let node_parent = ".." [@@dead "+node_parent"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 127, characters 0-22
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 68, characters 0-22
   +node_current is never used
-  <-- line 127
+  <-- line 68
   let node_current = "." [@@dead "+node_current"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 132, characters 0-40
-  +sourcedirs_meta is never used
-  <-- line 132
-  let sourcedirs_meta = ".sourcedirs.json" [@@dead "+sourcedirs_meta"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 153, characters 0-22
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/literals.ml", line 92, characters 0-22
   +pure is never used
-  <-- line 153
+  <-- line 92
   let pure = "@__PURE__" [@@dead "+pure"] 
 
   Warning Dead Value
@@ -15157,4 +14985,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2662 issues (Warning Dead Module:151, Warning Dead Type:265, Warning Dead Value:1990, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2633 issues (Warning Dead Module:151, Warning Dead Type:265, Warning Dead Value:1962, Warning Dead Value With Side Effects:36, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
