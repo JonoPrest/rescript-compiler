@@ -318,6 +318,25 @@ live after manual validation.
   with the unused `Js_op_util.str_of_used_stats` and `Js_output.to_string`
   debug exports.
 
+### Core JS package path helpers
+
+- Report: `Warning Dead Value` and record-field warnings in
+  `compiler/core/js_packages_info.ml` / `.mli`, plus
+  `Js_packages_state.get_packages_info`.
+- Verdict: live; false positive for the remaining reported package helpers and
+  `package_found_info` fields.
+- Validation: `compiler/core/js_name_of_module_id.cppo.ml` calls
+  `query_package_infos`, `runtime_package_path`,
+  `runtime_dir_of_module_system`, `same_package_by_name`, and
+  `is_runtime_package`, then reads `package_found_info.rel_path`,
+  `pkg_rel_path`, and `suffix`. `lam_compile_main.cppo.ml` uses
+  `Js_packages_info.iter`, `lam_compile_primitive.ml` uses
+  `Js_packages_info.map`, and `js_name_of_module_id.cppo.ml` reads
+  `Js_packages_state.get_packages_info`.
+- Context: the unused package dump formatter and old `get_output_dir` helper
+  were removed. The remaining warnings are `.cppo.ml` call sites and record
+  fields read by package path generation.
+
 ### `File_deps.File_hash` callbacks
 
 - Report: `Warning Dead Module` and `Warning Dead Value`,
