@@ -3629,152 +3629,116 @@
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 1, characters 0-0
   +js_of_lam_option is a dead module as all its items are dead.
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 27, characters 26-42
-  option_unwrap_time.Static_unwrapped is a variant case which is never constructed
-  <-- line 27
-  type option_unwrap_time = Static_unwrapped [@dead "option_unwrap_time.Static_unwrapped"]  | Runtime_maybe_unwrapped
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 27, characters 43-68
-  option_unwrap_time.Runtime_maybe_unwrapped is a variant case which is never constructed
-  <-- line 27
-  type option_unwrap_time = Static_unwrapped [@dead "option_unwrap_time.Static_unwrapped"]  | Runtime_maybe_unwrapped [@dead "option_unwrap_time.Runtime_maybe_unwrapped"] 
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 37, characters 0-37
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 35, characters 0-37
   +none is never used
-  <-- line 37
+  <-- line 35
   let none : J.expression = E.undefined [@@dead "+none"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 39, characters 0-102
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 37, characters 0-102
   +is_none_static is never used
-  <-- line 39
+  <-- line 37
     | _ -> false [@@dead "+is_none_static"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 44, characters 0-226
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 42, characters 0-226
   +is_not_none is never used
-  <-- line 44
+  <-- line 42
       | _ -> E.not (E.triple_equal e none) [@@dead "+is_not_none"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 67, characters 0-177
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 65, characters 0-177
   +val_from_option is never used
-  <-- line 67
+  <-- line 65
     | _ -> E.runtime_call Primitive_modules.option "valFromOption" [arg] [@@dead "+val_from_option"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 72, characters 0-496
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 70, characters 0-496
   +get_default_undefined_from_optional is never used
-  <-- line 72
+  <-- line 70
         else E.runtime_call Primitive_modules.option "valFromOption" [arg] [@@dead "+get_default_undefined_from_optional"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 84, characters 0-327
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 82, characters 0-327
   +option_unwrap is never used
-  <-- line 84
+  <-- line 82
       | _ -> E.runtime_call Primitive_modules.option "unwrapPolyVar" [arg] [@@dead "+option_unwrap"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 93, characters 0-265
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 91, characters 0-265
   +destruct_optional is never used
-  <-- line 93
+  <-- line 91
       | _ -> not_sure () [@@dead "+destruct_optional"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 102, characters 0-27
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 100, characters 0-27
   +some is never used
-  <-- line 102
+  <-- line 100
   let some = E.optional_block [@@dead "+some"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 104, characters 0-55
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 102, characters 0-55
   +null_to_opt is never used
-  <-- line 104
+  <-- line 102
   let null_to_opt e = E.econd (E.is_null e) none (some e) [@@dead "+null_to_opt"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 106, characters 0-57
-  +undef_to_opt is never used
-  <-- line 106
-  let undef_to_opt e = E.econd (E.is_undef e) none (some e) [@@dead "+undef_to_opt"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 108, characters 0-71
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.ml", line 104, characters 0-71
   +null_undef_to_opt is never used
-  <-- line 108
+  <-- line 104
   let null_undef_to_opt e = E.econd (E.is_null_undefined e) none (some e) [@@dead "+null_undef_to_opt"] 
 
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 1, characters 0-0
   js_of_lam_option is a dead module as all its items are dead.
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 25, characters 26-42
-  option_unwrap_time.Static_unwrapped is a variant case which is never constructed
-  <-- line 25
-  type option_unwrap_time = Static_unwrapped [@dead "option_unwrap_time.Static_unwrapped"]  | Runtime_maybe_unwrapped
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 25, characters 43-68
-  option_unwrap_time.Runtime_maybe_unwrapped is a variant case which is never constructed
-  <-- line 25
-  type option_unwrap_time = Static_unwrapped [@dead "option_unwrap_time.Static_unwrapped"]  | Runtime_maybe_unwrapped [@dead "option_unwrap_time.Runtime_maybe_unwrapped"] 
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 27, characters 0-50
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 25, characters 0-50
   +val_from_option is never used
-  <-- line 27
+  <-- line 25
   val val_from_option : J.expression -> J.expression [@@dead "+val_from_option"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 30, characters 0-70
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 28, characters 0-70
   +get_default_undefined_from_optional is never used
-  <-- line 30
+  <-- line 28
   val get_default_undefined_from_optional : J.expression -> J.expression [@@dead "+get_default_undefined_from_optional"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 33, characters 0-48
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 31, characters 0-48
   +option_unwrap is never used
-  <-- line 33
+  <-- line 31
   val option_unwrap : J.expression -> J.expression [@@dead "+option_unwrap"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 37, characters 0-135
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 35, characters 0-135
   +destruct_optional is never used
-  <-- line 37
+  <-- line 35
     'a [@@dead "+destruct_optional"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 44, characters 0-39
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 42, characters 0-39
   +some is never used
-  <-- line 44
+  <-- line 42
   val some : J.expression -> J.expression [@@dead "+some"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 46, characters 0-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 44, characters 0-46
   +is_not_none is never used
-  <-- line 46
+  <-- line 44
   val is_not_none : J.expression -> J.expression [@@dead "+is_not_none"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 48, characters 0-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 46, characters 0-46
   +null_to_opt is never used
-  <-- line 48
+  <-- line 46
   val null_to_opt : J.expression -> J.expression [@@dead "+null_to_opt"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 50, characters 0-47
-  +undef_to_opt is never used
-  <-- line 50
-  val undef_to_opt : J.expression -> J.expression [@@dead "+undef_to_opt"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 52, characters 0-52
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_option.mli", line 48, characters 0-52
   +null_undef_to_opt is never used
-  <-- line 52
+  <-- line 48
   val null_undef_to_opt : J.expression -> J.expression [@@dead "+null_undef_to_opt"] 
 
   Warning Dead Module
@@ -16343,4 +16307,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2860 issues (Warning Dead Module:152, Warning Dead Type:360, Warning Dead Value:2092, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2854 issues (Warning Dead Module:152, Warning Dead Type:356, Warning Dead Value:2090, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
