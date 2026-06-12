@@ -3550,8 +3550,8 @@ let enlarge_type env ty =
 
 let subtypes = Type_pairs.create 17
 
-let subtype_error ?ctx env trace =
-  raise (Subtype (expand_trace env (List.rev trace), [], ctx))
+let subtype_error env trace =
+  raise (Subtype (expand_trace env (List.rev trace), [], None))
 
 let extract_concrete_typedecl_opt env t =
   match extract_concrete_typedecl env t with

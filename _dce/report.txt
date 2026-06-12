@@ -804,10 +804,6 @@
   optional argument from_type of function +unbound_constructor_error is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.ml", line 3553, characters 0-97
-  optional argument ctx of function +subtype_error is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 116, characters 0-90
   optional argument loc of function +lookup_modtype is never used
 
@@ -16661,4 +16657,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2918 issues (Warning Dead Module:145, Warning Dead Type:368, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:201, Warning Unused Argument:40)
+  Analysis reported 2917 issues (Warning Dead Module:145, Warning Dead Type:368, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:201, Warning Unused Argument:39)
