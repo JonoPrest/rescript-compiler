@@ -688,9 +688,11 @@ live after manual validation.
   `pure_runtime_call` had no callers and were removed. The remaining zero
   direct-call entries, such as `bin`, `str_equal`, `push_negation`, and the
   `simplify_*` helpers, are local dependencies of exported builders that are
-  used through `E.*`. The debug-printer ref is intentionally left because
-  removing its `Js_dump` hook unroots a large live dump-printer subgraph in the
-  current DCE report.
+  used through `E.*`. `assign_by_exp` is called from
+  `compiler/core/js_of_lam_block.ml` through the usual `module E = Js_exp_make`
+  alias. The debug-printer ref is intentionally left because removing its
+  `Js_dump` hook unroots a large live dump-printer subgraph in the current DCE
+  report.
 
 ### `Js_stmt_make` statement builders
 
@@ -848,8 +850,8 @@ live after manual validation.
 
 - Report: `Warning Dead Value` / `Warning Dead Module` clusters in
   `compiler/core/lam_compile_env.ml`, `lam_compile_external_call.ml`,
-  `lam_compile_external_obj.ml`, and `lam_compile_primitive.ml` plus their
-  `.mli` files.
+  `lam_compile_external_obj.ml`, `lam_compile_primitive.ml`, and
+  `lam_module_ident.ml` plus their `.mli` files.
 - Verdict: live; false positive.
 - Validation: `Lam_compile_env` is used by `lam_compile.ml`,
   `lam_pass_remove_alias.ml`, `lam_arity_analysis.ml`,
@@ -857,9 +859,11 @@ live after manual validation.
   and `lam_compile_main.cppo.ml`. `Lam_compile_external_call.translate_ffi` is
   called by `lam_compile_primitive.ml`, and `ocaml_to_js_eff` is used by
   `lam_compile_external_obj.ml`. `Lam_compile_external_obj.assemble_obj_args`
-  and `Lam_compile_primitive.translate` are called by `lam_compile.ml`. The
-  reported helper functions in those modules are local dependencies of those
-  exported lowering entry points.
+  and `Lam_compile_primitive.translate` are called by `lam_compile.ml`.
+  `Lam_module_ident.t` is a manifest alias of `J.module_id`; `dynamic_import`
+  is filled by `Lam_module_ident.of_ml` and read by `js_dump_program.ml` when
+  emitting dynamic imports. The reported helper functions in those modules are
+  local dependencies of those exported lowering entry points.
 - Context: `lam_compile_external_call.arg_expression` is a manifest alias of
   `Js_of_lam_variant.arg_expression`; constructor warnings there are false
   positives for the same aliasing reason documented in the JS lowering section.
