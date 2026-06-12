@@ -3,22 +3,6 @@
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reanalyze.ml", line 199, characters 0-11133
   optional argument file_stats of function +run_analysis is never used
 
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_derive_js_mapper.ml", line 136, characters 0-30
-  optional argument attrs of function +app2 is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_derive_js_mapper.ml", line 136, characters 0-30
-  optional argument loc of function +app2 is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_derive_js_mapper.ml", line 134, characters 0-30
-  optional argument attrs of function +app1 is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_derive_js_mapper.ml", line 134, characters 0-30
-  optional argument loc of function +app1 is never used
-
   Warning Redundant Optional Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 344, characters 2-178
   optional argument attrs of function Te.+constructor is always supplied (1 calls)
@@ -16939,4 +16923,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2987 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:210, Warning Unused Argument:98)
+  Analysis reported 2983 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:210, Warning Unused Argument:94)
