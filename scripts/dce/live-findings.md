@@ -17,10 +17,12 @@ live after manual validation.
   `process_cmt_files`; `process_cmt_files` mutates it from
   `Reactive_analysis.process_files` stats when reactive mode is active.
 
-### `Ast_helper0` helper labels
+### `Ast_helper0` compatibility helper surface
 
-- Report: many `Warning Redundant Optional Argument` entries in
-  `compiler/ml/ast_helper0.ml`, starting with `Te.constructor`, `Te.mk`,
+- Report: many `Warning Dead Value`, `Warning Dead Module`, and
+  `Warning Redundant Optional Argument` entries in `compiler/ml/ast_helper0.ml`
+  / `.mli`, including helper submodules such as `Const`, `Typ`, `Pat`, `Exp`,
+  `Mty`, `Mod`, and `Te`, plus optional labels on `Te.constructor`, `Te.mk`,
   `Type.field`, and `Type.constructor`.
 - Verdict: live compatibility surface; do not remove as part of this DCE pass.
 - Validation: `compiler/ml/ast_mapper_to0.ml` opens `Ast_helper0` and uses these
