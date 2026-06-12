@@ -193,6 +193,22 @@ live after manual validation.
   They are live in the compiler pipeline even though the current DCE report
   misses those edges.
 
+### Core JS analyzer and delimiters
+
+- Report: `Warning Dead Type`, `compiler/core/j.ml`, `delim.DBackQuotes`; and
+  many `Warning Dead Value` entries in `compiler/core/js_analyzer.ml` / `.mli`.
+- Verdict: live; false positive.
+- Validation: `DBackQuotes` is constructed by
+  `compiler/frontend/ast_utf8_string_interp.ml` for the processed `"bq"`
+  delimiter and printed by `compiler/core/js_dump.ml`. `Js_analyzer` helpers are
+  used from `js_pass_flatten.ml`, `js_shake.ml`, `js_exp_make.ml`,
+  `js_output.ml`, `js_pass_flatten_and_mark_dead.ml`,
+  `lam_compile_external_obj.ml`, `lam_compile_external_call.ml`,
+  `lam_compile_primitive.ml`, `lam_compile.ml`, and related JS passes.
+- Context: these are cross-module compiler pipeline edges. The warning cluster
+  is consistent with the known DCE limitation where anything referenced only
+  across modules can appear dead.
+
 ### `File_deps.File_hash` callbacks
 
 - Report: `Warning Dead Module` and `Warning Dead Value`,
