@@ -3,10 +3,6 @@
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reanalyze.ml", line 199, characters 0-11133
   optional argument file_stats of function +run_analysis is never used
 
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/cmd_ppx_apply.ml", line 120, characters 0-241
-  optional argument restore of function +apply_rewriters is always supplied (4 calls)
-
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typemod.mli", line 43, characters 0-163
   optional argument used_slot of function +type_open_ is never used
@@ -16979,4 +16975,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2997 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:213, Warning Unused Argument:105)
+  Analysis reported 2996 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:212, Warning Unused Argument:105)

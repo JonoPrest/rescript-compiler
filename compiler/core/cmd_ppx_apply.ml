@@ -93,7 +93,7 @@ let rewrite kind ppxs ast =
     out
   | _ -> assert false
 
-let apply_rewriters_str ?(restore = true) ~tool_name ast =
+let apply_rewriters_str ~restore ~tool_name ast =
   match !Clflags.all_ppx with
   | [] ->
     if !Js_config.test_ast_conversion then
@@ -105,7 +105,7 @@ let apply_rewriters_str ?(restore = true) ~tool_name ast =
     |> rewrite Ml ppxs |> Ml_binary.ast0_to_structure
     |> Ast_mapper.drop_ppx_context_str ~restore
 
-let apply_rewriters_sig ?(restore = true) ~tool_name ast =
+let apply_rewriters_sig ~restore ~tool_name ast =
   match !Clflags.all_ppx with
   | [] ->
     if !Js_config.test_ast_conversion then
@@ -117,8 +117,8 @@ let apply_rewriters_sig ?(restore = true) ~tool_name ast =
     |> rewrite Mli ppxs |> Ml_binary.ast0_to_signature
     |> Ast_mapper.drop_ppx_context_sig ~restore
 
-let apply_rewriters ?restore ~tool_name (type a) (kind : a Ml_binary.kind)
+let apply_rewriters ~restore ~tool_name (type a) (kind : a Ml_binary.kind)
     (ast : a) : a =
   match kind with
-  | Ml_binary.Ml -> apply_rewriters_str ?restore ~tool_name ast
-  | Ml_binary.Mli -> apply_rewriters_sig ?restore ~tool_name ast
+  | Ml_binary.Ml -> apply_rewriters_str ~restore ~tool_name ast
+  | Ml_binary.Mli -> apply_rewriters_sig ~restore ~tool_name ast
