@@ -1,6 +1,6 @@
 let ( >:: ), ( >::: ) = OUnit.(( >:: ), ( >::: ))
 
-let ( =~ ) x y = OUnit.assert_equal x y
+let ( =~ ) = OUnit.assert_equal
 
 let printer_int_array xs =
   String.concat "," (List.map string_of_int @@ Array.to_list xs)
@@ -29,7 +29,7 @@ let suites =
            Ext_array.reverse [|1; 2|] =~ [|2; 1|];
            Ext_array.reverse [||] =~ [||] );
          ( __LOC__ >:: fun _ ->
-           let ( =~ ) x y = OUnit.assert_equal ~printer:printer_int_array x y in
+           let ( =~ ) = OUnit.assert_equal ~printer:printer_int_array in
            let k x y = Ext_array.of_list_map y x in
            k succ [] =~ [||];
            k succ [1] =~ [|2|];

@@ -14,6 +14,11 @@ Requires the host OCaml switch (5.3) with `dune` available (`eval $(opam env)`).
 The script fetches + builds a pinned standalone reanalyze on first run (cached in
 `~/.cache/rescript-dce`).
 
+The runner excludes `tests/ounit_tests` from DCE by default. Unit tests should not
+keep compiler implementation details live, and test-only helpers are intentionally
+out of scope for the dead-code removal pass. Override `DCE_EXCLUDE_PATHS` only when
+you explicitly want to experiment with a different exclusion set.
+
 ## Why the vendored `rescript-tools reanalyze` does NOT work here
 
 The compiler's OCaml is compiled by the **host OCaml (5.3)** via dune, producing

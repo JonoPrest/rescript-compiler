@@ -1,4 +1,5 @@
 let ( >:: ), ( >::: ) = OUnit.(( >:: ), ( >::: ))
+let assert_equal = OUnit.assert_equal
 let assert_failure = OUnit.assert_failure
 
 let parse_structure source =
@@ -56,7 +57,7 @@ let assert_same_loc expected actual =
       loc.loc_end.pos_bol,
       loc.loc_end.pos_cnum )
   in
-  OUnit.assert_equal
+  assert_equal
     ~printer:(fun loc ->
       let sl, sb, sc, el, eb, ec = to_tuple loc in
       Printf.sprintf "(%d,%d,%d)-(%d,%d,%d)" sl sb sc el eb ec)

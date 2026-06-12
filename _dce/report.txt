@@ -2274,6 +2274,42 @@
     Set_ident.diff init.used_idents init.defined_idents [@@dead "+free_variables_of_expression"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_analyzer.ml", line 86, characters 0-1631
+  +no_side_effect_expression_desc is never used
+  <-- line 86
+    | Spread _ -> false [@@dead "+no_side_effect_expression_desc"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_analyzer.ml", line 122, characters 0-90
+  +no_side_effect is never used
+  <-- line 122
+    no_side_effect_expression_desc x.expression_desc [@@dead "+no_side_effect"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_analyzer.ml", line 125, characters 0-67
+  +no_side_effect_expression is never used
+  <-- line 125
+  let no_side_effect_expression (x : J.expression) = no_side_effect x [@@dead "+no_side_effect_expression"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_analyzer.ml", line 127, characters 0-32
+  +super is never used
+  <-- line 127
+  let super = Js_record_iter.super [@@dead "+super"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_analyzer.ml", line 129, characters 0-581
+  +no_side_effect_obj is never used
+  <-- line 129
+    } [@@dead "+no_side_effect_obj"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_analyzer.ml", line 147, characters 0-122
+  +no_side_effect_statement is never used
+  <-- line 147
+    with _ -> false [@@dead "+no_side_effect_statement"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_analyzer.ml", line 164, characters 0-2369
   +eq_expression is never used
   <-- line 164
@@ -2315,6 +2351,10 @@
   <-- line 304
     | _ -> false [@@dead "+is_okay_to_duplicate"] 
 
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_analyzer.mli", line 1, characters 0-0
+  js_analyzer is a dead module as all its items are dead.
+
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_analyzer.mli", line 30, characters 0-60
   +free_variables_of_statement is never used
@@ -2332,6 +2372,12 @@
   +no_side_effect_expression is never used
   <-- line 37
   val no_side_effect_expression : J.expression -> bool [@@dead "+no_side_effect_expression"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_analyzer.mli", line 47, characters 0-50
+  +no_side_effect_statement is never used
+  <-- line 47
+  val no_side_effect_statement : J.statement -> bool [@@dead "+no_side_effect_statement"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_analyzer.mli", line 56, characters 0-56
@@ -9630,6 +9676,12 @@
   let reverse_in_place a = reverse_range a 0 (Array.length a) [@@dead "+reverse_in_place"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 40, characters 0-217
+  +reverse is never used
+  <-- line 40
+      b [@@dead "+reverse"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 63, characters 0-241
   +filter is never used
   <-- line 63
@@ -9660,10 +9712,28 @@
     else Array.mapi (fun i a -> f i a (Array.unsafe_get b i)) a [@@dead "+map2i"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 114, characters 0-159
+  +tolist_aux is never used
+  <-- line 114
+        | None -> res) [@@dead "+tolist_aux"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 122, characters 0-60
   +to_list_map is never used
   <-- line 122
   let to_list_map a f = tolist_aux a f (Array.length a - 1) [] [@@dead "+to_list_map"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 124, characters 0-69
+  +to_list_map_acc is never used
+  <-- line 124
+  let to_list_map_acc a acc f = tolist_aux a f (Array.length a - 1) acc [@@dead "+to_list_map_acc"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 126, characters 0-1053
+  +of_list_map is never used
+  <-- line 126
+      fill 5 tl [@@dead "+of_list_map"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 186, characters 0-194
@@ -9672,10 +9742,40 @@
     aux (len - 1) [@@dead "+rfind_with_index"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 197, characters 0-201
+  +find_with_index is never used
+  <-- line 197
+    aux 0 len [@@dead "+find_with_index"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 206, characters 0-191
+  +find_and_split is never used
+  <-- line 206
+      Split (Array.sub arr 0 i, Array.sub arr (i + 1) (Array.length arr - i - 1)) [@@dead "+find_and_split"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 223, characters 0-39
   +is_empty is never used
   <-- line 223
   let is_empty arr = Array.length arr = 0 [@@dead "+is_empty"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 225, characters 0-180
+  +unsafe_loop is never used
+  <-- line 225
+      && unsafe_loop (succ index) len p xs ys [@@dead "+unsafe_loop"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 240, characters 0-147
+  +for_all2_no_exn is never used
+  <-- line 240
+    len_xs = len_ys && unsafe_loop 0 len_xs p xs ys [@@dead "+for_all2_no_exn"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 262, characters 0-135
+  +fold_left is never used
+  <-- line 262
+    !r [@@dead "+fold_left"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.ml", line 270, characters 0-96
@@ -9694,6 +9794,12 @@
   +reverse_in_place is never used
   <-- line 28
   val reverse_in_place : 'a array -> unit [@@dead "+reverse_in_place"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 30, characters 0-34
+  +reverse is never used
+  <-- line 30
+  val reverse : 'a array -> 'a array [@@dead "+reverse"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 34, characters 0-49
@@ -9732,10 +9838,28 @@
   val to_list_map : 'a array -> ('a -> 'b option) -> 'b list [@@dead "+to_list_map"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 48, characters 0-73
+  +to_list_map_acc is never used
+  <-- line 48
+  val to_list_map_acc : 'a array -> 'b list -> ('a -> 'b option) -> 'b list [@@dead "+to_list_map_acc"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 50, characters 0-51
+  +of_list_map is never used
+  <-- line 50
+  val of_list_map : 'a list -> ('a -> 'b) -> 'b array [@@dead "+of_list_map"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 52, characters 0-66
   +rfind_with_index is never used
   <-- line 52
   val rfind_with_index : 'a array -> ('a -> 'b -> bool) -> 'b -> int [@@dead "+rfind_with_index"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 56, characters 0-69
+  +find_and_split is never used
+  <-- line 56
+  val find_and_split : 'a array -> ('a -> 'b -> bool) -> 'b -> 'a split [@@dead "+find_and_split"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 60, characters 0-31
@@ -9744,10 +9868,28 @@
   val is_empty : 'a array -> bool [@@dead "+is_empty"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 62, characters 0-72
+  +for_all2_no_exn is never used
+  <-- line 62
+  val for_all2_no_exn : 'a array -> 'b array -> ('a -> 'b -> bool) -> bool [@@dead "+for_all2_no_exn"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 70, characters 0-56
+  +fold_left is never used
+  <-- line 70
+  val fold_left : 'b array -> 'a -> ('a -> 'b -> 'a) -> 'a [@@dead "+fold_left"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_array.mli", line 72, characters 0-50
   +get_or is never used
   <-- line 72
   val get_or : 'a array -> int -> (unit -> 'a) -> 'a [@@dead "+get_or"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.ml", line 42, characters 0-31
+  +is_empty is never used
+  <-- line 42
+  let is_empty b = b.position = 0 [@@dead "+is_empty"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.ml", line 44, characters 0-29
@@ -9760,6 +9902,18 @@
   +digest is never used
   <-- line 128
   let digest b = unsafe_string b.buffer 0 b.position [@@dead "+digest"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.ml", line 130, characters 0-173
+  +not_equal_aux is never used
+  <-- line 130
+      || not_equal_aux b s (i + 1) len [@@dead "+not_equal_aux"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.ml", line 137, characters 0-150
+  +not_equal is never used
+  <-- line 137
+    b_len <> s_len || not_equal_aux b.buffer s 0 s_len [@@dead "+not_equal"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.ml", line 146, characters 0-199
@@ -9786,6 +9940,12 @@
     b.position <- pos + 4 [@@dead "+add_int_4"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.mli", line 48, characters 0-24
+  +is_empty is never used
+  <-- line 48
+  val is_empty : t -> bool [@@dead "+is_empty"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.mli", line 50, characters 0-21
   +clear is never used
   <-- line 50
@@ -9796,6 +9956,12 @@
   +digest is never used
   <-- line 86
   val digest : t -> Digest.t [@@dead "+digest"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.mli", line 88, characters 0-35
+  +not_equal is never used
+  <-- line 88
+  val not_equal : t -> string -> bool [@@dead "+not_equal"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_buffer.mli", line 90, characters 0-32
@@ -9851,6 +10017,12 @@
   <-- line 31
     search_dot (String.length name - 1) [@@dead "+chop_extension_maybe"] 
 
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.ml", line 48, characters 0-363
+  +chop_all_extensions_maybe is never used
+  <-- line 48
+    search_dot (String.length name - 1) None [@@dead "+chop_all_extensions_maybe"] 
+
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.ml", line 89, characters 20-40
   module_info.module_name is a record label never used to read a value
@@ -9864,10 +10036,34 @@
   type module_info = {module_name: string; [@dead "module_info.module_name"]  case: bool [@dead "module_info.case"] }
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.ml", line 91, characters 0-277
+  +valid_module_name_aux is never used
+  <-- line 91
+      | _ -> false [@@dead "+valid_module_name_aux"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.ml", line 102, characters 0-338
+  +valid_module_name is never used
+  <-- line 102
+      | _ -> Invalid [@@dead "+valid_module_name"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.ml", line 112, characters 0-796
+  +as_module is never used
+  <-- line 112
+    search_dot (name_len - 1) basename name_len [@@dead "+as_module"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.mli", line 36, characters 0-43
   +chop_extension_maybe is never used
   <-- line 36
   val chop_extension_maybe : string -> string [@@dead "+chop_extension_maybe"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.mli", line 43, characters 0-48
+  +chop_all_extensions_maybe is never used
+  <-- line 43
+  val chop_all_extensions_maybe : string -> string [@@dead "+chop_all_extensions_maybe"] 
 
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.mli", line 48, characters 20-40
@@ -9880,6 +10076,12 @@
   module_info.case is a record label never used to read a value
   <-- line 48
   type module_info = {module_name: string; [@dead "module_info.module_name"]  case: bool [@dead "module_info.case"] }
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.mli", line 50, characters 0-53
+  +as_module is never used
+  <-- line 50
+  val as_module : basename:string -> module_info option [@@dead "+as_module"] 
 
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_fmt.ml", line 1, characters 0-0
@@ -9956,6 +10158,12 @@
     if u = 0 then Ext_string.compare x.name y.name else u [@@dead "+compare"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 182, characters 0-116
+  +equal is never used
+  <-- line 182
+    if x.stamp <> 0 then x.stamp = y.stamp else y.stamp = 0 && x.name = y.name [@@dead "+equal"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 29, characters 0-34
   +is_js_object is never used
   <-- line 29
@@ -10002,6 +10210,12 @@
   +compare is never used
   <-- line 57
   val compare : Ident.t -> Ident.t -> int [@@dead "+compare"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 58, characters 0-38
+  +equal is never used
+  <-- line 58
+  val equal : Ident.t -> Ident.t -> bool [@@dead "+equal"] 
 
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_int.ml", line 1, characters 0-0
@@ -10077,6 +10291,22 @@
   <-- line 27
   val rev_lines_of_file : string -> string list [@@dead "+rev_lines_of_file"] 
 
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_js_file_kind.ml", line 1, characters 0-0
+  +ext_js_file_kind is a dead module as all its items are dead.
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_js_file_kind.ml", line 24, characters 12-17
+  case.Upper is a variant case which is never constructed
+  <-- line 24
+  type case = Upper [@dead "case.Upper"]  | Little
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_js_file_kind.ml", line 24, characters 18-26
+  case.Little is a variant case which is never constructed
+  <-- line 24
+  type case = Upper [@dead "case.Upper"]  | Little [@dead "case.Little"] 
+
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_js_file_kind.ml", line 26, characters 10-21
   t.case is a record label never used to read a value
@@ -10144,6 +10374,42 @@
     | a :: l -> fold_left_with_offset l (f a accu i) (i + 1) f [@@dead "+fold_left_with_offset"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 370, characters 0-151
+  +exclude is never used
+  <-- line 370
+    | x :: xs -> if p x then exclude xs p else x :: exclude xs p [@@dead "+exclude"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 375, characters 0-370
+  +exclude_with_val is never used
+  <-- line 375
+            | Some rest -> Some (a0 :: a1 :: rest))) [@@dead "+exclude_with_val"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 435, characters 0-183
+  +small_split_at is never used
+  <-- line 435
+      | _ -> invalid_arg "Ext_list.split_at" [@@dead "+small_split_at"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 442, characters 0-40
+  +split_at is never used
+  <-- line 442
+  let split_at l n = small_split_at n [] l [@@dead "+split_at"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 444, characters 0-168
+  +split_at_last_aux is never used
+  <-- line 444
+    | y0 :: ys -> split_at_last_aux (y0 :: acc) ys [@@dead "+split_at_last_aux"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 450, characters 0-409
+  +split_at_last is never used
+  <-- line 450
+      (a0 :: a1 :: a2 :: a3 :: a4 :: rev, last) [@@dead "+split_at_last"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 465, characters 0-204
   +filter_mapi is never used
   <-- line 465
@@ -10156,6 +10422,48 @@
     | _ -> invalid_arg "Ext_list.filter_map2" [@@dead "+filter_map2"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 509, characters 0-61
+  +flat_map_append is never used
+  <-- line 509
+  let flat_map_append lx append f = flat_map_aux f [] append lx [@@dead "+flat_map_append"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 511, characters 0-154
+  +length_compare is never used
+  <-- line 511
+      | [] -> if n = 0 then `Eq else `Lt [@@dead "+length_compare"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 518, characters 0-124
+  +length_ge is never used
+  <-- line 518
+    else true [@@dead "+length_ge"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 528, characters 0-171
+  +length_larger_than_n is never used
+  <-- line 528
+    | [], _ -> false [@@dead "+length_larger_than_n"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 534, characters 0-111
+  +group is never used
+  <-- line 534
+    | x :: xs -> aux eq x (group eq xs) [@@dead "+group"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 539, characters 0-228
+  +aux is never used
+  <-- line 539
+    | _ :: _ -> assert false [@@dead "+aux"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 547, characters 0-45
+  +stable_group is never used
+  <-- line 547
+  let stable_group lst eq = group eq lst |> rev [@@dead "+stable_group"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 549, characters 0-182
   +drop is never used
   <-- line 549
@@ -10166,6 +10474,12 @@
   +find_first_not is never used
   <-- line 562
     | a :: l -> if p a then find_first_not l p else Some a [@@dead "+find_first_not"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 620, characters 0-101
+  +for_all_snd is never used
+  <-- line 620
+    | (_, a) :: l -> p a && for_all_snd l p [@@dead "+for_all_snd"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 647, characters 0-776
@@ -10184,6 +10498,12 @@
   +assoc_by_string is never used
   <-- line 687
     | (k1, v1) :: rest -> if k1 = k then v1 else assoc_by_string rest k def [@@dead "+assoc_by_string"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 695, characters 0-205
+  +assoc_by_int is never used
+  <-- line 695
+    | (k1, v1) :: rest -> if k1 = k then v1 else assoc_by_int rest k def [@@dead "+assoc_by_int"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 703, characters 0-109
@@ -10300,6 +10620,24 @@
   val exclude : 'a list -> ('a -> bool) -> 'a list [@@dead "+exclude"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 84, characters 0-64
+  +exclude_with_val is never used
+  <-- line 84
+  val exclude_with_val : 'a list -> ('a -> bool) -> 'a list option [@@dead "+exclude_with_val"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 96, characters 0-50
+  +split_at is never used
+  <-- line 96
+  val split_at : 'a list -> int -> 'a list * 'a list [@@dead "+split_at"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 102, characters 0-43
+  +split_at_last is never used
+  <-- line 102
+  val split_at_last : 'a list -> 'a list * 'a [@@dead "+split_at_last"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 107, characters 0-64
   +filter_mapi is never used
   <-- line 107
@@ -10312,6 +10650,36 @@
   val filter_map2 : 'a list -> 'b list -> ('a -> 'b -> 'c option) -> 'c list [@@dead "+filter_map2"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 111, characters 0-56
+  +length_compare is never used
+  <-- line 111
+  val length_compare : 'a list -> int -> [`Gt | `Eq | `Lt] [@@dead "+length_compare"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 113, characters 0-38
+  +length_ge is never used
+  <-- line 113
+  val length_ge : 'a list -> int -> bool [@@dead "+length_ge"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 122, characters 0-60
+  +length_larger_than_n is never used
+  <-- line 122
+  val length_larger_than_n : 'a list -> 'a list -> int -> bool [@@dead "+length_larger_than_n"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 134, characters 0-70
+  +flat_map_append is never used
+  <-- line 134
+  val flat_map_append : 'a list -> 'b list -> ('a -> 'b list) -> 'b list [@@dead "+flat_map_append"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 136, characters 0-64
+  +stable_group is never used
+  <-- line 136
+  val stable_group : 'a list -> ('a -> 'a -> bool) -> 'a list list [@@dead "+stable_group"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 152, characters 0-36
   +drop is never used
   <-- line 152
@@ -10322,6 +10690,12 @@
   +find_first_not is never used
   <-- line 160
   val find_first_not : 'a list -> ('a -> bool) -> 'a option [@@dead "+find_first_not"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 181, characters 0-56
+  +for_all_snd is never used
+  <-- line 181
+  val for_all_snd : ('a * 'b) list -> ('b -> bool) -> bool [@@dead "+for_all_snd"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 189, characters 0-63
@@ -10346,6 +10720,12 @@
   +assoc_by_string is never used
   <-- line 199
   val assoc_by_string : (string * 'a) list -> string -> 'a option -> 'a [@@dead "+assoc_by_string"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 206, characters 0-60
+  +assoc_by_int is never used
+  <-- line 206
+  val assoc_by_int : (int * 'a) list -> int -> 'a option -> 'a [@@dead "+assoc_by_int"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 208, characters 0-41
@@ -10395,6 +10775,108 @@
   <-- line 228
   val mem_string : string list -> string -> bool [@@dead "+mem_string"] 
 
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_modulename.ml", line 1, characters 0-0
+  +ext_modulename is a dead module as all its items are dead.
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_modulename.ml", line 25, characters 0-363
+  +good_hint_name is never used
+  <-- line 25
+         | _ -> false) [@@dead "+good_hint_name"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_modulename.ml", line 36, characters 0-381
+  +collect_start is never used
+  <-- line 36
+      | _ -> collect_start buf s next len [@@dead "+collect_start"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_modulename.ml", line 49, characters 0-341
+  +collect_next is never used
+  <-- line 49
+      | _ -> collect_next buf s next len [@@dead "+collect_next"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_modulename.ml", line 68, characters 0-836
+  +js_id_name_of_hint_name is never used
+  <-- line 68
+      if Ext_buffer.is_empty buf then module_name else Ext_buffer.contents buf [@@dead "+js_id_name_of_hint_name"] 
+
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_modulename.mli", line 1, characters 0-0
+  ext_modulename is a dead module as all its items are dead.
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_modulename.mli", line 25, characters 0-46
+  +js_id_name_of_hint_name is never used
+  <-- line 25
+  val js_id_name_of_hint_name : string -> string [@@dead "+js_id_name_of_hint_name"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_namespace.ml", line 33, characters 0-147
+  +change_ext_ns_suffix is never used
+  <-- line 33
+    if i < 0 then name ^ ext else String.sub name 0 i ^ ext [@@dead "+change_ext_ns_suffix"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_namespace.ml", line 44, characters 0-208
+  +js_name_of_modulename is never used
+  <-- line 44
+    change_ext_ns_suffix s suffix [@@dead "+js_name_of_modulename"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_namespace.ml", line 59, characters 0-352
+  +is_valid_npm_package_name is never used
+  <-- line 59
+    | _ -> false [@@dead "+is_valid_npm_package_name"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_namespace.ml", line 72, characters 0-598
+  +namespace_of_package_name is never used
+  <-- line 72
+    Ext_buffer.contents buf [@@dead "+namespace_of_package_name"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_namespace.mli", line 34, characters 0-53
+  +change_ext_ns_suffix is never used
+  <-- line 34
+  val change_ext_ns_suffix : string -> string -> string [@@dead "+change_ext_ns_suffix"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_namespace.mli", line 36, characters 0-79
+  +js_name_of_modulename is never used
+  <-- line 36
+  val js_name_of_modulename : string -> Ext_js_file_kind.case -> string -> string [@@dead "+js_name_of_modulename"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_namespace.mli", line 48, characters 0-46
+  +is_valid_npm_package_name is never used
+  <-- line 48
+  val is_valid_npm_package_name : string -> bool [@@dead "+is_valid_npm_package_name"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_namespace.mli", line 50, characters 0-48
+  +namespace_of_package_name is never used
+  <-- line 50
+  val namespace_of_package_name : string -> string [@@dead "+namespace_of_package_name"] 
+
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.ml", line 1, characters 0-0
+  +ext_obj is a dead module as all its items are dead.
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.ml", line 25, characters 0-2650
+  +dump is never used
+  <-- line 25
+      | _ -> opaque (Printf.sprintf "unknown: tag %d size %d" t s) [@@dead "+dump"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.ml", line 101, characters 0-30
+  +dump is never used
+  <-- line 101
+  let dump v = dump (Obj.repr v) [@@dead "+dump"] 
+
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.ml", line 103, characters 0-86
   +dump_endline is never used
@@ -10412,6 +10894,16 @@
   +bt is never used
   <-- line 109
             bt.line_number bt.start_char bt.end_char) [@@dead "+bt"] 
+
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.mli", line 1, characters 0-0
+  ext_obj is a dead module as all its items are dead.
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.mli", line 24, characters 0-23
+  +dump is never used
+  <-- line 24
+  val dump : 'a -> string [@@dead "+dump"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.mli", line 26, characters 0-48
@@ -10504,10 +10996,40 @@
     finally (open_out_bin filename) ~clean:close_out f [@@dead "+with_file_as_chan"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pervasives.ml", line 69, characters 0-221
+  +int_of_string_aux is never used
+  <-- line 69
+      else -1 [@@dead "+int_of_string_aux"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pervasives.ml", line 77, characters 0-134
+  +nat_of_string_exn is never used
+  <-- line 77
+    if acc < 0 then invalid_arg s else acc [@@dead "+nat_of_string_exn"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pervasives.ml", line 82, characters 0-441
+  +parse_nat_of_string is never used
+  <-- line 82
+    !acc [@@dead "+parse_nat_of_string"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pervasives.mli", line 34, characters 0-59
   +with_file_as_chan is never used
   <-- line 34
   val with_file_as_chan : string -> (out_channel -> 'a) -> 'a [@@dead "+with_file_as_chan"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pervasives.mli", line 51, characters 0-37
+  +nat_of_string_exn is never used
+  <-- line 51
+  val nat_of_string_exn : string -> int [@@dead "+nat_of_string_exn"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pervasives.mli", line 53, characters 0-50
+  +parse_nat_of_string is never used
+  <-- line 53
+  val parse_nat_of_string : string -> int ref -> int [@@dead "+parse_nat_of_string"] 
 
   Warning Dead Value With Side Effects
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pp.ml", line 31, characters 0-46
@@ -10622,6 +11144,44 @@
   val protect_list : ('a ref * 'a) list -> (unit -> 'b) -> 'b [@@dead "+protect_list"] 
 
   Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_scc.ml", line 1, characters 0-0
+  +ext_scc is a dead module as all its items are dead.
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_scc.ml", line 37, characters 0-48
+  +min_int is never used
+  <-- line 37
+  let min_int (x : int) y = if x < y then x else y [@@dead "+min_int"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_scc.ml", line 39, characters 0-1928
+  +graph is never used
+  <-- line 39
+    output [@@dead "+graph"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_scc.ml", line 98, characters 0-138
+  +graph_check is never used
+  <-- line 98
+      Int_vec_vec.fold_left (fun acc x -> Vec_int.length x :: acc) [] v ) [@@dead "+graph_check"] 
+
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_scc.mli", line 1, characters 0-0
+  ext_scc is a dead module as all its items are dead.
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_scc.mli", line 27, characters 0-44
+  +graph is never used
+  <-- line 27
+  val graph : Vec_int.t array -> Int_vec_vec.t [@@dead "+graph"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_scc.mli", line 41, characters 0-46
+  +graph_check is never used
+  <-- line 41
+  val graph_check : node array -> int * int list [@@dead "+graph_check"] 
+
+  Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_sys.mli", line 1, characters 0-0
   ext_sys is a dead module as all its items are dead.
 
@@ -10638,16 +11198,46 @@
   val is_windows_or_cygwin : bool [@@dead "+is_windows_or_cygwin"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_utf8.ml", line 64, characters 0-250
+  +follow is never used
+  <-- line 64
+      | _ -> raise (Invalid_utf8 "Continuation byte expected") [@@dead "+follow"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_utf8.ml", line 80, characters 0-580
+  +decode_utf8_string is never used
+  <-- line 80
+    List.rev !lst [@@dead "+decode_utf8_string"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_utf8.mli", line 29, characters 0-53
   +follow is never used
   <-- line 29
   val follow : string -> int -> int -> int -> int * int [@@dead "+follow"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_utf8.mli", line 38, characters 0-43
+  +decode_utf8_string is never used
+  <-- line 38
+  val decode_utf8_string : string -> int list [@@dead "+decode_utf8_string"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_util.ml", line 31, characters 0-123
+  +power_2_above is never used
+  <-- line 31
+    else power_2_above (x * 2) n [@@dead "+power_2_above"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_util.ml", line 36, characters 0-324
   +stats_to_string is never used
   <-- line 36
          (Array.to_list (Array.map string_of_int bucket_histogram))) [@@dead "+stats_to_string"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_util.mli", line 25, characters 0-37
+  +power_2_above is never used
+  <-- line 25
+  val power_2_above : int -> int -> int [@@dead "+power_2_above"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_util.mli", line 27, characters 0-50
@@ -10812,6 +11402,82 @@
       else remove_bucket h i key ~prec:buck next eq_key [@@dead "+remove_bucket"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_ident_mask.ml", line 37, characters 0-130
+  +key_index_by_ident is never used
+  <-- line 37
+    Bs_hash_stubs.hash_string_int key.name key.stamp land (Array.length h.data - 1) [@@dead "+key_index_by_ident"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_ident_mask.ml", line 40, characters 0-131
+  +create is never used
+  <-- line 40
+    {size = 0; data = Array.make s Empty; mask_size = 0} [@@dead "+create"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_ident_mask.ml", line 44, characters 0-526
+  +iter_and_unmask is never used
+  <-- line 44
+    done [@@dead "+iter_and_unmask"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_ident_mask.ml", line 65, characters 0-381
+  +small_bucket_mem is never used
+  <-- line 65
+          Ext_ident.equal key rst.ident || small_bucket_mem key rst.rest)) [@@dead "+small_bucket_mem"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_ident_mask.ml", line 81, characters 0-634
+  +resize is never used
+  <-- line 81
+      done) [@@dead "+resize"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_ident_mask.ml", line 101, characters 0-394
+  +add_unmask is never used
+  <-- line 101
+      if h.size > Array.length h_data lsl 1 then resize key_index_by_ident h) [@@dead "+add_unmask"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_ident_mask.ml", line 111, characters 0-745
+  +small_bucket_mask is never used
+  <-- line 111
+              else small_bucket_mask key rst.rest)) [@@dead "+small_bucket_mask"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_ident_mask.ml", line 140, characters 0-194
+  +mask_and_check_all_hit is never used
+  <-- line 140
+    h.size = h.mask_size [@@dead "+mask_and_check_all_hit"] 
+
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_ident_mask.mli", line 1, characters 0-0
+  hash_set_ident_mask is a dead module as all its items are dead.
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_ident_mask.mli", line 6, characters 0-21
+  +create is never used
+  <-- line 6
+  val create : int -> t [@@dead "+create"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_ident_mask.mli", line 11, characters 0-35
+  +add_unmask is never used
+  <-- line 11
+  val add_unmask : t -> ident -> unit [@@dead "+add_unmask"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_ident_mask.mli", line 13, characters 0-47
+  +mask_and_check_all_hit is never used
+  <-- line 13
+  val mask_and_check_all_hit : t -> ident -> bool [@@dead "+mask_and_check_all_hit"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_ident_mask.mli", line 18, characters 0-58
+  +iter_and_unmask is never used
+  <-- line 18
+  val iter_and_unmask : t -> (ident -> bool -> unit) -> unit [@@dead "+iter_and_unmask"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_poly.mli", line 29, characters 0-24
   +clear is never used
   <-- line 29
@@ -10824,6 +11490,12 @@
   val reset : 'a t -> unit [@@dead "+reset"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_poly.mli", line 37, characters 0-31
+  +remove is never used
+  <-- line 37
+  val remove : 'a t -> 'a -> unit [@@dead "+remove"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_poly.mli", line 41, characters 0-39
   +iter is never used
   <-- line 41
@@ -10834,6 +11506,12 @@
   +to_list is never used
   <-- line 43
   val to_list : 'a t -> 'a list [@@dead "+to_list"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_poly.mli", line 45, characters 0-24
+  +length is never used
+  <-- line 45
+  val length : 'a t -> int [@@dead "+length"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ident.ml", line 44, characters 0-56
@@ -11004,6 +11682,32 @@
   Make.Tbl.+map is never used
   <-- line 100
   module Make (T : Thing) : S with type t := T.t [@@dead "Make.Tbl.+map"] 
+
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/int_vec_util.ml", line 1, characters 0-0
+  +int_vec_util is a dead module as all its items are dead.
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/int_vec_util.ml", line 25, characters 0-182
+  +unsafe_mem_aux is never used
+  <-- line 25
+    else false [@@dead "+unsafe_mem_aux"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/int_vec_util.ml", line 31, characters 0-167
+  +mem is never used
+  <-- line 31
+    unsafe_mem_aux internal_array 0 key (len - 1) [@@dead "+mem"] 
+
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/int_vec_util.mli", line 1, characters 0-0
+  int_vec_util is a dead module as all its items are dead.
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/int_vec_util.mli", line 25, characters 0-34
+  +mem is never used
+  <-- line 25
+  val mem : int -> Vec_int.t -> bool [@@dead "+mem"] 
 
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/int_vec_vec.ml", line 1, characters 0-0
@@ -13094,6 +13798,12 @@
   val dummy_item : Location.t -> item [@@dead "+dummy_item"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string.ml", line 184, characters 0-157
+  +transform_test is never used
+  <-- line 184
+    Buffer.contents buf [@@dead "+transform_test"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string.ml", line 199, characters 0-370
   +check_no_escapes_or_unicode is never used
   <-- line 199
@@ -13112,16 +13822,142 @@
   val pp_error : Format.formatter -> error -> unit [@@dead "+pp_error"] 
 
   Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string.mli", line 35, characters 0-37
+  +transform_test is never used
+  <-- line 35
+  val transform_test : string -> string [@@dead "+transform_test"] 
+
+  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string.mli", line 40, characters 0-38
   +simple_comparison is never used
   <-- line 40
   val simple_comparison : string -> bool [@@dead "+simple_comparison"] 
 
   Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 42, characters 2-12
+  pos.lnum is a record label never used to read a value
+  <-- line 42
+    lnum: int; [@dead "pos.lnum"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 43, characters 2-14
+  pos.offset is a record label never used to read a value
+  <-- line 43
+    offset: int; [@dead "pos.offset"] 
+
+  Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 44, characters 2-16
   pos.byte_bol is a record label never used to read a value
   <-- line 44
     byte_bol: int; [@dead "pos.byte_bol"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 49, characters 16-27
+  segment.start is a record label never used to read a value
+  <-- line 49
+  type segment = {start: pos; [@dead "segment.start"]  finish: pos; kind: kind; content: string}
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 49, characters 28-40
+  segment.finish is a record label never used to read a value
+  <-- line 49
+  type segment = {start: pos; [@dead "segment.start"]  finish: pos; [@dead "segment.finish"]  kind: kind; content: string}
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 49, characters 41-52
+  segment.kind is a record label never used to read a value
+  <-- line 49
+  type segment = {start: pos; [@dead "segment.start"]  finish: pos; [@dead "segment.finish"]  kind: kind; [@dead "segment.kind"]  content: string}
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 65, characters 0-93
+  +valid_lead_identifier_char is never used
+  <-- line 65
+    | _ -> false [@@dead "+valid_lead_identifier_char"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 71, characters 0-121
+  +valid_identifier_char is never used
+  <-- line 71
+    | _ -> false [@@dead "+valid_identifier_char"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 76, characters 0-184
+  +valid_identifier is never used
+  <-- line 76
+      && Ext_string.for_all_from s 1 valid_identifier_char [@@dead "+valid_identifier"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 89, characters 0-57
+  +empty_segment is never used
+  <-- line 89
+  let empty_segment {content} = Ext_string.is_empty content [@@dead "+empty_segment"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 91, characters 0-123
+  +update_newline is never used
+  <-- line 91
+    cxt.byte_bol <- byte_bol [@@dead "+update_newline"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 96, characters 0-225
+  +pos_error is never used
+  <-- line 96
+           error )) [@@dead "+pos_error"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 107, characters 0-520
+  +add_var_segment is never used
+  <-- line 107
+    else pos_error cxt ~loc (Invalid_syntax_of_var content) [@@dead "+add_var_segment"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 125, characters 0-343
+  +add_str_segment is never used
+  <-- line 125
+    cxt.segment_start <- next_loc [@@dead "+add_str_segment"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 136, characters 0-1645
+  +check_and_transform is never used
+  <-- line 136
+          check_and_transform (loc + 1) s (i' + 1) cxt) [@@dead "+check_and_transform"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 182, characters 0-639
+  +expect_simple_var is never used
+  <-- line 182
+      check_and_transform loc s (added_length + offset) cxt) [@@dead "+expect_simple_var"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 199, characters 0-540
+  +expect_var_paren is never used
+  <-- line 199
+    else pos_error cxt ~loc Unmatched_paren [@@dead "+expect_var_paren"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 215, characters 0-584
+  +escape_code is never used
+  <-- line 215
+    | _ -> pos_error cxt ~loc (Invalid_escape_code cur_char) [@@dead "+escape_code"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 231, characters 0-372
+  +two_hex is never used
+  <-- line 231
+    else pos_error cxt ~loc Invalid_hex_escape [@@dead "+two_hex"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 240, characters 0-548
+  +unicode is never used
+  <-- line 240
+    else pos_error cxt ~loc Invalid_unicode_escape [@@dead "+unicode"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 256, characters 0-346
+  +transform_test is never used
+  <-- line 256
+    List.rev cxt.segments [@@dead "+transform_test"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.ml", line 290, characters 2-41
@@ -13136,10 +13972,52 @@
     || Ext_string.equal opt Delim.escaped_back_quote_delimiter [@@dead "+is_unicode_string"] 
 
   Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.mli", line 37, characters 12-22
+  pos.lnum is a record label never used to read a value
+  <-- line 37
+  type pos = {lnum: int; [@dead "pos.lnum"]  offset: int; byte_bol: int}
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.mli", line 37, characters 23-35
+  pos.offset is a record label never used to read a value
+  <-- line 37
+  type pos = {lnum: int; [@dead "pos.lnum"]  offset: int; [@dead "pos.offset"]  byte_bol: int}
+
+  Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.mli", line 37, characters 36-49
   pos.byte_bol is a record label never used to read a value
   <-- line 37
-  type pos = {lnum: int; offset: int; byte_bol: int [@dead "pos.byte_bol"] }
+  type pos = {lnum: int; [@dead "pos.lnum"]  offset: int; [@dead "pos.offset"]  byte_bol: int [@dead "pos.byte_bol"] }
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.mli", line 40, characters 16-27
+  segment.start is a record label never used to read a value
+  <-- line 40
+  type segment = {start: pos; [@dead "segment.start"]  finish: pos; kind: kind; content: string}
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.mli", line 40, characters 28-40
+  segment.finish is a record label never used to read a value
+  <-- line 40
+  type segment = {start: pos; [@dead "segment.start"]  finish: pos; [@dead "segment.finish"]  kind: kind; content: string}
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.mli", line 40, characters 41-52
+  segment.kind is a record label never used to read a value
+  <-- line 40
+  type segment = {start: pos; [@dead "segment.start"]  finish: pos; [@dead "segment.finish"]  kind: kind; [@dead "segment.kind"]  content: string}
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.mli", line 56, characters 0-35
+  +empty_segment is never used
+  <-- line 56
+  val empty_segment : segment -> bool [@@dead "+empty_segment"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.mli", line 57, characters 0-43
+  +transform_test is never used
+  <-- line 57
+  val transform_test : string -> segment list [@@dead "+transform_test"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string_interp.mli", line 61, characters 0-38
@@ -16518,131 +17396,5 @@
   +peek_minus is never used
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_bal_tree_tests.ml", line 3, characters 0-31
-  +=~ is never used
-  <-- line 3
-  let ( =~ ) = OUnit.assert_equal [@@dead "+=~"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_bal_tree_tests.ml", line 65, characters 0-88
-  +ounit_bal_tree_tests.Set_ident is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_bal_tree_tests.ml", line 67, characters 2-30
-  Set_ident.+compare is never used
-  <-- line 67
-    let compare = Stdlib.compare [@@dead "Set_ident.+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_bal_tree_tests.ml", line 70, characters 0-200
-  +compare_ident is never used
-  <-- line 70
-      if b <> 0 then b else compare (x.flags : int) y.flags [@@dead "+compare_ident"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_bal_tree_tests.ml", line 77, characters 0-417
-  +add is never used
-  <-- line 77
-      else Set_gen.bal l v (add r x) [@@dead "+add"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_bal_tree_tests.ml", line 91, characters 0-208
-  +mem is never used
-  <-- line 91
-      c = 0 || mem (if c < 0 then l else r) x [@@dead "+mem"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_bal_tree_tests.ml", line 99, characters 0-88
-  +ounit_bal_tree_tests.Ident_set2 is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_bal_tree_tests.ml", line 101, characters 2-29
-  Ident_set2.+compare is never used
-  <-- line 101
-    let compare = compare_ident [@@dead "Ident_set2.+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_bal_tree_tests.ml", line 104, characters 0-1318
-  +bench is never used
-  <-- line 104
-        done) [@@dead "+bench"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_hash_set_tests.ml", line 3, characters 0-31
-  +=~ is never used
-  <-- line 3
-  let ( =~ ) = OUnit.assert_equal [@@dead "+=~"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_hash_set_tests.ml", line 7, characters 0-152
-  +ounit_hash_set_tests.Id_hash_set is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_hash_set_tests.ml", line 9, characters 2-54
-  Id_hash_set.+equal is never used
-  <-- line 9
-    let equal x y = x.stamp = y.stamp && x.name = y.name [@@dead "Id_hash_set.+equal"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_hash_set_tests.ml", line 10, characters 2-35
-  Id_hash_set.+hash is never used
-  <-- line 10
-    let hash x = Hashtbl.hash x.stamp [@@dead "Id_hash_set.+hash"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_hash_stubs_test.ml", line 5, characters 0-21
-  +count is never used
-  <-- line 5
-  let count = 2_000_000 [@@dead "+count"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_hash_stubs_test.ml", line 7, characters 0-586
-  +bench is never used
-  <-- line 7
-        done) [@@dead "+bench"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_hash_stubs_test.ml", line 29, characters 37-55
-  id.flags is a record label never used to read a value
-  <-- line 29
-  type id = {stamp: int; name: string; mutable flags: int [@dead "id.flags"] } (* = Ident.t *)
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_ident_mask_tests.ml", line 3, characters 0-31
-  +=~ is never used
-  <-- line 3
-  let ( =~ ) = OUnit.assert_equal [@@dead "+=~"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_int_vec_tests.ml", line 3, characters 0-31
-  +=~ is never used
-  <-- line 3
-  let ( =~ ) = OUnit.assert_equal [@@dead "+=~"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_scc_tests.ml", line 3, characters 0-31
-  +=~ is never used
-  <-- line 3
-  let ( =~ ) = OUnit.assert_equal [@@dead "+=~"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_scc_tests.ml", line 204, characters 0-581
-  +read_file is never used
-  <-- line 204
-    fst (Ext_scc.graph_check node_array) [@@dead "+read_file"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_tests_util.ml", line 12, characters 0-492
-  +time is never used
-  <-- line 12
-      flush stdout [@@dead "+time"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_vec_test.ml", line 4, characters 0-89
-  +=~ is never used
-  <-- line 4
-    OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2914 issues (Warning Dead Module:145, Warning Dead Type:368, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:200, Warning Unused Argument:37)
+  Analysis reported 3042 issues (Warning Dead Module:153, Warning Dead Type:379, Warning Dead Value:2236, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:200, Warning Unused Argument:37)

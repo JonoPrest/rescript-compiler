@@ -1,6 +1,6 @@
 let ( >:: ), ( >::: ) = OUnit.(( >:: ), ( >::: ))
 
-let ( =~ ) x y = OUnit.assert_equal ~printer:Ext_obj.dump x y
+let ( =~ ) = OUnit.assert_equal ~printer:Ext_obj.dump
 
 let suites =
   __FILE__

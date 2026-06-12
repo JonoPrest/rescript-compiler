@@ -25,6 +25,10 @@ REANALYZE_SRC="${REANALYZE_SRC:-$HOME/.cache/rescript-dce/reanalyze}"
 OUT="${1:-_dce/report.txt}"
 mkdir -p "$(dirname "$OUT")"
 
+# Unit tests are intentionally excluded from DCE. They should not keep compiler
+# implementation details live, and test-only helpers are noisy DCE targets.
+EXCLUDE_PATHS="${DCE_EXCLUDE_PATHS:-$REPO_ROOT/tests/ounit_tests,tests/ounit_tests,./tests/ounit_tests,$REPO_ROOT/_build/default/tests/ounit_tests,_build/default/tests/ounit_tests}"
+
 # 1. Fetch + build the standalone reanalyze (cached).
 if [ ! -x "$REANALYZE_SRC/_build/default/src/Reanalyze.exe" ]; then
   echo "==> Fetching standalone reanalyze ($REANALYZE_REF)"
@@ -44,11 +48,12 @@ BIN="$REANALYZE_SRC/_build/default/src/Reanalyze.exe"
 echo "==> dune build @check (producing .cmt files incl. entry points)"
 dune build @check
 
-# 3. Run DCE over the whole dune build tree (compiler + tools + analysis +
-#    executables). All are host-OCaml 5.3 cmts; the ReScript runtime (4.06 cmts)
-#    lives outside _build/default so it is not picked up.
+# 3. Run DCE over the dune build tree (compiler + tools + analysis +
+#    executables), excluding unit tests. All are host-OCaml 5.3 cmts; the
+#    ReScript runtime (4.06 cmts) lives outside _build/default so it is not
+#    picked up.
 echo "==> Running DCE -> $OUT"
-"$BIN" -dce-cmt _build/default > "$OUT" 2>&1 || true
+"$BIN" -exclude-paths "$EXCLUDE_PATHS" -dce-cmt _build/default > "$OUT" 2>&1 || true
 
 echo "==> Done. Summary:"
 grep -oE "Warning [A-Za-z ]+" "$OUT" | sort | uniq -c | sort -rn || true

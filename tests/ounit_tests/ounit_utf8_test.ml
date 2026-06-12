@@ -3,7 +3,7 @@
 
 let ( >:: ), ( >::: ) = OUnit.(( >:: ), ( >::: ))
 
-let ( =~ ) x y = OUnit.assert_equal x y
+let ( =~ ) = OUnit.assert_equal
 let suites =
   __FILE__
   >::: [
