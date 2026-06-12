@@ -10125,59 +10125,23 @@
   <-- line 46
   val invariant : cmp:('a -> 'a -> int) -> 'a t -> bool [@@dead "+invariant"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/warnings.ml", line 43, characters 2-29
-  t.Bad_module_name is a variant case which is never constructed
-  <-- line 43
-    | Bad_module_name of string [@dead "t.Bad_module_name"]  (* 24 *)
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/warnings.ml", line 188, characters 0-216
-  +mk_lazy is never used
-  <-- line 188
-         raise exn) [@@dead "+mk_lazy"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/warnings.ml", line 489, characters 0-33
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/warnings.ml", line 468, characters 0-33
   +reset_fatal is never used
-  <-- line 489
+  <-- line 468
   let reset_fatal () = nerrors := 0 [@@dead "+reset_fatal"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/warnings.mli", line 36, characters 2-29
-  t.Bad_module_name is a variant case which is never constructed
-  <-- line 36
-    | Bad_module_name of string [@dead "t.Bad_module_name"]  (* 24 *)
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/warnings.mli", line 77, characters 0-24
-  +is_error is never used
-  <-- line 77
-  val is_error : t -> bool [@@dead "+is_error"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/warnings.mli", line 92, characters 0-30
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/warnings.mli", line 89, characters 0-30
   +reset_fatal is never used
-  <-- line 92
+  <-- line 89
   val reset_fatal : unit -> unit [@@dead "+reset_fatal"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/warnings.mli", line 102, characters 0-39
-  +mk_lazy is never used
-  <-- line 102
-  val mk_lazy : (unit -> 'a) -> 'a Lazy.t [@@dead "+mk_lazy"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/warnings.mli", line 106, characters 0-27
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/warnings.mli", line 99, characters 0-27
   +has_warnings is never used
-  <-- line 106
+  <-- line 99
   val has_warnings : bool ref [@@dead "+has_warnings"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/warnings.mli", line 108, characters 0-21
-  +nerrors is never used
-  <-- line 108
-  val nerrors : int ref [@@dead "+nerrors"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.ml", line 76, characters 0-341
@@ -13789,4 +13753,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2431 issues (Warning Dead Module:146, Warning Dead Type:225, Warning Dead Value:1808, Warning Dead Value With Side Effects:33, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2425 issues (Warning Dead Module:146, Warning Dead Type:223, Warning Dead Value:1804, Warning Dead Value With Side Effects:33, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
