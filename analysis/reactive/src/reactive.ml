@@ -454,7 +454,6 @@ let iter f t = t.iter f
 let get t k = t.get k
 let length t = t.length ()
 let stats t = t.stats
-let name t = t.name
 
 (** {1 Source Collection} *)
 

@@ -39,33 +39,18 @@ val to_collection : ('raw, 'v) t -> (string, 'v) Reactive.t
 
 (** {1 Processing} *)
 
-val process_files : ('raw, 'v) t -> string list -> unit
-(** Process files, emitting individual deltas for each changed file. *)
-
 val process_files_batch : ('raw, 'v) t -> string list -> int
 (** Process files, emitting a single [Batch] delta with all changes.
     Returns the number of files that changed.
     More efficient than [process_files] when processing many files at once,
     as downstream combinators can process all changes together. *)
 
-val process_if_changed : ('raw, 'v) t -> string -> bool
-(** Process a file if changed. Returns true if file was processed. *)
-
-val remove : ('raw, 'v) t -> string -> unit
-(** Remove a file from the collection. *)
-
 val remove_batch : ('raw, 'v) t -> string list -> int
 (** Remove multiple files as a batch. Returns the number of files removed.
     More efficient than calling [remove] multiple times. *)
 
-(** {1 Cache Management} *)
-
-val invalidate : ('raw, 'v) t -> string -> unit
-val clear : ('raw, 'v) t -> unit
-
 (** {1 Access} *)
 
-val get : ('raw, 'v) t -> string -> 'v option
 val mem : ('raw, 'v) t -> string -> bool
 val length : ('raw, 'v) t -> int
 val iter : (string -> 'v -> unit) -> ('raw, 'v) t -> unit
