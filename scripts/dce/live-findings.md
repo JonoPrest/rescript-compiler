@@ -315,6 +315,22 @@ live after manual validation.
   and the unconstructed `Lam_constant.pointer_info.Some` case were removed.
   What remains is cross-module compiler-core use that reanalyze does not root.
 
+### Untagged variant dynamic checks
+
+- Report: `Warning Dead Value` / `Warning Dead Value With Side Effects`,
+  `compiler/ml/ast_untagged_variants.ml`, for `Dynamic_checks.*` builders and
+  combinators such as `size`, `typeof`, literal check constructors,
+  `is_a_literal_case`, `is_int_tag`, and `add_runtime_type_check`.
+- Verdict: live; false positives.
+- Validation: `compiler/core/js_exp_make.ml` exposes `emit_check`,
+  `is_a_literal_case`, and `is_int_tag` by calling
+  `Ast_untagged_variants.Dynamic_checks`; `compiler/core/lam_compile.ml` uses
+  `Dynamic_checks.add_runtime_type_check` and the `( == )` builder while
+  compiling untagged variant comparisons and runtime checks.
+- Context: unused standalone helpers `tag_can_be_undefined` and
+  `block_is_object` were removed. The remaining warnings are a cross-module
+  pipeline edge from ML variant analysis into JS lowering.
+
 ### GenType map/set helpers
 
 - Report: `Warning Dead Module` / `Warning Dead Value`,
