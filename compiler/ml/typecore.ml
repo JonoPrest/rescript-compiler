@@ -1706,14 +1706,14 @@ let type_pat ?(allow_existentials = false) ?constrs ?labels ?(mode = Normal)
 
 (* this function is passed to Partial.parmatch
    to type check gadt nonexhaustiveness *)
-let partial_pred ~lev ?mode ?explode env expected_ty constrs labels p =
+let partial_pred ~lev ?mode ~explode env expected_ty constrs labels p =
   let env = ref env in
   let state = save_state env in
   try
     reset_pattern None true;
     let typed_p =
       Ctype.with_passive_variants
-        (type_pat ~allow_existentials:true ~lev ~constrs ~labels ?mode ?explode
+        (type_pat ~allow_existentials:true ~lev ~constrs ~labels ?mode ~explode
            env p)
         expected_ty
     in
@@ -1735,7 +1735,7 @@ let check_partial ?(lev = get_current_level ()) ?partial_match_warning_hint env
     (partial_pred ~lev ~explode env expected_ty)
     loc cases
 
-let check_unused ?(lev = get_current_level ()) env expected_ty cases =
+let check_unused ~lev env expected_ty cases =
   Parmatch.check_unused
     (fun constrs labels spat ->
       partial_pred ~lev ~mode:Split_or ~explode:5 env expected_ty constrs labels
@@ -4613,7 +4613,8 @@ let find_arity_suggestion env function_name target_arity =
 
 open Format
 let longident = Printtyp.longident
-let super_report_unification_error = Printtyp.super_report_unification_error
+let super_report_unification_error ?print_extra_info ppf env trace =
+  Printtyp.super_report_unification_error ?print_extra_info ppf env trace
 let report_ambiguous_type_error = Printtyp.report_ambiguous_type_error
 let report_subtyping_error = Printtyp.report_subtyping_error
 
