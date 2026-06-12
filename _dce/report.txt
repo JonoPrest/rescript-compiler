@@ -1,12 +1,4 @@
 
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.ml", line 111, characters 2-544
-  optional argument eq of function Make.Tbl.T_map.+disjoint_union is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.ml", line 111, characters 2-544
-  optional argument print of function Make.Tbl.T_map.+disjoint_union is never used
-
   Warning Incorrect Annotation
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_multi_printer.mli", line 3, characters 0-75
   +print  is annotated @dead but is live
@@ -11552,21 +11544,21 @@
     include Map.OrderedType with type t := t [@@dead "Make.+compare"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.ml", line 88, characters 2-106
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.ml", line 86, characters 2-106
   Pair.+compare is never used
-  <-- line 88
+  <-- line 86
       if c <> 0 then c else B.compare b1 b2 [@@dead "Pair.+compare"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.ml", line 93, characters 2-53
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.ml", line 91, characters 2-53
   Pair.+hash is never used
-  <-- line 93
+  <-- line 91
     let hash (a, b) = Hashtbl.hash (A.hash a, B.hash b) [@@dead "Pair.+hash"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.ml", line 94, characters 2-62
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.ml", line 92, characters 2-62
   Pair.+equal is never used
-  <-- line 94
+  <-- line 92
     let equal (a1, b1) (a2, b2) = A.equal a1 a2 && B.equal b1 b2 [@@dead "Pair.+equal"] 
 
   Warning Dead Module
@@ -11598,13 +11590,13 @@
     val print : Format.formatter -> t -> unit [@@dead "Pair.+print"] 
 
   Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 106, characters 26-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 100, characters 26-46
   identifiable.Make.Tbl is a dead module as all its items are dead.
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 106, characters 26-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 100, characters 26-46
   Make.Tbl.+map is never used
-  <-- line 106
+  <-- line 100
   module Make (T : Thing) : S with type t := T.t [@@dead "Make.Tbl.+map"] 
 
   Warning Dead Module
@@ -17253,4 +17245,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 3065 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2128, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:2, Warning Redundant Optional Argument:214, Warning Unused Argument:170)
+  Analysis reported 3063 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2128, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:2, Warning Redundant Optional Argument:214, Warning Unused Argument:168)

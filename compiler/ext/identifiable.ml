@@ -43,8 +43,6 @@ module type Map = sig
   val of_list : (key * 'a) list -> 'a t
 
   val disjoint_union :
-    ?eq:('a -> 'a -> bool) ->
-    ?print:(Format.formatter -> 'a -> unit) ->
     'a t ->
     'a t ->
     'a t
@@ -108,24 +106,10 @@ module Make_map (T : Thing) = struct
 
   let of_list l = List.fold_left (fun map (id, v) -> add id v map) empty l
 
-  let disjoint_union ?eq ?print m1 m2 =
+  let disjoint_union m1 m2 =
     union
-      (fun id v1 v2 ->
-        let ok =
-          match eq with
-          | None -> false
-          | Some eq -> eq v1 v2
-        in
-        if not ok then
-          let err =
-            match print with
-            | None -> Format.asprintf "Map.disjoint_union %a" T.print id
-            | Some print ->
-              Format.asprintf "Map.disjoint_union %a => %a <> %a" T.print id
-                print v1 print v2
-          in
-          Misc.fatal_error err
-        else Some v1)
+      (fun id _ _ ->
+        Misc.fatal_error (Format.asprintf "Map.disjoint_union %a" T.print id))
       m1 m2
 
   let union_right m1 m2 =

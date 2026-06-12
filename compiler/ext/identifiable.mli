@@ -46,15 +46,9 @@ module type Map = sig
   val filter_map : (key -> 'a -> 'b option) -> 'a t -> 'b t
   val of_list : (key * 'a) list -> 'a t
 
-  val disjoint_union :
-    ?eq:('a -> 'a -> bool) ->
-    ?print:(Format.formatter -> 'a -> unit) ->
-    'a t ->
-    'a t ->
-    'a t
+  val disjoint_union : 'a t -> 'a t -> 'a t
   (** [disjoint_union m1 m2] contains all bindings from [m1] and
-      [m2]. If some binding is present in both and the associated
-      value is not equal, a Fatal_error is raised *)
+      [m2]. If some binding is present in both, a Fatal_error is raised. *)
 
   val union_right : 'a t -> 'a t -> 'a t
   (** [union_right m1 m2] contains all bindings from [m1] and [m2]. If
