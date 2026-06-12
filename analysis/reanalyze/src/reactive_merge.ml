@@ -237,35 +237,3 @@ let collect_cross_file_items (t : t) : Cross_file_items.t =
     optional_arg_calls = !optional_arg_calls;
     function_refs = !function_refs;
   }
-
-(** Convert reactive file deps to FileDeps.t for solver.
-    Includes file deps from exception refs. *)
-let freeze_file_deps (t : t) : File_deps.t =
-  let files =
-    let result = ref File_set.empty in
-    Reactive.iter (fun path () -> result := File_set.add path !result) t.files;
-    !result
-  in
-  let deps = File_deps.File_hash.create 256 in
-  Reactive.iter
-    (fun from_file to_files ->
-      File_deps.File_hash.replace deps from_file to_files)
-    t.file_deps_map;
-  (* Add file deps from exception refs - iterate value_refs_from *)
-  Reactive.iter
-    (fun pos_from pos_to_set ->
-      Pos_set.iter
-        (fun pos_to ->
-          let from_file = pos_from.Lexing.pos_fname in
-          let to_file = pos_to.Lexing.pos_fname in
-          if from_file <> to_file then
-            let existing =
-              match File_deps.File_hash.find_opt deps from_file with
-              | Some s -> s
-              | None -> File_set.empty
-            in
-            File_deps.File_hash.replace deps from_file
-              (File_set.add to_file existing))
-        pos_to_set)
-    t.exception_refs.resolved_refs_from;
-  File_deps.create ~files ~deps

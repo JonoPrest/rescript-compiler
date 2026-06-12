@@ -1205,126 +1205,6 @@
   <-- line 10
     let equal (x : t) y = x = y [@@dead "File_hash.+equal"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.ml", line 55, characters 0-265
-  +freeze_builder is never used
-  <-- line 55
-    {files = b.files; deps = b.deps} [@@dead "+freeze_builder"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.ml", line 61, characters 0-207
-  +merge_all is never used
-  <-- line 61
-    freeze_builder merged_builder [@@dead "+merge_all"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.ml", line 76, characters 0-43
-  +create is never used
-  <-- line 76
-  let create ~files ~deps : t = {files; deps} [@@dead "+create"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.ml", line 80, characters 0-31
-  +get_files is never used
-  <-- line 80
-  let get_files (t : t) = t.files [@@dead "+get_files"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.ml", line 82, characters 0-114
-  +get_deps is never used
-  <-- line 82
-    | None -> File_set.empty [@@dead "+get_deps"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.ml", line 87, characters 0-49
-  +iter_deps is never used
-  <-- line 87
-  let iter_deps (t : t) f = File_hash.iter f t.deps [@@dead "+iter_deps"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.ml", line 89, characters 0-56
-  +file_exists is never used
-  <-- line 89
-  let file_exists (t : t) file = File_hash.mem t.deps file [@@dead "+file_exists"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.ml", line 91, characters 0-51
-  +files_count is never used
-  <-- line 91
-  let files_count (t : t) = File_set.cardinal t.files [@@dead "+files_count"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.ml", line 93, characters 0-48
-  +deps_count is never used
-  <-- line 93
-  let deps_count (t : t) = File_hash.length t.deps [@@dead "+deps_count"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.ml", line 97, characters 0-2717
-  +iter_files_from_roots_to_leaves is never used
-  <-- line 97
-           else set |> File_set.iter (fun file_name -> iter_fun file_name)) [@@dead "+iter_files_from_roots_to_leaves"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.mli", line 31, characters 0-33
-  +freeze_builder is never used
-  <-- line 31
-  val freeze_builder : builder -> t [@@dead "+freeze_builder"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.mli", line 35, characters 0-33
-  +merge_all is never used
-  <-- line 35
-  val merge_all : builder list -> t [@@dead "+merge_all"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.mli", line 51, characters 0-65
-  +create is never used
-  <-- line 51
-  val create : files:File_set.t -> deps:File_set.t File_hash.t -> t [@@dead "+create"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.mli", line 56, characters 0-31
-  +get_files is never used
-  <-- line 56
-  val get_files : t -> File_set.t [@@dead "+get_files"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.mli", line 59, characters 0-40
-  +get_deps is never used
-  <-- line 59
-  val get_deps : t -> string -> File_set.t [@@dead "+get_deps"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.mli", line 62, characters 0-59
-  +iter_deps is never used
-  <-- line 62
-  val iter_deps : t -> (string -> File_set.t -> unit) -> unit [@@dead "+iter_deps"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.mli", line 65, characters 0-37
-  +file_exists is never used
-  <-- line 65
-  val file_exists : t -> string -> bool [@@dead "+file_exists"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.mli", line 68, characters 0-26
-  +files_count is never used
-  <-- line 68
-  val files_count : t -> int [@@dead "+files_count"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.mli", line 71, characters 0-25
-  +deps_count is never used
-  <-- line 71
-  val deps_count : t -> int [@@dead "+deps_count"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_deps.mli", line 76, characters 0-67
-  +iter_files_from_roots_to_leaves is never used
-  <-- line 76
-  val iter_files_from_roots_to_leaves : t -> (string -> unit) -> unit [@@dead "+iter_files_from_roots_to_leaves"] 
-
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/file_hash.ml", line 1, characters 0-0
   +file_hash is a dead module as all its items are dead.
@@ -1461,6 +1341,18 @@
   <-- line 58
   val add_to_file_deps_builder : t -> file_deps:File_deps.builder -> unit [@@dead "+add_to_file_deps_builder"] 
 
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.ml", line 14, characters 2-49
+  t.file_deps_map is a record label never used to read a value
+  <-- line 14
+    file_deps_map: (string, File_set.t) Reactive.t; [@dead "t.file_deps_map"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.ml", line 15, characters 2-35
+  t.files is a record label never used to read a value
+  <-- line 15
+    files: (string, unit) Reactive.t; [@dead "t.files"] 
+
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.ml", line 159, characters 0-199
   +freeze_decls is never used
@@ -1485,11 +1377,17 @@
   <-- line 224
     } [@@dead "+collect_cross_file_items"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.ml", line 243, characters 0-1044
-  +freeze_file_deps is never used
-  <-- line 243
-    File_deps.create ~files ~deps [@@dead "+freeze_file_deps"] 
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.mli", line 35, characters 2-49
+  t.file_deps_map is a record label never used to read a value
+  <-- line 35
+    file_deps_map: (string, File_set.t) Reactive.t; [@dead "t.file_deps_map"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.mli", line 36, characters 2-35
+  t.files is a record label never used to read a value
+  <-- line 36
+    files: (string, unit) Reactive.t; [@dead "t.files"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.mli", line 51, characters 0-38
@@ -1514,12 +1412,6 @@
   +collect_cross_file_items is never used
   <-- line 60
   val collect_cross_file_items : t -> Cross_file_items.t [@@dead "+collect_cross_file_items"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.mli", line 63, characters 0-39
-  +freeze_file_deps is never used
-  <-- line 63
-  val freeze_file_deps : t -> File_deps.t [@@dead "+freeze_file_deps"] 
 
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_solver.ml", line 30, characters 2-75
@@ -17007,4 +16899,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2970 issues (Warning Dead Module:150, Warning Dead Type:379, Warning Dead Value:2185, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2952 issues (Warning Dead Module:150, Warning Dead Type:383, Warning Dead Value:2163, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)

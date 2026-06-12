@@ -149,6 +149,18 @@ live after manual validation.
   immutable store types. Reanalyze reports them because the caller sits in the
   reactive pipeline, which is affected by the cross-module liveness blind spot.
 
+### `File_deps.File_hash` callbacks
+
+- Report: `Warning Dead Module` and `Warning Dead Value`,
+  `analysis/reanalyze/src/file_deps.ml`, `File_hash.hash` and `File_hash.equal`.
+- Verdict: live; false positive.
+- Validation: `File_deps.create_builder`, `add_file`, `add_dep`,
+  `merge_into_builder`, and the reactive merge extraction helpers all use the
+  `File_hash` table produced by `Hashtbl.Make`.
+- Context: `hash` and `equal` are callbacks consumed by the hashtable functor,
+  so they can look unreferenced as ordinary values even though table operations
+  depend on them.
+
 ### `Arnold` ordered-set compare callbacks
 
 - Report: `Warning Dead Value`, `analysis/reanalyze/src/arnold.ml`,

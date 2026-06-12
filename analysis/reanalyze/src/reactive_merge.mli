@@ -59,6 +59,3 @@ val freeze_refs : t -> References.t
 
 val collect_cross_file_items : t -> Cross_file_items.t
 (** Collect all cross-file items *)
-
-val freeze_file_deps : t -> File_deps.t
-(** Convert reactive file deps to FileDeps.t for solver *)
