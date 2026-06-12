@@ -1497,42 +1497,6 @@
   <-- line 99
   type property = Lam_compat.let_kind = Strict [@dead "property.Strict"]  | Alias [@dead "property.Alias"]  | StrictOpt [@dead "property.StrictOpt"]  | Variable [@dead "property.Variable"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_record_fold.ml", line 63, characters 0-109
-  +required_modules is never used
-  <-- line 63
-   fun _self st arg -> list _self.module_id _self st arg [@@dead "+required_modules"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_record_fold.ml", line 314, characters 0-203
-  +deps_program is never used
-  <-- line 314
-    st [@@dead "+deps_program"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_record_iter.ml", line 61, characters 0-93
-  +required_modules is never used
-  <-- line 61
-   fun _self arg -> list _self.module_id _self arg [@@dead "+required_modules"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_record_iter.ml", line 229, characters 0-156
-  +deps_program is never used
-  <-- line 229
-    required_modules _self _x1 [@@dead "+deps_program"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_record_map.ml", line 63, characters 0-93
-  +required_modules is never used
-  <-- line 63
-   fun _self arg -> list _self.module_id _self arg [@@dead "+required_modules"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_record_map.ml", line 311, characters 0-233
-  +deps_program is never used
-  <-- line 311
-    {program = _x0; modules = _x1; side_effect = _x2} [@@dead "+deps_program"] 
-
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.ml", line 57, characters 2-69
   field_dbg_info.Fld_record is a variant case which is never constructed
@@ -2623,4 +2587,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 555 issues (Warning Dead Module:4, Warning Dead Type:84, Warning Dead Value:118, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:198, Warning Unused Argument:149)
+  Analysis reported 549 issues (Warning Dead Module:4, Warning Dead Type:84, Warning Dead Value:112, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:198, Warning Unused Argument:149)
