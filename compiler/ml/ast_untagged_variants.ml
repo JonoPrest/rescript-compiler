@@ -166,13 +166,6 @@ let block_type_can_be_undefined = function
     false
   | UnknownType -> true
 
-let tag_can_be_undefined tag =
-  match tag.tag_type with
-  | None -> false
-  | Some (String _ | Int _ | Float _ | BigInt _ | Bool _ | Null) -> false
-  | Some (Untagged block_type) -> block_type_can_be_undefined block_type
-  | Some Undefined -> true
-
 let has_untagged (attrs : Parsetree.attributes) =
   Ext_list.exists attrs (function {txt}, _ -> txt = untagged)
 
@@ -523,8 +516,6 @@ let check_well_formed ~env {is_untagged_def; cstrs} =
   ignore (names_from_type_variant ~env ~is_untagged_def cstrs)
 
 let has_undefined_literal attrs = process_tag_type attrs = Some Undefined
-
-let block_is_object ~env attrs = get_block_type ~env attrs = Some ObjectType
 
 module Dynamic_checks = struct
   type op = EqEqEq | NotEqEq | Or | And

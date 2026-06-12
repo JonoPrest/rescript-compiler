@@ -10530,131 +10530,119 @@
   val get_cookie : string -> Parsetree.expression option [@@dead "+get_cookie"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 169, characters 0-248
-  +tag_can_be_undefined is never used
-  <-- line 169
-    | Some Undefined -> true [@@dead "+tag_can_be_undefined"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 527, characters 0-76
-  +block_is_object is never used
-  <-- line 527
-  let block_is_object ~env attrs = get_block_type ~env attrs = Some ObjectType [@@dead "+block_is_object"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 539, characters 2-204
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 530, characters 2-204
   Dynamic_checks.+size is never used
-  <-- line 539
+  <-- line 530
       | Expr _ -> 1 [@@dead "Dynamic_checks.+size"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 547, characters 2-35
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 538, characters 2-35
   Dynamic_checks.+bin is never used
-  <-- line 547
+  <-- line 538
     let bin op x y = BinOp (op, x, y) [@@dead "Dynamic_checks.+bin"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 549, characters 2-25
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 540, characters 2-25
   Dynamic_checks.+typeof is never used
-  <-- line 549
+  <-- line 540
     let typeof x = TypeOf x [@@dead "Dynamic_checks.+typeof"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 550, characters 2-34
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 541, characters 2-34
   Dynamic_checks.+str is never used
-  <-- line 550
+  <-- line 541
     let str s = String s |> tag_type [@@dead "Dynamic_checks.+str"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 551, characters 2-43
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 542, characters 2-43
   Dynamic_checks.+is_instance is never used
-  <-- line 551
+  <-- line 542
     let is_instance i x = IsInstanceOf (i, x) [@@dead "Dynamic_checks.+is_instance"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 552, characters 2-19
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 543, characters 2-19
   Dynamic_checks.+not is never used
-  <-- line 552
+  <-- line 543
     let not x = Not x [@@dead "Dynamic_checks.+not"] 
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 553, characters 2-28
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 544, characters 2-28
   Dynamic_checks.+nil is never used and could have side effects
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 554, characters 2-39
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 545, characters 2-39
   Dynamic_checks.+undefined is never used and could have side effects
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 555, characters 2-47
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 546, characters 2-47
   Dynamic_checks.+object_ is never used and could have side effects
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 557, characters 2-51
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 548, characters 2-51
   Dynamic_checks.+function_ is never used and could have side effects
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 558, characters 2-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 549, characters 2-46
   Dynamic_checks.+string is never used and could have side effects
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 559, characters 2-43
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 550, characters 2-43
   Dynamic_checks.+number is never used and could have side effects
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 561, characters 2-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 552, characters 2-46
   Dynamic_checks.+bigint is never used and could have side effects
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 563, characters 2-48
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 554, characters 2-48
   Dynamic_checks.+boolean is never used and could have side effects
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 565, characters 2-33
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 556, characters 2-33
   Dynamic_checks.+== is never used
-  <-- line 565
+  <-- line 556
     let ( == ) x y = bin EqEqEq x y [@@dead "Dynamic_checks.+=="] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 566, characters 2-34
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 557, characters 2-34
   Dynamic_checks.+!= is never used
-  <-- line 566
+  <-- line 557
     let ( != ) x y = bin NotEqEq x y [@@dead "Dynamic_checks.+!="] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 567, characters 2-30
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 558, characters 2-30
   Dynamic_checks.+||| is never used
-  <-- line 567
+  <-- line 558
     let ( ||| ) x y = bin Or x y [@@dead "Dynamic_checks.+|||"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 568, characters 2-31
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 559, characters 2-31
   Dynamic_checks.+&&& is never used
-  <-- line 568
+  <-- line 559
     let ( &&& ) x y = bin And x y [@@dead "Dynamic_checks.+&&&"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 570, characters 2-2866
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 561, characters 2-2866
   Dynamic_checks.+is_a_literal_case is never used
-  <-- line 570
+  <-- line 561
         | [] -> assert false [@@dead "Dynamic_checks.+is_a_literal_case"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 650, characters 2-411
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 641, characters 2-411
   Dynamic_checks.+is_a_literal_case is never used
-  <-- line 650
+  <-- line 641
       else without_literal_cases [@@dead "Dynamic_checks.+is_a_literal_case"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 661, characters 2-706
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 652, characters 2-706
   Dynamic_checks.+is_int_tag is never used
-  <-- line 661
+  <-- line 652
         typeof e != object_ [@@dead "Dynamic_checks.+is_int_tag"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 679, characters 2-1031
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 670, characters 2-1031
   Dynamic_checks.+add_runtime_type_check is never used
-  <-- line 679
+  <-- line 670
       | Bool _ | Float _ | Int _ | BigInt _ | String _ | Null | Undefined -> x [@@dead "Dynamic_checks.+add_runtime_type_check"] 
 
   Warning Dead Type
@@ -13079,4 +13067,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2311 issues (Warning Dead Module:145, Warning Dead Type:203, Warning Dead Value:1715, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2309 issues (Warning Dead Module:145, Warning Dead Type:203, Warning Dead Value:1713, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
