@@ -26,10 +26,6 @@ type 'a lit = ?loc:Location.t -> unit -> 'a
 
 val predef_option : Longident.t
 
-val predef_some : Longident.t
-
-val predef_none : Longident.t
-
 module Lid : sig
   type t = Longident.t
 
@@ -38,8 +34,6 @@ module Lid : sig
   val type_unit : t
 
   val type_int : t
-
-  val type_bigint : t
 
   val pervasives : t
 
@@ -70,8 +64,6 @@ val val_unit : expression_lit
 
 val type_unit : core_type_lit
 
-val type_exn : core_type_lit
-
 val type_string : core_type_lit
 
 val type_bool : core_type_lit
@@ -79,9 +71,3 @@ val type_bool : core_type_lit
 val type_int : core_type_lit
 
 val type_float : Parsetree.core_type
-
-val type_bigint : core_type_lit
-
-val type_any : core_type_lit
-
-val pat_unit : pattern_lit

@@ -10156,146 +10156,46 @@
     expression_gen: (Parsetree.core_type -> Parsetree.expression) option; [@dead "gen.expression_gen"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 31, characters 0-66
-  +predef_some is never used
-  <-- line 31
-  let predef_some : Longident.t = Ldot (predef_prefix_ident, "Some") [@@dead "+predef_some"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 33, characters 0-66
-  +predef_none is never used
-  <-- line 33
-  let predef_none : Longident.t = Ldot (predef_prefix_ident, "None") [@@dead "+predef_none"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 48, characters 2-33
-  Lid.+type_exn is never used
-  <-- line 48
-    let type_exn : t = Lident "exn" [@@dead "Lid.+type_exn"]  (* use *predef* *)
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 52, characters 2-58
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 42, characters 2-58
   Lid.+pervasives is never used
-  <-- line 52
+  <-- line 42
     let pervasives : t = Lident Primitive_modules.pervasives [@@dead "Lid.+pervasives"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 60, characters 2-49
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 50, characters 2-49
   Lid.+ignore_id is never used
-  <-- line 60
+  <-- line 50
     let ignore_id : t = Ldot (pervasives, "ignore") [@@dead "Lid.+ignore_id"] 
 
-  Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 84, characters 2-85
-  No_loc.+type_exn is never used and could have side effects
-
-  Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 89, characters 2-90
-  No_loc.+type_bigint is never used and could have side effects
-
-  Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 98, characters 2-38
-  No_loc.+type_any is never used and could have side effects
-
-  Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 100, characters 2-61
-  No_loc.+pat_unit is never used and could have side effects
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 122, characters 0-156
-  +type_exn is never used
-  <-- line 122
-      Ast_helper.Typ.mk ~loc (Ptyp_constr ({txt = Lid.type_exn; loc}, [])) [@@dead "+type_exn"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 150, characters 0-165
-  +type_bigint is never used
-  <-- line 150
-      Ast_helper.Typ.mk ~loc (Ptyp_constr ({txt = Lid.type_bigint; loc}, [])) [@@dead "+type_bigint"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 156, characters 0-110
-  +type_any is never used
-  <-- line 156
-    | Some loc -> Ast_helper.Typ.any ~loc () [@@dead "+type_any"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 161, characters 0-133
-  +pat_unit is never used
-  <-- line 161
-    | Some loc -> Pat.construct ~loc {txt = Lid.val_unit; loc} None [@@dead "+pat_unit"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 29, characters 0-29
-  +predef_some is never used
-  <-- line 29
-  val predef_some : Longident.t [@@dead "+predef_some"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 31, characters 0-29
-  +predef_none is never used
-  <-- line 31
-  val predef_none : Longident.t [@@dead "+predef_none"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 36, characters 2-18
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 32, characters 2-18
   Lid.+val_unit is never used
-  <-- line 36
+  <-- line 32
     val val_unit : t [@@dead "Lid.+val_unit"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 38, characters 2-19
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 34, characters 2-19
   Lid.+type_unit is never used
-  <-- line 38
+  <-- line 34
     val type_unit : t [@@dead "Lid.+type_unit"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 40, characters 2-18
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 36, characters 2-18
   Lid.+type_int is never used
-  <-- line 40
+  <-- line 36
     val type_int : t [@@dead "Lid.+type_int"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 42, characters 2-21
-  Lid.+type_bigint is never used
-  <-- line 42
-    val type_bigint : t [@@dead "Lid.+type_bigint"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 44, characters 2-20
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 38, characters 2-20
   Lid.+pervasives is never used
-  <-- line 44
+  <-- line 38
     val pervasives : t [@@dead "Lid.+pervasives"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 52, characters 2-19
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 46, characters 2-19
   Lid.+ignore_id is never used
-  <-- line 52
+  <-- line 46
     val ignore_id : t [@@dead "Lid.+ignore_id"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 73, characters 0-28
-  +type_exn is never used
-  <-- line 73
-  val type_exn : core_type_lit [@@dead "+type_exn"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 83, characters 0-31
-  +type_bigint is never used
-  <-- line 83
-  val type_bigint : core_type_lit [@@dead "+type_bigint"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 85, characters 0-28
-  +type_any is never used
-  <-- line 85
-  val type_any : core_type_lit [@@dead "+type_any"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 87, characters 0-26
-  +pat_unit is never used
-  <-- line 87
-  val pat_unit : pattern_lit [@@dead "+pat_unit"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_pat.ml", line 27, characters 0-130
@@ -13657,4 +13557,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2409 issues (Warning Dead Module:146, Warning Dead Type:223, Warning Dead Value:1788, Warning Dead Value With Side Effects:33, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2391 issues (Warning Dead Module:146, Warning Dead Type:223, Warning Dead Value:1774, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
