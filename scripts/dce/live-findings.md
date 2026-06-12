@@ -112,6 +112,23 @@ live after manual validation.
   warnings. Removing the labels from the wrappers would drop source locations for
   those diagnostics even though reanalyze does not see the cross-module flow.
 
+### `Env` external roots
+
+- Report: `Warning Dead Value` / `Warning Dead Type`, `compiler/ml/env.ml` and
+  `compiler/ml/env.mli`, for `reset_cache_toplevel` and the
+  `Persistent_signature.t` fields `filename` and `cmi`.
+- Verdict: live; false positives.
+- Validation: `compiler/jsoo/jsoo_playground_main.ml` calls
+  `Env.reset_cache_toplevel` from the playground reset path.
+  `compiler/core/bs_cmi_load.ml` returns
+  `Env.Persistent_signature.t option`, `compiler/core/bs_conditional_initial.ml`
+  installs that loader into `Env.Persistent_signature.load`, and
+  `compiler/ml/env.ml` reads both `filename` and `cmi` when acknowledging the
+  persistent signature.
+- Context: the playground and core CMI loader are outside the roots reanalyze is
+  following for this report, so the exported reset hook and loader payload fields
+  look dead even though they are part of the live compiler setup.
+
 ### `Location.report_error ?custom_intro ?src`
 
 - Report: `Warning Redundant Optional Argument`, `compiler/ml/location.ml` and
