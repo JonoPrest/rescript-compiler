@@ -859,10 +859,6 @@
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1092, characters 0-391
   optional argument loc of function +lookup is never used
 
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_async.ml", line 7, characters 0-320
-  optional argument loc of function +add_promise_type is always supplied (1 calls)
-
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/btype.mli", line 37, characters 0-49
   optional argument name of function +newgenvar is never used
@@ -16657,4 +16653,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2917 issues (Warning Dead Module:145, Warning Dead Type:368, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:201, Warning Unused Argument:39)
+  Analysis reported 2916 issues (Warning Dead Module:145, Warning Dead Type:368, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:200, Warning Unused Argument:39)
