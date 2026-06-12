@@ -56,20 +56,7 @@ val for_let : Location.t -> lambda -> pattern -> lambda -> lambda
 val for_multiple_match :
   Location.t -> lambda list -> (pattern * lambda) list -> partial -> lambda
 
-val for_tupled_function :
-  Location.t ->
-  Ident.t list ->
-  (pattern list * lambda) list ->
-  partial ->
-  lambda
-
 exception Cannot_flatten
-
-val flatten_pattern : int -> pattern -> pattern list
-
-(* Expand stringswitch to  string test tree *)
-val expand_stringswitch :
-  Location.t -> lambda -> (string * lambda) list -> lambda option -> lambda
 
 (* To be set by Lam_compile *)
 val names_from_construct_pattern :

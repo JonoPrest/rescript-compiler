@@ -2702,18 +2702,6 @@
       cmi: Cmi_format.cmi_infos; [@dead "t.cmi"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/error_message_utils.ml", line 20, characters 2-90
-  Parser.+parse_expr_at_loc is never used
-  <-- line 20
-      Warnings.loc -> (Parsetree.expression * comment list) option [@@dead "Parser.+parse_expr_at_loc"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/error_message_utils.ml", line 843, characters 0-347
-  +type_clash_context_maybe_option is never used
-  <-- line 843
-    | _ -> None [@@dead "+type_clash_context_maybe_option"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/experimental_features.ml", line 23, characters 0-52
   +reset is never used
   <-- line 23
@@ -2724,42 +2712,6 @@
   +reset is never used
   <-- line 6
   val reset : unit -> unit [@@dead "+reset"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/includemod.ml", line 146, characters 0-151
-  +print_list is never used
-  <-- line 146
-      print_list pr ppf l [@@dead "+print_list"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/includemod.ml", line 153, characters 0-73
-  +print_list is never used
-  <-- line 153
-  let print_list pr ppf l = Format.fprintf ppf "[@[%a@]]" (print_list pr) l [@@dead "+print_list"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/includemod.ml", line 155, characters 0-614
-  +print_coercion is never used
-  <-- line 155
-      pr "@[<2>alias %a@ (%a)@]" Printtyp.path p print_coercion c [@@dead "+print_coercion"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/includemod.ml", line 173, characters 0-86
-  +print_coercion2 is never used
-  <-- line 173
-    Format.fprintf ppf "@[%d,@ %a@]" n print_coercion c [@@dead "+print_coercion2"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/includemod.ml", line 176, characters 0-115
-  +print_coercion3 is never used
-  <-- line 176
-    Format.fprintf ppf "@[%s, %d,@ %a@]" (Ident.unique_name i) n print_coercion c [@@dead "+print_coercion3"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/includemod.mli", line 38, characters 0-57
-  +print_coercion is never used
-  <-- line 38
-  val print_coercion : formatter -> module_coercion -> unit [@@dead "+print_coercion"] 
 
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/lambda.ml", line 342, characters 43-53
@@ -2772,106 +2724,6 @@
   let_kind.Variable is a variant case which is never constructed
   <-- line 299
   type let_kind = Strict | Alias | StrictOpt | Variable [@dead "let_kind.Variable"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/lambda.mli", line 387, characters 0-36
-  +const_unit is never used
-  <-- line 387
-  val const_unit : structured_constant [@@dead "+const_unit"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/lambda.mli", line 393, characters 0-45
-  +iter is never used
-  <-- line 393
-  val iter : (lambda -> unit) -> lambda -> unit [@@dead "+iter"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/longident.mli", line 22, characters 0-39
-  +unflatten is never used
-  <-- line 22
-  val unflatten : string list -> t option [@@dead "+unflatten"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 452, characters 0-158
-  +make_catch is never used
-  <-- line 452
-      Lstaticcatch (k (make_exit e), (e, []), d) [@@dead "+make_catch"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1532, characters 0-30
-  +strings_test_threshold is never used
-  <-- line 1532
-  let strings_test_threshold = 8 [@@dead "+strings_test_threshold"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1534, characters 0-152
-  +bind_sw is never used
-  <-- line 1534
-      Llet (Strict, Pgenval, id, arg, k (Lvar id)) [@@dead "+bind_sw"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1543, characters 0-429
-  +make_string_test_sequence is never used
-  <-- line 1543
-          sw d) [@@dead "+make_string_test_sequence"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1561, characters 0-184
-  +split is never used
-  <-- line 1561
-        (x0 :: xs, y0, ys) [@@dead "+split"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1570, characters 0-48
-  +zero_lam is never used
-  <-- line 1570
-  let zero_lam = Lconst (Const_base (Const_int 0)) [@@dead "+zero_lam"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1572, characters 0-183
-  +tree_way_test is never used
-  <-- line 1572
-        Lifthenelse (Lprim (Pintcomp Clt, [zero_lam; arg], loc), gt, eq) ) [@@dead "+tree_way_test"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1580, characters 0-479
-  +do_make_string_test_tree is never used
-  <-- line 1580
-            (do_make_string_test_tree loc arg gt delta d)) [@@dead "+do_make_string_test_tree"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 1595, characters 0-255
-  +expand_stringswitch is never used
-  <-- line 1595
-          make_catch e (fun d -> do_make_string_test_tree loc arg sw 1 (Some d))) [@@dead "+expand_stringswitch"] 
-
-  Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 2680, characters 0-63
-  +check_partial_list is never used and could have side effects
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.ml", line 2817, characters 0-577
-  +for_tupled_function is never used
-  <-- line 2817
-    with Unused -> partial_function loc () [@@dead "+for_tupled_function"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.mli", line 59, characters 0-115
-  +for_tupled_function is never used
-  <-- line 59
-    lambda [@@dead "+for_tupled_function"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.mli", line 68, characters 0-52
-  +flatten_pattern is never used
-  <-- line 68
-  val flatten_pattern : int -> pattern -> pattern list [@@dead "+flatten_pattern"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/matching.mli", line 71, characters 0-101
-  +expand_stringswitch is never used
-  <-- line 71
-    Location.t -> lambda -> (string * lambda) list -> lambda option -> lambda [@@dead "+expand_stringswitch"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/mtype.ml", line 235, characters 0-248
@@ -3827,4 +3679,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 757 issues (Warning Dead Module:4, Warning Dead Type:130, Warning Dead Value:270, Warning Dead Value With Side Effects:6, Warning Redundant Optional Argument:198, Warning Unused Argument:149)
+  Analysis reported 732 issues (Warning Dead Module:4, Warning Dead Type:130, Warning Dead Value:246, Warning Dead Value With Side Effects:5, Warning Redundant Optional Argument:198, Warning Unused Argument:149)

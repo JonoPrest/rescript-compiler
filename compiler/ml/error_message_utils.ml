@@ -17,9 +17,6 @@ module Parser : sig
 
   val reprint_source : (Parsetree.structure -> comment list -> string) ref
 
-  val parse_expr_at_loc :
-    Warnings.loc -> (Parsetree.expression * comment list) option
-
   val reprint_expr_at_loc :
     ?mapper:(Parsetree.expression -> Parsetree.expression option) ->
     Warnings.loc ->
@@ -91,7 +88,6 @@ type type_clash_context =
     }
   | ArrayValue
   | TaggedTemplateValue
-  | MaybeUnwrapOption
   | IfCondition
   | AssertCondition
   | IfReturn
@@ -189,7 +185,7 @@ let error_expected_type_text ppf type_clash_context =
     fprintf ppf
       "But you're using @{<info>await@} on this expression, so it is expected \
        to be of type:"
-  | Some MaybeUnwrapOption | Some BracedIdent | None ->
+  | Some BracedIdent | None ->
     fprintf ppf "But it's expected to have type:"
 
 let is_record_type ~(extract_concrete_typedecl : extract_concrete_typedecl) ~env
@@ -407,12 +403,6 @@ let print_extra_type_clash_help ~extract_concrete_typedecl ~env loc ppf
       "\n\n\
       \  Ternaries (@{<info>?@} and @{<info>:@}) must return the same type in \
        both branches."
-  | Some MaybeUnwrapOption, _ ->
-    fprintf ppf
-      "\n\n\
-      \  Possible solutions:\n\
-      \  - Unwrap the option to its underlying value using \
-       `yourValue->Option.getOr(someDefaultValue)`"
   | Some ComparisonOperator, _ ->
     fprintf ppf "\n\n  You can only compare things of the same type."
   | Some ArrayValue, _ ->
@@ -839,15 +829,6 @@ let type_clash_context_for_function_argument ~label type_clash_context sarg0 =
              | Optional {txt = l} | Labelled {txt = l} -> Some l);
          })
   | type_clash_context -> type_clash_context
-
-let type_clash_context_maybe_option ty_expected ty_res =
-  match (ty_expected, ty_res) with
-  | ( {Types.desc = Tconstr (expected_path, _, _)},
-      {Types.desc = Tconstr (type_path, _, _)} )
-    when Path.same Predef.path_option type_path
-         && Path.same expected_path Predef.path_option = false ->
-    Some MaybeUnwrapOption
-  | _ -> None
 
 let type_clash_context_in_statement sexp =
   match sexp.Parsetree.pexp_desc with

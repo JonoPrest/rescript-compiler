@@ -384,13 +384,11 @@ and lambda_switch = {
 (* Sharing key *)
 val make_key : lambda -> lambda option
 
-val const_unit : structured_constant
 val lambda_assert_false : lambda
 val lambda_unit : lambda
 val lambda_module_alias : lambda
 val name_lambda : let_kind -> lambda -> (Ident.t -> lambda) -> lambda
 
-val iter : (lambda -> unit) -> lambda -> unit
 module Ident_set : Set.S with type elt = Ident.t
 val free_variables : lambda -> Ident_set.t
 
