@@ -251,6 +251,29 @@ live after manual validation.
   dumper warnings are cross-module compiler output paths, including `.cppo.ml`
   and jsoo entry points that this DCE run misses.
 
+### `Js_exp_make` expression builders
+
+- Report: large `Warning Dead Value` cluster in
+  `compiler/core/js_exp_make.ml` / `.mli`.
+- Verdict: live; false positive for the remaining reported builders and their
+  local helper chains.
+- Validation: the module is imported as `module E = Js_exp_make` across core
+  lowering and JS passes, including `lam_compile.ml`,
+  `lam_compile_primitive.ml`, `lam_compile_external_call.ml`,
+  `lam_compile_external_obj.ml`, `js_stmt_make.ml`, `js_output.ml`,
+  `js_of_lam_array.ml`, `js_of_lam_block.ml`, `js_of_lam_option.ml`,
+  `js_of_lam_string.ml`, `js_of_lam_variant.ml`, `js_pass_flatten.ml`,
+  `js_pass_flatten_and_mark_dead.ml`, and `js_pass_external_shadow.ml`. Direct
+  `Js_exp_make.remove_pure_sub_exp` calls also exist in `lam_compile.ml`, and
+  tests use `Js_exp_make.var`.
+- Context: `runtime_ref`, `assign_by_int`, and the public signature export for
+  `pure_runtime_call` had no callers and were removed. The remaining zero
+  direct-call entries, such as `bin`, `str_equal`, `push_negation`, and the
+  `simplify_*` helpers, are local dependencies of exported builders that are
+  used through `E.*`. The debug-printer ref is intentionally left because
+  removing its `Js_dump` hook unroots a large live dump-printer subgraph in the
+  current DCE report.
+
 ### `File_deps.File_hash` callbacks
 
 - Report: `Warning Dead Module` and `Warning Dead Value`,
