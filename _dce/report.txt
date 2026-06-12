@@ -9122,22 +9122,10 @@
     else power_2_above (x * 2) n [@@dead "+power_2_above"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_util.ml", line 36, characters 0-324
-  +stats_to_string is never used
-  <-- line 36
-         (Array.to_list (Array.map string_of_int bucket_histogram))) [@@dead "+stats_to_string"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_util.mli", line 25, characters 0-37
   +power_2_above is never used
   <-- line 25
   val power_2_above : int -> int -> int [@@dead "+power_2_above"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_util.mli", line 27, characters 0-50
-  +stats_to_string is never used
-  <-- line 27
-  val stats_to_string : Hashtbl.statistics -> string [@@dead "+stats_to_string"] 
 
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_gen.ml", line 21, characters 2-78
@@ -14291,4 +14279,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2517 issues (Warning Dead Module:151, Warning Dead Type:235, Warning Dead Value:1877, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2515 issues (Warning Dead Module:151, Warning Dead Type:235, Warning Dead Value:1875, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
