@@ -565,6 +565,20 @@ live after manual validation.
   caller. Dead pretty-printer scope/debug helpers and extra `Ext_ref` protect
   variants were removed.
 
+### `Ext_namespace` package-name helpers
+
+- Report: `Warning Dead Value`, `compiler/ext/ext_namespace.ml` / `.mli`, for
+  `is_valid_npm_package_name` and `namespace_of_package_name`.
+- Verdict: intentionally retained unit-test-covered utility surface for now.
+- Validation: grep finds only OUnit callers in
+  `tests/ounit_tests/ounit_string_tests.ml` and documentation references in
+  `ext_namespace_encode.mli`; there are no production callers in the current
+  compiler pipeline.
+- Context: these helpers validate and encode npm package names for namespace
+  derivation. Since unit tests are excluded from DCE roots and this pass is
+  avoiding unit-test edits, they are documented rather than removed in this
+  batch.
+
 ### `Ext_pervasives` unit-test number parsers
 
 - Report: `Warning Dead Value`, `compiler/ext/ext_pervasives.ml` / `.mli`, for
