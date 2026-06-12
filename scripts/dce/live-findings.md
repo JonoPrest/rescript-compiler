@@ -351,6 +351,24 @@ live after manual validation.
   from constructors being built through the aliased `Lambda` type rather than
   directly through `Lam_compat`.
 
+### Lambda-to-JS compilation pipeline
+
+- Report: `Warning Dead Module` / `Warning Dead Value` clusters in
+  `compiler/core/lam_compile.ml`, `lam_compile_const.ml`, and
+  `lam_compile_context.ml` plus their `.mli` files.
+- Verdict: live; false positive.
+- Validation: `lam_compile_main.cppo.ml` calls
+  `Lam_compile.compile_lambda` and `compile_recursive_lets`. The reported
+  top-level helpers in `lam_compile.ml` are local dependencies of the recursive
+  `compile` closure that produces those functions. `Lam_compile_const.translate`
+  and `translate_arg_cst` are used by `lam_compile.ml`,
+  `lam_compile_external_call.ml`, and `lam_compile_external_obj.ml`.
+  `Lam_compile_context` types and helpers are used by `lam_compile.ml`,
+  `lam_compile_main.cppo.ml`, `lam_compile_primitive.ml`,
+  `lam_compile_external_call.ml`, and `js_output.ml`.
+- Context: DCE does not root the `.cppo.ml` entry point and therefore treats the
+  compiler backend and its local helper chains as dead.
+
 ### Core JS lowering helpers
 
 - Report: `Warning Dead Module`, `Warning Dead Value`, and constructor warnings
