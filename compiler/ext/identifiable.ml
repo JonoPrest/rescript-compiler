@@ -80,19 +80,6 @@ module type Tbl = sig
   val map : 'a t -> ('a -> 'b) -> 'b t
 end
 
-module Pair (A : Thing) (B : Thing) : Thing with type t = A.t * B.t = struct
-  type t = A.t * B.t
-
-  let compare (a1, b1) (a2, b2) =
-    let c = A.compare a1 a2 in
-    if c <> 0 then c else B.compare b1 b2
-
-  let output oc (a, b) = Printf.fprintf oc " (%a, %a)" A.output a B.output b
-  let hash (a, b) = Hashtbl.hash (A.hash a, B.hash b)
-  let equal (a1, b1) (a2, b2) = A.equal a1 a2 && B.equal b1 b2
-  let print ppf (a, b) = Format.fprintf ppf " (%a, @ %a)" A.print a B.print b
-end
-
 module Make_map (T : Thing) = struct
   include Map.Make (T)
 

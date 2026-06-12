@@ -26,8 +26,6 @@ module type Thing = sig
   val print : Format.formatter -> t -> unit
 end
 
-module Pair : functor (A : Thing) (B : Thing) -> Thing with type t = A.t * B.t
-
 module type Set = sig
   module T : Set.OrderedType
   include Set.S with type elt = T.t and type t = Set.Make(T).t

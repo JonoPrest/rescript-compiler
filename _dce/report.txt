@@ -9071,60 +9071,14 @@
   <-- line 21
     include Map.OrderedType with type t := t [@@dead "Make.+compare"] 
 
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.ml", line 86, characters 2-106
-  Pair.+compare is never used
-  <-- line 86
-      if c <> 0 then c else B.compare b1 b2 [@@dead "Pair.+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.ml", line 91, characters 2-53
-  Pair.+hash is never used
-  <-- line 91
-    let hash (a, b) = Hashtbl.hash (A.hash a, B.hash b) [@@dead "Pair.+hash"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.ml", line 92, characters 2-62
-  Pair.+equal is never used
-  <-- line 92
-    let equal (a1, b1) (a2, b2) = A.equal a1 a2 && B.equal b1 b2 [@@dead "Pair.+equal"] 
-
   Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 29, characters 0-78
-  identifiable.Pair is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 22, characters 10-45
-  Pair.+hash is never used
-  <-- line 22
-    include Hashtbl.HashedType with type t := t [@@dead "Pair.+hash"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 23, characters 10-42
-  Pair.+compare is never used
-  <-- line 23
-    include Map.OrderedType with type t := t [@@dead "Pair.+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 25, characters 2-39
-  Pair.+output is never used
-  <-- line 25
-    val output : out_channel -> t -> unit [@@dead "Pair.+output"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 26, characters 2-43
-  Pair.+print is never used
-  <-- line 26
-    val print : Format.formatter -> t -> unit [@@dead "Pair.+print"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 100, characters 26-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 98, characters 26-46
   identifiable.Make.Tbl is a dead module as all its items are dead.
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 100, characters 26-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/identifiable.mli", line 98, characters 26-46
   Make.Tbl.+map is never used
-  <-- line 100
+  <-- line 98
   module Make (T : Thing) : S with type t := T.t [@@dead "Make.Tbl.+map"] 
 
   Warning Dead Module
@@ -13835,4 +13789,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2439 issues (Warning Dead Module:147, Warning Dead Type:225, Warning Dead Value:1815, Warning Dead Value With Side Effects:33, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2431 issues (Warning Dead Module:146, Warning Dead Type:225, Warning Dead Value:1808, Warning Dead Value With Side Effects:33, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
