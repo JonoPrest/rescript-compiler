@@ -787,14 +787,6 @@
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 967, characters 2-55
   optional argument from_type of function Label.+unbound_name_error is never used
 
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 2047, characters 0-2615
-  optional argument pred of function +do_check_partial is always supplied (1 calls)
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 950, characters 0-927
-  optional argument always of function +pats_of_type is never used
-
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/pprintast.ml", line 220, characters 0-346
   optional argument first of function +paren is never used
@@ -15614,21 +15606,21 @@
     let equal = Types.equal_tag [@@dead "Constructor_tag_hashtbl.+equal"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 2541, characters 4-193
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 2534, characters 4-193
   +enter_expression is never used
-  <-- line 2541
+  <-- line 2534
         | _ -> () [@@dead "+enter_expression"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 2549, characters 4-103
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 2542, characters 4-103
   +is_unpack is never used
-  <-- line 2549
+  <-- line 2542
         List.exists (fun (attr, _) -> attr.txt = "#modulepat") exp.exp_attributes [@@dead "+is_unpack"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 2552, characters 4-493
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 2545, characters 4-493
   +leave_expression is never used
-  <-- line 2552
+  <-- line 2545
           | _ -> assert false [@@dead "+leave_expression"] 
 
   Warning Dead Type
@@ -16735,4 +16727,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2936 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:206, Warning Unused Argument:52)
+  Analysis reported 2934 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:205, Warning Unused Argument:51)

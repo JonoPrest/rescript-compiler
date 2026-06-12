@@ -947,15 +947,14 @@ let pat_of_constrs ex_pat cstrs =
   if cstrs = [] then raise Empty
   else orify_many (List.map (pat_of_constr ex_pat) cstrs)
 
-let pats_of_type ?(always = false) env ty =
+let pats_of_type env ty =
   let ty' = Ctype.expand_head env ty in
   match ty'.desc with
   | Tconstr (path, _, _) -> (
     try
       match (Env.find_type path env).type_kind with
       | Type_variant cl
-        when always
-             || List.length cl = 1
+        when List.length cl = 1
              || List.for_all (fun cd -> cd.Types.cd_res <> None) cl ->
         let cstrs = fst (Env.find_type_descrs path env) in
         List.map (pat_of_constr (make_pat Tpat_any ty env)) cstrs
@@ -2044,7 +2043,7 @@ let ppat_of_type env ty =
     (Conv.mkpat Parsetree.Ppat_any, Hashtbl.create 0, Hashtbl.create 0)
   | pats -> Conv.conv (orify_many pats)
 
-let do_check_partial ?partial_match_warning_hint ?pred exhaust loc casel pss =
+let do_check_partial ?partial_match_warning_hint ~pred exhaust loc casel pss =
   match pss with
   | [] ->
     (*
@@ -2065,19 +2064,13 @@ let do_check_partial ?partial_match_warning_hint ?pred exhaust loc casel pss =
     match exhaust None pss (List.length ps) with
     | Rnone -> Total
     | Rsome [u] -> (
-      let v =
-        match pred with
-        | Some pred ->
-          let pattern, constrs, labels = Conv.conv u in
-          let u' = pred constrs labels pattern in
-          (* pretty_pat u;
-             begin match u' with
-               None -> prerr_endline ": impossible"
-             | Some _ -> prerr_endline ": possible"
-             end; *)
-          u'
-        | None -> Some u
-      in
+      let pattern, constrs, labels = Conv.conv u in
+      let v = pred constrs labels pattern in
+      (* pretty_pat u;
+         begin match v with
+           None -> prerr_endline ": impossible"
+         | Some _ -> prerr_endline ": possible"
+         end; *)
       match v with
       | None -> Total
       | Some v ->
