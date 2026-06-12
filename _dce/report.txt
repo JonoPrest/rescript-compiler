@@ -804,34 +804,6 @@
   optional argument from_type of function +unbound_constructor_error is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.mli", line 84, characters 0-238
-  optional argument unif of function +super_report_unification_error is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.mli", line 75, characters 0-163
-  optional argument unif of function +report_unification_error is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.ml", line 1563, characters 0-200
-  optional argument unif of function +super_report_unification_error is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.ml", line 1503, characters 0-146
-  optional argument unif of function +report_unification_error is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.ml", line 960, characters 0-106
-  optional argument printing_context of function +typexp is never used
-
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.ml", line 950, characters 0-310
-  optional argument printing_context of function +tree_of_constraints is always supplied (1 calls)
-
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.ml", line 911, characters 0-1065
-  optional argument printing_context of function +tree_of_constructor is always supplied (1 calls)
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ctype.mli", line 322, characters 0-62
   optional argument env of function +free_variables is never used
 
@@ -15840,27 +15812,27 @@
   val structured_constant : formatter -> structured_constant -> unit [@@dead "+structured_constant"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.ml", line 965, characters 0-40
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.ml", line 964, characters 0-40
   +type_sch is never used
-  <-- line 965
+  <-- line 964
   and type_sch ppf ty = typexp true ppf ty [@@dead "+type_sch"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.ml", line 972, characters 0-113
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.ml", line 971, characters 0-113
   +type_scheme_max is never used
-  <-- line 972
+  <-- line 971
     typexp true ppf ty [@@dead "+type_scheme_max"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.ml", line 1186, characters 0-299
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.ml", line 1185, characters 0-299
   +refresh_weak is never used
-  <-- line 1186
+  <-- line 1185
     weak_var_map := m [@@dead "+refresh_weak"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.ml", line 1198, characters 0-358
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.ml", line 1197, characters 0-358
   +print_items is never used
-  <-- line 1198
+  <-- line 1197
     print showval env x [@@dead "+print_items"] 
 
   Warning Dead Value
@@ -15924,9 +15896,9 @@
     bool -> bool -> string -> formatter -> (type_expr * type_expr) list -> unit [@@dead "+trace"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.mli", line 113, characters 0-131
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.mli", line 111, characters 0-131
   +print_items is never used
-  <-- line 113
+  <-- line 111
     (out_sig_item * 'a option) list [@@dead "+print_items"] 
 
   Warning Dead Value
@@ -16697,4 +16669,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2927 issues (Warning Dead Module:145, Warning Dead Type:368, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:203, Warning Unused Argument:47)
+  Analysis reported 2920 issues (Warning Dead Module:145, Warning Dead Type:368, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:201, Warning Unused Argument:42)
