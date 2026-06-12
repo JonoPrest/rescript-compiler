@@ -59,7 +59,7 @@ let var ?comment id : t = {expression_desc = Var (Id id); comment}
 (* only used in property access,
     Invariant: it should not call an external module .. *)
 
-let js_global ?comment (v : string) = var ?comment (Ext_ident.create_js v)
+let js_global (v : string) = var (Ext_ident.create_js v)
 let undefined : t =
   {expression_desc = Undefined {is_unit = false}; comment = None}
 let nil : t = {expression_desc = Null; comment = None}
@@ -165,7 +165,7 @@ let raw_js_code ?comment info s : t =
     comment;
   }
 
-let array ?comment mt es : t = {expression_desc = Array (es, mt); comment}
+let array mt es : t = {expression_desc = Array (es, mt); comment = None}
 let some_comment = None
 
 let optional_block e : J.expression =
@@ -212,7 +212,7 @@ let is_array (e0 : t) : t =
   let f = str "Array.isArray" ~delim:DNoQuotes in
   {expression_desc = Call (f, [e0], Js_call_info.ml_full_call); comment = None}
 
-let new_ ?comment e0 args : t = {expression_desc = New (e0, Some args); comment}
+let new_ e0 args : t = {expression_desc = New (e0, Some args); comment = None}
 
 let unit : t = {expression_desc = Undefined {is_unit = true}; comment = None}
 

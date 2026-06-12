@@ -780,16 +780,8 @@
   optional argument ignore_parse_errors of function +parse_implementation is always supplied (1 calls)
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 316, characters 0-71
-  optional argument comment of function +array is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 314, characters 0-68
-  optional argument comment of function +new_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 46, characters 0-46
-  optional argument comment of function +js_global is never used
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.mli", line 44, characters 0-41
+  optional argument comment of function +var is never used
 
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.mli", line 45, characters 0-298
@@ -848,20 +840,12 @@
   optional argument comment of function +bigint is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 215, characters 0-80
-  optional argument comment of function +new_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 168, characters 0-74
-  optional argument comment of function +array is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 82, characters 0-317
   optional argument comment of function +runtime_var_dot is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 62, characters 0-74
-  optional argument comment of function +js_global is never used
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 57, characters 0-66
+  optional argument comment of function +var is never used
 
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.ml", line 62, characters 0-1047
@@ -16899,4 +16883,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2977 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:208, Warning Unused Argument:90)
+  Analysis reported 2973 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:208, Warning Unused Argument:86)

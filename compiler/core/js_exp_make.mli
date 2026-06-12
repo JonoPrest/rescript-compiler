@@ -43,7 +43,7 @@ val remove_pure_sub_exp : t -> t option
 
 val var : ?comment:string -> J.ident -> t
 
-val js_global : ?comment:string -> string -> t
+val js_global : string -> t
 
 val runtime_var_dot : ?comment:string -> string -> string -> t
 
@@ -311,9 +311,9 @@ val flat_call : ?comment:string -> t -> t -> t
 
 val tagged_template : ?comment:string -> t -> t list -> t list -> t
 
-val new_ : ?comment:string -> J.expression -> J.expression list -> t
+val new_ : J.expression -> J.expression list -> t
 
-val array : ?comment:string -> J.mutable_flag -> J.expression list -> t
+val array : J.mutable_flag -> J.expression list -> t
 
 val optional_block : J.expression -> J.expression
 
