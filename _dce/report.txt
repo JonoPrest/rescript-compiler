@@ -1,57 +1,5 @@
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_list_test.ml", line 93, characters 11-42
-  optional argument cmp of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_list_test.ml", line 93, characters 11-42
-  optional argument msg of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_list_test.ml", line 93, characters 11-42
-  optional argument pp_diff of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_list_test.ml", line 93, characters 11-42
-  optional argument printer of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_list_test.ml", line 62, characters 11-51
-  optional argument cmp of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_list_test.ml", line 62, characters 11-51
-  optional argument msg of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_list_test.ml", line 62, characters 11-51
-  optional argument pp_diff of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_list_test.ml", line 31, characters 11-68
-  optional argument cmp of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_list_test.ml", line 31, characters 11-68
-  optional argument msg of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_list_test.ml", line 31, characters 11-68
-  optional argument pp_diff of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_list_test.ml", line 20, characters 11-68
-  optional argument cmp of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_list_test.ml", line 20, characters 11-68
-  optional argument msg of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_list_test.ml", line 20, characters 11-68
-  optional argument pp_diff of function +=~ is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_map_tests.ml", line 3, characters 0-31
   optional argument cmp of function +=~ is never used
 
@@ -17140,12 +17088,6 @@
   let ( =~ ) = OUnit.assert_equal [@@dead "+=~"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_list_test.ml", line 3, characters 0-31
-  +=~ is never used
-  <-- line 3
-  let ( =~ ) = OUnit.assert_equal [@@dead "+=~"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_scc_tests.ml", line 3, characters 0-31
   +=~ is never used
   <-- line 3
@@ -17169,4 +17111,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 3044 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2128, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:213, Warning Unused Argument:151)
+  Analysis reported 3030 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:213, Warning Unused Argument:138)
