@@ -14315,54 +14315,6 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/cli/res_cli.ml", line 30, characters 4-11
-  Color.color.Black is a variant case which is never constructed
-  <-- line 30
-      | Black [@dead "Color.color.Black"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/cli/res_cli.ml", line 32, characters 4-11
-  Color.color.Green is a variant case which is never constructed
-  <-- line 32
-      | Green [@dead "Color.color.Green"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/cli/res_cli.ml", line 34, characters 4-10
-  Color.color.Blue is a variant case which is never constructed
-  <-- line 34
-      | Blue [@dead "Color.color.Blue"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/cli/res_cli.ml", line 37, characters 4-11
-  Color.color.White is a variant case which is never constructed
-  <-- line 37
-      | White [@dead "Color.color.White"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/cli/res_cli.ml", line 41, characters 4-17
-  Color.style.BG is a variant case which is never constructed
-  <-- line 41
-      | BG of color [@dead "Color.style.BG"]  (* background *)
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/cli/res_cli.ml", line 135, characters 33-37
-  Color.setting.Auto is a variant case which is never constructed
-  <-- line 135
-    type[@warning "-37"] setting = Auto [@dead "Color.setting.Auto"]  | Always | Never
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/cli/res_cli.ml", line 135, characters 38-46
-  Color.setting.Always is a variant case which is never constructed
-  <-- line 135
-    type[@warning "-37"] setting = Auto [@dead "Color.setting.Auto"]  | Always [@dead "Color.setting.Always"]  | Never
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/cli/res_cli.ml", line 135, characters 47-54
-  Color.setting.Never is a variant case which is never constructed
-  <-- line 135
-    type[@warning "-37"] setting = Auto [@dead "Color.setting.Auto"]  | Always [@dead "Color.setting.Always"]  | Never [@dead "Color.setting.Never"] 
-
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_comments_table.ml", line 27, characters 0-116
   +list_last is never used
@@ -14423,4 +14375,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2539 issues (Warning Dead Module:151, Warning Dead Type:247, Warning Dead Value:1887, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2531 issues (Warning Dead Module:151, Warning Dead Type:239, Warning Dead Value:1887, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
