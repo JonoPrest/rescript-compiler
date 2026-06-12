@@ -2726,30 +2726,6 @@
   type let_kind = Strict | Alias | StrictOpt | Variable [@dead "let_kind.Variable"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/mtype.ml", line 235, characters 0-248
-  +no_code_needed is never used
-  <-- line 235
-    | Mty_alias (Mta_present, _) -> false [@@dead "+no_code_needed"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/mtype.ml", line 243, characters 0-505
-  +no_code_needed_sig is never used
-  <-- line 243
-    | (Sig_typext _ | Sig_class _) :: _ -> false [@@dead "+no_code_needed_sig"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/mtype.mli", line 40, characters 0-49
-  +no_code_needed is never used
-  <-- line 40
-  val no_code_needed : Env.t -> module_type -> bool [@@dead "+no_code_needed"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/mtype.mli", line 41, characters 0-51
-  +no_code_needed_sig is never used
-  <-- line 41
-  val no_code_needed_sig : Env.t -> signature -> bool [@@dead "+no_code_needed_sig"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/oprint.mli", line 24, characters 0-62
   +out_class_type is never used
   <-- line 24
@@ -3134,30 +3110,6 @@
   val all_predef_exns : Ident.t list [@@dead "+all_predef_exns"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printast.mli", line 22, characters 0-55
-  +expression is never used
-  <-- line 22
-  val expression : int -> formatter -> expression -> unit [@@dead "+expression"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printast.mli", line 23, characters 0-53
-  +structure is never used
-  <-- line 23
-  val structure : int -> formatter -> structure -> unit [@@dead "+structure"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printlambda.ml", line 406, characters 0-38
-  +structured_constant is never used
-  <-- line 406
-  let structured_constant = struct_const [@@dead "+structured_constant"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printlambda.mli", line 20, characters 0-66
-  +structured_constant is never used
-  <-- line 20
-  val structured_constant : formatter -> structured_constant -> unit [@@dead "+structured_constant"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/printtyp.ml", line 964, characters 0-40
   +type_sch is never used
   <-- line 964
@@ -3246,12 +3198,6 @@
   +print_items is never used
   <-- line 111
     (out_sig_item * 'a option) list [@@dead "+print_items"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/record_type_spread.ml", line 3, characters 0-69
-  +t_equals is never used
-  <-- line 3
-  let t_equals t1 t2 = t1.Types.level = t2.Types.level && t1.id = t2.id [@@dead "+t_equals"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/stypes.ml", line 30, characters 0-56
@@ -3416,12 +3362,6 @@
     unit [@@dead "+print"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/translmod.mli", line 27, characters 0-52
-  +report_error is never used
-  <-- line 27
-  val report_error : Format.formatter -> error -> unit [@@dead "+report_error"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.mli", line 22, characters 0-50
   +is_nonexpansive is never used
   <-- line 22
@@ -3480,36 +3420,6 @@
   +constant is never used
   <-- line 157
   val constant : Parsetree.constant -> (Asttypes.constant, error) result [@@dead "+constant"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedecl.ml", line 25, characters 24-31
-  native_repr_kind.Unboxed is a variant case which is never constructed
-  <-- line 25
-  type native_repr_kind = Unboxed [@dead "native_repr_kind.Unboxed"]  | Untagged
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedecl.ml", line 25, characters 32-42
-  native_repr_kind.Untagged is a variant case which is never constructed
-  <-- line 25
-  type native_repr_kind = Unboxed [@dead "native_repr_kind.Unboxed"]  | Untagged [@dead "native_repr_kind.Untagged"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedecl.mli", line 53, characters 0-48
-  +abstract_type_decl is never used
-  <-- line 53
-  val abstract_type_decl : int -> type_declaration [@@dead "+abstract_type_decl"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedecl.mli", line 67, characters 24-31
-  native_repr_kind.Unboxed is a variant case which is never constructed
-  <-- line 67
-  type native_repr_kind = Unboxed [@dead "native_repr_kind.Unboxed"]  | Untagged
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedecl.mli", line 67, characters 32-42
-  native_repr_kind.Untagged is a variant case which is never constructed
-  <-- line 67
-  type native_repr_kind = Unboxed [@dead "native_repr_kind.Unboxed"]  | Untagged [@dead "native_repr_kind.Untagged"] 
 
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree.ml", line 281, characters 2-23
@@ -3679,4 +3589,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 732 issues (Warning Dead Module:4, Warning Dead Type:130, Warning Dead Value:246, Warning Dead Value With Side Effects:5, Warning Redundant Optional Argument:198, Warning Unused Argument:149)
+  Analysis reported 717 issues (Warning Dead Module:4, Warning Dead Type:126, Warning Dead Value:235, Warning Dead Value With Side Effects:5, Warning Redundant Optional Argument:198, Warning Unused Argument:149)

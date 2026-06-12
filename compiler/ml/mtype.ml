@@ -232,30 +232,6 @@ and type_paths_sig env p pos sg =
   | (Sig_typext _ | Sig_class _) :: rem -> type_paths_sig env p (pos + 1) rem
   | Sig_class_type _ :: rem -> type_paths_sig env p pos rem
 
-let rec no_code_needed env mty =
-  match scrape env mty with
-  | Mty_ident _ -> false
-  | Mty_signature sg -> no_code_needed_sig env sg
-  | Mty_functor (_, _, _) -> false
-  | Mty_alias (Mta_absent, _) -> true
-  | Mty_alias (Mta_present, _) -> false
-
-and no_code_needed_sig env sg =
-  match sg with
-  | [] -> true
-  | Sig_value (_id, decl) :: rem -> (
-    match decl.val_kind with
-    | Val_prim _ -> no_code_needed_sig env rem
-    | _ -> false)
-  | Sig_module (id, md, _) :: rem ->
-    no_code_needed env md.md_type
-    && no_code_needed_sig
-         (Env.add_module_declaration ~check:false id md env)
-         rem
-  | (Sig_type _ | Sig_modtype _ | Sig_class_type _) :: rem ->
-    no_code_needed_sig env rem
-  | (Sig_typext _ | Sig_class _) :: _ -> false
-
 (* Check whether a module type may return types *)
 
 let rec contains_type env = function
