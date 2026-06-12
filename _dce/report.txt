@@ -1,89 +1,5 @@
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 349, characters 11-66
-  optional argument cmp of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 349, characters 11-66
-  optional argument msg of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 349, characters 11-66
-  optional argument pp_diff of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 338, characters 11-64
-  optional argument cmp of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 338, characters 11-64
-  optional argument msg of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 338, characters 11-64
-  optional argument pp_diff of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 329, characters 11-181
-  optional argument cmp of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 329, characters 11-181
-  optional argument msg of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 329, characters 11-181
-  optional argument pp_diff of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 308, characters 11-64
-  optional argument cmp of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 308, characters 11-64
-  optional argument msg of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 308, characters 11-64
-  optional argument pp_diff of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 131, characters 11-92
-  optional argument cmp of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 131, characters 11-92
-  optional argument msg of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 131, characters 11-92
-  optional argument pp_diff of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 7, characters 0-58
-  optional argument cmp of function +string_eq is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 7, characters 0-58
-  optional argument msg of function +string_eq is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 7, characters 0-58
-  optional argument pp_diff of function +string_eq is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 3, characters 0-53
-  optional argument cmp of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 3, characters 0-53
-  optional argument msg of function +=~ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_string_tests.ml", line 3, characters 0-53
-  optional argument pp_diff of function +=~ is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_utf8_test.ml", line 6, characters 0-31
   optional argument cmp of function +=~ is never used
 
@@ -17095,4 +17011,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 3026 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:213, Warning Unused Argument:134)
+  Analysis reported 3005 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:213, Warning Unused Argument:113)

@@ -1,10 +1,10 @@
 let ( >:: ), ( >::: ) = OUnit.(( >:: ), ( >::: ))
 
-let ( =~ ) = OUnit.assert_equal ~printer:Ext_obj.dump
+let ( =~ ) x y = OUnit.assert_equal ~printer:Ext_obj.dump x y
 
 let printer_string x = x
 
-let string_eq = OUnit.assert_equal ~printer:(fun id -> id)
+let string_eq x y = OUnit.assert_equal ~printer:(fun id -> id) x y
 
 let suites =
   __FILE__
@@ -128,8 +128,8 @@ let suites =
            Ext_string.starts_with "abb" "abb" =~ true;
            Ext_string.starts_with "abb" "abbc" =~ false );
          ( __LOC__ >:: fun _ ->
-           let ( =~ ) =
-             OUnit.assert_equal ~printer:(fun x -> string_of_bool x)
+           let ( =~ ) x y =
+             OUnit.assert_equal ~printer:(fun x -> string_of_bool x) x y
            in
            let k = Ext_string.ends_with in
            k "xx.ml" ".ml" =~ true;
@@ -305,7 +305,7 @@ let suites =
          ( __LOC__ >:: fun _ ->
            Ext_namespace.namespace_of_package_name "xx" =~ "Xx" );
          ( __LOC__ >:: fun _ ->
-           let ( =~ ) = OUnit.assert_equal ~printer:(fun x -> x) in
+           let ( =~ ) x y = OUnit.assert_equal ~printer:(fun x -> x) x y in
            Ext_namespace.namespace_of_package_name "reason-react"
            =~ "ReasonReact";
            Ext_namespace.namespace_of_package_name "Foo_bar" =~ "Foo_bar";
@@ -326,16 +326,18 @@ let suites =
            Ext_namespace.js_name_of_modulename "AA-b" Upper ".bs.js"
            =~ "AA.bs.js" );
          ( __LOC__ >:: fun _ ->
-           let ( =~ ) =
-             OUnit.assert_equal ~printer:(fun x ->
+           let ( =~ ) x y =
+             OUnit.assert_equal
+               ~printer:(fun x ->
                  match x with
                  | None -> ""
                  | Some (a, b) -> a ^ "," ^ b)
+               x y
            in
            Ext_namespace.try_split_module_name "Js-X" =~ Some ("X", "Js");
            Ext_namespace.try_split_module_name "Js_X" =~ None );
          ( __LOC__ >:: fun _ ->
-           let ( =~ ) = OUnit.assert_equal ~printer:(fun x -> x) in
+           let ( =~ ) x y = OUnit.assert_equal ~printer:(fun x -> x) x y in
            let f = Ext_string.capitalize_ascii in
            f "x" =~ "X";
            f "X" =~ "X";
@@ -346,7 +348,7 @@ let suites =
            f v =~ "Bc";
            v =~ "bc" );
          ( __LOC__ >:: fun _ ->
-           let ( =~ ) = OUnit.assert_equal ~printer:printer_string in
+           let ( =~ ) x y = OUnit.assert_equal ~printer:printer_string x y in
            Ext_filename.chop_all_extensions_maybe "a.bs.js" =~ "a";
            Ext_filename.chop_all_extensions_maybe "a.js" =~ "a";
            Ext_filename.chop_all_extensions_maybe "a" =~ "a";
