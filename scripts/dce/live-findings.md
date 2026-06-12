@@ -895,7 +895,7 @@ live after manual validation.
 ### `Lam_print` lambda printers
 
 - Report: `Warning Dead Value` entries in `compiler/core/lam_print.ml` / `.mli`,
-  including `lambda`, `primitive`, `serialize`, and `lambda_to_string`.
+  including `lambda`, `serialize`, and `lambda_to_string`.
 - Verdict: live false positives, except `primitive_to_string`, which had no
   callers and was removed.
 - Validation: `Lam_group.pp` calls `Lam_print.lambda`,
@@ -906,7 +906,8 @@ live after manual validation.
 - Context: these are debug/inspection printers reached through cross-module and
   `.cppo.ml` paths that the DCE report does not root correctly. The playground
   call site is not covered by `dune build @check`, so this warning must stay
-  documented rather than removed.
+  documented rather than removed. The unused public `primitive` signature export
+  was removed; the implementation remains live through `lambda`.
 
 ### Lambda-to-JS compilation pipeline
 

@@ -1166,15 +1166,9 @@
   +lambda_to_string is never used and could have side effects
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.mli", line 27, characters 0-59
-  +primitive is never used
-  <-- line 27
-  val primitive : Format.formatter -> Lam_primitive.t -> unit [@@dead "+primitive"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.mli", line 31, characters 0-38
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.mli", line 29, characters 0-38
   +lambda_to_string is never used
-  <-- line 31
+  <-- line 29
   val lambda_to_string : Lam.t -> string [@@dead "+lambda_to_string"] 
 
   Warning Dead Value
@@ -1983,4 +1977,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 406 issues (Warning Dead Module:3, Warning Dead Type:82, Warning Dead Value:98, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:26)
+  Analysis reported 405 issues (Warning Dead Module:3, Warning Dead Type:82, Warning Dead Value:97, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:26)
