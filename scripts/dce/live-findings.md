@@ -283,6 +283,20 @@ live after manual validation.
   implementation as dead, but those functions are the shared implementation of
   the compiler's generated map and set modules.
 
+### `Ext_array` production helpers
+
+- Report: remaining `Warning Dead Value` entries in
+  `compiler/ext/ext_array.ml` / `.mli`, currently `reverse_range`,
+  `of_list_map`, and `fold_left`.
+- Verdict: live; false positive.
+- Validation: `compiler/ext/vec.cppo.ml` calls `Ext_array.reverse_range`;
+  `compiler/core/lam_util.cppo.ml` and `lam_stats_export.ml` call
+  `Ext_array.of_list_map`; and `compiler/ext/map.cppo.ml` calls
+  `Ext_array.fold_left`.
+- Context: helpers with no production callers were removed with their
+  unit-only tests. The remaining warnings are `.cppo.ml` and cross-module uses
+  missed by DCE.
+
 ### Core JS analyzer and delimiters
 
 - Report: `Warning Dead Type`, `compiler/core/j.ml`, `delim.DBackQuotes`; and
