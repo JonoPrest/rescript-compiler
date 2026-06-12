@@ -36,18 +36,13 @@ val const_exp_int : ?loc:Location.t -> ?attrs:attrs -> int -> expression
 val const_exp_int_list_as_array : int list -> expression
 
 val apply_simple :
-  ?loc:Location.t -> ?attrs:attrs -> expression -> expression list -> expression
+  ?loc:Location.t -> expression -> expression list -> expression
 
 val app1 :
   ?loc:Location.t -> ?attrs:attrs -> expression -> expression -> expression
 
 val app2 :
-  ?loc:Location.t ->
-  ?attrs:attrs ->
-  expression ->
-  expression ->
-  expression ->
-  expression
+  ?loc:Location.t -> expression -> expression -> expression -> expression
 
 val app3 :
   ?loc:Location.t ->
@@ -60,7 +55,6 @@ val app3 :
 
 val apply_labels :
   ?loc:Location.t ->
-  ?attrs:attrs ->
   expression ->
   (string * expression) list ->
   (* [(label,e)] [label] is strictly interpreted as label *)
@@ -72,9 +66,6 @@ val apply_labels :
 *)
 
 val fun_ :
-  ?loc:Location.t ->
-  ?attrs:attrs ->
-  ?async:bool ->
   arity:int option ->
   pattern ->
   expression ->

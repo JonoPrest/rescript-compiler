@@ -30,11 +30,11 @@ open Parsetree
 
 let default_loc = Location.none
 
-let apply_simple ?(loc = default_loc) ?(attrs = []) (fn : expression)
-    (args : expression list) : expression =
+let apply_simple ?(loc = default_loc) (fn : expression) (args : expression list)
+    : expression =
   {
     pexp_loc = loc;
-    pexp_attributes = attrs;
+    pexp_attributes = [];
     pexp_desc =
       Pexp_apply
         {
@@ -59,10 +59,10 @@ let app1 ?(loc = default_loc) ?(attrs = []) fn arg1 : expression =
         };
   }
 
-let app2 ?(loc = default_loc) ?(attrs = []) fn arg1 arg2 : expression =
+let app2 ?(loc = default_loc) fn arg1 arg2 : expression =
   {
     pexp_loc = loc;
-    pexp_attributes = attrs;
+    pexp_attributes = [];
     pexp_desc =
       Pexp_apply
         {
@@ -87,10 +87,10 @@ let app3 ?(loc = default_loc) ?(attrs = []) fn arg1 arg2 arg3 : expression =
         };
   }
 
-let fun_ ?(loc = default_loc) ?(attrs = []) ?(async = false) ~arity pat exp =
+let fun_ ~arity pat exp =
   {
-    pexp_loc = loc;
-    pexp_attributes = attrs;
+    pexp_loc = default_loc;
+    pexp_attributes = [];
     pexp_desc =
       Pexp_fun
         {
@@ -99,7 +99,7 @@ let fun_ ?(loc = default_loc) ?(attrs = []) ?(async = false) ~arity pat exp =
           lhs = pat;
           rhs = exp;
           arity;
-          async;
+          async = false;
         };
   }
 
@@ -118,11 +118,11 @@ let const_exp_int ?(loc = default_loc) ?(attrs = []) (s : int) : expression =
     pexp_desc = Pexp_constant (Pconst_integer (string_of_int s, None));
   }
 
-let apply_labels ?(loc = default_loc) ?(attrs = []) fn
-    (args : (string * expression) list) : expression =
+let apply_labels ?(loc = default_loc) fn (args : (string * expression) list) :
+    expression =
   {
     pexp_loc = loc;
-    pexp_attributes = attrs;
+    pexp_attributes = [];
     pexp_desc =
       Pexp_apply
         {

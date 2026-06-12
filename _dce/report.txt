@@ -787,30 +787,6 @@
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 967, characters 2-55
   optional argument from_type of function Label.+unbound_name_error is never used
 
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.mli", line 74, characters 0-130
-  optional argument async of function +fun_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.mli", line 74, characters 0-130
-  optional argument attrs of function +fun_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.mli", line 74, characters 0-130
-  optional argument loc of function +fun_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.mli", line 61, characters 0-179
-  optional argument attrs of function +apply_labels is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.mli", line 44, characters 0-110
-  optional argument attrs of function +app2 is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.mli", line 38, characters 0-99
-  optional argument attrs of function +apply_simple is never used
-
   Warning Redundant Optional Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 2047, characters 0-2615
   optional argument pred of function +do_check_partial is always supplied (1 calls)
@@ -818,30 +794,6 @@
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parmatch.ml", line 950, characters 0-927
   optional argument always of function +pats_of_type is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.ml", line 121, characters 0-438
-  optional argument attrs of function +apply_labels is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.ml", line 90, characters 0-319
-  optional argument async of function +fun_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.ml", line 90, characters 0-319
-  optional argument attrs of function +fun_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.ml", line 90, characters 0-319
-  optional argument loc of function +fun_ is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.ml", line 62, characters 0-319
-  optional argument attrs of function +app2 is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.ml", line 33, characters 0-377
-  optional argument attrs of function +apply_simple is never used
 
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/pprintast.ml", line 220, characters 0-346
@@ -12964,9 +12916,9 @@
   val const_exp_int_list_as_array : int list -> expression [@@dead "+const_exp_int_list_as_array"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.mli", line 52, characters 0-126
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.mli", line 47, characters 0-126
   +app3 is never used
-  <-- line 52
+  <-- line 47
     expression [@@dead "+app3"] 
 
   Warning Dead Value
@@ -16783,4 +16735,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2948 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:206, Warning Unused Argument:64)
+  Analysis reported 2936 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:206, Warning Unused Argument:52)
