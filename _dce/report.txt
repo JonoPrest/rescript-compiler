@@ -759,10 +759,6 @@
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 55, characters 2-50
   optional argument loc of function Typ.+any is always supplied (1 calls)
 
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/type_utils.ml", line 1213, characters 0-694
-  optional argument synthetic of function +transform_completion_to_pipe_completion is always supplied (1 calls)
-
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/type_utils.ml", line 588, characters 2-51
   optional argument print_opening_debug of function +extract_type is never used
@@ -16907,4 +16903,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2979 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:209, Warning Unused Argument:91)
+  Analysis reported 2978 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:208, Warning Unused Argument:91)

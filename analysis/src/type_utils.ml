@@ -1210,8 +1210,8 @@ let make_additional_text_edits_for_removing_dot pos_of_dot =
   ]
 
 (** Turns a completion into a pipe completion. *)
-let transform_completion_to_pipe_completion ?(synthetic = false) ~env
-    ?pos_of_dot (completion : Completion.t) =
+let transform_completion_to_pipe_completion ~synthetic ~env ?pos_of_dot
+    (completion : Completion.t) =
   let name = completion.name in
   let name_with_pipe = "->" ^ name in
   Some
