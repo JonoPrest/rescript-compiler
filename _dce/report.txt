@@ -10186,39 +10186,21 @@
     val ignore_id : t [@@dead "Lid.+ignore_id"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string.ml", line 184, characters 0-157
-  +transform_test is never used
-  <-- line 184
-    Buffer.contents buf [@@dead "+transform_test"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string.ml", line 199, characters 0-370
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string.ml", line 200, characters 0-370
   +check_no_escapes_or_unicode is never used
-  <-- line 199
+  <-- line 200
       | Invalid | Cont _ | Leading _ -> false [@@dead "+check_no_escapes_or_unicode"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string.ml", line 209, characters 0-75
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string.ml", line 210, characters 0-75
   +simple_comparison is never used
-  <-- line 209
+  <-- line 210
   let simple_comparison s = check_no_escapes_or_unicode s 0 (String.length s) [@@dead "+simple_comparison"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string.mli", line 29, characters 0-48
-  +pp_error is never used
-  <-- line 29
-  val pp_error : Format.formatter -> error -> unit [@@dead "+pp_error"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string.mli", line 35, characters 0-37
-  +transform_test is never used
-  <-- line 35
-  val transform_test : string -> string [@@dead "+transform_test"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string.mli", line 40, characters 0-38
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_utf8_string.mli", line 38, characters 0-38
   +simple_comparison is never used
-  <-- line 40
+  <-- line 38
   val simple_comparison : string -> bool [@@dead "+simple_comparison"] 
 
   Warning Dead Type
@@ -13485,4 +13467,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2379 issues (Warning Dead Module:146, Warning Dead Type:221, Warning Dead Value:1764, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2376 issues (Warning Dead Module:146, Warning Dead Type:221, Warning Dead Value:1761, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
