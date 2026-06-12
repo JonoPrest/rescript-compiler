@@ -230,6 +230,18 @@ live after manual validation.
 - Context: the `compare` function is consumed by `Set.Make`, so it can look
   unused as a plain value even though every set operation depends on it.
 
+### ML type-checker collection callbacks
+
+- Report: `Warning Dead Module` and `Warning Dead Value`,
+  `compiler/ml/ctype.ml`, `Type_pairs.equal` and `Type_pairs.hash`.
+- Verdict: live; false positive.
+- Validation: `Ctype.Type_pairs` is the hashtable used throughout type
+  equality, unification, subtyping, and generalization paths. `ctype.ml` calls
+  `Type_pairs.create`, `find`, `add`, `mem`, and `clear` in those algorithms.
+- Context: `equal` and `hash` are callbacks consumed by `Hashtbl.Make`, so they
+  can look unreferenced as ordinary values even though every generated table
+  operation depends on them.
+
 ### `Shared_types.package.rescript_version`
 
 - Report: `Warning Dead Type`, `analysis/src/shared_types.ml`,
