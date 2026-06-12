@@ -92,3 +92,17 @@ live after manual validation.
 - Context: `compiler/ml/env.mli` documents that `?loc` reports deprecated-module
   warnings. Removing the labels from the wrappers would drop source locations for
   those diagnostics even though reanalyze does not see the cross-module flow.
+
+### `Location.report_error ?custom_intro ?src`
+
+- Report: `Warning Redundant Optional Argument`, `compiler/ml/location.ml` and
+  `compiler/ml/location.mli`, optional arguments `custom_intro` and `src` on
+  `report_error`.
+- Verdict: live; false positive.
+- Validation: `compiler/syntax/src/res_diagnostics.ml` calls
+  `Location.report_error ~custom_intro ~src:(Some src)` when rendering syntax
+  diagnostics, and `compiler/jsoo/jsoo_playground_main.ml` uses the default
+  wrapper form. The local exception reporter also passes explicit `None` values.
+- Context: these labels select syntax-error intro text and source rendering for
+  diagnostics. Reanalyze only counts the local wrapper call, so it misses the
+  cross-module diagnostic call that supplies real values.
