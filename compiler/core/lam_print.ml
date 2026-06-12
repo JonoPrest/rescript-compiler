@@ -50,7 +50,6 @@ let primitive ppf (prim : Lam_primitive.t) =
   | Pinit_mod -> fprintf ppf "init_mod!"
   | Pupdate_mod -> fprintf ppf "update_mod!"
   | Pjs_apply -> fprintf ppf "#apply"
-  | Pjs_runtime_apply -> fprintf ppf "#runtime_apply"
   (* Debug-only dump, exercised solely under -drawlambda/-dlambda. *)
   | Ptagged_template -> fprintf ppf "#tagged_template" [@coverage off]
   | Pjs_unsafe_downgrade {name; setter} ->

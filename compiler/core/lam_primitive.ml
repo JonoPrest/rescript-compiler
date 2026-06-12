@@ -150,7 +150,6 @@ type t =
   | Pisout of int
   | Pjscomp of Lam_compat.comparison
   | Pjs_apply (*[f;arg0;arg1; arg2; ... argN]*)
-  | Pjs_runtime_apply (* [f; [...]] *)
   | Pdebugger
   | Pjs_unsafe_downgrade of {name: string; setter: bool}
   | Pinit_mod
@@ -223,7 +222,7 @@ let eq_primitive_approx (lhs : t) (rhs : t) =
   (* promise *)
   | Pawait
   (* etc *)
-  | Pjs_apply | Pjs_runtime_apply | Pval_from_option | Pval_from_option_not_nest
+  | Pjs_apply | Pval_from_option | Pval_from_option_not_nest
   | Pnull_to_opt | Pnull_undefined_to_opt | Pis_null | Pis_not_none | Psome
   | Psome_not_nest | Pis_null_undefined | Pimport | Ptypeof
   | Pfn_arity | Pis_poly_var_block | Pdebugger | Pinit_mod | Pupdate_mod

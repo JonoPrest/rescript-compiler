@@ -144,7 +144,6 @@ type t =
   | Pisout of int
   | Pjscomp of Lam_compat.comparison
   | Pjs_apply (*[f;arg0;arg1; arg2; ... argN]*)
-  | Pjs_runtime_apply (* [f; [...]] *)
   | Pdebugger
   | Pjs_unsafe_downgrade of {name: string; setter: bool}
   | Pinit_mod

@@ -5410,7 +5410,7 @@
     | _ -> false [@@dead "+not_zero_constant"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_analysis.ml", line 32, characters 0-4204
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_analysis.ml", line 32, characters 0-4184
   +no_side_effects is never used
   <-- line 32
     | Lapply _ -> false [@@dead "+no_side_effects"] 
@@ -6568,7 +6568,7 @@
       ] [@@dead "+wrap_then"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compile_primitive.ml", line 71, characters 0-19154
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compile_primitive.ml", line 71, characters 0-19044
   +translate is never used
   <-- line 71
       | _ -> assert false) [@@dead "+translate"] 
@@ -7399,34 +7399,28 @@
   <-- line 33
     | Record_extension [@dead "record_representation.Record_extension"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 153, characters 2-21
-  t.Pjs_runtime_apply is a variant case which is never constructed
-  <-- line 153
-    | Pjs_runtime_apply [@dead "t.Pjs_runtime_apply"]  (* [f; [...]] *)
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 186, characters 0-99
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 185, characters 0-99
   +eq_field_dbg_info is never used
-  <-- line 186
+  <-- line 185
     x = y [@@dead "+eq_field_dbg_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 191, characters 0-111
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 190, characters 0-111
   +eq_set_field_dbg_info is never used
-  <-- line 191
+  <-- line 190
     x = y [@@dead "+eq_set_field_dbg_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 196, characters 0-46
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 195, characters 0-46
   +eq_tag_info is never used
-  <-- line 196
+  <-- line 195
   let eq_tag_info (x : Lam_tag_info.t) y = x = y [@@dead "+eq_tag_info"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 198, characters 0-4133
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.ml", line 197, characters 0-4113
   +eq_primitive_approx is never used
-  <-- line 198
+  <-- line 197
     | Praw_js_code _ -> false [@@dead "+eq_primitive_approx"] 
 
   Warning Dead Type
@@ -7447,30 +7441,24 @@
   <-- line 31
     | Record_extension [@dead "record_representation.Record_extension"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.mli", line 147, characters 2-21
-  t.Pjs_runtime_apply is a variant case which is never constructed
-  <-- line 147
-    | Pjs_runtime_apply [@dead "t.Pjs_runtime_apply"]  (* [f; [...]] *)
-
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.mli", line 176, characters 0-40
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_primitive.mli", line 175, characters 0-40
   +eq_primitive_approx is never used
-  <-- line 176
+  <-- line 175
   val eq_primitive_approx : t -> t -> bool [@@dead "+eq_primitive_approx"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 483, characters 0-343
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 482, characters 0-343
   +serialize is never used
-  <-- line 483
+  <-- line 482
     Format.set_margin old [@@dead "+serialize"] 
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 494, characters 0-50
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 493, characters 0-50
   +lambda_to_string is never used and could have side effects
 
   Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 496, characters 0-56
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 495, characters 0-56
   +primitive_to_string is never used and could have side effects
 
   Warning Dead Module
@@ -15697,4 +15685,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2752 issues (Warning Dead Module:151, Warning Dead Type:288, Warning Dead Value:2057, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2750 issues (Warning Dead Module:151, Warning Dead Type:286, Warning Dead Value:2057, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
