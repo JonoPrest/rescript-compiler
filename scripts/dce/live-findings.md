@@ -277,6 +277,25 @@ live after manual validation.
   removed. `Ast_utf8_string.transform_test` is retained as a unit-test support
   hook and marked `[@@live]`.
 
+### Frontend FFI and lambda constants
+
+- Report: `Warning Dead Value`, `compiler/frontend/external_ffi_types.mli`,
+  `from_string`; and `compiler/frontend/lam_constant.ml` / `.mli`,
+  `string_of_pointer_info`, `eq_approx`, `lam_none`, and `is_allocating`.
+- Verdict: live; false positives for the remaining reported entries.
+- Validation: `compiler/core/lam_convert.ml` calls
+  `External_ffi_types.from_string` while lowering primitive externals.
+  `compiler/core/lam_compile_const.ml` calls
+  `Lam_constant.string_of_pointer_info` for generated integer comments,
+  `compiler/core/lam.ml` calls `Lam_constant.eq_approx` when comparing
+  constants, `compiler/core/lam_constant_convert.ml` uses `Lam_constant.lam_none`
+  for `Pt_shape_none`, and `compiler/core/lam_util.cppo.ml` calls
+  `Lam_constant.is_allocating` before preserving constant bindings.
+- Context: the orphaned `Bs_syntaxerr.untagged_variant` type, the over-exported
+  `External_arg_spec.empty_label`, unused `Lam_constant.constructor_tag` fields,
+  and the unconstructed `Lam_constant.pointer_info.Some` case were removed.
+  What remains is cross-module compiler-core use that reanalyze does not root.
+
 ### `Ext_util` table helpers
 
 - Report: `Warning Dead Value`, `compiler/ext/ext_util.ml` / `.mli`, for
