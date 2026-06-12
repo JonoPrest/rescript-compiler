@@ -1681,12 +1681,6 @@
   <-- line 188
   val get_cookie : string -> Parsetree.expression option [@@dead "+get_cookie"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/cmt_utils.ml", line 5, characters 2-26
-  deprecated_used.deprecated_text is a record label never used to read a value
-  <-- line 5
-    deprecated_text: string; [@dead "deprecated_used.deprecated_text"] 
-
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 718, characters 0-434
   +reset_cache_toplevel is never used
@@ -1945,4 +1939,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 399 issues (Warning Dead Module:3, Warning Dead Type:81, Warning Dead Value:94, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:193, Warning Unused Argument:26)
+  Analysis reported 398 issues (Warning Dead Module:3, Warning Dead Type:80, Warning Dead Value:94, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:193, Warning Unused Argument:26)

@@ -309,9 +309,9 @@ live after manual validation.
   when a specific field is not read back by current in-repo code. The
   deprecation hook is installed from `cmt_format.cppo.ml` into
   `Cmt_utils.record_deprecated_used` and invoked through
-  `compiler/ml/builtin_attributes.ml`, with `deprecated_text` carried in the
-  recorded payload. Unused public `Cmt_format` signature exports for internal
-  reader helpers and the hook installer were removed.
+  `compiler/ml/builtin_attributes.ml`. Unused public `Cmt_format` signature
+  exports for internal reader helpers, the hook installer, and the write-only
+  `deprecated_text` CMT payload field were removed.
 
 ### Typedtree iterators
 
