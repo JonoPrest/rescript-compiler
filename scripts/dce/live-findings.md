@@ -274,6 +274,30 @@ live after manual validation.
   removing its `Js_dump` hook unroots a large live dump-printer subgraph in the
   current DCE report.
 
+### Core JS lowering helpers
+
+- Report: `Warning Dead Module`, `Warning Dead Value`, and constructor warnings
+  in `compiler/core/js_fold_basic.ml`, `js_fun_env.ml`,
+  `js_name_of_module_id.mli`, `js_of_lam_array.ml`,
+  `js_of_lam_block.ml`, `js_of_lam_option.ml`, `js_of_lam_string.ml`, and
+  `js_of_lam_variant.ml` / `.mli`.
+- Verdict: live; false positive for the remaining reported helpers.
+- Validation: `lam_compile_main.cppo.ml` calls
+  `Js_fold_basic.calculate_hard_dependencies`. `Js_fun_env.make` is used while
+  building JS functions in `Js_exp_make`; `js_pass_scope.ml` and
+  `js_pass_tailcall_inline.ml` use `set_unbounded`, `mark_unused`,
+  `get_mutable_params`, and `no_tailcall`. `Js_name_of_module_id` is used by
+  `lam_compile_primitive.ml` and `js_dump_program.ml`. Array, block, option,
+  string, and variant lowering helpers are called from `lam_compile.ml`,
+  `lam_compile_const.ml`, `lam_compile_primitive.ml`,
+  `lam_compile_external_obj.ml`, and `lam_compile_external_call.ml`.
+- Context: `Js_of_lam_option.option_unwrap_time` and `undef_to_opt` had no
+  callers and were removed. The `Js_of_lam_variant.arg_expression` constructor
+  warnings are false positives: `lam_compile_external_call.ml` re-exports the
+  same constructors with
+  `type arg_expression = Js_of_lam_variant.arg_expression = ...`, then
+  constructs and pattern matches `Splice0`, `Splice1`, and `Splice2`.
+
 ### `File_deps.File_hash` callbacks
 
 - Report: `Warning Dead Module` and `Warning Dead Value`,
