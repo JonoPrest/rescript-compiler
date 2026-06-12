@@ -1,4 +1,4 @@
-type input = Filename of string | Source of string
+type input = Filename of string
 
 let dump_tokens input =
   let src =
@@ -13,13 +13,11 @@ let dump_tokens input =
         Printf.printf "Error reading file %s: %s\n" filename
           (Printexc.to_string e);
         exit 1)
-    | Source code -> code
   in
 
   let filename =
     match input with
     | Filename filename -> filename
-    | Source _ -> "<source>"
   in
   let scanner = Res_scanner.make ~filename src in
 
@@ -152,10 +150,6 @@ let token_print_engine =
   {
     Res_driver.print_implementation =
       (fun ~width:_ ~filename ~comments:_ _ -> dump_tokens (Filename filename));
-    Res_driver.print_implementation_from_source =
-      (fun ~width:_ ~source ~comments:_ _ -> dump_tokens (Source source));
     Res_driver.print_interface =
       (fun ~width:_ ~filename ~comments:_ _ -> dump_tokens (Filename filename));
-    Res_driver.print_interface_from_source =
-      (fun ~width:_ ~source ~comments:_ _ -> dump_tokens (Source source));
   }

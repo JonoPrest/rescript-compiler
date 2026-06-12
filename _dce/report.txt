@@ -772,11 +772,11 @@
   optional argument type_arg_context of function +instantiate_type2 is never used
 
   Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_driver.ml", line 211, characters 0-399
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_driver.ml", line 192, characters 0-399
   optional argument ignore_parse_errors of function +parse_interface is always supplied (1 calls)
 
   Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_driver.ml", line 200, characters 0-409
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_driver.ml", line 181, characters 0-409
   optional argument ignore_parse_errors of function +parse_implementation is always supplied (1 calls)
 
   Warning Unused Argument
@@ -14314,29 +14314,5 @@
   Type_ops.+hash is never used
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_driver.ml", line 40, characters 2-145
-  print_engine.print_implementation_from_source is a record label never used to read a value
-  <-- line 40
-      unit; [@dead "print_engine.print_implementation_from_source"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_driver.ml", line 52, characters 2-140
-  print_engine.print_interface_from_source is a record label never used to read a value
-  <-- line 52
-      unit; [@dead "print_engine.print_interface_from_source"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_driver.mli", line 52, characters 2-145
-  print_engine.print_implementation_from_source is a record label never used to read a value
-  <-- line 52
-      unit; [@dead "print_engine.print_implementation_from_source"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_driver.mli", line 64, characters 2-140
-  print_engine.print_interface_from_source is a record label never used to read a value
-  <-- line 64
-      unit; [@dead "print_engine.print_interface_from_source"] 
   
-  Analysis reported 2525 issues (Warning Dead Module:151, Warning Dead Type:239, Warning Dead Value:1881, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2521 issues (Warning Dead Module:151, Warning Dead Type:235, Warning Dead Value:1881, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
