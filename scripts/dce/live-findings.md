@@ -106,3 +106,21 @@ live after manual validation.
 - Context: these labels select syntax-error intro text and source rendering for
   diagnostics. Reanalyze only counts the local wrapper call, so it misses the
   cross-module diagnostic call that supplies real values.
+
+### Reactive combinator internals
+
+- Report: many `Warning Dead Value` entries in
+  `analysis/reactive/src/reactive.ml`, including `merge_entries`,
+  `count_changes`, `Registry.register`, nested `process` functions, and
+  combinator-local helpers such as `recompute_target`.
+- Verdict: live; false positive.
+- Validation: `analysis/reanalyze/src/reactive_liveness.ml`,
+  `reactive_solver.ml`, `reactive_merge.ml`, `reactive_decl_refs.ml`,
+  `reactive_type_deps.ml`, and related modules build the DCE pipeline with
+  `Reactive.source`, `Reactive.flat_map`, `Reactive.join`, `Reactive.union`, and
+  `Reactive.fixpoint`. Those public combinators call these local helpers when
+  sources emit and the scheduler propagates updates.
+- Context: these warnings are cascading from the known cross-module liveness
+  blind spot: reanalyze does not mark the exported combinators live from their
+  users, so the implementation below them looks dead even though it runs in the
+  analyzer's reactive mode.
