@@ -1116,30 +1116,6 @@
     ('k * unit option) list [@@dead "+apply"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/analysis_result.ml", line 11, characters 0-62
-  +add_issue is never used
-  <-- line 11
-  let add_issue result issue = {issues = issue :: result.issues} [@@dead "+add_issue"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/analysis_result.ml", line 18, characters 0-50
-  +issue_count is never used
-  <-- line 18
-  let issue_count result = List.length result.issues [@@dead "+issue_count"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/analysis_result.mli", line 12, characters 0-33
-  +add_issue is never used
-  <-- line 12
-  val add_issue : t -> Issue.t -> t [@@dead "+add_issue"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/analysis_result.mli", line 21, characters 0-26
-  +issue_count is never used
-  <-- line 21
-  val issue_count : t -> int [@@dead "+issue_count"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/arnold.ml", line 33, characters 2-134
   Function_args.+compare_arg is never used
   <-- line 33
@@ -17155,4 +17131,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2995 issues (Warning Dead Module:151, Warning Dead Type:379, Warning Dead Value:2209, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2991 issues (Warning Dead Module:151, Warning Dead Type:379, Warning Dead Value:2205, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
