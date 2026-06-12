@@ -8056,18 +8056,6 @@
   val is_lower_case : char -> bool [@@dead "+is_lower_case"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_digest.ml", line 27, characters 0-19
-  +hex_length is never used
-  <-- line 27
-  let hex_length = 32 [@@dead "+hex_length"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_digest.mli", line 27, characters 0-20
-  +hex_length is never used
-  <-- line 27
-  val hex_length : int [@@dead "+hex_length"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_filename.ml", line 31, characters 0-259
   +chop_extension_maybe is never used
   <-- line 31
@@ -8334,18 +8322,6 @@
   +int32_pow is never used
   <-- line 37
   val int32_pow : int32 -> int32 -> int32 [@@dead "+int32_pow"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_io.ml", line 43, characters 0-107
-  +rev_lines_of_file is never used
-  <-- line 43
-    Ext_pervasives.finally ~clean:close_in (open_in_bin file) rev_lines_of_chann [@@dead "+rev_lines_of_file"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_io.mli", line 27, characters 0-45
-  +rev_lines_of_file is never used
-  <-- line 27
-  val rev_lines_of_file : string -> string list [@@dead "+rev_lines_of_file"] 
 
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_js_file_kind.ml", line 1, characters 0-0
@@ -14315,4 +14291,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2521 issues (Warning Dead Module:151, Warning Dead Type:235, Warning Dead Value:1881, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2517 issues (Warning Dead Module:151, Warning Dead Type:235, Warning Dead Value:1877, Warning Dead Value With Side Effects:35, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
