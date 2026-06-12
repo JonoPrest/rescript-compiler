@@ -54,7 +54,7 @@ and is_pure_sub_exp (x : t) = remove_pure_sub_exp x = None
 (* let mk ?comment exp : t =
    {expression_desc = exp ; comment  } *)
 
-let var ?comment id : t = {expression_desc = Var (Id id); comment}
+let var id : t = {expression_desc = Var (Id id); comment = None}
 
 (* only used in property access,
     Invariant: it should not call an external module .. *)

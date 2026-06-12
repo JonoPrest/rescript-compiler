@@ -41,7 +41,7 @@ type t = J.expression
 
 val remove_pure_sub_exp : t -> t option
 
-val var : ?comment:string -> J.ident -> t
+val var : J.ident -> t
 
 val js_global : string -> t
 
