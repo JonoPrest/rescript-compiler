@@ -63,9 +63,9 @@ val print_engine : print_engine
 
 (* ReScript implementation parsing compatible with ocaml pparse driver. Used by the compiler. *)
 val parse_implementation :
-  ?ignore_parse_errors:bool -> string -> Parsetree.structure
+  ignore_parse_errors:bool -> string -> Parsetree.structure
 [@@live] [@@raises Location.Error]
 
 (* ReScript interface parsing compatible with ocaml pparse driver. Used by the compiler *)
-val parse_interface : ?ignore_parse_errors:bool -> string -> Parsetree.signature
+val parse_interface : ignore_parse_errors:bool -> string -> Parsetree.signature
 [@@live] [@@raises Location.Error]

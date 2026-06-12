@@ -779,14 +779,6 @@
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/type_utils.ml", line 179, characters 0-2146
   optional argument type_arg_context of function +instantiate_type2 is never used
 
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_driver.ml", line 192, characters 0-399
-  optional argument ignore_parse_errors of function +parse_interface is always supplied (1 calls)
-
-  Warning Redundant Optional Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_driver.ml", line 181, characters 0-409
-  optional argument ignore_parse_errors of function +parse_implementation is always supplied (1 calls)
-
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 1145, characters 2-61
   optional argument from_type of function Constructor.+unbound_name_error is never used
@@ -1977,4 +1969,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 405 issues (Warning Dead Module:3, Warning Dead Type:82, Warning Dead Value:97, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:195, Warning Unused Argument:26)
+  Analysis reported 403 issues (Warning Dead Module:3, Warning Dead Type:82, Warning Dead Value:97, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:193, Warning Unused Argument:26)

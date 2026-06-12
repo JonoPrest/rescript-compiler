@@ -68,21 +68,6 @@ live after manual validation.
   aliasing in the recursive type-extraction helpers. Removing these labels would
   break generic type instantiation and manifest traversal.
 
-### `Res_driver.parse_* ?ignore_parse_errors`
-
-- Report: `Warning Redundant Optional Argument`, `compiler/syntax/src/res_driver.ml`,
-  optional argument `ignore_parse_errors` on `parse_implementation` and
-  `parse_interface`.
-- Verdict: live parser option; do not remove as part of this DCE pass.
-- Validation: `compiler/bsc/rescript_compiler_main.ml` passes
-  `~ignore_parse_errors:!Clflags.ignore_parse_errors` into both parser functions
-  so the `-ignore-parse-errors` CLI flag controls whether syntax diagnostics
-  exit compilation. The declarations in `res_driver.mli` are also marked
-  `[@@live]`.
-- Context: the warning only says all known callers supply the option. The option
-  itself is behaviorally live and part of the syntax driver surface used by the
-  compiler entry point.
-
 ### `from_type` in unbound name errors
 
 - Report: `Warning Unused Argument`, `compiler/ml/typecore.ml` and

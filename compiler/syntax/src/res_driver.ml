@@ -178,7 +178,7 @@ let print_engine =
         print_string (Res_printer.print_interface ~width signature ~comments));
   }
 
-let parse_implementation ?(ignore_parse_errors = false) sourcefile =
+let parse_implementation ~ignore_parse_errors sourcefile =
   Location.input_name := sourcefile;
   let parse_result =
     parsing_engine.parse_implementation ~for_printer:false ~filename:sourcefile
@@ -189,7 +189,7 @@ let parse_implementation ?(ignore_parse_errors = false) sourcefile =
   parse_result.parsetree
 [@@raises exit]
 
-let parse_interface ?(ignore_parse_errors = false) sourcefile =
+let parse_interface ~ignore_parse_errors sourcefile =
   Location.input_name := sourcefile;
   let parse_result =
     parsing_engine.parse_interface ~for_printer:false ~filename:sourcefile
