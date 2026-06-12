@@ -853,15 +853,14 @@ module Completion = struct
     kind: kind;
     detail: string option;
     type_arg_context: type_arg_context option;
-    data: (string * string) list option;
     additional_text_edits: Lsp.Types.TextEdit.t list option;
     synthetic: bool;
         (** Whether this item is an made up, synthetic item or not. *)
   }
 
-  let create ?(synthetic = false) ?additional_text_edits ?data ?type_arg_context
+  let create ?(synthetic = false) ?additional_text_edits ?type_arg_context
       ?(includes_snippets = false) ?insert_text ~kind ~env ?sort_text
-      ?deprecated ?filter_text ?detail ?(docstring = []) name =
+      ?deprecated ?detail ?(docstring = []) name =
     {
       name;
       env;
@@ -873,10 +872,9 @@ module Completion = struct
       insert_text_format =
         (if includes_snippets then Some Lsp.Types.InsertTextFormat.Snippet
          else None);
-      filter_text;
+      filter_text = None;
       detail;
       type_arg_context;
-      data;
       additional_text_edits;
       synthetic;
     }

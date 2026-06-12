@@ -796,14 +796,6 @@
   optional argument from_type of function +unbound_constructor_error is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 862, characters 2-570
-  optional argument data of function Completion.+create is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 862, characters 2-570
-  optional argument filter_text of function Completion.+create is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typetexp.ml", line 173, characters 0-141
   optional argument from_type of function +unbound_label_error is never used
 
@@ -2234,12 +2226,6 @@
   Completion.t.type_arg_context is a record label never used to read a value
   <-- line 855
       type_arg_context: type_arg_context option; [@dead "Completion.t.type_arg_context"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/shared_types.ml", line 856, characters 4-40
-  Completion.t.data is a record label never used to read a value
-  <-- line 856
-      data: (string * string) list option; [@dead "Completion.t.data"] 
 
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/type_utils.ml", line 980, characters 0-153
@@ -16719,4 +16705,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2932 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:205, Warning Unused Argument:49)
+  Analysis reported 2929 issues (Warning Dead Module:145, Warning Dead Type:368, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:205, Warning Unused Argument:47)
