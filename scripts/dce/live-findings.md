@@ -229,6 +229,29 @@ live after manual validation.
   They are live in the compiler pipeline even though the current DCE report
   misses those edges.
 
+### Typed artifact readers and raw statement classification
+
+- Report: `Warning Dead Value` / `Warning Dead Type`,
+  `compiler/ml/classify_function.ml` / `.mli`,
+  `compiler/ml/cmi_format.ml` / `.mli`, `compiler/ml/cmt_format.mli`, and
+  `compiler/ml/cmt_utils.ml`.
+- Verdict: live; false positives for compiler, GenType, and analysis tooling.
+- Validation: `compiler/core/lam_convert.ml` calls
+  `Classify_function.classify_stmt` when lowering raw JavaScript statement
+  literals. `compiler/ml/cmt_format.cppo.ml` calls `Cmi_format.input_cmi`,
+  `Cmi_format.output_cmi`, and its own `read_magic_number` while reading and
+  writing `.cmi`, `.cmt`, and `.cmti` artifacts. `analysis/src/*`,
+  `analysis/reanalyze/src/*`, and `compiler/gentype/*` call
+  `Cmt_format.read_cmt`, inspect `Partial_interface` / `Packed` typed
+  artifacts, and traverse `Partial_class_expr` where present.
+- Context: the reported `cmt_infos` fields are serialized into typed artifact
+  files by `cmt_format.cppo.ml` and are part of the reader/writer schema even
+  when a specific field is not read back by current in-repo code. The
+  deprecation hook is installed from `cmt_format.cppo.ml` into
+  `Cmt_utils.record_deprecated_used` and invoked through
+  `compiler/ml/builtin_attributes.ml`, with `deprecated_text` carried in the
+  recorded payload.
+
 ### `Misc` live utility surface
 
 - Report: remaining `Warning Dead Value`, `Warning Dead Module`, and constructor
