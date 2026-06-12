@@ -264,6 +264,25 @@ live after manual validation.
   unit tests that only exercised that dead helper surface. The remaining
   warnings are ordinary cross-module `Ext_list.*` uses missed by DCE.
 
+### `Map_gen` and `Set_gen` collection cores
+
+- Report: `Warning Dead Module`, `Warning Dead Value`, and constructor warnings
+  across `compiler/ext/map_gen.ml` / `.mli` and
+  `compiler/ext/set_gen.ml` / `.mli`.
+- Verdict: live; false positive.
+- Validation: `compiler/ext/map.cppo.ml` defines concrete map modules by
+  wrapping `Map_gen.empty`, `is_empty`, `iter`, `fold`, `for_all`, `exists`,
+  `singleton`, `cardinal`, `bindings`, sorted-array helpers, `map`, `mapi`,
+  balancing helpers, `merge`, `join`, and tree constructors. Similarly,
+  `compiler/ext/set.cppo.ml` wraps `Set_gen.empty`, `iter`, `fold`,
+  `singleton`, `cardinal`, `elements`, `choose`, balancing and join/concat
+  helpers, and validation helpers. `map_ident.mli`, `map_int.mli`,
+  `map_string.mli`, `set_ident.mli`, `set_int.mli`, and `set_string.mli`
+  expose those generated concrete modules.
+- Context: this is a `.cppo.ml` rooting issue. The report sees the generic tree
+  implementation as dead, but those functions are the shared implementation of
+  the compiler's generated map and set modules.
+
 ### Core JS analyzer and delimiters
 
 - Report: `Warning Dead Type`, `compiler/core/j.ml`, `delim.DBackQuotes`; and
