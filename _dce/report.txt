@@ -8608,460 +8608,322 @@
   type t = {case: case; [@dead "t.case"]  suffix: string [@dead "t.suffix"] } [@@warning "-69"]
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 78, characters 0-114
-  +combine_array_append is never used
-  <-- line 78
-    arr_list_combine_unsafe arr l 0 len acc f [@@dead "+combine_array_append"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 100, characters 0-343
-  +map_split_opt is never used
-  <-- line 100
-        | None -> ds )) [@@dead "+map_split_opt"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 114, characters 0-767
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 96, characters 0-767
   +map_snd is never used
-  <-- line 114
+  <-- line 96
       (v1, y1) :: (v2, y2) :: (v3, y3) :: (v4, y4) :: (v5, y5) :: map_snd tail f [@@dead "+map_snd"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 189, characters 0-355
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 171, characters 0-355
   +append_aux is never used
-  <-- line 189
+  <-- line 171
       a0 :: a1 :: a2 :: a3 :: a4 :: append_aux rest l2 [@@dead "+append_aux"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 200, characters 0-73
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 182, characters 0-73
   +append is never used
-  <-- line 200
+  <-- line 182
     | _ -> append_aux l1 l2 [@@dead "+append"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 205, characters 0-39
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 187, characters 0-39
   +append_one is never used
-  <-- line 205
+  <-- line 187
   let append_one l1 x = append_aux l1 [x] [@@dead "+append_one"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 267, characters 0-856
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 249, characters 0-856
   +fold_right3 is never used
-  <-- line 267
+  <-- line 249
     | _, _, _ -> invalid_arg "Ext_list.fold_right2" [@@dead "+fold_right3"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 287, characters 0-984
-  +map2i is never used
-  <-- line 287
-    | _, _ -> invalid_arg "Ext_list.map2" [@@dead "+map2i"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 357, characters 0-133
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 304, characters 0-133
   +fold_left_with_offset is never used
-  <-- line 357
+  <-- line 304
     | a :: l -> fold_left_with_offset l (f a accu i) (i + 1) f [@@dead "+fold_left_with_offset"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 370, characters 0-151
-  +exclude is never used
-  <-- line 370
-    | x :: xs -> if p x then exclude xs p else x :: exclude xs p [@@dead "+exclude"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 375, characters 0-370
-  +exclude_with_val is never used
-  <-- line 375
-            | Some rest -> Some (a0 :: a1 :: rest))) [@@dead "+exclude_with_val"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 435, characters 0-183
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 362, characters 0-183
   +small_split_at is never used
-  <-- line 435
+  <-- line 362
       | _ -> invalid_arg "Ext_list.split_at" [@@dead "+small_split_at"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 442, characters 0-40
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 369, characters 0-40
   +split_at is never used
-  <-- line 442
+  <-- line 369
   let split_at l n = small_split_at n [] l [@@dead "+split_at"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 444, characters 0-168
-  +split_at_last_aux is never used
-  <-- line 444
-    | y0 :: ys -> split_at_last_aux (y0 :: acc) ys [@@dead "+split_at_last_aux"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 450, characters 0-409
-  +split_at_last is never used
-  <-- line 450
-      (a0 :: a1 :: a2 :: a3 :: a4 :: rev, last) [@@dead "+split_at_last"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 465, characters 0-204
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 374, characters 0-204
   +filter_mapi is never used
-  <-- line 465
+  <-- line 374
     aux 0 xs [@@dead "+filter_mapi"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 476, characters 0-294
-  +filter_map2 is never used
-  <-- line 476
-    | _ -> invalid_arg "Ext_list.filter_map2" [@@dead "+filter_map2"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 509, characters 0-61
-  +flat_map_append is never used
-  <-- line 509
-  let flat_map_append lx append f = flat_map_aux f [] append lx [@@dead "+flat_map_append"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 511, characters 0-154
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 409, characters 0-154
   +length_compare is never used
-  <-- line 511
+  <-- line 409
       | [] -> if n = 0 then `Eq else `Lt [@@dead "+length_compare"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 518, characters 0-124
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 416, characters 0-124
   +length_ge is never used
-  <-- line 518
+  <-- line 416
     else true [@@dead "+length_ge"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 528, characters 0-171
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 426, characters 0-171
   +length_larger_than_n is never used
-  <-- line 528
+  <-- line 426
     | [], _ -> false [@@dead "+length_larger_than_n"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 534, characters 0-111
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 432, characters 0-111
   +group is never used
-  <-- line 534
+  <-- line 432
     | x :: xs -> aux eq x (group eq xs) [@@dead "+group"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 539, characters 0-228
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 437, characters 0-228
   +aux is never used
-  <-- line 539
+  <-- line 437
     | _ :: _ -> assert false [@@dead "+aux"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 547, characters 0-45
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 445, characters 0-45
   +stable_group is never used
-  <-- line 547
+  <-- line 445
   let stable_group lst eq = group eq lst |> rev [@@dead "+stable_group"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 549, characters 0-182
-  +drop is never used
-  <-- line 549
-      | _ :: tl -> drop tl (n - 1) [@@dead "+drop"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 562, characters 0-117
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 452, characters 0-117
   +find_first_not is never used
-  <-- line 562
+  <-- line 452
     | a :: l -> if p a then find_first_not l p else Some a [@@dead "+find_first_not"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 620, characters 0-101
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 510, characters 0-101
   +for_all_snd is never used
-  <-- line 620
+  <-- line 510
     | (_, a) :: l -> p a && for_all_snd l p [@@dead "+for_all_snd"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 647, characters 0-776
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 537, characters 0-776
   +split_map is never used
-  <-- line 647
+  <-- line 537
       (a1 :: a2 :: a3 :: a4 :: a5 :: ass, b1 :: b2 :: b3 :: b4 :: b5 :: bss) [@@dead "+split_map"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 677, characters 0-103
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 567, characters 0-103
   +sort_via_array is never used
-  <-- line 677
+  <-- line 567
     Array.to_list arr [@@dead "+sort_via_array"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 687, characters 0-214
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 577, characters 0-214
   +assoc_by_string is never used
-  <-- line 687
+  <-- line 577
     | (k1, v1) :: rest -> if k1 = k then v1 else assoc_by_string rest k def [@@dead "+assoc_by_string"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 695, characters 0-205
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 585, characters 0-205
   +assoc_by_int is never used
-  <-- line 695
+  <-- line 585
     | (k1, v1) :: rest -> if k1 = k then v1 else assoc_by_int rest k def [@@dead "+assoc_by_int"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 703, characters 0-109
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 593, characters 0-109
   +nth_aux is never used
-  <-- line 703
+  <-- line 593
     | a :: l -> if n = 0 then Some a else nth_aux l (n - 1) [@@dead "+nth_aux"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 708, characters 0-53
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 598, characters 0-53
   +nth_opt is never used
-  <-- line 708
+  <-- line 598
   let nth_opt l n = if n < 0 then None else nth_aux l n [@@dead "+nth_opt"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 710, characters 0-101
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 600, characters 0-101
   +iter_snd is never used
-  <-- line 710
+  <-- line 600
       iter_snd xs f [@@dead "+iter_snd"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 717, characters 0-101
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 607, characters 0-101
   +iter_fst is never used
-  <-- line 717
+  <-- line 607
       iter_fst xs f [@@dead "+iter_fst"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 734, characters 0-96
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 624, characters 0-96
   +exists_snd is never used
-  <-- line 734
+  <-- line 624
     | (_, a) :: l -> p a || exists_snd l p [@@dead "+exists_snd"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 739, characters 0-143
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 629, characters 0-143
   +concat_append is never used
-  <-- line 739
+  <-- line 629
     | l :: r -> append l (concat_append r xs) [@@dead "+concat_append"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 749, characters 0-140
-  +reduce_from_left is never used
-  <-- line 749
-    | _ -> invalid_arg "Ext_list.reduce_from_left" [@@dead "+reduce_from_left"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 754, characters 0-180
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 639, characters 0-180
   +fold_left2 is never used
-  <-- line 754
+  <-- line 639
     | _, _ -> invalid_arg "Ext_list.fold_left2" [@@dead "+fold_left2"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 760, characters 0-73
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 645, characters 0-73
   +singleton_exn is never used
-  <-- line 760
+  <-- line 645
     | _ -> assert false [@@dead "+singleton_exn"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.ml", line 765, characters 0-122
-  +mem_string is never used
-  <-- line 765
-    | a :: l -> a = x || mem_string l x [@@dead "+mem_string"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 31, characters 0-98
-  +combine_array_append is never used
-  <-- line 31
-    'a array -> 'b list -> ('c * 'b) list -> ('a -> 'c) -> ('c * 'b) list [@@dead "+combine_array_append"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 36, characters 0-83
-  +map_split_opt is never used
-  <-- line 36
-    'a list -> ('a -> 'b option * 'c option) -> 'b list * 'c list [@@dead "+map_split_opt"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 43, characters 0-60
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 37, characters 0-60
   +map_snd is never used
-  <-- line 43
+  <-- line 37
   val map_snd : ('a * 'b) list -> ('b -> 'c) -> ('a * 'c) list [@@dead "+map_snd"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 58, characters 0-42
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 52, characters 0-42
   +append is never used
-  <-- line 58
+  <-- line 52
   val append : 'a list -> 'a list -> 'a list [@@dead "+append"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 60, characters 0-41
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 54, characters 0-41
   +append_one is never used
-  <-- line 60
+  <-- line 54
   val append_one : 'a list -> 'a -> 'a list [@@dead "+append_one"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 68, characters 0-93
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 62, characters 0-93
   +fold_right3 is never used
-  <-- line 68
+  <-- line 62
     'a list -> 'b list -> 'c list -> 'd -> ('a -> 'b -> 'c -> 'd -> 'd) -> 'd [@@dead "+fold_right3"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 73, characters 0-68
-  +map2i is never used
-  <-- line 73
-  val map2i : 'a list -> 'b list -> (int -> 'a -> 'b -> 'c) -> 'c list [@@dead "+map2i"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 75, characters 0-91
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 67, characters 0-91
   +fold_left_with_offset is never used
-  <-- line 75
+  <-- line 67
     'a list -> 'acc -> int -> ('a -> 'acc -> int -> 'acc) -> 'acc [@@dead "+fold_left_with_offset"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 81, characters 0-48
-  +exclude is never used
-  <-- line 81
-  val exclude : 'a list -> ('a -> bool) -> 'a list [@@dead "+exclude"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 84, characters 0-64
-  +exclude_with_val is never used
-  <-- line 84
-  val exclude_with_val : 'a list -> ('a -> bool) -> 'a list option [@@dead "+exclude_with_val"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 96, characters 0-50
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 77, characters 0-50
   +split_at is never used
-  <-- line 96
+  <-- line 77
   val split_at : 'a list -> int -> 'a list * 'a list [@@dead "+split_at"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 102, characters 0-43
-  +split_at_last is never used
-  <-- line 102
-  val split_at_last : 'a list -> 'a list * 'a [@@dead "+split_at_last"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 107, characters 0-64
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 83, characters 0-64
   +filter_mapi is never used
-  <-- line 107
+  <-- line 83
   val filter_mapi : 'a list -> ('a -> int -> 'b option) -> 'b list [@@dead "+filter_mapi"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 109, characters 0-74
-  +filter_map2 is never used
-  <-- line 109
-  val filter_map2 : 'a list -> 'b list -> ('a -> 'b -> 'c option) -> 'c list [@@dead "+filter_map2"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 111, characters 0-56
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 85, characters 0-56
   +length_compare is never used
-  <-- line 111
+  <-- line 85
   val length_compare : 'a list -> int -> [`Gt | `Eq | `Lt] [@@dead "+length_compare"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 113, characters 0-38
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 87, characters 0-38
   +length_ge is never used
-  <-- line 113
+  <-- line 87
   val length_ge : 'a list -> int -> bool [@@dead "+length_ge"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 122, characters 0-60
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 96, characters 0-60
   +length_larger_than_n is never used
-  <-- line 122
+  <-- line 96
   val length_larger_than_n : 'a list -> 'a list -> int -> bool [@@dead "+length_larger_than_n"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 134, characters 0-70
-  +flat_map_append is never used
-  <-- line 134
-  val flat_map_append : 'a list -> 'b list -> ('a -> 'b list) -> 'b list [@@dead "+flat_map_append"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 136, characters 0-64
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 108, characters 0-64
   +stable_group is never used
-  <-- line 136
+  <-- line 108
   val stable_group : 'a list -> ('a -> 'a -> bool) -> 'a list list [@@dead "+stable_group"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 152, characters 0-36
-  +drop is never used
-  <-- line 152
-  val drop : 'a list -> int -> 'a list [@@dead "+drop"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 160, characters 0-57
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 126, characters 0-57
   +find_first_not is never used
-  <-- line 160
+  <-- line 126
   val find_first_not : 'a list -> ('a -> bool) -> 'a option [@@dead "+find_first_not"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 181, characters 0-56
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 147, characters 0-56
   +for_all_snd is never used
-  <-- line 181
+  <-- line 147
   val for_all_snd : ('a * 'b) list -> ('b -> bool) -> bool [@@dead "+for_all_snd"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 189, characters 0-63
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 155, characters 0-63
   +split_map is never used
-  <-- line 189
+  <-- line 155
   val split_map : 'a list -> ('a -> 'b * 'c) -> 'b list * 'c list [@@dead "+split_map"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 192, characters 0-56
-  +reduce_from_left is never used
-  <-- line 192
-  val reduce_from_left : 'a list -> ('a -> 'a -> 'a) -> 'a [@@dead "+reduce_from_left"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 195, characters 0-60
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 158, characters 0-60
   +sort_via_array is never used
-  <-- line 195
+  <-- line 158
   val sort_via_array : 'a list -> ('a -> 'a -> int) -> 'a list [@@dead "+sort_via_array"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 199, characters 0-69
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 162, characters 0-69
   +assoc_by_string is never used
-  <-- line 199
+  <-- line 162
   val assoc_by_string : (string * 'a) list -> string -> 'a option -> 'a [@@dead "+assoc_by_string"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 206, characters 0-60
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 169, characters 0-60
   +assoc_by_int is never used
-  <-- line 206
+  <-- line 169
   val assoc_by_int : (int * 'a) list -> int -> 'a option -> 'a [@@dead "+assoc_by_int"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 208, characters 0-41
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 171, characters 0-41
   +nth_opt is never used
-  <-- line 208
+  <-- line 171
   val nth_opt : 'a list -> int -> 'a option [@@dead "+nth_opt"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 210, characters 0-53
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 173, characters 0-53
   +iter_snd is never used
-  <-- line 210
+  <-- line 173
   val iter_snd : ('a * 'b) list -> ('b -> unit) -> unit [@@dead "+iter_snd"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 212, characters 0-53
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 175, characters 0-53
   +iter_fst is never used
-  <-- line 212
+  <-- line 175
   val iter_fst : ('a * 'b) list -> ('a -> unit) -> unit [@@dead "+iter_fst"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 218, characters 0-55
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 181, characters 0-55
   +exists_snd is never used
-  <-- line 218
+  <-- line 181
   val exists_snd : ('a * 'b) list -> ('b -> bool) -> bool [@@dead "+exists_snd"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 220, characters 0-54
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 183, characters 0-54
   +concat_append is never used
-  <-- line 220
+  <-- line 183
   val concat_append : 'a list list -> 'a list -> 'a list [@@dead "+concat_append"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 222, characters 0-73
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 185, characters 0-73
   +fold_left2 is never used
-  <-- line 222
+  <-- line 185
   val fold_left2 : 'a list -> 'b list -> 'c -> ('a -> 'b -> 'c -> 'c) -> 'c [@@dead "+fold_left2"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 226, characters 0-33
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 189, characters 0-33
   +singleton_exn is never used
-  <-- line 226
+  <-- line 189
   val singleton_exn : 'a list -> 'a [@@dead "+singleton_exn"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_list.mli", line 228, characters 0-46
-  +mem_string is never used
-  <-- line 228
-  val mem_string : string list -> string -> bool [@@dead "+mem_string"] 
 
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_modulename.ml", line 1, characters 0-0
@@ -14985,4 +14847,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2633 issues (Warning Dead Module:151, Warning Dead Type:265, Warning Dead Value:1962, Warning Dead Value With Side Effects:36, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2610 issues (Warning Dead Module:151, Warning Dead Type:265, Warning Dead Value:1939, Warning Dead Value With Side Effects:36, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
