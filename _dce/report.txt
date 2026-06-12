@@ -2678,82 +2678,6 @@
     deprecated_text: string; [@dead "deprecated_used.deprecated_text"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/datarepr.ml", line 261, characters 0-420
-  +find_constr is never used
-  <-- line 261
-      else find_constr tag num_const (num_nonconst + 1) rem [@@dead "+find_constr"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/datarepr.ml", line 271, characters 0-66
-  +find_constr_by_tag is never used
-  <-- line 271
-  let find_constr_by_tag tag cstrlist = find_constr tag 0 0 cstrlist [@@dead "+find_constr_by_tag"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/datarepr.mli", line 32, characters 0-101
-  +find_constr_by_tag is never used
-  <-- line 32
-    constructor_tag -> constructor_declaration list -> constructor_declaration [@@dead "+find_constr_by_tag"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/datarepr.mli", line 35, characters 0-109
-  +constructor_existentials is never used
-  <-- line 35
-    constructor_arguments -> type_expr option -> type_expr list * type_expr list [@@dead "+constructor_existentials"] 
-
-  Warning Dead Value With Side Effects
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/depend.ml", line 21, characters 0-20
-  +pp_deps is never used and could have side effects
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/depend.ml", line 39, characters 0-103
-  +weaken_map is never used
-  <-- line 39
-    Node (String_set.union s s0, String_map.map (weaken_map s) m0) [@@dead "+weaken_map"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/depend.ml", line 526, characters 0-70
-  +add_implementation_binding is never used
-  <-- line 526
-  and add_implementation_binding bv l = snd (add_structure_binding bv l) [@@dead "+add_implementation_binding"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/depend.mli", line 23, characters 0-34
-  +make_leaf is never used
-  <-- line 23
-  val make_leaf : string -> map_tree [@@dead "+make_leaf"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/depend.mli", line 24, characters 0-37
-  +make_node is never used
-  <-- line 24
-  val make_node : bound_map -> map_tree [@@dead "+make_node"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/depend.mli", line 25, characters 0-53
-  +weaken_map is never used
-  <-- line 25
-  val weaken_map : String_set.t -> map_tree -> map_tree [@@dead "+weaken_map"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/depend.mli", line 30, characters 0-29
-  +pp_deps is never used
-  <-- line 30
-  val pp_deps : string list ref [@@dead "+pp_deps"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/depend.mli", line 38, characters 0-78
-  +add_implementation_binding is never used
-  <-- line 38
-  val add_implementation_binding : bound_map -> Parsetree.structure -> bound_map [@@dead "+add_implementation_binding"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/depend.mli", line 39, characters 0-73
-  +add_signature_binding is never used
-  <-- line 39
-  val add_signature_binding : bound_map -> Parsetree.signature -> bound_map [@@dead "+add_signature_binding"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 230, characters 2-188
   Tycomp_tbl.+local_keys is never used
   <-- line 230
@@ -4045,4 +3969,4 @@
   <-- line 99
     type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
   
-  Analysis reported 794 issues (Warning Dead Module:4, Warning Dead Type:131, Warning Dead Value:304, Warning Dead Value With Side Effects:8, Warning Redundant Optional Argument:198, Warning Unused Argument:149)
+  Analysis reported 781 issues (Warning Dead Module:4, Warning Dead Type:131, Warning Dead Value:292, Warning Dead Value With Side Effects:7, Warning Redundant Optional Argument:198, Warning Unused Argument:149)
