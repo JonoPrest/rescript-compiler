@@ -10530,48 +10530,6 @@
   val get_cookie : string -> Parsetree.expression option [@@dead "+get_cookie"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_payload.ml", line 42, characters 0-341
-  +is_single_string_as_ast is never used
-  <-- line 42
-    | _ -> None [@@dead "+is_single_string_as_ast"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_payload.ml", line 171, characters 0-118
-  +as_core_type is never used
-  <-- line 171
-    | _ -> Location.raise_errorf ~loc "except a core type" [@@dead "+as_core_type"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_payload.ml", line 176, characters 0-140
-  +as_ident is never used
-  <-- line 176
-    | _ -> None [@@dead "+as_ident"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_payload.mli", line 38, characters 0-62
-  +is_single_string_as_ast is never used
-  <-- line 38
-  val is_single_string_as_ast : t -> Parsetree.expression option [@@dead "+is_single_string_as_ast"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_payload.mli", line 57, characters 0-57
-  +as_core_type is never used
-  <-- line 57
-  val as_core_type : Location.t -> t -> Parsetree.core_type [@@dead "+as_core_type"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_payload.mli", line 60, characters 0-51
-  +as_ident is never used
-  <-- line 60
-  val as_ident : t -> Longident.t Asttypes.loc option [@@dead "+as_ident"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_payload.mli", line 92, characters 0-61
-  +unrecognized_config_record is never used
-  <-- line 92
-  val unrecognized_config_record : Location.t -> string -> unit [@@dead "+unrecognized_config_record"] 
-
-  Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_untagged_variants.ml", line 169, characters 0-248
   +tag_can_be_undefined is never used
   <-- line 169
@@ -13121,4 +13079,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2318 issues (Warning Dead Module:145, Warning Dead Type:203, Warning Dead Value:1722, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2311 issues (Warning Dead Module:145, Warning Dead Type:203, Warning Dead Value:1715, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
