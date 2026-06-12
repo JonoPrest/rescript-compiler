@@ -17,7 +17,6 @@ val has_await_attribute : Parsetree.attributes -> bool
 val has_inline_record_definition_attribute : Parsetree.attributes -> bool
 val has_res_pat_variant_spread_attribute : Parsetree.attributes -> bool
 val has_dict_pattern_attribute : Parsetree.attributes -> bool
-val has_dict_spread_attribute : Parsetree.attributes -> bool
 
 type dict_expr_part =
   | DictExprRows of Parsetree.expression
@@ -71,7 +70,6 @@ val operator_precedence : string -> int
 
 val not_ghost_operator : string -> Location.t -> bool
 val is_unary_expression : Parsetree.expression -> bool
-val is_binary_operator : string -> bool
 val is_binary_expression : Parsetree.expression -> bool
 val is_rhs_binary_operator : string -> bool
 val is_equality_operator : string -> bool

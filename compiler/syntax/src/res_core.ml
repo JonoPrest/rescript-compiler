@@ -391,13 +391,9 @@ let rec go_to_closing closing_token state =
 (* Madness *)
 let is_es6_arrow_expression ~in_ternary p =
   Parser.lookahead p (fun state ->
-      let _async =
-        match state.Parser.token with
-        | Lident "async" ->
-          Parser.next state;
-          true
-        | _ -> false
-      in
+      (match state.Parser.token with
+      | Lident "async" -> Parser.next state
+      | _ -> ());
       match state.Parser.token with
       | Lident _ | Underscore -> (
         Parser.next state;
