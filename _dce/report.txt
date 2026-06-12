@@ -1,9 +1,5 @@
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_tests_util.ml", line 7, characters 0-423
-  optional argument msg of function +assert_raise_any is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reanalyze.ml", line 199, characters 0-11133
   optional argument file_stats of function +run_analysis is never used
 
@@ -16972,9 +16968,9 @@
     fst (Ext_scc.graph_check node_array) [@@dead "+read_file"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_tests_util.ml", line 20, characters 0-492
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/tests/ounit_tests/ounit_tests_util.ml", line 12, characters 0-492
   +time is never used
-  <-- line 20
+  <-- line 12
       flush stdout [@@dead "+time"] 
 
   Warning Dead Value
@@ -16983,4 +16979,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2998 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:213, Warning Unused Argument:106)
+  Analysis reported 2997 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:213, Warning Unused Argument:105)
