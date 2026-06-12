@@ -635,8 +635,9 @@ live after manual validation.
 ### `Map_gen` and `Set_gen` collection cores
 
 - Report: `Warning Dead Module`, `Warning Dead Value`, and constructor warnings
-  across `compiler/ext/map_gen.ml` / `.mli` and
-  `compiler/ext/set_gen.ml` / `.mli`.
+  across `compiler/ext/map_gen.ml`, `compiler/ext/map_gen.mli`,
+  `compiler/ext/set_gen.ml`, and `compiler/ext/set_gen.mli`, including the
+  `t.Empty`, `t.Leaf`, and `t.Node` constructor mirrors.
 - Verdict: live; false positive.
 - Validation: `compiler/ext/map.cppo.ml` defines concrete map modules by
   wrapping `Map_gen.empty`, `is_empty`, `iter`, `fold`, `for_all`, `exists`,
