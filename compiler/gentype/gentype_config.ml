@@ -13,7 +13,6 @@ type module_resolution =
 type bs_version = int * int * int
 
 type t = {
-  bsb_project_root: string;
   bs_dependencies: string list;
   dep_paths: (string, string) Hashtbl.t;
       (** Map from package name to its install path, used to locate
@@ -36,7 +35,6 @@ type t = {
 
 let default =
   {
-    bsb_project_root = "";
     bs_dependencies = [];
     dep_paths = Hashtbl.create 0;
     emit_import_curry = false;
@@ -158,7 +156,6 @@ let build_config ~namespace =
     tbl
   in
   {
-    bsb_project_root;
     bs_dependencies = !bs_dependencies_flag;
     dep_paths;
     emit_import_curry = false;

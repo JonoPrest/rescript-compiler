@@ -10237,12 +10237,6 @@
   <-- line 4
     let compare (x : int) (y : int) = compare x y [@@dead "Int_map.+compare"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/gentype/gentype_config.ml", line 16, characters 2-27
-  t.bsb_project_root is a record label never used to read a value
-  <-- line 16
-    bsb_project_root: string; [@dead "t.bsb_project_root"] 
-
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/gentype/module_name.ml", line 27, characters 0-44
   +compare is never used
@@ -10254,12 +10248,6 @@
   +compare is never used
   <-- line 3
   val compare : t -> t -> int [@@dead "+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/gentype/paths.ml", line 3, characters 0-28
-  +concat is never used
-  <-- line 3
-  let concat = Filename.concat [@@dead "+concat"] 
 
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/gentype/resolved_name.ml", line 10, characters 0-336
@@ -13359,4 +13347,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2358 issues (Warning Dead Module:146, Warning Dead Type:209, Warning Dead Value:1755, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2356 issues (Warning Dead Module:146, Warning Dead Type:208, Warning Dead Value:1754, Warning Dead Value With Side Effects:29, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
