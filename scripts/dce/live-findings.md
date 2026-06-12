@@ -284,6 +284,17 @@ live after manual validation.
 - Context: unused `clear` and `digest` were removed. The remaining production
   warning depends on the known `Ext_modulename` cross-module false positive.
 
+### `Ext_filename` test helpers
+
+- Report: `Warning Dead Value` / `Warning Dead Type`,
+  `compiler/ext/ext_filename.ml` / `.mli`, for `chop_all_extensions_maybe`,
+  `as_module`, and the `module_info` fields.
+- Verdict: intentionally retained unit-test helper surface.
+- Validation: these helpers are exercised by `ounit_string_tests.ml` and have
+  no production callers. They are marked live so unit-test-only validation code
+  remains available while DCE ignores test modules.
+- Context: the fully unused `chop_extension_maybe` helper was removed.
+
 ### `Ext_list` production helpers
 
 - Report: remaining `Warning Dead Value` entries in
