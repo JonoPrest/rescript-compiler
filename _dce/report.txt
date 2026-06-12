@@ -8523,68 +8523,6 @@
   <-- line 50
   val namespace_of_package_name : string -> string [@@dead "+namespace_of_package_name"] 
 
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.ml", line 1, characters 0-0
-  +ext_obj is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.ml", line 25, characters 0-2650
-  +dump is never used
-  <-- line 25
-      | _ -> opaque (Printf.sprintf "unknown: tag %d size %d" t s) [@@dead "+dump"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.ml", line 101, characters 0-30
-  +dump is never used
-  <-- line 101
-  let dump v = dump (Obj.repr v) [@@dead "+dump"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.ml", line 103, characters 0-86
-  +dump_endline is never used
-  <-- line 103
-    print_endline (dump v) [@@dead "+dump_endline"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.ml", line 107, characters 0-55
-  +pp_any is never used
-  <-- line 107
-  let pp_any fmt v = Format.fprintf fmt "@[%s@]" (dump v) [@@dead "+pp_any"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.ml", line 109, characters 0-611
-  +bt is never used
-  <-- line 109
-            bt.line_number bt.start_char bt.end_char) [@@dead "+bt"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.mli", line 1, characters 0-0
-  ext_obj is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.mli", line 24, characters 0-23
-  +dump is never used
-  <-- line 24
-  val dump : 'a -> string [@@dead "+dump"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.mli", line 26, characters 0-48
-  +dump_endline is never used
-  <-- line 26
-  val dump_endline : ?__LOC__:string -> 'a -> unit [@@dead "+dump_endline"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.mli", line 28, characters 0-43
-  +pp_any is never used
-  <-- line 28
-  val pp_any : Format.formatter -> 'a -> unit [@@dead "+pp_any"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_obj.mli", line 30, characters 0-21
-  +bt is never used
-  <-- line 30
-  val bt : unit -> unit [@@dead "+bt"] 
-
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_option.ml", line 25, characters 0-70
   +map is never used
@@ -8717,43 +8655,11 @@
   <-- line 71
   val from_channel : out_channel -> t [@@dead "+from_channel"] 
 
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_scc.ml", line 1, characters 0-0
-  +ext_scc is a dead module as all its items are dead.
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_scc.ml", line 37, characters 0-48
-  +min_int is never used
-  <-- line 37
-  let min_int (x : int) y = if x < y then x else y [@@dead "+min_int"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_scc.ml", line 39, characters 0-1928
-  +graph is never used
-  <-- line 39
-    output [@@dead "+graph"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_scc.ml", line 98, characters 0-138
-  +graph_check is never used
-  <-- line 98
-      Int_vec_vec.fold_left (fun acc x -> Vec_int.length x :: acc) [] v ) [@@dead "+graph_check"] 
-
-  Warning Dead Module
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_scc.mli", line 1, characters 0-0
-  ext_scc is a dead module as all its items are dead.
-
   Warning Dead Value
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_scc.mli", line 27, characters 0-44
   +graph is never used
   <-- line 27
   val graph : Vec_int.t array -> Int_vec_vec.t [@@dead "+graph"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_scc.mli", line 41, characters 0-46
-  +graph_check is never used
-  <-- line 41
-  val graph_check : node array -> int * int list [@@dead "+graph_check"] 
 
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_sys.mli", line 1, characters 0-0
@@ -13929,4 +13835,4 @@
   <-- line 211
     val hash : t -> int [@@dead "Type_ops.+hash"] 
   
-  Analysis reported 2456 issues (Warning Dead Module:151, Warning Dead Type:225, Warning Dead Value:1828, Warning Dead Value With Side Effects:33, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2439 issues (Warning Dead Module:147, Warning Dead Type:225, Warning Dead Value:1815, Warning Dead Value With Side Effects:33, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
