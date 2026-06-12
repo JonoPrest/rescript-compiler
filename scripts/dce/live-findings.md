@@ -635,8 +635,9 @@ live after manual validation.
   `hash.cppo.ml` and `hash_set.cppo.ml`; `Hash_set_ident_mask` is used by
   `lam_scc.ml`; `Hash_set_poly` is used by `used_attributes.ml` and covered by
   unit tests for the extra collection operations.
-- Context: unused `Warnings.Bad_module_name`, `mk_lazy`, and unused interface
-  exports were removed.
+- Context: unused `Warnings.Bad_module_name`, `mk_lazy`, unused interface
+  exports, and unused `Hash_set_poly` exports (`clear`, `reset`, `to_list`)
+  were removed.
 
 ### `Ext_list` production helpers
 
