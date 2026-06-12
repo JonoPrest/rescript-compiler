@@ -788,14 +788,6 @@
   optional argument from_type of function Label.+unbound_name_error is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_core.ml", line 5923, characters 0-1468
-  optional argument current_type_name_path of function +parse_spread_tail_classified is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_core.ml", line 5923, characters 0-1468
-  optional argument inline_types_context of function +parse_spread_tail_classified is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_compatible.mli", line 74, characters 0-130
   optional argument async of function +fun_ is never used
 
@@ -16791,4 +16783,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2950 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:206, Warning Unused Argument:66)
+  Analysis reported 2948 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:206, Warning Unused Argument:64)
