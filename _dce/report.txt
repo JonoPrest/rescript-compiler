@@ -784,30 +784,6 @@
   optional argument comment of function +var is never used
 
   Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.mli", line 45, characters 0-298
-  optional argument local_fun_name of function +local_external_obj is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.mli", line 45, characters 0-298
-  optional argument local_module_name of function +local_external_obj is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.mli", line 45, characters 0-298
-  optional argument pval_attributes of function +local_external_obj is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.mli", line 25, characters 0-265
-  optional argument local_fun_name of function +local_external_apply is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.mli", line 25, characters 0-265
-  optional argument local_module_name of function +local_external_apply is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.mli", line 25, characters 0-265
-  optional argument pval_attributes of function +local_external_apply is never used
-
-  Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 4616, characters 0-76
   optional argument unif of function +super_report_unification_error is never used
 
@@ -846,30 +822,6 @@
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_exp_make.ml", line 57, characters 0-66
   optional argument comment of function +var is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.ml", line 62, characters 0-1047
-  optional argument local_fun_name of function +local_external_obj is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.ml", line 62, characters 0-1047
-  optional argument local_module_name of function +local_external_obj is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.ml", line 62, characters 0-1047
-  optional argument pval_attributes of function +local_external_obj is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.ml", line 25, characters 0-1123
-  optional argument local_fun_name of function +local_external_apply is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.ml", line 25, characters 0-1123
-  optional argument local_module_name of function +local_external_apply is never used
-
-  Warning Unused Argument
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.ml", line 25, characters 0-1123
-  optional argument pval_attributes of function +local_external_apply is never used
 
   Warning Unused Argument
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/syntax/src/res_core.ml", line 5923, characters 0-1468
@@ -13118,15 +13070,15 @@
   val handle_external : Location.t -> string -> Parsetree.expression [@@dead "+handle_external"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.ml", line 98, characters 0-998
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.ml", line 100, characters 0-998
   +local_extern_cont_to_obj is never used
-  <-- line 98
+  <-- line 100
           } ) [@@dead "+local_extern_cont_to_obj"] 
 
   Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.mli", line 56, characters 0-290
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_external_mk.mli", line 50, characters 0-290
   +local_extern_cont_to_obj is never used
-  <-- line 56
+  <-- line 50
     Parsetree.expression_desc [@@dead "+local_extern_cont_to_obj"] 
 
   Warning Dead Value
@@ -16883,4 +16835,4 @@
   <-- line 4
     OUnit.assert_equal ~cmp:(Vec_int.equal (fun (x : int) y -> x = y)) x y [@@dead "+=~"] 
   
-  Analysis reported 2973 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:208, Warning Unused Argument:86)
+  Analysis reported 2961 issues (Warning Dead Module:145, Warning Dead Type:369, Warning Dead Value:2127, Warning Dead Value With Side Effects:37, Warning Incorrect Annotation:1, Warning Redundant Optional Argument:208, Warning Unused Argument:74)

@@ -24,11 +24,8 @@
 
 val local_external_apply :
   Location.t ->
-  ?pval_attributes:Parsetree.attributes ->
   pval_prim:string list ->
   pval_type:Parsetree.core_type ->
-  ?local_module_name:string ->
-  ?local_fun_name:string ->
   Parsetree.expression list ->
   Parsetree.expression_desc
 (**
@@ -44,11 +41,8 @@ val local_external_apply :
 
 val local_external_obj :
   Location.t ->
-  ?pval_attributes:Parsetree.attributes ->
   pval_prim:string list ->
   pval_type:Parsetree.core_type ->
-  ?local_module_name:string ->
-  ?local_fun_name:string ->
   (string * Parsetree.expression) list ->
   (* [ (label, exp )]*)
   Parsetree.expression_desc

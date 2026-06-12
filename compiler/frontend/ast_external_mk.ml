@@ -22,10 +22,11 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. *)
 
-let local_external_apply loc ?(pval_attributes = []) ~(pval_prim : string list)
-    ~(pval_type : Parsetree.core_type) ?(local_module_name = "J")
-    ?(local_fun_name = "unsafe_expr") (args : Parsetree.expression list) :
+let local_external_apply loc ~(pval_prim : string list)
+    ~(pval_type : Parsetree.core_type) (args : Parsetree.expression list) :
     Parsetree.expression_desc =
+  let local_module_name = "J" in
+  let local_fun_name = "unsafe_expr" in
   Pexp_letmodule
     ( {txt = local_module_name; loc},
       {
@@ -40,7 +41,7 @@ let local_external_apply loc ?(pval_attributes = []) ~(pval_prim : string list)
                       pval_type;
                       pval_loc = loc;
                       pval_prim;
-                      pval_attributes;
+                      pval_attributes = [];
                     };
                 pstr_loc = loc;
               };
@@ -59,9 +60,10 @@ let local_external_apply loc ?(pval_attributes = []) ~(pval_prim : string list)
           : Parsetree.expression)
         args ~loc )
 
-let local_external_obj loc ?(pval_attributes = []) ~pval_prim ~pval_type
-    ?(local_module_name = "J") ?(local_fun_name = "unsafe_expr") args :
+let local_external_obj loc ~pval_prim ~pval_type args :
     Parsetree.expression_desc =
+  let local_module_name = "J" in
+  let local_fun_name = "unsafe_expr" in
   Pexp_letmodule
     ( {txt = local_module_name; loc},
       {
@@ -76,7 +78,7 @@ let local_external_obj loc ?(pval_attributes = []) ~pval_prim ~pval_type
                       pval_type;
                       pval_loc = loc;
                       pval_prim;
-                      pval_attributes;
+                      pval_attributes = [];
                     };
                 pstr_loc = loc;
               };
