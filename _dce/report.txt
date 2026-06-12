@@ -1221,24 +1221,6 @@
   <-- line 7
     let equal (x : t) y = x = y [@@dead "+equal"] 
 
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/issue.ml", line 32, characters 2-33
-  description.Circular is a variant case which is never constructed
-  <-- line 32
-    | Circular of {message: string} [@dead "description.Circular"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/liveness.ml", line 259, characters 0-113
-  +is_live_forward is never used
-  <-- line 259
-    Pos_hash.mem live pos [@@dead "+is_live_forward"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/liveness.mli", line 33, characters 0-76
-  +is_live_forward is never used
-  <-- line 33
-  val is_live_forward : live:live_reason Pos_hash.t -> Lexing.position -> bool [@@dead "+is_live_forward"] 
-
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/loc_set.ml", line 1, characters 0-0
   +loc_set is a dead module as all its items are dead.
@@ -1260,18 +1242,6 @@
   +compare is never used
   <-- line 3
   val compare : t -> t -> int [@@dead "+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/optional_args.ml", line 40, characters 0-48
-  +iter_unused is never used
-  <-- line 40
-  let iter_unused f x = String_set.iter f x.unused [@@dead "+iter_unused"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/optional_args.ml", line 41, characters 0-79
-  +iter_always_used is never used
-  <-- line 41
-  let iter_always_used f x = String_set.iter (fun s -> f s x.count) x.always_used [@@dead "+iter_always_used"] 
 
   Warning Dead Module
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/pos_hash.ml", line 1, characters 0-0
@@ -1298,48 +1268,6 @@
   +compare is never used
   <-- line 7
     let compare = compare [@@dead "+compare"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_analysis.ml", line 135, characters 0-72
-  +length is never used
-  <-- line 135
-  let length (collection : t) = Reactive_file_collection.length collection [@@dead "+length"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_exception_refs.ml", line 13, characters 2-55
-  t.exception_decls is a record label never used to read a value
-  <-- line 13
-    exception_decls: (Dce_path.t, Location.t) Reactive.t; [@dead "t.exception_decls"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_exception_refs.ml", line 75, characters 0-252
-  +add_to_refs_builder is never used
-  <-- line 75
-      t.resolved_refs [@@dead "+add_to_refs_builder"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_exception_refs.ml", line 84, characters 0-418
-  +add_to_file_deps_builder is never used
-  <-- line 84
-      t.resolved_refs [@@dead "+add_to_file_deps_builder"] 
-
-  Warning Dead Type
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_exception_refs.mli", line 35, characters 2-55
-  t.exception_decls is a record label never used to read a value
-  <-- line 35
-    exception_decls: (Dce_path.t, Location.t) Reactive.t; [@dead "t.exception_decls"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_exception_refs.mli", line 55, characters 0-62
-  +add_to_refs_builder is never used
-  <-- line 55
-  val add_to_refs_builder : t -> refs:References.builder -> unit [@@dead "+add_to_refs_builder"] 
-
-  Warning Dead Value
-  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_exception_refs.mli", line 58, characters 0-71
-  +add_to_file_deps_builder is never used
-  <-- line 58
-  val add_to_file_deps_builder : t -> file_deps:File_deps.builder -> unit [@@dead "+add_to_file_deps_builder"] 
 
   Warning Dead Type
   File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reactive_merge.ml", line 14, characters 2-49
@@ -16899,4 +16827,4 @@
   <-- line 38
   val peek_minus : t -> bool [@@dead "+peek_minus"] 
   
-  Analysis reported 2952 issues (Warning Dead Module:150, Warning Dead Type:383, Warning Dead Value:2163, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)
+  Analysis reported 2940 issues (Warning Dead Module:150, Warning Dead Type:380, Warning Dead Value:2154, Warning Dead Value With Side Effects:37, Warning Redundant Optional Argument:195, Warning Unused Argument:24)

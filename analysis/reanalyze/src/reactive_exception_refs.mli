@@ -26,15 +26,12 @@
         ~decls:merged.decls
         ~exception_refs:(flatMap cross_file ~f:extract_exception_refs ())
       in
-      ReactiveExceptionRefs.add_to_refs_builder exc_refs ~refs:my_refs_builder
+      Reactive.iter (fun pos refs -> ...) exc_refs.resolved_refs_from
     ]} *)
 
 (** {1 Types} *)
 
 type t = {
-  exception_decls: (Dce_path.t, Location.t) Reactive.t;
-  resolved_refs: (Lexing.position, Pos_set.t) Reactive.t;
-      (** refs_to direction: target -> sources *)
   resolved_refs_from: (Lexing.position, Pos_set.t) Reactive.t;
       (** refs_from direction: source -> targets (for forward solver) *)
 }
@@ -49,11 +46,3 @@ val create :
 (** Create reactive exception refs from decls and cross-file exception refs.
     
     When the source collections change, resolved refs automatically update. *)
-
-(** {1 Freezing} *)
-
-val add_to_refs_builder : t -> refs:References.builder -> unit
-(** Add all resolved exception refs to a References.builder. *)
-
-val add_to_file_deps_builder : t -> file_deps:File_deps.builder -> unit
-(** Add file dependencies for resolved refs. *)

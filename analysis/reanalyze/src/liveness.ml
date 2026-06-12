@@ -255,11 +255,6 @@ let compute_forward ~debug ~(decl_store : Declaration_store.t)
 
   (live, decl_refs_index)
 
-(** Check if a position is live according to forward-computed liveness *)
-let is_live_forward ~(live : live_reason Pos_hash.t) (pos : Lexing.position) :
-    bool =
-  Pos_hash.mem live pos
-
 (** Get the reason why a position is live, if it is *)
 let get_live_reason ~(live : live_reason Pos_hash.t) (pos : Lexing.position) :
     live_reason option =
