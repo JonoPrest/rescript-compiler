@@ -591,6 +591,14 @@ warnings still fire.
 Fixtures follow the naming convention `warning_<NN>_<description>.res`
 so coverage gaps stay greppable.
 
+Pattern-matching warnings (8 non-exhaustive, 11/12 unused-case /
+sub-pattern, all-clauses-guarded) additionally have shape-oriented
+fixtures named `non_exhaustive_*`, `redundant_or_branch`,
+`overlapping_or_lub`, and `all_clauses_guarded`. These exist to drive the
+`parmatch.ml` witness pretty-printers and redundancy analysis per pattern
+category; see [`PATTERN_MATCHING_COVERAGE.md`](./PATTERN_MATCHING_COVERAGE.md)
+for the reachable-vs-dead breakdown of `matching.ml` / `parmatch.ml`.
+
 ### Removed warnings
 
 The warning constructors listed in **Removed in `jono/remove-dead-errors`**
