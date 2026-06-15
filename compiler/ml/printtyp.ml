@@ -907,7 +907,7 @@ and tree_of_constructor_arguments ?printing_context = function
   | Cstr_tuple l -> tree_of_typlist ?printing_context false l
   | Cstr_record l -> [Otyp_record (List.map tree_of_label l)]
 
-and tree_of_constructor ?printing_context cd =
+and tree_of_constructor ~printing_context cd =
   let name = Ident.name cd.cd_id in
   let nullary = Ast_untagged_variants.is_nullary_variant cd.cd_args in
   let repr =
@@ -923,13 +923,13 @@ and tree_of_constructor ?printing_context cd =
       | Some (BigInt s) -> Some (Printf.sprintf "@as(%sn)" s)
       | Some (Untagged _) (* should never happen *) | None -> None
   in
-  let arg () = tree_of_constructor_arguments ?printing_context cd.cd_args in
+  let arg () = tree_of_constructor_arguments ~printing_context cd.cd_args in
   match cd.cd_res with
   | None -> (name, arg (), None, repr)
   | Some res ->
     let nm = !names in
     names := [];
-    let ret = tree_of_typexp ?printing_context false res in
+    let ret = tree_of_typexp ~printing_context false res in
     let args = arg () in
     names := nm;
     (name, args, Some ret, repr)
@@ -946,32 +946,23 @@ and tree_of_label ?printing_context l =
     opt,
     tree_of_typexp ?printing_context false typ )
 
-and tree_of_constraints ?printing_context params =
+and tree_of_constraints ~printing_context params =
   List.fold_right
     (fun ty list ->
       let ty' = unalias ty in
       if proxy ty != proxy ty' then
-        let tr = tree_of_typexp ?printing_context true ty in
-        (tr, tree_of_typexp ?printing_context true ty') :: list
+        let tr = tree_of_typexp ~printing_context true ty in
+        (tr, tree_of_typexp ~printing_context true ty') :: list
       else list)
     params []
 
-let typexp ?printing_context sch ppf ty =
-  !Oprint.out_type ppf (tree_of_typexp ?printing_context sch ty)
+let typexp sch ppf ty = !Oprint.out_type ppf (tree_of_typexp sch ty)
 
 let type_expr ppf ty = typexp false ppf ty
-
-and type_sch ppf ty = typexp true ppf ty
 
 and type_scheme ppf ty =
   reset_and_mark_loops ty;
   typexp true ppf ty
-
-(* Maxence *)
-let type_scheme_max ?(b_reset_names = true) ppf ty =
-  if b_reset_names then reset_names ();
-  typexp true ppf ty
-(* End Maxence *)
 
 let tree_of_type_scheme ty =
   reset_and_mark_loops ty;
@@ -1047,9 +1038,7 @@ let tree_of_value_description id decl =
   (* Format.eprintf "@[%a@]@." raw_type_expr decl.val_type; *)
   let id = Ident.name id in
   let ty = tree_of_type_scheme decl.val_type in
-  let vd =
-    {oval_name = id; oval_type = ty; oval_prims = []; oval_attributes = []}
-  in
+  let vd = {oval_name = id; oval_type = ty; oval_prims = []} in
   let vd =
     match decl.val_kind with
     | Val_prim p -> Primitive.print p vd
@@ -1172,41 +1161,12 @@ and tree_of_modtype_declaration id decl =
   in
   Osig_modtype (Ident.name id, mty)
 
-and tree_of_module id ?ellipsis mty rs =
-  Osig_module (Ident.name id, tree_of_modtype ?ellipsis mty, tree_of_rec rs)
+and tree_of_module id ~ellipsis mty rs =
+  Osig_module (Ident.name id, tree_of_modtype ~ellipsis mty, tree_of_rec rs)
 
 let modtype ppf mty = !Oprint.out_module_type ppf (tree_of_modtype mty)
 let modtype_declaration id ppf decl =
   !Oprint.out_sig_item ppf (tree_of_modtype_declaration id decl)
-
-(* For the toplevel: merge with tree_of_signature? *)
-
-(* Refresh weak variable map in the toplevel *)
-let refresh_weak () =
-  let refresh t name (m, s) =
-    if is_non_gen true (repr t) then
-      (Type_map.add t name m, String_set.add name s)
-    else (m, s)
-  in
-  let m, s =
-    Type_map.fold refresh !weak_var_map (Type_map.empty, String_set.empty)
-  in
-  named_weak_vars := s;
-  weak_var_map := m
-
-let print_items showval env x =
-  refresh_weak ();
-  let rec print showval env = function
-    | [] -> []
-    | item :: rem as items ->
-      let _sg, rem = filter_rem_sig item rem in
-      hide_rec_items items;
-      let trees = trees_of_sigitem item in
-      List.map (fun d -> (d, showval env item)) trees @ print showval env rem
-  in
-  print showval env x
-
-(* Print a signature body (used by -i when compiling a .ml) *)
 
 let print_signature ppf tree =
   fprintf ppf "@[<v>%a@]" !Oprint.out_signature tree
@@ -1499,8 +1459,8 @@ let unification_error env unif tr txt1 ppf txt2 =
         warn_on_missing_def env ppf t2)
     with exn -> raise exn)
 
-let report_unification_error ppf env ?(unif = true) tr txt1 txt2 =
-  wrap_printing_env env (fun () -> unification_error env unif tr txt1 ppf txt2)
+let report_unification_error ppf env tr txt1 txt2 =
+  wrap_printing_env env (fun () -> unification_error env true tr txt1 ppf txt2)
 
 let super_type_expansion ~tag t ppf t' =
   let tag = Format.String_tag tag in
@@ -1559,10 +1519,9 @@ let super_unification_error ?print_extra_info unif tr txt1 ppf txt2 =
           | Some f -> f ppf t1 t2)
     with exn -> raise exn)
 
-let super_report_unification_error ?print_extra_info ppf env ?(unif = true) tr
-    txt1 txt2 =
+let super_report_unification_error ?print_extra_info ppf env tr txt1 txt2 =
   wrap_printing_env env (fun () ->
-      super_unification_error ?print_extra_info unif tr txt1 ppf txt2)
+      super_unification_error ?print_extra_info true tr txt1 ppf txt2)
 
 let trace fst keep_last txt ppf tr =
   trace_same_names tr;

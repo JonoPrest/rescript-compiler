@@ -37,21 +37,9 @@ type print_engine = {
     comments:Res_comment.t list ->
     Parsetree.structure ->
     unit;
-  print_implementation_from_source:
-    width:int ->
-    source:string ->
-    comments:Res_comment.t list ->
-    Parsetree.structure ->
-    unit;
   print_interface:
     width:int ->
     filename:string ->
-    comments:Res_comment.t list ->
-    Parsetree.signature ->
-    unit;
-  print_interface_from_source:
-    width:int ->
-    source:string ->
     comments:Res_comment.t list ->
     Parsetree.signature ->
     unit;
@@ -185,19 +173,12 @@ let print_engine =
       (fun ~width ~filename:_ ~comments structure ->
         print_string
           (Res_printer.print_implementation ~width structure ~comments));
-    print_implementation_from_source =
-      (fun ~width ~source:_ ~comments structure ->
-        print_string
-          (Res_printer.print_implementation ~width structure ~comments));
     print_interface =
       (fun ~width ~filename:_ ~comments signature ->
         print_string (Res_printer.print_interface ~width signature ~comments));
-    print_interface_from_source =
-      (fun ~width ~source:_ ~comments signature ->
-        print_string (Res_printer.print_interface ~width signature ~comments));
   }
 
-let parse_implementation ?(ignore_parse_errors = false) sourcefile =
+let parse_implementation ~ignore_parse_errors sourcefile =
   Location.input_name := sourcefile;
   let parse_result =
     parsing_engine.parse_implementation ~for_printer:false ~filename:sourcefile
@@ -208,7 +189,7 @@ let parse_implementation ?(ignore_parse_errors = false) sourcefile =
   parse_result.parsetree
 [@@raises exit]
 
-let parse_interface ?(ignore_parse_errors = false) sourcefile =
+let parse_interface ~ignore_parse_errors sourcefile =
   Location.input_name := sourcefile;
   let parse_result =
     parsing_engine.parse_interface ~for_printer:false ~filename:sourcefile

@@ -242,14 +242,14 @@ let rec flatten_any_namespace_in_path path =
       (parts |> List.rev) @ flatten_any_namespace_in_path tail
     else head :: flatten_any_namespace_in_path tail
 
-let print_maybe_exotic_ident ?(allow_uident = false) txt =
+let print_maybe_exotic_ident txt =
   let len = String.length txt in
 
   let rec loop i =
     if i == len then txt
     else if i == 0 then
       match String.unsafe_get txt i with
-      | 'A' .. 'Z' when allow_uident -> loop (i + 1)
+      | 'A' .. 'Z' -> loop (i + 1)
       | 'a' .. 'z' | '_' -> loop (i + 1)
       | _ -> "\"" ^ txt ^ "\""
     else

@@ -52,8 +52,7 @@ let rec convert_constant (const : Lambda.structured_constant) : Lam_constant.t =
       Const_int
         {
           i = Int32.of_int i;
-          comment =
-            Pt_constructor {cstr_name = {name; tag_type}; const; non_const};
+          comment = Pt_constructor {cstr_name = {name; tag_type}};
         }
     | Pt_variant {name} ->
       if Ext_string.is_valid_hash_number name then

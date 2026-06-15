@@ -27,22 +27,16 @@
 val interface :
   parser:(string -> Parsetree.signature) ->
   Format.formatter ->
-  ?outputprefix:string ->
   string ->
   unit
 (** This module defines a function to compile the program directly into [js]
-    given [filename] and [outputprefix], 
+    given [filename],
     it will be useful if we don't care about bytecode output(generating js only).
 *)
 
 val interface_mliast : Format.formatter -> string -> unit
 
-(* val after_parsing_impl :
-   Format.formatter ->
-   string ->
-   Parsetree.structure ->
-   unit *)
-(** [after_parsing_impl ppf sourcefile outputprefix ast ]
+(** [after_parsing_impl ppf sourcefile outputprefix ast]
     Make sure you need run {!Res_compmisc.init_path} for set up
     Used in eval
 *)
@@ -50,10 +44,9 @@ val interface_mliast : Format.formatter -> string -> unit
 val implementation :
   parser:(string -> Parsetree.structure) ->
   Format.formatter ->
-  ?outputprefix:string ->
   string ->
   unit
-(** [implementation ppf sourcefile outprefix] compiles to JS directly *)
+(** [implementation ppf sourcefile] compiles to JS directly *)
 
 val implementation_mlast : Format.formatter -> string -> unit
 

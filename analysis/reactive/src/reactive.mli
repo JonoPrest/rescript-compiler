@@ -18,12 +18,6 @@ type ('k, 'v) delta =
 val set : 'k -> 'v -> 'k * 'v option
 (** Create a batch entry that sets a key *)
 
-val remove : 'k -> 'k * 'v option
-(** Create a batch entry that removes a key *)
-
-val delta_to_entries : ('k, 'v) delta -> ('k * 'v option) list
-(** Convert delta to batch entries *)
-
 (** {1 Statistics} *)
 
 type stats = {
@@ -45,41 +39,6 @@ type stats = {
 }
 (** Per-node statistics for diagnostics *)
 
-val create_stats : unit -> stats
-
-(** {1 Node Registry} *)
-
-module Registry : sig
-  type node_info
-  (** Information about a registered node *)
-
-  val clear : unit -> unit
-  (** Clear all registered nodes *)
-
-  val to_mermaid : unit -> string
-  (** Generate a Mermaid diagram of the pipeline *)
-
-  val print_stats : unit -> unit
-  (** Print timing statistics for all nodes *)
-end
-
-(** {1 Scheduler} *)
-
-module Scheduler : sig
-  val propagate : unit -> unit
-  (** Process all dirty nodes in topological order.
-      Called automatically when a source emits. *)
-
-  val is_propagating : unit -> bool
-  (** Returns true if currently in a propagation wave *)
-
-  val wave_count : unit -> int
-  (** Number of propagation waves executed *)
-
-  val reset_wave_count : unit -> unit
-  (** Reset the wave counter *)
-end
-
 (** {1 Collection Interface} *)
 
 type ('k, 'v) t = {
@@ -97,8 +56,6 @@ val iter : ('k -> 'v -> unit) -> ('k, 'v) t -> unit
 val get : ('k, 'v) t -> 'k -> 'v option
 val length : ('k, 'v) t -> int
 val stats : ('k, 'v) t -> stats
-val level : ('k, 'v) t -> int
-val name : ('k, 'v) t -> string
 
 (** {1 Source Collection} *)
 

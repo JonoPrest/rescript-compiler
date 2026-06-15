@@ -22,15 +22,9 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA. *)
 
-open Ast_helper
-
 let predef_prefix_ident : Longident.t = Lident "*predef*"
 
 let predef_option : Longident.t = Ldot (predef_prefix_ident, "option")
-
-let predef_some : Longident.t = Ldot (predef_prefix_ident, "Some")
-
-let predef_none : Longident.t = Ldot (predef_prefix_ident, "None")
 
 module Lid = struct
   type t = Longident.t
@@ -43,13 +37,7 @@ module Lid = struct
 
   let type_int : t = Lident "int" (* use *predef* *)
 
-  let type_bigint : t = Lident "bigint" (* use *predef* *)
-
-  let type_exn : t = Lident "exn" (* use *predef* *)
-
   let type_bool : t = Lident "bool" (* use *predef* *)
-
-  let pervasives : t = Lident Primitive_modules.pervasives
 
   (* FIXME: Use primitive module *)
   let js_oo : t = Lident "Js_OO"
@@ -57,7 +45,7 @@ module Lid = struct
   (* FIXME: Use primitive module *)
   let js_meth_callback : t = Ldot (js_oo, "Callback")
 
-  let ignore_id : t = Ldot (pervasives, "ignore")
+  let ignore_id : t = Ldot (Lident Primitive_modules.pervasives, "ignore")
 
   let hidden_field n : t = Lident ("I" ^ n)
 
@@ -81,23 +69,13 @@ module No_loc = struct
   let type_unit =
     Ast_helper.Typ.mk (Ptyp_constr ({txt = Lid.type_unit; loc}, []))
 
-  let type_exn =
-    Ast_helper.Typ.mk (Ptyp_constr ({txt = Lid.type_unit; loc}, []))
-
   let type_int = Ast_helper.Typ.mk (Ptyp_constr ({txt = Lid.type_int; loc}, []))
-
-  let type_bigint =
-    Ast_helper.Typ.mk (Ptyp_constr ({txt = Lid.type_bigint; loc}, []))
 
   let type_string =
     Ast_helper.Typ.mk (Ptyp_constr ({txt = Lid.type_string; loc}, []))
 
   let type_bool =
     Ast_helper.Typ.mk (Ptyp_constr ({txt = Lid.type_bool; loc}, []))
-
-  let type_any = Ast_helper.Typ.any ()
-
-  let pat_unit = Pat.construct {txt = Lid.val_unit; loc} None
 end
 
 type 'a lit = ?loc:Location.t -> unit -> 'a
@@ -118,12 +96,6 @@ let type_unit ?loc () =
   | None -> No_loc.type_unit
   | Some loc ->
     Ast_helper.Typ.mk ~loc (Ptyp_constr ({txt = Lid.type_unit; loc}, []))
-
-let type_exn ?loc () =
-  match loc with
-  | None -> No_loc.type_exn
-  | Some loc ->
-    Ast_helper.Typ.mk ~loc (Ptyp_constr ({txt = Lid.type_exn; loc}, []))
 
 let type_string ?loc () =
   match loc with
@@ -146,19 +118,3 @@ let type_int ?loc () =
 let type_float =
   Ast_helper.Typ.mk
     (Ptyp_constr ({txt = Lident "float"; loc = Location.none}, []))
-
-let type_bigint ?loc () =
-  match loc with
-  | None -> No_loc.type_bigint
-  | Some loc ->
-    Ast_helper.Typ.mk ~loc (Ptyp_constr ({txt = Lid.type_bigint; loc}, []))
-
-let type_any ?loc () =
-  match loc with
-  | None -> No_loc.type_any
-  | Some loc -> Ast_helper.Typ.any ~loc ()
-
-let pat_unit ?loc () =
-  match loc with
-  | None -> No_loc.pat_unit
-  | Some loc -> Pat.construct ~loc {txt = Lid.val_unit; loc} None

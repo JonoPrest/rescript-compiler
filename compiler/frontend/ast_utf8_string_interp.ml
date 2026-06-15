@@ -39,14 +39,19 @@ type kind = String | Var of int * int
 *)
 
 type pos = {
-  lnum: int;
-  offset: int;
-  byte_bol: int;
+  lnum: int; [@live]
+  offset: int; [@live]
+  byte_bol: int; [@live]
       (* Note it actually needs to be in sync with OCaml's lexing semantics *)
 }
 (** Note the position is about code point *)
 
-type segment = {start: pos; finish: pos; kind: kind; content: string}
+type segment = {
+  start: pos; [@live]
+  finish: pos; [@live]
+  kind: kind; [@live]
+  content: string; [@live]
+}
 type segments = segment list
 
 type cxt = {
@@ -87,6 +92,7 @@ let valid_identifier s =
 
 (** Note [Var] kind can not be mpty  *)
 let empty_segment {content} = Ext_string.is_empty content
+[@@live]
 
 let update_newline ~byte_bol loc cxt =
   cxt.pos_lnum <- cxt.pos_lnum + 1;
@@ -269,6 +275,7 @@ let transform_test s =
   in
   check_and_transform 0 s 0 cxt;
   List.rev cxt.segments
+[@@live]
 
 module Delim = struct
   let parse_processed = function
@@ -287,7 +294,6 @@ module Delim = struct
     | _ -> Unrecognized
 
   let escaped_j_delimiter = "*j" (* not user level syntax allowed *)
-  let escaped_back_quote_delimiter = "bq"
   let some_escaped_back_quote_delimiter = Some "bq"
   let some_escaped_j_delimiter = Some escaped_j_delimiter
 end
@@ -333,9 +339,5 @@ let transform_pat (p : Parsetree.pattern) s delim : Parsetree.pattern =
           (Pconst_string (s, Delim.some_escaped_back_quote_delimiter));
     }
   | Unrecognized -> p
-
-let is_unicode_string opt =
-  Ext_string.equal opt Delim.escaped_j_delimiter
-  || Ext_string.equal opt Delim.escaped_back_quote_delimiter
 
 let parse_processed_delim = Delim.parse_processed

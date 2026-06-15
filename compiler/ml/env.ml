@@ -148,7 +148,6 @@ type summary =
   | Env_modtype of summary * Ident.t * modtype_declaration
   | Env_open of summary * Path.t
   | Env_functor_arg of summary * Ident.t
-  | Env_constraints of summary * type_declaration Path_map.t
   | Env_copy_types of summary * string list
 
 module Tycomp_tbl = struct
@@ -227,21 +226,6 @@ module Tycomp_tbl = struct
       |> fold_name f next
     | None -> acc
 
-  let rec local_keys tbl acc =
-    let acc = Ident.fold_all (fun k _ accu -> k :: accu) tbl.current acc in
-    match tbl.opened with
-    | Some o -> local_keys o.next acc
-    | None -> acc
-
-  let diff_keys is_local tbl1 tbl2 =
-    let keys2 = local_keys tbl2 [] in
-    Ext_list.filter keys2 (fun id ->
-        is_local (find_same id tbl2)
-        &&
-        try
-          ignore (find_same id tbl1);
-          false
-        with Not_found -> true)
 end
 
 module Id_tbl = struct
@@ -357,12 +341,6 @@ module Id_tbl = struct
       |> fold_name f next
     | None -> acc
 
-  let rec local_keys tbl acc =
-    let acc = Ident.fold_all (fun k _ accu -> k :: accu) tbl.current acc in
-    match tbl.opened with
-    | Some o -> local_keys o.next acc
-    | None -> acc
-
   let rec iter f tbl =
     Ident.iter (fun id desc -> f id (Pident id, desc)) tbl.current;
     match tbl.opened with
@@ -374,13 +352,6 @@ module Id_tbl = struct
       iter f next
     | None -> ()
 
-  let diff_keys tbl1 tbl2 =
-    let keys2 = local_keys tbl2 [] in
-    Ext_list.filter keys2 (fun id ->
-        try
-          ignore (find_same id tbl1);
-          false
-        with Not_found -> true)
 end
 
 type type_descriptions = constructor_description list * label_description list
@@ -505,19 +476,6 @@ let implicit_coercion env =
 let is_in_signature env = env.flags land in_signature_flag <> 0
 let is_implicit_coercion env = env.flags land implicit_coercion_flag <> 0
 
-let is_ident = function
-  | Pident _ -> true
-  | Pdot _ | Papply _ -> false
-
-let is_local_ext = function
-  | {cstr_tag = Cstr_extension p} -> is_ident p
-  | _ -> false
-
-let diff env1 env2 =
-  Id_tbl.diff_keys env1.values env2.values
-  @ Tycomp_tbl.diff_keys is_local_ext env1.constrs env2.constrs
-  @ Id_tbl.diff_keys env1.modules env2.modules
-
 type can_load_cmis = Can_load_cmis | Cannot_load_cmis of Env_lazy.log
 
 let can_load_cmis = ref Can_load_cmis
@@ -600,7 +558,6 @@ type pers_struct = {
   ps_comps: module_components;
   ps_crcs: (string * Digest.t option) list;
   ps_filename: string;
-  ps_flags: pers_flags list;
 }
 [@@warning "-69"]
 
@@ -678,7 +635,6 @@ let acknowledge_pers_struct check modname {Persistent_signature.filename; cmi} =
       ps_comps = comps;
       ps_crcs = crcs;
       ps_filename = filename;
-      ps_flags = flags;
     }
   in
   if ps.ps_name <> modname then
@@ -1225,14 +1181,6 @@ let mark_constructor usage env name desc =
       let ty_name = Path.last ty_path in
       mark_constructor_used usage env ty_name ty_decl name
 
-let lookup_label ?loc lid env =
-  match lookup_all_labels ?loc lid env with
-  | [] -> raise Not_found
-  | (desc, use) :: _ ->
-    mark_type_path env (ty_path desc.lbl_res);
-    use ();
-    desc
-
 let lookup_all_labels ?loc lid env =
   try
     let lbls = lookup_all_labels ?loc lid env in
@@ -1774,8 +1722,6 @@ let enter_value ?check = enter (store_value ?check)
 
 and enter_type = enter (store_type ~check:true)
 
-and enter_extension = enter (store_extension ~check:true)
-
 and enter_module_declaration ?arg id md env =
   add_module_declaration ?arg ~check:true id md env
 (* let (id, env) = enter store_module name md env in
@@ -1846,8 +1792,7 @@ let open_signature slot root env0 =
 
 (* Open a signature from a file *)
 
-let open_signature ?(used_slot = ref false) ?(loc = Location.none)
-    ?(toplevel = false) ovf root env =
+let open_signature ?(loc = Location.none) ?(toplevel = false) ovf root env =
   if
     (not toplevel) && ovf = Asttypes.Fresh
     && (not loc.Location.loc_ghost)
@@ -1855,7 +1800,7 @@ let open_signature ?(used_slot = ref false) ?(loc = Location.none)
        || Warnings.is_active (Warnings.Open_shadow_identifier ("", ""))
        || Warnings.is_active (Warnings.Open_shadow_label_constructor ("", "")))
   then (
-    let used = used_slot in
+    let used = ref false in
     Delayed_checks.add_delayed_check (fun () ->
         if not !used then (
           used := true;
@@ -1883,15 +1828,6 @@ let open_signature ?(used_slot = ref false) ?(loc = Location.none)
 let read_signature modname filename =
   let ps = read_pers_struct modname filename in
   Lazy.force ps.ps_sig
-
-(* Return the CRC of the interface of the given compilation unit *)
-
-let crc_of_unit name =
-  let ps = find_pers_struct name in
-  let crco = try List.assoc name ps.ps_crcs with Not_found -> assert false in
-  match crco with
-  | None -> assert false
-  | Some crc -> crc
 
 (* Return the list of imported interfaces with their CRCs *)
 
@@ -1939,7 +1875,6 @@ let save_signature_with_imports ?check_exists ~deprecated sg modname filename
         ps_comps = comps;
         ps_crcs = (cmi.cmi_name, Some crc) :: imports;
         ps_filename = filename;
-        ps_flags = cmi.cmi_flags;
       }
     in
     save_pers_struct crc ps;
@@ -2034,12 +1969,6 @@ let initial_safe_string =
     (add_extension ~check:false)
     empty
 
-(* Return the environment summary *)
-
-let summary env =
-  if Path_map.is_empty env.local_constraints then env.summary
-  else Env_constraints (env.summary, env.local_constraints)
-
 let last_env = ref empty
 let last_reduced_env = ref empty
 
@@ -2057,10 +1986,6 @@ let keep_only_summary env =
     last_env := env;
     last_reduced_env := new_env;
     new_env
-
-let env_of_only_summary env_from_summary env =
-  let new_env = env_from_summary env.summary Subst.identity in
-  {new_env with local_constraints = env.local_constraints; flags = env.flags}
 
 (* Error report *)
 

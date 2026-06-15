@@ -28,6 +28,4 @@ type t = Location.t = {
   loc_ghost: bool;
 }
 
-(* val is_ghost : t -> bool *)
-val merge : t -> t -> t
 (* val none : t  *)

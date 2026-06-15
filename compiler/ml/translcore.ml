@@ -988,9 +988,8 @@ and transl_case_try {c_lhs; c_guard; c_rhs} =
 
 and transl_cases_try cases = List.map transl_case_try cases
 
-and transl_apply ?(inlined = Default_inline)
-    ?(uncurried_partial_application = None) ?(transformed_jsx = false) lam sargs
-    loc =
+and transl_apply ~inlined ?(uncurried_partial_application = None) ~transformed_jsx
+    lam sargs loc =
   let lapply ap_func ap_args =
     Lapply
       {

@@ -40,7 +40,6 @@ type t =
   | Nonreturning_statement (* 21 *)
   | Preprocessor of string (* 22 *)
   | Useless_record_with (* 23 *)
-  | Bad_module_name of string (* 24 *)
   | All_clauses_guarded (* 8, used to be 25 *)
   | Unused_var of string (* 26 *)
   | Unused_var_strict of string (* 27 *)
@@ -94,7 +93,6 @@ let number = function
   | Nonreturning_statement -> 21
   | Preprocessor _ -> 22
   | Useless_record_with -> 23
-  | Bad_module_name _ -> 24
   | All_clauses_guarded -> 8 (* used to be 25 *)
   | Unused_var _ -> 26
   | Unused_var_strict _ -> 27
@@ -186,19 +184,6 @@ let restore x = current := x
 let is_active x = (not !disabled) && !current.active.(number x)
 
 let is_error x = (not !disabled) && !current.error.(number x)
-
-let mk_lazy f =
-  let state = backup () in
-  lazy
-    (let prev = backup () in
-     restore state;
-     try
-       let r = f () in
-       restore prev;
-       r
-     with exn ->
-       restore prev;
-       raise exn)
 
 let parse_opt error active flags s =
   let set i = flags.(i) <- true in
@@ -310,12 +295,6 @@ let message = function
   | Useless_record_with ->
     "All the fields are already explicitly listed in this record. You can \
      remove the `...` spread."
-  | Bad_module_name modname ->
-    "This file's name is potentially invalid. The build systems conventionally \
-     turn a file name into a module name by upper-casing the first letter. "
-    ^ modname ^ " isn't a valid module name.\n"
-    ^ "Note: some build systems might e.g. turn kebab-case into CamelCase \
-       module, which is why this isn't a hard error."
   | All_clauses_guarded ->
     "this pattern-matching is not exhaustive.\n\
      All clauses in this pattern-matching are guarded."

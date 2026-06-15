@@ -1,22 +1,4 @@
-let filter_by_cursor cursor (loc : Warnings.loc) : bool =
-  match cursor with
-  | None -> true
-  | Some (line, col) ->
-    let start = loc.loc_start and end_ = loc.loc_end in
-    let line_in = start.pos_lnum <= line && line <= end_.pos_lnum in
-    let col_in =
-      if start.pos_lnum = end_.pos_lnum then
-        start.pos_cnum - start.pos_bol <= col
-        && col <= end_.pos_cnum - end_.pos_bol
-      else if line = start.pos_lnum then col >= start.pos_cnum - start.pos_bol
-      else if line = end_.pos_lnum then col <= end_.pos_cnum - end_.pos_bol
-      else true
-    in
-    line_in && col_in
-
-type filter = Cursor of (int * int) | Loc of Loc.t
-
-let dump ~state ?filter rescript_json cmt_path =
+let dump ~state rescript_json cmt_path =
   let uri = Uri.from_path (Filename.remove_extension cmt_path ^ ".res") in
   let package =
     let uri = Uri.from_path rescript_json in
@@ -31,25 +13,9 @@ let dump ~state ?filter rescript_json cmt_path =
   | Some full ->
     let open Shared_types in
     let open Shared_types.Stamps in
-    let apply_filter =
-      match filter with
-      | None -> fun _ -> true
-      | Some (Cursor cursor) -> Loc.has_pos ~pos:cursor
-      | Some (Loc loc) -> Loc.is_inside loc
-    in
-    (match filter with
-    | None -> ()
-    | Some (Cursor (line, col)) ->
-      Printf.printf "Filtering by cursor %d,%d\n" line col
-    | Some (Loc loc) ->
-      Printf.printf "Filtering by loc %s\n" (Loc.to_string loc));
-
     Printf.printf "file moduleName: %s\n\n" full.file.module_name;
 
-    let stamps =
-      full.file.stamps |> get_entries
-      |> List.filter (fun (_, stamp) -> apply_filter (loc_of_kind stamp))
-    in
+    let stamps = full.file.stamps |> get_entries in
 
     let total_stamps = List.length stamps in
     Printf.printf "Found %d stamps:\n%s" total_stamps
@@ -110,8 +76,7 @@ let dump ~state ?filter rescript_json cmt_path =
     (* Dump all locItems (typed nodes) *)
     let loc_items =
       match full.extra with
-      | {loc_items} ->
-        loc_items |> List.filter (fun loc_item -> apply_filter loc_item.loc)
+      | {loc_items} -> loc_items
     in
 
     Printf.printf "\nFound %d locItems (typed nodes):\n\n"

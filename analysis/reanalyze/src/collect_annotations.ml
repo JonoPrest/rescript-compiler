@@ -90,19 +90,17 @@ let collect_export_locations ~state ~config ~do_gentype =
              ({cd_attributes; cd_loc; cd_args} :
                Typedtree.constructor_declaration)
            ->
-             let _process_inline_records =
-               match cd_args with
-               | Cstr_record flds ->
-                 List.iter
-                   (fun ({ld_attributes; ld_loc} : Typedtree.label_declaration)
-                      ->
-                     toplevel_attrs @ cd_attributes @ ld_attributes
-                     |> process_attributes ~scope_default:!current_scope_default
-                          ~state ~config ~do_gentype:false ~name:""
-                          ~pos:ld_loc.loc_start)
-                   flds
-               | Cstr_tuple _ -> ()
-             in
+             (match cd_args with
+             | Cstr_record flds ->
+               List.iter
+                 (fun ({ld_attributes; ld_loc} : Typedtree.label_declaration)
+                    ->
+                   toplevel_attrs @ cd_attributes @ ld_attributes
+                   |> process_attributes ~scope_default:!current_scope_default
+                        ~state ~config ~do_gentype:false ~name:""
+                        ~pos:ld_loc.loc_start)
+                 flds
+             | Cstr_tuple _ -> ());
              toplevel_attrs @ cd_attributes
              |> process_attributes ~scope_default:!current_scope_default ~state
                   ~config ~do_gentype:false ~name:"" ~pos:cd_loc.loc_start)

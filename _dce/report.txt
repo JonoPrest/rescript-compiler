@@ -1,0 +1,1876 @@
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compile.ml", line 820, characters 4-2265
+  optional argument declaration of function +switch is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compile.ml", line 820, characters 4-2265
+  optional argument default of function +switch is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/reanalyze/src/reanalyze.ml", line 199, characters 0-11133
+  optional argument file_stats of function +run_analysis is never used
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 344, characters 2-178
+  optional argument attrs of function Te.+constructor is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 344, characters 2-178
+  optional argument loc of function Te.+constructor is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 335, characters 2-246
+  optional argument attrs of function Te.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 335, characters 2-246
+  optional argument params of function Te.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 335, characters 2-246
+  optional argument priv of function Te.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 323, characters 2-210
+  optional argument attrs of function Type.+field is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 323, characters 2-210
+  optional argument loc of function Type.+field is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 323, characters 2-210
+  optional argument mut of function Type.+field is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 313, characters 2-226
+  optional argument args of function Type.+constructor is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 313, characters 2-226
+  optional argument attrs of function Type.+constructor is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 313, characters 2-226
+  optional argument loc of function Type.+constructor is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 300, characters 2-372
+  optional argument attrs of function Type.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 300, characters 2-372
+  optional argument cstrs of function Type.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 300, characters 2-372
+  optional argument kind of function Type.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 300, characters 2-372
+  optional argument loc of function Type.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 300, characters 2-372
+  optional argument params of function Type.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 300, characters 2-372
+  optional argument priv of function Type.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 295, characters 2-131
+  optional argument attrs of function Vb.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 295, characters 2-131
+  optional argument loc of function Vb.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 290, characters 2-119
+  optional argument attrs of function Incl.+mk is always supplied (2 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 290, characters 2-119
+  optional argument loc of function Incl.+mk is always supplied (2 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 280, characters 2-193
+  optional argument attrs of function Opn.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 280, characters 2-193
+  optional argument loc of function Opn.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 280, characters 2-193
+  optional argument override of function Opn.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 275, characters 2-134
+  optional argument attrs of function Mb.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 275, characters 2-134
+  optional argument loc of function Mb.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 270, characters 2-137
+  optional argument attrs of function Mtd.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 270, characters 2-137
+  optional argument loc of function Mtd.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 265, characters 2-132
+  optional argument attrs of function Md.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 265, characters 2-132
+  optional argument loc of function Md.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 254, characters 2-204
+  optional argument attrs of function Val.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 254, characters 2-204
+  optional argument loc of function Val.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 254, characters 2-204
+  optional argument prim of function Val.+mk is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 250, characters 2-51
+  optional argument loc of function Str.+attribute is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 249, characters 2-74
+  optional argument attrs of function Str.+extension is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 249, characters 2-74
+  optional argument loc of function Str.+extension is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 248, characters 2-48
+  optional argument loc of function Str.+include_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 247, characters 2-42
+  optional argument loc of function Str.+open_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 246, characters 2-47
+  optional argument loc of function Str.+modtype is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 245, characters 2-52
+  optional argument loc of function Str.+rec_module is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 244, characters 2-46
+  optional argument loc of function Str.+module_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 243, characters 2-52
+  optional argument loc of function Str.+exception_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 242, characters 2-53
+  optional argument loc of function Str.+type_extension is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 241, characters 2-63
+  optional argument loc of function Str.+type_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 240, characters 2-51
+  optional argument loc of function Str.+primitive is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 239, characters 2-50
+  optional argument loc of function Str.+value is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 232, characters 2-51
+  optional argument loc of function Sig.+attribute is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 231, characters 2-74
+  optional argument attrs of function Sig.+extension is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 231, characters 2-74
+  optional argument loc of function Sig.+extension is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 229, characters 2-48
+  optional argument loc of function Sig.+include_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 228, characters 2-42
+  optional argument loc of function Sig.+open_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 227, characters 2-47
+  optional argument loc of function Sig.+modtype is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 226, characters 2-52
+  optional argument loc of function Sig.+rec_module is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 225, characters 2-46
+  optional argument loc of function Sig.+module_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 224, characters 2-52
+  optional argument loc of function Sig.+exception_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 223, characters 2-53
+  optional argument loc of function Sig.+type_extension is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 222, characters 2-63
+  optional argument loc of function Sig.+type_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 221, characters 2-43
+  optional argument loc of function Sig.+value is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 215, characters 2-65
+  optional argument attrs of function Mod.+extension is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 215, characters 2-65
+  optional argument loc of function Mod.+extension is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 214, characters 2-59
+  optional argument attrs of function Mod.+unpack is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 214, characters 2-59
+  optional argument loc of function Mod.+unpack is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 213, characters 2-79
+  optional argument attrs of function Mod.+constraint_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 213, characters 2-79
+  optional argument loc of function Mod.+constraint_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 212, characters 2-68
+  optional argument attrs of function Mod.+apply is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 212, characters 2-68
+  optional argument loc of function Mod.+apply is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 210, characters 2-98
+  optional argument attrs of function Mod.+functor_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 210, characters 2-98
+  optional argument loc of function Mod.+functor_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 209, characters 2-65
+  optional argument attrs of function Mod.+structure is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 209, characters 2-65
+  optional argument loc of function Mod.+structure is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 208, characters 2-57
+  optional argument attrs of function Mod.+ident is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 208, characters 2-57
+  optional argument loc of function Mod.+ident is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 200, characters 2-65
+  optional argument attrs of function Mty.+extension is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 200, characters 2-65
+  optional argument loc of function Mty.+extension is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 199, characters 2-60
+  optional argument attrs of function Mty.+typeof_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 199, characters 2-60
+  optional argument loc of function Mty.+typeof_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 198, characters 2-63
+  optional argument attrs of function Mty.+with_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 198, characters 2-63
+  optional argument loc of function Mty.+with_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 197, characters 2-74
+  optional argument attrs of function Mty.+functor_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 197, characters 2-74
+  optional argument loc of function Mty.+functor_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 196, characters 2-65
+  optional argument attrs of function Mty.+signature is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 196, characters 2-65
+  optional argument loc of function Mty.+signature is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 195, characters 2-57
+  optional argument attrs of function Mty.+alias is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 195, characters 2-57
+  optional argument loc of function Mty.+alias is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 194, characters 2-57
+  optional argument attrs of function Mty.+ident is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 194, characters 2-57
+  optional argument loc of function Mty.+ident is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 184, characters 2-65
+  optional argument attrs of function Exp.+extension is always supplied (3 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 184, characters 2-65
+  optional argument loc of function Exp.+extension is always supplied (3 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 183, characters 2-68
+  optional argument attrs of function Exp.+open_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 183, characters 2-68
+  optional argument loc of function Exp.+open_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 182, characters 2-55
+  optional argument attrs of function Exp.+pack is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 182, characters 2-55
+  optional argument loc of function Exp.+pack is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 181, characters 2-68
+  optional argument attrs of function Exp.+newtype is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 181, characters 2-68
+  optional argument loc of function Exp.+newtype is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 178, characters 2-60
+  optional argument attrs of function Exp.+assert_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 178, characters 2-60
+  optional argument loc of function Exp.+assert_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 177, characters 2-78
+  optional argument attrs of function Exp.+letexception is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 177, characters 2-78
+  optional argument loc of function Exp.+letexception is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 176, characters 2-77
+  optional argument attrs of function Exp.+letmodule is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 176, characters 2-77
+  optional argument loc of function Exp.+letmodule is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 172, characters 2-62
+  optional argument attrs of function Exp.+send is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 172, characters 2-62
+  optional argument loc of function Exp.+send is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 171, characters 2-70
+  optional argument attrs of function Exp.+coerce is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 171, characters 2-70
+  optional argument loc of function Exp.+coerce is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 170, characters 2-75
+  optional argument attrs of function Exp.+constraint_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 170, characters 2-75
+  optional argument loc of function Exp.+constraint_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 169, characters 2-76
+  optional argument attrs of function Exp.+for_ is always supplied (3 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 169, characters 2-76
+  optional argument loc of function Exp.+for_ is always supplied (3 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 168, characters 2-65
+  optional argument attrs of function Exp.+while_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 168, characters 2-65
+  optional argument loc of function Exp.+while_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 167, characters 2-70
+  optional argument attrs of function Exp.+sequence is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 167, characters 2-70
+  optional argument loc of function Exp.+sequence is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 166, characters 2-79
+  optional argument attrs of function Exp.+ifthenelse is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 166, characters 2-79
+  optional argument loc of function Exp.+ifthenelse is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 165, characters 2-57
+  optional argument attrs of function Exp.+array is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 165, characters 2-57
+  optional argument loc of function Exp.+array is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 164, characters 2-75
+  optional argument attrs of function Exp.+setfield is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 164, characters 2-75
+  optional argument loc of function Exp.+setfield is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 163, characters 2-64
+  optional argument attrs of function Exp.+field is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 163, characters 2-64
+  optional argument loc of function Exp.+field is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 162, characters 2-66
+  optional argument attrs of function Exp.+record is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 162, characters 2-66
+  optional argument loc of function Exp.+record is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 161, characters 2-68
+  optional argument attrs of function Exp.+variant is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 161, characters 2-68
+  optional argument loc of function Exp.+variant is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 159, characters 2-57
+  optional argument attrs of function Exp.+tuple is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 159, characters 2-57
+  optional argument loc of function Exp.+tuple is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 158, characters 2-61
+  optional argument attrs of function Exp.+try_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 158, characters 2-61
+  optional argument loc of function Exp.+try_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 157, characters 2-65
+  optional argument attrs of function Exp.+match_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 157, characters 2-65
+  optional argument loc of function Exp.+match_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 156, characters 2-64
+  optional argument attrs of function Exp.+apply is always supplied (3 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 156, characters 2-64
+  optional argument loc of function Exp.+apply is always supplied (3 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 154, characters 2-71
+  optional argument attrs of function Exp.+fun_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 154, characters 2-71
+  optional argument loc of function Exp.+fun_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 153, characters 2-66
+  optional argument attrs of function Exp.+let_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 153, characters 2-66
+  optional argument loc of function Exp.+let_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 143, characters 2-65
+  optional argument attrs of function Pat.+extension is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 143, characters 2-65
+  optional argument loc of function Pat.+extension is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 142, characters 2-66
+  optional argument attrs of function Pat.+exception_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 142, characters 2-66
+  optional argument loc of function Pat.+exception_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 141, characters 2-63
+  optional argument attrs of function Pat.+open_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 141, characters 2-63
+  optional argument loc of function Pat.+open_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 140, characters 2-59
+  optional argument attrs of function Pat.+unpack is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 140, characters 2-59
+  optional argument loc of function Pat.+unpack is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 138, characters 2-56
+  optional argument attrs of function Pat.+type_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 138, characters 2-56
+  optional argument loc of function Pat.+type_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 137, characters 2-75
+  optional argument attrs of function Pat.+constraint_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 137, characters 2-75
+  optional argument loc of function Pat.+constraint_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 136, characters 2-59
+  optional argument attrs of function Pat.+or_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 136, characters 2-59
+  optional argument loc of function Pat.+or_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 135, characters 2-57
+  optional argument attrs of function Pat.+array is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 135, characters 2-57
+  optional argument loc of function Pat.+array is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 134, characters 2-66
+  optional argument attrs of function Pat.+record is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 134, characters 2-66
+  optional argument loc of function Pat.+record is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 133, characters 2-68
+  optional argument attrs of function Pat.+variant is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 133, characters 2-68
+  optional argument loc of function Pat.+variant is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 132, characters 2-72
+  optional argument attrs of function Pat.+construct is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 132, characters 2-72
+  optional argument loc of function Pat.+construct is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 131, characters 2-57
+  optional argument attrs of function Pat.+tuple is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 131, characters 2-57
+  optional argument loc of function Pat.+tuple is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 130, characters 2-70
+  optional argument attrs of function Pat.+interval is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 130, characters 2-70
+  optional argument loc of function Pat.+interval is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 129, characters 2-63
+  optional argument attrs of function Pat.+constant is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 129, characters 2-63
+  optional argument loc of function Pat.+constant is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 128, characters 2-64
+  optional argument attrs of function Pat.+alias is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 128, characters 2-64
+  optional argument loc of function Pat.+alias is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 127, characters 2-53
+  optional argument attrs of function Pat.+var is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 127, characters 2-53
+  optional argument loc of function Pat.+var is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 126, characters 2-50
+  optional argument attrs of function Pat.+any is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 126, characters 2-50
+  optional argument loc of function Pat.+any is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 65, characters 2-65
+  optional argument attrs of function Typ.+extension is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 65, characters 2-65
+  optional argument loc of function Typ.+extension is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 64, characters 2-68
+  optional argument attrs of function Typ.+package is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 64, characters 2-68
+  optional argument loc of function Typ.+package is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 63, characters 2-62
+  optional argument loc of function Typ.+poly is always supplied (2 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 62, characters 2-73
+  optional argument loc of function Typ.+variant is always supplied (2 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 61, characters 2-64
+  optional argument attrs of function Typ.+alias is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 61, characters 2-64
+  optional argument loc of function Typ.+alias is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 60, characters 2-67
+  optional argument attrs of function Typ.+object_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 60, characters 2-67
+  optional argument loc of function Typ.+object_ is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 59, characters 2-66
+  optional argument loc of function Typ.+constr is always supplied (2 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 58, characters 2-57
+  optional argument attrs of function Typ.+tuple is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 58, characters 2-57
+  optional argument loc of function Typ.+tuple is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 57, characters 2-69
+  optional argument attrs of function Typ.+arrow is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 57, characters 2-69
+  optional argument loc of function Typ.+arrow is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 56, characters 2-53
+  optional argument attrs of function Typ.+var is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 56, characters 2-53
+  optional argument loc of function Typ.+var is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 55, characters 2-50
+  optional argument attrs of function Typ.+any is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 55, characters 2-50
+  optional argument loc of function Typ.+any is always supplied (1 calls)
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/type_utils.ml", line 587, characters 2-51
+  optional argument print_opening_debug of function +extract_type is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/type_utils.ml", line 587, characters 2-51
+  optional argument type_arg_context_from_type_manifest of function +extract_type is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/analysis/src/type_utils.ml", line 179, characters 0-2146
+  optional argument type_arg_context of function +instantiate_type2 is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 1145, characters 2-61
+  optional argument from_type of function Constructor.+unbound_name_error is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typecore.ml", line 967, characters 2-55
+  optional argument from_type of function Label.+unbound_name_error is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typetexp.mli", line 102, characters 0-91
+  optional argument from_type of function +unbound_label_error is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typetexp.mli", line 100, characters 0-97
+  optional argument from_type of function +unbound_constructor_error is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typetexp.ml", line 173, characters 0-141
+  optional argument from_type of function +unbound_label_error is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typetexp.ml", line 168, characters 0-160
+  optional argument from_type of function +unbound_constructor_error is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 112, characters 0-90
+  optional argument loc of function +lookup_modtype is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 106, characters 0-63
+  optional argument loc of function +lookup_type is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 101, characters 0-112
+  optional argument loc of function +lookup_all_labels is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 96, characters 0-124
+  optional argument loc of function +lookup_all_constructors is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 94, characters 0-89
+  optional argument loc of function +lookup_constructor is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 92, characters 0-86
+  optional argument loc of function +lookup_value is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1216, characters 0-295
+  optional argument loc of function +lookup_all_labels is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1190, characters 0-313
+  optional argument loc of function +lookup_all_constructors is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1178, characters 0-206
+  optional argument loc of function +lookup_constructor is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1162, characters 0-137
+  optional argument loc of function +lookup_type is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1157, characters 0-138
+  optional argument loc of function +lookup_value is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1101, characters 0-84
+  optional argument loc of function +lookup_modtype is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1060, characters 0-663
+  optional argument loc of function +lookup_all_simple is never used
+
+  Warning Unused Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 1048, characters 0-391
+  optional argument loc of function +lookup is never used
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 103, characters 0-108
+  optional argument custom_intro of function +report_error is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 103, characters 0-108
+  optional argument src of function +report_error is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.ml", line 253, characters 0-108
+  optional argument custom_intro of function +report_error is always supplied (1 calls)
+
+  Warning Redundant Optional Argument
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.ml", line 253, characters 0-108
+  optional argument src of function +report_error is always supplied (1 calls)
+
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.ml", line 1, characters 0-0
+  +bs_loc is a dead module as all its items are dead.
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.ml", line 26, characters 2-29
+  t.loc_start is a record label never used to read a value
+  <-- line 26
+    loc_start: Lexing.position; [@dead "t.loc_start"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.ml", line 27, characters 2-27
+  t.loc_end is a record label never used to read a value
+  <-- line 27
+    loc_end: Lexing.position; [@dead "t.loc_end"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.ml", line 28, characters 2-18
+  t.loc_ghost is a record label never used to read a value
+  <-- line 28
+    loc_ghost: bool; [@dead "t.loc_ghost"] 
+
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.mli", line 1, characters 0-0
+  bs_loc is a dead module as all its items are dead.
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.mli", line 26, characters 2-29
+  t.loc_start is a record label never used to read a value
+  <-- line 26
+    loc_start: Lexing.position; [@dead "t.loc_start"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.mli", line 27, characters 2-27
+  t.loc_end is a record label never used to read a value
+  <-- line 27
+    loc_end: Lexing.position; [@dead "t.loc_end"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/common/bs_loc.mli", line 28, characters 2-18
+  t.loc_ghost is a record label never used to read a value
+  <-- line 28
+    loc_ghost: bool; [@dead "t.loc_ghost"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/j.ml", line 77, characters 65-78
+  delim.DBackQuotes is a variant case which is never constructed
+  <-- line 77
+  and delim = External_arg_spec.delim = DNone | DStarJ | DNoQuotes | DBackQuotes [@dead "delim.DBackQuotes"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_dump_program.mli", line 28, characters 0-124
+  +pp_deps_program is never used
+  <-- line 28
+    unit [@@dead "+pp_deps_program"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_variant.ml", line 28, characters 22-29
+  arg_expression.Splice0 is a variant case which is never constructed
+  <-- line 28
+  type arg_expression = Splice0 [@dead "arg_expression.Splice0"]  | Splice1 of E.t | Splice2 of E.t * E.t
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_variant.ml", line 28, characters 30-46
+  arg_expression.Splice1 is a variant case which is never constructed
+  <-- line 28
+  type arg_expression = Splice0 [@dead "arg_expression.Splice0"]  | Splice1 of E.t [@dead "arg_expression.Splice1"]  | Splice2 of E.t * E.t
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_variant.mli", line 28, characters 2-11
+  arg_expression.Splice0 is a variant case which is never constructed
+  <-- line 28
+    | Splice0 [@dead "arg_expression.Splice0"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_of_lam_variant.mli", line 29, characters 2-27
+  arg_expression.Splice1 is a variant case which is never constructed
+  <-- line 29
+    | Splice1 of J.expression [@dead "arg_expression.Splice1"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 99, characters 38-44
+  property.Strict is a variant case which is never constructed
+  <-- line 99
+  type property = Lam_compat.let_kind = Strict [@dead "property.Strict"]  | Alias | StrictOpt | Variable
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 99, characters 45-52
+  property.Alias is a variant case which is never constructed
+  <-- line 99
+  type property = Lam_compat.let_kind = Strict [@dead "property.Strict"]  | Alias [@dead "property.Alias"]  | StrictOpt | Variable
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 99, characters 53-64
+  property.StrictOpt is a variant case which is never constructed
+  <-- line 99
+  type property = Lam_compat.let_kind = Strict [@dead "property.Strict"]  | Alias [@dead "property.Alias"]  | StrictOpt [@dead "property.StrictOpt"]  | Variable
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/js_op.ml", line 99, characters 65-75
+  property.Variable is a variant case which is never constructed
+  <-- line 99
+  type property = Lam_compat.let_kind = Strict [@dead "property.Strict"]  | Alias [@dead "property.Alias"]  | StrictOpt [@dead "property.StrictOpt"]  | Variable [@dead "property.Variable"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.ml", line 57, characters 2-69
+  field_dbg_info.Fld_record is a variant case which is never constructed
+  <-- line 57
+    | Fld_record of {name: string; mutable_flag: Asttypes.mutable_flag} [@dead "field_dbg_info.Fld_record"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.ml", line 58, characters 2-32
+  field_dbg_info.Fld_module is a variant case which is never constructed
+  <-- line 58
+    | Fld_module of {name: string} [@dead "field_dbg_info.Fld_module"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.ml", line 59, characters 2-39
+  field_dbg_info.Fld_record_inline is a variant case which is never constructed
+  <-- line 59
+    | Fld_record_inline of {name: string} [@dead "field_dbg_info.Fld_record_inline"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.ml", line 60, characters 2-42
+  field_dbg_info.Fld_record_extension is a variant case which is never constructed
+  <-- line 60
+    | Fld_record_extension of {name: string} [@dead "field_dbg_info.Fld_record_extension"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.ml", line 61, characters 2-13
+  field_dbg_info.Fld_tuple is a variant case which is never constructed
+  <-- line 61
+    | Fld_tuple [@dead "field_dbg_info.Fld_tuple"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.ml", line 62, characters 2-20
+  field_dbg_info.Fld_poly_var_tag is a variant case which is never constructed
+  <-- line 62
+    | Fld_poly_var_tag [@dead "field_dbg_info.Fld_poly_var_tag"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.ml", line 63, characters 2-24
+  field_dbg_info.Fld_poly_var_content is a variant case which is never constructed
+  <-- line 63
+    | Fld_poly_var_content [@dead "field_dbg_info.Fld_poly_var_content"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.ml", line 64, characters 2-17
+  field_dbg_info.Fld_extension is a variant case which is never constructed
+  <-- line 64
+    | Fld_extension [@dead "field_dbg_info.Fld_extension"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.ml", line 65, characters 2-15
+  field_dbg_info.Fld_variant is a variant case which is never constructed
+  <-- line 65
+    | Fld_variant [@dead "field_dbg_info.Fld_variant"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.ml", line 66, characters 2-12
+  field_dbg_info.Fld_cons is a variant case which is never constructed
+  <-- line 66
+    | Fld_cons [@dead "field_dbg_info.Fld_cons"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.ml", line 82, characters 2-38
+  set_field_dbg_info.Fld_record_extension_set is a variant case which is never constructed
+  <-- line 82
+    | Fld_record_extension_set of string [@dead "set_field_dbg_info.Fld_record_extension_set"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.mli", line 30, characters 2-69
+  field_dbg_info.Fld_record is a variant case which is never constructed
+  <-- line 30
+    | Fld_record of {name: string; mutable_flag: Asttypes.mutable_flag} [@dead "field_dbg_info.Fld_record"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.mli", line 31, characters 2-32
+  field_dbg_info.Fld_module is a variant case which is never constructed
+  <-- line 31
+    | Fld_module of {name: string} [@dead "field_dbg_info.Fld_module"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.mli", line 32, characters 2-39
+  field_dbg_info.Fld_record_inline is a variant case which is never constructed
+  <-- line 32
+    | Fld_record_inline of {name: string} [@dead "field_dbg_info.Fld_record_inline"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.mli", line 33, characters 2-42
+  field_dbg_info.Fld_record_extension is a variant case which is never constructed
+  <-- line 33
+    | Fld_record_extension of {name: string} [@dead "field_dbg_info.Fld_record_extension"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.mli", line 34, characters 2-13
+  field_dbg_info.Fld_tuple is a variant case which is never constructed
+  <-- line 34
+    | Fld_tuple [@dead "field_dbg_info.Fld_tuple"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.mli", line 35, characters 2-20
+  field_dbg_info.Fld_poly_var_tag is a variant case which is never constructed
+  <-- line 35
+    | Fld_poly_var_tag [@dead "field_dbg_info.Fld_poly_var_tag"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.mli", line 36, characters 2-24
+  field_dbg_info.Fld_poly_var_content is a variant case which is never constructed
+  <-- line 36
+    | Fld_poly_var_content [@dead "field_dbg_info.Fld_poly_var_content"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.mli", line 37, characters 2-17
+  field_dbg_info.Fld_extension is a variant case which is never constructed
+  <-- line 37
+    | Fld_extension [@dead "field_dbg_info.Fld_extension"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.mli", line 38, characters 2-15
+  field_dbg_info.Fld_variant is a variant case which is never constructed
+  <-- line 38
+    | Fld_variant [@dead "field_dbg_info.Fld_variant"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.mli", line 39, characters 2-12
+  field_dbg_info.Fld_cons is a variant case which is never constructed
+  <-- line 39
+    | Fld_cons [@dead "field_dbg_info.Fld_cons"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compat.mli", line 46, characters 2-38
+  set_field_dbg_info.Fld_record_extension_set is a variant case which is never constructed
+  <-- line 46
+    | Fld_record_extension_set of string [@dead "set_field_dbg_info.Fld_record_extension_set"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compile_env.ml", line 33, characters 2-15
+  ident_info.name is a record label never used to read a value
+  <-- line 33
+    name: string; [@dead "ident_info.name"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compile_env.ml", line 34, characters 2-29
+  ident_info.arity is a record label never used to read a value
+  <-- line 34
+    arity: Js_cmj_format.arity; [@dead "ident_info.arity"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compile_env.ml", line 35, characters 2-41
+  ident_info.persistent_closed_lambda is a record label never used to read a value
+  <-- line 35
+    persistent_closed_lambda: Lam.t option; [@dead "ident_info.persistent_closed_lambda"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_compile_external_call.ml", line 60, characters 2-24
+  arg_expression.Splice2 is a variant case which is never constructed
+  <-- line 60
+    | Splice2 of E.t * E.t [@dead "arg_expression.Splice2"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_module_ident.ml", line 25, characters 55-75
+  t.dynamic_import is a record label never used to read a value
+  <-- line 25
+  type t = J.module_id = {id: Ident.t; kind: Js_op.kind; dynamic_import: bool [@dead "t.dynamic_import"] }
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_module_ident.mli", line 31, characters 2-23
+  t.dynamic_import is a record label never used to read a value
+  <-- line 31
+    dynamic_import: bool; [@dead "t.dynamic_import"] 
+
+  Warning Dead Value With Side Effects
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.ml", line 493, characters 0-50
+  +lambda_to_string is never used and could have side effects
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/core/lam_print.mli", line 29, characters 0-38
+  +lambda_to_string is never used
+  <-- line 29
+  val lambda_to_string : Lam.t -> string [@@dead "+lambda_to_string"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.ml", line 166, characters 0-31
+  +make_unused is never used
+  <-- line 166
+  let make_unused () = create "_" [@@dead "+make_unused"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_ident.mli", line 38, characters 0-33
+  +make_unused is never used
+  <-- line 38
+  val make_unused : unit -> Ident.t [@@dead "+make_unused"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_namespace.ml", line 59, characters 0-352
+  +is_valid_npm_package_name is never used
+  <-- line 59
+    | _ -> false [@@dead "+is_valid_npm_package_name"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_namespace.ml", line 72, characters 0-598
+  +namespace_of_package_name is never used
+  <-- line 72
+    Ext_buffer.contents buf [@@dead "+namespace_of_package_name"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_namespace.mli", line 48, characters 0-46
+  +is_valid_npm_package_name is never used
+  <-- line 48
+  val is_valid_npm_package_name : string -> bool [@@dead "+is_valid_npm_package_name"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_namespace.mli", line 50, characters 0-48
+  +namespace_of_package_name is never used
+  <-- line 50
+  val namespace_of_package_name : string -> string [@@dead "+namespace_of_package_name"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pervasives.ml", line 69, characters 0-221
+  +int_of_string_aux is never used
+  <-- line 69
+      else -1 [@@dead "+int_of_string_aux"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pervasives.ml", line 77, characters 0-134
+  +nat_of_string_exn is never used
+  <-- line 77
+    if acc < 0 then invalid_arg s else acc [@@dead "+nat_of_string_exn"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pervasives.ml", line 82, characters 0-441
+  +parse_nat_of_string is never used
+  <-- line 82
+    !acc [@@dead "+parse_nat_of_string"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pervasives.mli", line 51, characters 0-37
+  +nat_of_string_exn is never used
+  <-- line 51
+  val nat_of_string_exn : string -> int [@@dead "+nat_of_string_exn"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/ext_pervasives.mli", line 53, characters 0-50
+  +parse_nat_of_string is never used
+  <-- line 53
+  val parse_nat_of_string : string -> int ref -> int [@@dead "+parse_nat_of_string"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_poly.mli", line 33, characters 0-31
+  +remove is never used
+  <-- line 33
+  val remove : 'a t -> 'a -> unit [@@dead "+remove"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_poly.mli", line 37, characters 0-39
+  +iter is never used
+  <-- line 37
+  val iter : 'a t -> ('a -> unit) -> unit [@@dead "+iter"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/hash_set_poly.mli", line 39, characters 0-24
+  +length is never used
+  <-- line 39
+  val length : 'a t -> int [@@dead "+length"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/map_gen.ml", line 72, characters 2-9
+  t.Empty is a variant case which is never constructed
+  <-- line 72
+    | Empty [@dead "t.Empty"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/map_gen.ml", line 73, characters 2-28
+  t.Leaf is a variant case which is never constructed
+  <-- line 73
+    | Leaf of {k: 'key; v: 'a} [@dead "t.Leaf"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/map_gen.ml", line 74, characters 2-70
+  t.Node is a variant case which is never constructed
+  <-- line 74
+    | Node of {l: ('key, 'a) t; k: 'key; v: 'a; r: ('key, 'a) t; h: int} [@dead "t.Node"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/map_gen.mli", line 2, characters 2-9
+  t.Empty is a variant case which is never constructed
+  <-- line 2
+    | Empty [@dead "t.Empty"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/map_gen.mli", line 3, characters 2-28
+  t.Leaf is a variant case which is never constructed
+  <-- line 3
+    | Leaf of {k: 'key; v: 'a} [@dead "t.Leaf"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/map_gen.mli", line 4, characters 2-70
+  t.Node is a variant case which is never constructed
+  <-- line 4
+    | Node of {l: ('key, 'a) t; k: 'key; v: 'a; r: ('key, 'a) t; h: int} [@dead "t.Node"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 313, characters 17-21
+  Color.setting.Auto is a variant case which is never constructed
+  <-- line 313
+    type setting = Auto [@dead "Color.setting.Auto"]  | Always | Never
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 313, characters 22-30
+  Color.setting.Always is a variant case which is never constructed
+  <-- line 313
+    type setting = Auto [@dead "Color.setting.Auto"]  | Always [@dead "Color.setting.Always"]  | Never
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/misc.ml", line 313, characters 31-38
+  Color.setting.Never is a variant case which is never constructed
+  <-- line 313
+    type setting = Auto [@dead "Color.setting.Auto"]  | Always [@dead "Color.setting.Always"]  | Never [@dead "Color.setting.Never"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/set_gen.ml", line 48, characters 2-9
+  t.Empty is a variant case which is never constructed
+  <-- line 48
+    | Empty [@dead "t.Empty"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/set_gen.ml", line 49, characters 2-14
+  t.Leaf is a variant case which is never constructed
+  <-- line 49
+    | Leaf of 'a [@dead "t.Leaf"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/set_gen.ml", line 50, characters 2-47
+  t.Node is a variant case which is never constructed
+  <-- line 50
+    | Node of {l: 'a t0; v: 'a; r: 'a t0; h: int} [@dead "t.Node"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/set_gen.mli", line 2, characters 2-9
+  t.Empty is a variant case which is never constructed
+  <-- line 2
+    | Empty [@dead "t.Empty"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/set_gen.mli", line 3, characters 2-14
+  t.Leaf is a variant case which is never constructed
+  <-- line 3
+    | Leaf of 'a [@dead "t.Leaf"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/set_gen.mli", line 4, characters 2-45
+  t.Node is a variant case which is never constructed
+  <-- line 4
+    | Node of {l: 'a t; v: 'a; r: 'a t; h: int} [@dead "t.Node"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/warnings.ml", line 468, characters 0-33
+  +reset_fatal is never used
+  <-- line 468
+  let reset_fatal () = nerrors := 0 [@@dead "+reset_fatal"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ext/warnings.mli", line 89, characters 0-30
+  +reset_fatal is never used
+  <-- line 89
+  val reset_fatal : unit -> unit [@@dead "+reset_fatal"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.ml", line 48, characters 2-74
+  Lid.+ignore_id is never used
+  <-- line 48
+    let ignore_id : t = Ldot (Lident Primitive_modules.pervasives, "ignore") [@@dead "Lid.+ignore_id"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/frontend/ast_literal.mli", line 38, characters 2-19
+  Lid.+ignore_id is never used
+  <-- line 38
+    val ignore_id : t [@@dead "Lid.+ignore_id"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 28, characters 0-182
+  +with_default_loc is never used
+  <-- line 28
+      raise exn [@@dead "+with_default_loc"] 
+
+  Warning Dead Module
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 39, characters 0-513
+  +ast_helper0.Const is a dead module as all its items are dead.
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 40, characters 2-52
+  Const.+integer is never used
+  <-- line 40
+    let integer ?suffix i = Pconst_integer (i, suffix) [@@dead "Const.+integer"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 41, characters 2-55
+  Const.+int is never used
+  <-- line 41
+    let int ?suffix i = integer ?suffix (string_of_int i) [@@dead "Const.+int"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 42, characters 2-67
+  Const.+int32 is never used
+  <-- line 42
+    let int32 ?(suffix = 'l') i = integer ~suffix (Int32.to_string i) [@@dead "Const.+int32"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 43, characters 2-67
+  Const.+int64 is never used
+  <-- line 43
+    let int64 ?(suffix = 'L') i = integer ~suffix (Int64.to_string i) [@@dead "Const.+int64"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 44, characters 2-75
+  Const.+nativeint is never used
+  <-- line 44
+    let nativeint ?(suffix = 'n') i = integer ~suffix (Nativeint.to_string i) [@@dead "Const.+nativeint"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 45, characters 2-48
+  Const.+float is never used
+  <-- line 45
+    let float ?suffix f = Pconst_float (f, suffix) [@@dead "Const.+float"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 46, characters 2-40
+  Const.+char is never used
+  <-- line 46
+    let char c = Pconst_char (Char.code c) [@@dead "Const.+char"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 47, characters 2-76
+  Const.+string is never used
+  <-- line 47
+    let string ?quotation_delimiter s = Pconst_string (s, quotation_delimiter) [@@dead "Const.+string"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 53, characters 2-67
+  Typ.+attr is never used
+  <-- line 53
+    let attr d a = {d with ptyp_attributes = d.ptyp_attributes @ [a]} [@@dead "Typ.+attr"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 67, characters 2-107
+  Typ.+force_poly is never used
+  <-- line 67
+      | _ -> poly ~loc:t.ptyp_loc [] t [@@dead "Typ.+force_poly"]  (* -> ghost? *)
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 72, characters 2-1986
+  Typ.+varify_constructors is never used
+  <-- line 72
+      loop t [@@dead "Typ.+varify_constructors"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 124, characters 2-67
+  Pat.+attr is never used
+  <-- line 124
+    let attr d a = {d with ppat_attributes = d.ppat_attributes @ [a]} [@@dead "Pat.+attr"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 139, characters 2-56
+  Pat.+lazy_ is never used
+  <-- line 139
+    let lazy_ ?loc ?attrs a = mk ?loc ?attrs (Ppat_lazy a) [@@dead "Pat.+lazy_"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 149, characters 2-67
+  Exp.+attr is never used
+  <-- line 149
+    let attr d a = {d with pexp_attributes = d.pexp_attributes @ [a]} [@@dead "Exp.+attr"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 155, characters 2-64
+  Exp.+function_ is never used
+  <-- line 155
+    let function_ ?loc ?attrs a = mk ?loc ?attrs (Pexp_function a) [@@dead "Exp.+function_"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 173, characters 2-54
+  Exp.+new_ is never used
+  <-- line 173
+    let new_ ?loc ?attrs a = mk ?loc ?attrs (Pexp_new a) [@@dead "Exp.+new_"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 174, characters 2-74
+  Exp.+setinstvar is never used
+  <-- line 174
+    let setinstvar ?loc ?attrs a b = mk ?loc ?attrs (Pexp_setinstvar (a, b)) [@@dead "Exp.+setinstvar"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 175, characters 2-63
+  Exp.+override is never used
+  <-- line 175
+    let override ?loc ?attrs a = mk ?loc ?attrs (Pexp_override a) [@@dead "Exp.+override"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 179, characters 2-56
+  Exp.+lazy_ is never used
+  <-- line 179
+    let lazy_ ?loc ?attrs a = mk ?loc ?attrs (Pexp_lazy a) [@@dead "Exp.+lazy_"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 180, characters 2-62
+  Exp.+poly is never used
+  <-- line 180
+    let poly ?loc ?attrs a b = mk ?loc ?attrs (Pexp_poly (a, b)) [@@dead "Exp.+poly"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 186, characters 2-74
+  Exp.+case is never used
+  <-- line 186
+    let case lhs ?guard rhs = {pc_lhs = lhs; pc_guard = guard; pc_rhs = rhs} [@@dead "Exp.+case"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 192, characters 2-67
+  Mty.+attr is never used
+  <-- line 192
+    let attr d a = {d with pmty_attributes = d.pmty_attributes @ [a]} [@@dead "Mty.+attr"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 206, characters 2-67
+  Mod.+attr is never used
+  <-- line 206
+    let attr d a = {d with pmod_attributes = d.pmod_attributes @ [a]} [@@dead "Mod.+attr"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 352, characters 2-219
+  Te.+decl is never used
+  <-- line 352
+      } [@@dead "Te.+decl"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_helper0.ml", line 361, characters 2-183
+  Te.+rebind is never used
+  <-- line 361
+      } [@@dead "Te.+rebind"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.ml", line 529, characters 0-136
+  +attribute_of_warning is never used
+  <-- line 529
+      PStr [Str.eval ~loc (Exp.constant (Pconst_string (s, None)))] ) [@@dead "+attribute_of_warning"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.ml", line 540, characters 0-81
+  +get_cookie is never used
+  <-- line 540
+    try Some (String_map.find k !cookies) with Not_found -> None [@@dead "+get_cookie"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.ml", line 543, characters 0-59
+  +set_cookie is never used
+  <-- line 543
+  let set_cookie k v = cookies := String_map.add k v !cookies [@@dead "+set_cookie"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.ml", line 547, characters 0-33
+  +tool_name is never used
+  <-- line 547
+  let tool_name () = !tool_name_ref [@@dead "+tool_name"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.ml", line 790, characters 0-80
+  +apply is never used
+  <-- line 790
+  let apply ~source ~target mapper = apply_lazy ~source ~target (fun () -> mapper) [@@dead "+apply"] 
+
+  Warning Dead Value With Side Effects
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.ml", line 813, characters 0-55
+  +register_function is never used and could have side effects
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.ml", line 814, characters 0-47
+  +register is never used
+  <-- line 814
+  let register name f = !register_function name f [@@dead "+register"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.mli", line 101, characters 0-30
+  +tool_name is never used
+  <-- line 101
+  val tool_name : unit -> string [@@dead "+tool_name"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.mli", line 110, characters 0-60
+  +apply is never used
+  <-- line 110
+  val apply : source:string -> target:string -> mapper -> unit [@@dead "+apply"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.mli", line 116, characters 0-46
+  +run_main is never used
+  <-- line 116
+  val run_main : (string list -> mapper) -> unit [@@dead "+run_main"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.mli", line 125, characters 0-71
+  +register_function is never used
+  <-- line 125
+  val register_function : (string -> (string list -> mapper) -> unit) ref [@@dead "+register_function"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.mli", line 127, characters 0-56
+  +register is never used
+  <-- line 127
+  val register : string -> (string list -> mapper) -> unit [@@dead "+register"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.mli", line 146, characters 0-50
+  +map_opt is never used
+  <-- line 146
+  val map_opt : ('a -> 'b) -> 'a option -> 'b option [@@dead "+map_opt"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.mli", line 148, characters 0-52
+  +extension_of_error is never used
+  <-- line 148
+  val extension_of_error : Location.error -> extension [@@dead "+extension_of_error"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.mli", line 153, characters 0-60
+  +attribute_of_warning is never used
+  <-- line 153
+  val attribute_of_warning : Location.t -> string -> attribute [@@dead "+attribute_of_warning"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.mli", line 187, characters 0-55
+  +set_cookie is never used
+  <-- line 187
+  val set_cookie : string -> Parsetree.expression -> unit [@@dead "+set_cookie"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/ast_mapper.mli", line 188, characters 0-54
+  +get_cookie is never used
+  <-- line 188
+  val get_cookie : string -> Parsetree.expression option [@@dead "+get_cookie"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.ml", line 718, characters 0-434
+  +reset_cache_toplevel is never used
+  <-- line 718
+    Hashtbl.clear prefixed_sg [@@dead "+reset_cache_toplevel"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 171, characters 0-39
+  +reset_cache_toplevel is never used
+  <-- line 171
+  val reset_cache_toplevel : unit -> unit [@@dead "+reset_cache_toplevel"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 288, characters 4-21
+  t.filename is a record label never used to read a value
+  <-- line 288
+      filename: string; [@dead "t.filename"]   (** Name of the file containing the signature. *)
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/env.mli", line 289, characters 4-30
+  t.cmi is a record label never used to read a value
+  <-- line 289
+      cmi: Cmi_format.cmi_infos; [@dead "t.cmi"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/experimental_features.ml", line 23, characters 0-52
+  +reset is never used
+  <-- line 23
+  let reset () = enabled_features := Feature_set.empty [@@dead "+reset"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/experimental_features.mli", line 6, characters 0-24
+  +reset is never used
+  <-- line 6
+  val reset : unit -> unit [@@dead "+reset"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/lambda.ml", line 342, characters 43-53
+  let_kind.Variable is a variant case which is never constructed
+  <-- line 342
+  type let_kind = Strict | Alias | StrictOpt | Variable [@dead "let_kind.Variable"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/lambda.mli", line 299, characters 43-53
+  let_kind.Variable is a variant case which is never constructed
+  <-- line 299
+  type let_kind = Strict | Alias | StrictOpt | Variable [@dead "let_kind.Variable"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 47, characters 0-64
+  +warning_printer is never used
+  <-- line 47
+  val warning_printer : (t -> formatter -> Warnings.t -> unit) ref [@@dead "+warning_printer"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 50, characters 0-42
+  +formatter_for_warnings is never used
+  <-- line 50
+  val formatter_for_warnings : formatter ref [@@dead "+formatter_for_warnings"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 52, characters 0-66
+  +default_warning_printer is never used
+  <-- line 52
+  val default_warning_printer : t -> formatter -> Warnings.t -> unit [@@dead "+default_warning_printer"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 110, characters 0-118
+  +error_reporter is never used
+  <-- line 110
+    ref [@@dead "+error_reporter"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/location.mli", line 119, characters 0-118
+  +default_error_reporter is never used
+  <-- line 119
+    unit [@@dead "+default_error_reporter"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parsetree0.ml", line 98, characters 2-22
+  core_type_desc.Ptyp_class is a variant case which is never constructed
+  <-- line 98
+    | Ptyp_class of unit [@dead "core_type_desc.Ptyp_class"]  (* dummy AST node *)
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parsetree0.ml", line 302, characters 2-23
+  expression_desc.Pexp_object is a variant case which is never constructed
+  <-- line 302
+    | Pexp_object of unit [@dead "expression_desc.Pexp_object"]  (* dummy AST node *)
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parsetree0.ml", line 314, characters 2-20
+  expression_desc.Pexp_unreachable is a variant case which is never constructed
+  <-- line 314
+    | Pexp_unreachable [@dead "expression_desc.Pexp_unreachable"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parsetree0.ml", line 474, characters 2-22
+  signature_item_desc.Psig_class is a variant case which is never constructed
+  <-- line 474
+    | Psig_class of unit [@dead "signature_item_desc.Psig_class"]  (* Dummy AST node *)
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parsetree0.ml", line 475, characters 2-27
+  signature_item_desc.Psig_class_type is a variant case which is never constructed
+  <-- line 475
+    | Psig_class_type of unit [@dead "signature_item_desc.Psig_class_type"]  (* Dummy AST node *)
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parsetree0.ml", line 576, characters 2-22
+  structure_item_desc.Pstr_class is a variant case which is never constructed
+  <-- line 576
+    | Pstr_class of unit [@dead "structure_item_desc.Pstr_class"]  (* Dummy AST node *)
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/parsetree0.ml", line 577, characters 2-27
+  structure_item_desc.Pstr_class_type is a variant case which is never constructed
+  <-- line 577
+    | Pstr_class_type of unit [@dead "structure_item_desc.Pstr_class_type"]  (* Dummy AST node *)
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree.ml", line 281, characters 2-23
+  open_description.open_loc is a record label never used to read a value
+  <-- line 281
+    open_loc: Location.t; [@dead "open_description.open_loc"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree.ml", line 327, characters 2-31
+  package_type.pack_type is a record label never used to read a value
+  <-- line 327
+    pack_type: Types.module_type; [@dead "package_type.pack_type"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree.ml", line 328, characters 2-28
+  package_type.pack_txt is a record label never used to read a value
+  <-- line 328
+    pack_txt: Longident.t loc; [@dead "package_type.pack_txt"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree.ml", line 393, characters 2-29
+  type_extension.tyext_txt is a record label never used to read a value
+  <-- line 393
+    tyext_txt: Longident.t loc; [@dead "type_extension.tyext_txt"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree.ml", line 402, characters 2-23
+  extension_constructor.ext_name is a record label never used to read a value
+  <-- line 402
+    ext_name: string loc; [@dead "extension_constructor.ext_name"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree.mli", line 387, characters 2-23
+  open_description.open_loc is a record label never used to read a value
+  <-- line 387
+    open_loc: Location.t; [@dead "open_description.open_loc"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree.mli", line 433, characters 2-31
+  package_type.pack_type is a record label never used to read a value
+  <-- line 433
+    pack_type: Types.module_type; [@dead "package_type.pack_type"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree.mli", line 434, characters 2-28
+  package_type.pack_txt is a record label never used to read a value
+  <-- line 434
+    pack_txt: Longident.t loc; [@dead "package_type.pack_txt"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree.mli", line 499, characters 2-29
+  type_extension.tyext_txt is a record label never used to read a value
+  <-- line 499
+    tyext_txt: Longident.t loc; [@dead "type_extension.tyext_txt"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree.mli", line 508, characters 2-23
+  extension_constructor.ext_name is a record label never used to read a value
+  <-- line 508
+    ext_name: string loc; [@dead "extension_constructor.ext_name"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree_iter.ml", line 72, characters 2-40
+  Make_iterator.+iter_structure is never used
+  <-- line 72
+    val iter_structure : structure -> unit [@@dead "Make_iterator.+iter_structure"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree_iter.ml", line 73, characters 2-40
+  Make_iterator.+iter_signature is never used
+  <-- line 73
+    val iter_signature : signature -> unit [@@dead "Make_iterator.+iter_signature"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree_iter.ml", line 74, characters 2-50
+  Make_iterator.+iter_structure_item is never used
+  <-- line 74
+    val iter_structure_item : structure_item -> unit [@@dead "Make_iterator.+iter_structure_item"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree_iter.ml", line 75, characters 2-50
+  Make_iterator.+iter_signature_item is never used
+  <-- line 75
+    val iter_signature_item : signature_item -> unit [@@dead "Make_iterator.+iter_signature_item"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree_iter.ml", line 77, characters 2-44
+  Make_iterator.+iter_module_type is never used
+  <-- line 77
+    val iter_module_type : module_type -> unit [@@dead "Make_iterator.+iter_module_type"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree_iter.ml", line 78, characters 2-36
+  Make_iterator.+iter_pattern is never used
+  <-- line 78
+    val iter_pattern : pattern -> unit [@@dead "Make_iterator.+iter_pattern"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree_iter.mli", line 64, characters 2-40
+  Make_iterator.+iter_structure is never used
+  <-- line 64
+    val iter_structure : structure -> unit [@@dead "Make_iterator.+iter_structure"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree_iter.mli", line 65, characters 2-40
+  Make_iterator.+iter_signature is never used
+  <-- line 65
+    val iter_signature : signature -> unit [@@dead "Make_iterator.+iter_signature"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree_iter.mli", line 66, characters 2-50
+  Make_iterator.+iter_structure_item is never used
+  <-- line 66
+    val iter_structure_item : structure_item -> unit [@@dead "Make_iterator.+iter_structure_item"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree_iter.mli", line 67, characters 2-50
+  Make_iterator.+iter_signature_item is never used
+  <-- line 67
+    val iter_signature_item : signature_item -> unit [@@dead "Make_iterator.+iter_signature_item"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree_iter.mli", line 69, characters 2-44
+  Make_iterator.+iter_module_type is never used
+  <-- line 69
+    val iter_module_type : module_type -> unit [@@dead "Make_iterator.+iter_module_type"] 
+
+  Warning Dead Value
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/typedtree_iter.mli", line 70, characters 2-36
+  Make_iterator.+iter_pattern is never used
+  <-- line 70
+    val iter_pattern : pattern -> unit [@@dead "Make_iterator.+iter_pattern"] 
+
+  Warning Dead Type
+  File "/home/jono/.codex/worktrees/2166/rescript-compiler/compiler/ml/types.ml", line 99, characters 29-39
+  Variance.f.May_weak is a variant case which is never constructed
+  <-- line 99
+    type f = May_pos | May_neg | May_weak [@dead "Variance.f.May_weak"]  | Inj | Pos | Neg | Inv
+  
+  Analysis reported 387 issues (Warning Dead Module:3, Warning Dead Type:80, Warning Dead Value:83, Warning Dead Value With Side Effects:2, Warning Redundant Optional Argument:193, Warning Unused Argument:26)

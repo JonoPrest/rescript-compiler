@@ -18,8 +18,6 @@ open Location
 open Longident
 open Parsetree
 
-let pp_deps = ref []
-
 module String_set = Set.Make (struct
   type t = string
   let compare = compare
@@ -36,8 +34,6 @@ let bound = Node (String_set.empty, String_map.empty)
 let get_map (Node (_s, m)) = m
 let make_leaf s = Node (String_set.singleton s, String_map.empty)
 let make_node m = Node (String_set.empty, m)
-let rec weaken_map s (Node (s0, m0)) =
-  Node (String_set.union s s0, String_map.map (weaken_map s) m0)
 let rec collect_free (Node (s, m)) =
   String_map.fold (fun _ n -> String_set.union (collect_free n)) m s
 
@@ -518,5 +514,3 @@ and add_struct_item (bv, m) item : _ String_map.t * _ String_map.t =
 and add_implementation bv l =
   if !Clflags.transparent_modules then ignore (add_structure_binding bv l)
   else ignore (add_structure bv l)
-
-and add_implementation_binding bv l = snd (add_structure_binding bv l)

@@ -26,8 +26,6 @@ type byte = Single of int | Cont of int | Leading of int * int | Invalid
 
 val classify : char -> byte
 
-val follow : string -> int -> int -> int -> int * int
-
 val next : string -> remaining:int -> int -> int
 (** 
    return [-1] if failed 
@@ -35,6 +33,6 @@ val next : string -> remaining:int -> int -> int
 
 exception Invalid_utf8 of string
 
-val decode_utf8_string : string -> int list
+val decode_utf8_string : string -> int list [@@live]
 
 val encode_codepoint : int -> string

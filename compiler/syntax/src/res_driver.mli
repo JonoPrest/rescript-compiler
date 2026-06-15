@@ -49,21 +49,9 @@ type print_engine = {
     comments:Res_comment.t list ->
     Parsetree.structure ->
     unit;
-  print_implementation_from_source:
-    width:int ->
-    source:string ->
-    comments:Res_comment.t list ->
-    Parsetree.structure ->
-    unit;
   print_interface:
     width:int ->
     filename:string ->
-    comments:Res_comment.t list ->
-    Parsetree.signature ->
-    unit;
-  print_interface_from_source:
-    width:int ->
-    source:string ->
     comments:Res_comment.t list ->
     Parsetree.signature ->
     unit;
@@ -75,9 +63,9 @@ val print_engine : print_engine
 
 (* ReScript implementation parsing compatible with ocaml pparse driver. Used by the compiler. *)
 val parse_implementation :
-  ?ignore_parse_errors:bool -> string -> Parsetree.structure
+  ignore_parse_errors:bool -> string -> Parsetree.structure
 [@@live] [@@raises Location.Error]
 
 (* ReScript interface parsing compatible with ocaml pparse driver. Used by the compiler *)
-val parse_interface : ?ignore_parse_errors:bool -> string -> Parsetree.signature
+val parse_interface : ignore_parse_errors:bool -> string -> Parsetree.signature
 [@@live] [@@raises Location.Error]

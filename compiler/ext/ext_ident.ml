@@ -38,8 +38,6 @@ let is_js (i : Ident.t) = i.flags land js_flag <> 0
 
 let is_js_or_global (i : Ident.t) = i.flags land (8 lor 1) <> 0
 
-let is_js_object (i : Ident.t) = i.flags land js_object_flag <> 0
-
 let make_js_object (i : Ident.t) = i.flags <- i.flags lor js_object_flag
 
 (* It's a js function hard coded by js api, so when printing,
@@ -51,8 +49,6 @@ let create = Ident.create
 
 (* FIXME: no need for `$' operator *)
 let create_tmp ?(name = Literals.tmp) () = create name
-
-let js_module_table : Ident.t Hash_string.t = Hash_string.create 31
 
 (* This is for a js exeternal module, we can change it when printing
    for example
@@ -81,7 +77,7 @@ let js_module_table : Ident.t Hash_string.t = Hash_string.create 31
     | v -> (* v *) Ident.rename v
 *)
 
-let[@inline] convert ?(op = false) (c : char) : string =
+let[@inline] convert_char ~op (c : char) : string =
   match c with
   | '*' -> "$star"
   | '\'' -> "$p"
@@ -146,7 +142,7 @@ let name_mangle name =
     for j = 0 to len - 1 do
       let c = String.unsafe_get name j in
       if no_escape c then Ext_buffer.add_char buffer c
-      else Ext_buffer.add_string buffer (convert ~op:(i = 0) c)
+      else Ext_buffer.add_string buffer (convert_char ~op:(i = 0) c)
     done;
     Ext_buffer.contents buffer
 
@@ -168,8 +164,6 @@ let convert (name : string) =
    - other solution: use lazy values
 *)
 let make_unused () = create "_"
-
-let reset () = Hash_string.clear js_module_table
 
 (* Has to be total order, [x < y]
    and [x > y] should be consistent

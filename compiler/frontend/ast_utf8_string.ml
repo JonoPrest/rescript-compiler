@@ -186,6 +186,7 @@ let transform_test s =
   let buf = Buffer.create (s_len * 2) in
   check_and_transform 0 buf s 0 s_len;
   Buffer.contents buf
+[@@live]
 
 let transform loc s =
   let s_len = String.length s in

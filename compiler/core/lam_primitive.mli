@@ -24,13 +24,6 @@
 
 type ident = Ident.t
 
-type record_representation =
-  | Record_regular
-  | Record_inlined of {tag: int; name: string; num_nonconsts: int}
-    (* Inlined record *)
-  | Record_extension
-(* Inlined record under extension *)
-
 type t =
   | Pmakeblock of int * Lam_tag_info.t * Asttypes.mutable_flag
   | Pfield of int * Lambda.field_dbg_info
@@ -144,7 +137,6 @@ type t =
   | Pisout of int
   | Pjscomp of Lam_compat.comparison
   | Pjs_apply (*[f;arg0;arg1; arg2; ... argN]*)
-  | Pjs_runtime_apply (* [f; [...]] *)
   | Pdebugger
   | Pjs_unsafe_downgrade of {name: string; setter: bool}
   | Pinit_mod
@@ -156,7 +148,6 @@ type t =
   | Pnull_to_opt
   | Pnull_undefined_to_opt
   | Pis_null
-  | Pis_undefined
   | Pis_null_undefined
   | Pimport
   | Ptypeof

@@ -17,9 +17,6 @@
 
 open Asttypes
 open Types
-open Format
-
-val is_nonexpansive : Typedtree.expression -> bool
 
 val type_binding :
   context:Error_message_utils.type_clash_context option ->
@@ -33,26 +30,11 @@ val type_expression :
   Env.t ->
   Parsetree.expression ->
   Typedtree.expression
-val check_partial :
-  ?lev:int ->
-  ?partial_match_warning_hint:string ->
-  Env.t ->
-  type_expr ->
-  Location.t ->
-  Typedtree.case list ->
-  Typedtree.partial
 val type_exp :
   Env.t ->
   Parsetree.expression ->
   context:Error_message_utils.type_clash_context option ->
   Typedtree.expression
-val type_approx : Env.t -> Parsetree.expression -> type_expr
-
-val option_some : Typedtree.expression -> Typedtree.expression
-val option_none : type_expr -> Location.t -> Typedtree.expression
-val extract_option_type : Env.t -> type_expr -> type_expr
-val iter_pattern : (Typedtree.pattern -> unit) -> Typedtree.pattern -> unit
-val generalizable : int -> type_expr -> bool
 
 val id_of_pattern : Typedtree.pattern -> Ident.t option
 val name_pattern : string -> Typedtree.case list -> Ident.t
@@ -133,20 +115,12 @@ type error =
 exception Error of Location.t * Env.t * error
 exception Error_forward of Location.error
 
-val report_error : Env.t -> Location.t -> formatter -> error -> unit
-(* Deprecated.  Use Location.{error_of_exn, report_error}. *)
-
 (* Forward declaration, to be filled in by Typemod.type_module *)
 val type_module : (Env.t -> Parsetree.module_expr -> Typedtree.module_expr) ref
 
 (* Forward declaration, to be filled in by Typemod.type_open *)
 val type_open :
-  (?used_slot:bool ref ->
-  override_flag ->
-  Env.t ->
-  Location.t ->
-  Longident.t loc ->
-  Path.t * Env.t)
+  (override_flag -> Env.t -> Location.t -> Longident.t loc -> Path.t * Env.t)
   ref
 
 (* Forward declaration, to be filled in by Typemod.type_package *)
@@ -157,5 +131,3 @@ val type_package :
   Longident.t list ->
   Typedtree.module_expr * type_expr list)
   ref
-
-val constant : Parsetree.constant -> (Asttypes.constant, error) result

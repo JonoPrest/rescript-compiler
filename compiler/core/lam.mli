@@ -91,8 +91,6 @@ and t = private
    we should use record for trivial debugger info
 *)
 
-val inner_map : t -> (t -> t) -> t
-
 val handle_bs_non_obj_ffi :
   ?transformed_jsx:bool ->
   External_arg_spec.params ->
@@ -134,9 +132,6 @@ val switch : t -> lambda_switch -> t
 
 val stringswitch : t -> (string * t) list -> t option -> t
 (** constant folding*)
-
-(* val true_ : t  *)
-val false_ : t
 
 val unit : t
 

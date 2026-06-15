@@ -38,5 +38,5 @@ val graph : Vec_int.t array -> Int_vec_vec.t
     [Array.length] of the input 
 *)
 
-val graph_check : node array -> int * int list
+val graph_check : node array -> int * int list [@@live]
 (** Used for unit test *)

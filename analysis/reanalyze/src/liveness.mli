@@ -30,9 +30,6 @@ val compute_forward :
     decl_pos -> (value_targets, type_targets).
     Pass [~debug:true] for verbose output. *)
 
-val is_live_forward : live:live_reason Pos_hash.t -> Lexing.position -> bool
-(** Check if a position is live according to forward-computed liveness *)
-
 val get_live_reason :
   live:live_reason Pos_hash.t -> Lexing.position -> live_reason option
 (** Get the reason why a position is live, if it is *)

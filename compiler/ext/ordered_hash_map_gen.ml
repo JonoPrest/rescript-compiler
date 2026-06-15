@@ -153,8 +153,3 @@ let fold h init f =
   !accu
 
 let elements set = fold set [] (fun k _ _ acc -> k :: acc)
-
-let rec bucket_length acc (x : _ bucket) =
-  match x with
-  | Empty -> 0
-  | Cons rhs -> bucket_length (acc + 1) rhs.next

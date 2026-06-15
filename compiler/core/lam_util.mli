@@ -58,5 +58,3 @@ val dump : string -> Lam.t -> unit
 (** [dump] when {!Js_config.is_same_file}*)
 
 val not_function : Lam.t -> bool
-
-val is_function : Lam.t -> bool

@@ -219,19 +219,15 @@ let option :
 
 let paren :
     'a.
-    ?first:space_formatter ->
-    ?last:space_formatter ->
     bool ->
     (Format.formatter -> 'a -> unit) ->
     Format.formatter ->
     'a ->
     unit =
- fun ?(first = ("" : _ format6)) ?(last = ("" : _ format6)) b fu f x ->
+ fun b fu f x ->
   if b then (
     pp f "(";
-    pp f first;
     fu f x;
-    pp f last;
     pp f ")")
   else fu f x
 
@@ -1354,21 +1350,5 @@ and label_x_expression_param ctxt f (l, e) =
     if Some lbl = simple_name then pp f "~%s" lbl
     else pp f "~%s:%a" lbl (simple_expr ctxt) e
 
-let expression f x = pp f "@[%a@]" (expression reset_ctxt) x
-
-let string_of_expression x =
-  ignore (flush_str_formatter ());
-  let f = str_formatter in
-  expression f x;
-  flush_str_formatter ()
-
-let string_of_structure x =
-  ignore (flush_str_formatter ());
-  let f = str_formatter in
-  structure reset_ctxt f x;
-  flush_str_formatter ()
-
-let core_type = core_type reset_ctxt
-let pattern = pattern reset_ctxt
 let signature = signature reset_ctxt
 let structure = structure reset_ctxt

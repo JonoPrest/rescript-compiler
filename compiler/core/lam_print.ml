@@ -50,7 +50,6 @@ let primitive ppf (prim : Lam_primitive.t) =
   | Pinit_mod -> fprintf ppf "init_mod!"
   | Pupdate_mod -> fprintf ppf "update_mod!"
   | Pjs_apply -> fprintf ppf "#apply"
-  | Pjs_runtime_apply -> fprintf ppf "#runtime_apply"
   (* Debug-only dump, exercised solely under -drawlambda/-dlambda. *)
   | Ptagged_template -> fprintf ppf "#tagged_template" [@coverage off]
   | Pjs_unsafe_downgrade {name; setter} ->
@@ -70,7 +69,6 @@ let primitive ppf (prim : Lam_primitive.t) =
   | Psome_not_nest -> fprintf ppf "[some-not-nest]"
   | Pval_from_option -> fprintf ppf "[?unbox]"
   | Pval_from_option_not_nest -> fprintf ppf "[?unbox-not-nest]"
-  | Pis_undefined -> fprintf ppf "[?undefined]"
   | Pis_null_undefined -> fprintf ppf "[?null?undefined]"
   | Pimport -> fprintf ppf "[import]"
   | Pmakeblock (tag, _, Immutable) -> fprintf ppf "makeblock %i" tag
@@ -493,5 +491,3 @@ let serialize (filename : string) (lam : Lam.t) : unit =
   Format.set_margin old
 
 let lambda_to_string = Format.asprintf "%a" lambda
-
-let primitive_to_string = Format.asprintf "%a" primitive

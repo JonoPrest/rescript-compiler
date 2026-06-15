@@ -47,7 +47,7 @@ let newty2 level desc =
   incr new_id;
   {desc; level; id = !new_id}
 let newgenty desc = newty2 generic_level desc
-let newgenvar ?name () = newgenty (Tvar name)
+let newgenvar () = newgenty (Tvar None)
 (*
 let newmarkedvar level =
   incr new_id; { desc = Tvar; level = pivot_level - level; id = !new_id }
@@ -409,12 +409,6 @@ let copy_row f fixed row keep more =
     row_name = name;
   }
 
-let rec copy_kind = function
-  | Fvar {contents = Some k} -> copy_kind k
-  | Fvar _ -> Fvar (ref None)
-  | Fpresent -> Fpresent
-  | Fabsent -> assert false
-
 let copy_commu c = if commu_repr c = Cok then Cok else Clink (ref Cunknown)
 
 (* Since univars may be used as row variables, we need to do some
@@ -485,8 +479,6 @@ let rec mark_type ty =
 let mark_type_node ty =
   let ty = repr ty in
   if ty.level >= lowest_level then ty.level <- pivot_level - ty.level
-
-let mark_type_params ty = iter_type_expr mark_type ty
 
 let type_iterators =
   let it_type_expr it ty =

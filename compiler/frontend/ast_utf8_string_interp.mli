@@ -34,10 +34,19 @@ type error = private
   | Unmatched_paren
   | Invalid_syntax_of_var of string
 
-type pos = {lnum: int; offset: int; byte_bol: int}
+type pos = {
+  lnum: int; [@live]
+  offset: int; [@live]
+  byte_bol: int; [@live]
+}
 (** Note the position is about code point *)
 
-type segment = {start: pos; finish: pos; kind: kind; content: string}
+type segment = {
+  start: pos; [@live]
+  finish: pos; [@live]
+  kind: kind; [@live]
+  content: string; [@live]
+}
 type segments = segment list
 
 type cxt = {
@@ -53,10 +62,9 @@ type cxt = {
 
 type exn += Error of pos * pos * error
 
-val empty_segment : segment -> bool
-val transform_test : string -> segment list
+val empty_segment : segment -> bool [@@live]
+val transform_test : string -> segment list [@@live]
 val transform_exp :
   Parsetree.expression -> string -> string -> Parsetree.expression
 val transform_pat : Parsetree.pattern -> string -> string -> Parsetree.pattern
-val is_unicode_string : string -> bool
 val parse_processed_delim : string option -> External_arg_spec.delim option

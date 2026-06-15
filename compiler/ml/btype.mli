@@ -34,7 +34,7 @@ val newty2 : int -> type_desc -> type_expr
 val newgenty : type_desc -> type_expr
 (* Create a generic type *)
 
-val newgenvar : ?name:string -> unit -> type_expr
+val newgenvar : unit -> type_expr
 (* Return a fresh generic variable *)
 
 (* Use Tsubst instead
@@ -131,7 +131,6 @@ val copy_type_desc :
 
 val copy_row :
   (type_expr -> type_expr) -> bool -> row_desc -> bool -> type_expr -> row_desc
-val copy_kind : field_kind -> field_kind
 
 val save_desc : type_expr -> type_desc -> unit
 (* Save a type description *)
@@ -153,9 +152,6 @@ val mark_type : type_expr -> unit
 
 val mark_type_node : type_expr -> unit
 (* Mark a type node (but not its sons) *)
-
-val mark_type_params : type_expr -> unit
-(* Mark the sons of a type node *)
 
 val unmark_type : type_expr -> unit
 val unmark_type_decl : type_declaration -> unit

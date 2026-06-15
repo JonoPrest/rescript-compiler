@@ -40,23 +40,14 @@ let termination () = run_config.termination <- true
 
 let transitive b = run_config.transitive <- b
 
-type snapshot = {
-  dce: bool;
-  exception_: bool;
-  suppress: string list;
-  termination: bool;
-  transitive: bool;
-  unsuppress: string list;
-}
+type snapshot = bool * bool * string list * bool * bool * string list
 
 let snapshot () =
-  {
-    dce = run_config.dce;
-    exception_ = run_config.exception_;
-    suppress = run_config.suppress;
-    termination = run_config.termination;
-    transitive = run_config.transitive;
-    unsuppress = run_config.unsuppress;
-  }
+  ( run_config.dce,
+    run_config.exception_,
+    run_config.suppress,
+    run_config.termination,
+    run_config.transitive,
+    run_config.unsuppress )
 
 let equal_snapshot (a : snapshot) (b : snapshot) = a = b

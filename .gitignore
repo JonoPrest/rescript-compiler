@@ -108,3 +108,6 @@ package.tgz
 
 # AI Agents
 .claude/settings.local.json
+
+# reanalyze DCE report output
+_dce/

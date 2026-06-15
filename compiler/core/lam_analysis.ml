@@ -45,7 +45,7 @@ let rec no_side_effects (lam : Lam.t) : bool =
       | [_; Lconst cst] -> not_zero_constant cst
       | _ -> false)
     | Pcreate_extension _ | Ptypeof | Pis_null | Pis_not_none | Psome
-    | Psome_not_nest | Pis_undefined | Pis_null_undefined | Pnull_to_opt
+    | Psome_not_nest | Pis_null_undefined | Pnull_to_opt
     | Pnull_undefined_to_opt | Pjs_fn_make _ | Pjs_fn_make_unit
     | Pjs_object_create _ | Pimport
     (* TODO: check *)
@@ -93,8 +93,8 @@ let rec no_side_effects (lam : Lam.t) : bool =
       true
     (* A tagged template invokes its tag at runtime, so it always has side
        effects. *)
-    | Ptagged_template | Pjs_apply | Pjs_runtime_apply | Pjs_call _ | Pinit_mod
-    | Pupdate_mod | Pjs_unsafe_downgrade _ | Pdebugger | Pjs_fn_method
+    | Ptagged_template | Pjs_apply | Pjs_call _ | Pinit_mod | Pupdate_mod
+    | Pjs_unsafe_downgrade _ | Pdebugger | Pjs_fn_method
     (* Await promise *)
     | Pawait
     (* TODO *)

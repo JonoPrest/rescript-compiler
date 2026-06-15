@@ -28,14 +28,6 @@ let is_dir_sep_win_cygwin c = c = '/' || c = '\\' || c = ':'
 
 let is_dir_sep = if Sys.unix then is_dir_sep_unix else is_dir_sep_win_cygwin
 
-let chop_extension_maybe name =
-  let rec search_dot i =
-    if i < 0 || is_dir_sep (String.unsafe_get name i) then name
-    else if String.unsafe_get name i = '.' then String.sub name 0 i
-    else search_dot (i - 1)
-  in
-  search_dot (String.length name - 1)
-
 let get_extension_maybe name =
   let name_len = String.length name in
   let rec search_dot name i name_len =
@@ -55,6 +47,7 @@ let chop_all_extensions_maybe name =
     else search_dot (i - 1) last
   in
   search_dot (String.length name - 1) None
+[@@live]
 
 let new_extension name (ext : string) =
   let rec search_dot name i ext =
@@ -86,7 +79,10 @@ let module_name name =
   let name_len = String.length name in
   search_dot (name_len - 1) name
 
-type module_info = {module_name: string; case: bool}
+type module_info = {
+  module_name: string; [@live]
+  case: bool; [@live]
+}
 
 let rec valid_module_name_aux name off len =
   if off >= len then true
@@ -130,3 +126,4 @@ let as_module ~basename =
   in
   let name_len = String.length basename in
   search_dot (name_len - 1) basename name_len
+[@@live]

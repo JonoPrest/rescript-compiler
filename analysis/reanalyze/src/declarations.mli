@@ -30,13 +30,8 @@ val merge_all : builder list -> t
 val builder_to_list : builder -> (Lexing.position * Decl.t) list
 (** Extract all declarations as a list for reactive merge *)
 
-val create_from_hashtbl : Decl.t Pos_hash.t -> t
-(** Create from hashtable for reactive merge *)
-
 (** {2 Read-only API for t - for solver} *)
 
 val find_opt : t -> Lexing.position -> Decl.t option
 val fold : (Lexing.position -> Decl.t -> 'a -> 'a) -> t -> 'a -> 'a
 val iter : (Lexing.position -> Decl.t -> unit) -> t -> unit
-
-val length : t -> int

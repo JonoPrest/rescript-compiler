@@ -67,12 +67,8 @@ let after_parsing_sig ppf outputprefix ast =
         initial_env sg;
       process_with_gentype (outputprefix ^ ".cmti"))
 
-let interface ~parser ppf ?outputprefix fname =
-  let outputprefix =
-    match outputprefix with
-    | None -> Config_util.output_prefix fname
-    | Some x -> x
-  in
+let interface ~parser ppf fname =
+  let outputprefix = Config_util.output_prefix fname in
   Res_compmisc.init_path ();
   parser fname
   |> Cmd_ppx_apply.apply_rewriters ~restore:false ~tool_name:Js_config.tool_name
@@ -154,12 +150,8 @@ let after_parsing_impl ppf outputprefix (ast : Parsetree.structure) =
            Lam_compile_main.lambda_as_module js_program outputprefix);
       process_with_gentype (outputprefix ^ ".cmt"))
 
-let implementation ~parser ppf ?outputprefix fname =
-  let outputprefix =
-    match outputprefix with
-    | None -> Config_util.output_prefix fname
-    | Some x -> x
-  in
+let implementation ~parser ppf fname =
+  let outputprefix = Config_util.output_prefix fname in
   Res_compmisc.init_path ();
   parser fname
   |> Cmd_ppx_apply.apply_rewriters ~restore:false ~tool_name:Js_config.tool_name

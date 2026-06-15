@@ -35,8 +35,6 @@ let merge_all (builders : builder list) : t =
 let builder_to_list (builder : builder) : (Lexing.position * Decl.t) list =
   Pos_hash.fold (fun pos decl acc -> (pos, decl) :: acc) builder []
 
-let create_from_hashtbl (h : Decl.t Pos_hash.t) : t = h
-
 (* ===== Read-only API ===== *)
 
 let find_opt (t : t) pos = Pos_hash.find_opt t pos
@@ -44,5 +42,3 @@ let find_opt (t : t) pos = Pos_hash.find_opt t pos
 let fold f (t : t) init = Pos_hash.fold f t init
 
 let iter f (t : t) = Pos_hash.iter f t
-
-let length (t : t) = Pos_hash.length t

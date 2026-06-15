@@ -269,23 +269,6 @@ let rec join l v d r =
       else if rh > lh + 2 then bal (join l v d xr.l) xr.k xr.v xr.r
       else unsafe_node v d l r (calc_height lh rh))
 
-(* Merge two trees l and r into one.
-   All elements of l must precede the elements of r.
-   No assumption on the heights of l and r. *)
-
-let concat t1 t2 =
-  match (t1, t2) with
-  | Empty, t -> t
-  | t, Empty -> t
-  | _, _ ->
-    let x, d = min_binding_exn t2 in
-    join t1 x d (remove_min_binding t2)
-
-let concat_or_join t1 v d t2 =
-  match d with
-  | Some d -> join t1 v d t2
-  | None -> concat t1 t2
-
 module type S = sig
   type key
 

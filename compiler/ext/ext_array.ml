@@ -35,18 +35,6 @@ let reverse_range a i len =
       a.!(i + len - 1 - k) <- t
     done
 
-let reverse_in_place a = reverse_range a 0 (Array.length a)
-
-let reverse a =
-  let b_len = Array.length a in
-  if b_len = 0 then [||]
-  else
-    let b = Array.copy a in
-    for i = 0 to b_len - 1 do
-      Array.unsafe_set b i (Array.unsafe_get a (b_len - 1 - i))
-    done;
-    b
-
 let reverse_of_list = function
   | [] -> [||]
   | hd :: tl ->
@@ -60,49 +48,6 @@ let reverse_of_list = function
     in
     fill (len - 1) tl
 
-let filter a f =
-  let arr_len = Array.length a in
-  let rec aux acc i =
-    if i = arr_len then reverse_of_list acc
-    else
-      let v = Array.unsafe_get a i in
-      if f v then aux (v :: acc) (i + 1) else aux acc (i + 1)
-  in
-  aux [] 0
-
-let filter_map a (f : _ -> _ option) =
-  let arr_len = Array.length a in
-  let rec aux acc i =
-    if i = arr_len then reverse_of_list acc
-    else
-      let v = Array.unsafe_get a i in
-      match f v with
-      | Some v -> aux (v :: acc) (i + 1)
-      | None -> aux acc (i + 1)
-  in
-  aux [] 0
-
-let filter_mapi a (f : _ -> _ -> _ option) =
-  let arr_len = Array.length a in
-  let rec aux acc i =
-    if i = arr_len then reverse_of_list acc
-    else
-      let v = Array.unsafe_get a i in
-      match f i v with
-      | Some v -> aux (v :: acc) (i + 1)
-      | None -> aux acc (i + 1)
-  in
-  aux [] 0
-
-let range from to_ =
-  if from > to_ then invalid_arg "Ext_array.range"
-  else Array.init (to_ - from + 1) (fun i -> i + from)
-
-let map2i f a b =
-  let len = Array.length a in
-  if len <> Array.length b then invalid_arg "Ext_array.map2i"
-  else Array.mapi (fun i a -> f i a (Array.unsafe_get b i)) a
-
 let rec tolist_f_aux a f i res =
   if i < 0 then res
   else
@@ -110,18 +55,6 @@ let rec tolist_f_aux a f i res =
     tolist_f_aux a f (i - 1) (f v :: res)
 
 let to_list_f a f = tolist_f_aux a f (Array.length a - 1) []
-
-let rec tolist_aux a f i res =
-  if i < 0 then res
-  else
-    tolist_aux a f (i - 1)
-      (match f a.!(i) with
-      | Some v -> v :: res
-      | None -> res)
-
-let to_list_map a f = tolist_aux a f (Array.length a - 1) []
-
-let to_list_map_acc a acc f = tolist_aux a f (Array.length a - 1) acc
 
 let of_list_map a f =
   match a with
@@ -171,44 +104,6 @@ let of_list_map a f =
     in
     fill 5 tl
 
-(**
-   {[
-     # rfind_with_index [|1;2;3|] (=) 2;;
-     - : int = 1
-               # rfind_with_index [|1;2;3|] (=) 1;;
-     - : int = 0
-               # rfind_with_index [|1;2;3|] (=) 3;;
-     - : int = 2
-               # rfind_with_index [|1;2;3|] (=) 4;;
-     - : int = -1
-   ]}
-*)
-let rfind_with_index arr cmp v =
-  let len = Array.length arr in
-  let rec aux i =
-    if i < 0 then i
-    else if cmp (Array.unsafe_get arr i) v then i
-    else aux (i - 1)
-  in
-  aux (len - 1)
-
-type 'a split = No_split | Split of 'a array * 'a array
-
-let find_with_index arr cmp v =
-  let len = Array.length arr in
-  let rec aux i len =
-    if i >= len then -1
-    else if cmp (Array.unsafe_get arr i) v then i
-    else aux (i + 1) len
-  in
-  aux 0 len
-
-let find_and_split arr cmp v : _ split =
-  let i = find_with_index arr cmp v in
-  if i < 0 then No_split
-  else
-    Split (Array.sub arr 0 i, Array.sub arr (i + 1) (Array.length arr - i - 1))
-
 (** TODO: available since 4.03, use {!Array.exists} *)
 
 let exists a p =
@@ -220,14 +115,6 @@ let exists a p =
   in
   loop 0
 
-let is_empty arr = Array.length arr = 0
-
-let rec unsafe_loop index len p xs ys =
-  if index >= len then true
-  else
-    p (Array.unsafe_get xs index) (Array.unsafe_get ys index)
-    && unsafe_loop (succ index) len p xs ys
-
 let for_alli a p =
   let n = Array.length a in
   let rec loop i =
@@ -236,11 +123,6 @@ let for_alli a p =
     else false
   in
   loop 0
-
-let for_all2_no_exn xs ys p =
-  let len_xs = Array.length xs in
-  let len_ys = Array.length ys in
-  len_xs = len_ys && unsafe_loop 0 len_xs p xs ys
 
 let map a f =
   let open Array in
@@ -266,6 +148,3 @@ let fold_left a x f =
     r := f !r (unsafe_get a i)
   done;
   !r
-
-let get_or arr i cb =
-  if i >= 0 && i < Array.length arr then Array.unsafe_get arr i else cb ()

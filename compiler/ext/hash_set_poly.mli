@@ -26,10 +26,6 @@ type 'a t
 
 val create : int -> 'a t
 
-val clear : 'a t -> unit
-
-val reset : 'a t -> unit
-
 (* val copy : 'a t -> 'a t *)
 
 val add : 'a t -> 'a -> unit
@@ -39,8 +35,6 @@ val remove : 'a t -> 'a -> unit
 val mem : 'a t -> 'a -> bool
 
 val iter : 'a t -> ('a -> unit) -> unit
-
-val to_list : 'a t -> 'a list
 
 val length : 'a t -> int
 

@@ -26,36 +26,22 @@
 *)
 module Color = struct
   (* use ANSI color codes, see https://en.wikipedia.org/wiki/ANSI_escape_code *)
-  type[@warning "-37"] color =
-    | Black
-    | Red
-    | Green
-    | Yellow
-    | Blue
-    | Magenta
-    | Cyan
-    | White
+  type color = Red | Yellow | Magenta | Cyan
 
-  type[@warning "-37"] style =
+  type style =
     | FG of color (* foreground *)
-    | BG of color (* background *)
     | Bold
     | Reset
     | Dim
 
   let ansi_of_color = function
-    | Black -> "0"
     | Red -> "1"
-    | Green -> "2"
     | Yellow -> "3"
-    | Blue -> "4"
     | Magenta -> "5"
     | Cyan -> "6"
-    | White -> "7"
 
   let code_of_style = function
     | FG c -> "3" ^ ansi_of_color c
-    | BG c -> "4" ^ ansi_of_color c
     | Bold -> "1"
     | Reset -> "0"
     | Dim -> "2"
@@ -132,25 +118,18 @@ module Color = struct
     let term = try Sys.getenv "TERM" with Not_found -> "" in
     term <> "dumb" && term <> "" && isatty stderr
 
-  type[@warning "-37"] setting = Auto | Always | Never
-
   let setup =
     let first = ref true in
     (* initialize only once *)
     let formatter_l =
       [Format.std_formatter; Format.err_formatter; Format.str_formatter]
     in
-    fun o ->
+    fun () ->
       if !first then (
         first := false;
         Format.set_mark_tags true;
         List.iter set_color_tag_handling formatter_l;
-        color_enabled :=
-          match o with
-          | Some Always -> true
-          | Some Auto -> should_enable_color ()
-          | Some Never -> false
-          | None -> should_enable_color ());
+        color_enabled := should_enable_color ());
       ()
 end
 
@@ -257,7 +236,7 @@ module Cli_arg_processor = struct
 
     let (Parser backend) = parsing_engine in
     (* This is the whole purpose of the Color module above *)
-    Color.setup None;
+    Color.setup ();
 
     (* Special case for tokens - bypass parsing entirely *)
     if target = "tokens" then

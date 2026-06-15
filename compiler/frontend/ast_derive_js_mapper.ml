@@ -131,9 +131,9 @@ let build_map (row_fields : Parsetree.row_field list) =
   in
   (data, rev_data, !has_bs_as)
 
-let app1 = Ast_compatible.app1
+let app1 fn arg = Ast_compatible.app1 fn arg
 
-let app2 = Ast_compatible.app2
+let app2 fn arg1 arg2 = Ast_compatible.app2 fn arg1 arg2
 
 let ( ->~ ) a b = Ast_helper.Typ.arrows [{attrs = []; lbl = Nolabel; typ = a}] b
 
@@ -354,5 +354,4 @@ let init () =
                 []
             in
             Ext_list.flat_map tdcls handle_tdcl);
-        expression_gen = None;
       })
