@@ -11,8 +11,10 @@ scripts/dce/run-dce.sh            # writes _dce/report.txt
 ```
 
 Requires the host OCaml switch (5.3) with `dune` available (`eval $(opam env)`).
-The script fetches + builds a pinned standalone reanalyze on first run (cached in
-`~/.cache/rescript-dce/reanalyze-cmt-sourcefile-fallback`).
+The script fetches + builds standalone reanalyze from
+`jono/cmt-sourcefile-fallback` by default (cached in
+`~/.cache/rescript-dce/reanalyze-cmt-sourcefile-fallback`) and rebuilds the cache
+when that branch advances.
 
 The runner excludes `tests/ounit_tests` from DCE by default. Unit tests should not
 keep compiler implementation details live, and test-only helpers are intentionally
@@ -31,12 +33,12 @@ So we use the **standalone** reanalyze (`rescript-lang/reanalyze`), built agains
 the host `compiler-libs.common`. OCaml 5.3 support started in
 [reanalyze#203](https://github.com/rescript-lang/reanalyze/pull/203), with
 follow-up source-file/dependency fixes on JonoPrest's
-`jono/cmt-sourcefile-fallback` branch. The runner pins that branch commit.
+`jono/cmt-sourcefile-fallback` branch. The runner tracks that branch by default.
 
 ## Status: actionable, still manually validated
 
 The tooling runs end-to-end and produces a full report over all dune-built cmts.
-The pinned `jono/cmt-sourcefile-fallback` build fixes the large cross-module
+The `jono/cmt-sourcefile-fallback` build fixes the large cross-module
 false-positive class seen with the earlier `ocaml-5-3` branch. Treat the report as
 an actionable worklist, but still manually validate each warning with source
 searches and `dune build @check` before committing removals.
@@ -88,5 +90,5 @@ Complementary, with a subtle boundary:
 
 Once the backlog is cleaned up, gate CI on **new** dead code: run `run-dce.sh`,
 diff against the checked-in baseline, and fail on additions. Open question: how to
-depend on the external unmerged analyzer fix long-term (pin a commit, vendor it,
-or wait for merge).
+depend on the analyzer fix long-term (track the branch, pin a commit, or use an
+upstream release once available).

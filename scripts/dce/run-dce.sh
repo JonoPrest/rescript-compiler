@@ -8,7 +8,7 @@
 # cmts (fails with Cmi_format.Error). We therefore use the STANDALONE reanalyze
 # built against the host compiler-libs. OCaml 5.3 support comes from
 # rescript-lang/reanalyze#203 plus follow-up fixes from JonoPrest's
-# `jono/cmt-sourcefile-fallback` branch, so we pin that branch commit here.
+# `jono/cmt-sourcefile-fallback` branch, so we track that branch by default.
 #
 # Usage: scripts/dce/run-dce.sh [output-file]
 #   Output defaults to _dce/report.txt
@@ -17,9 +17,9 @@ set -euo pipefail
 REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 cd "$REPO_ROOT"
 
-# Pinned standalone reanalyze with OCaml 5.3 support and cmt source-file fixes.
+# Standalone reanalyze with OCaml 5.3 support and cmt source-file fixes.
 REANALYZE_REPO="${REANALYZE_REPO:-https://github.com/JonoPrest/reanalyze.git}"
-REANALYZE_REF="${REANALYZE_REF:-c7ee038f772e5175253527236c5eac44c02f6136}" # jono/cmt-sourcefile-fallback
+REANALYZE_REF="${REANALYZE_REF:-jono/cmt-sourcefile-fallback}"
 REANALYZE_SRC="${REANALYZE_SRC:-$HOME/.cache/rescript-dce/reanalyze-cmt-sourcefile-fallback}"
 
 OUT="${1:-_dce/report.txt}"
@@ -30,15 +30,31 @@ mkdir -p "$(dirname "$OUT")"
 EXCLUDE_PATHS="${DCE_EXCLUDE_PATHS:-$REPO_ROOT/tests/ounit_tests,tests/ounit_tests,./tests/ounit_tests,$REPO_ROOT/_build/default/tests/ounit_tests,_build/default/tests/ounit_tests}"
 
 # 1. Fetch + build the standalone reanalyze (cached).
-if [ ! -x "$REANALYZE_SRC/_build/default/src/Reanalyze.exe" ]; then
-  echo "==> Fetching standalone reanalyze ($REANALYZE_REF)"
+if [ ! -d "$REANALYZE_SRC/.git" ]; then
+  echo "==> Fetching standalone reanalyze"
   rm -rf "$REANALYZE_SRC"
   git clone --quiet "$REANALYZE_REPO" "$REANALYZE_SRC"
+else
+  echo "==> Updating standalone reanalyze"
+  git -C "$REANALYZE_SRC" fetch --quiet origin
+fi
+
+if git -C "$REANALYZE_SRC" rev-parse --verify --quiet "refs/remotes/origin/$REANALYZE_REF" >/dev/null; then
+  git -C "$REANALYZE_SRC" checkout --quiet --detach "origin/$REANALYZE_REF"
+else
   git -C "$REANALYZE_SRC" checkout --quiet "$REANALYZE_REF"
+fi
+
+BIN="$REANALYZE_SRC/_build/default/src/Reanalyze.exe"
+STAMP="$REANALYZE_SRC/_build/.rescript-dce-reanalyze-sha"
+REANALYZE_SHA="$(git -C "$REANALYZE_SRC" rev-parse HEAD)"
+if [ ! -x "$BIN" ] || [ ! -f "$STAMP" ] || [ "$(cat "$STAMP")" != "$REANALYZE_SHA" ]; then
   echo "==> Building reanalyze against $(ocaml -version)"
   (cd "$REANALYZE_SRC" && dune build 2>&1 | tail -5)
+  mkdir -p "$(dirname "$STAMP")"
+  echo "$REANALYZE_SHA" > "$STAMP"
 fi
-BIN="$REANALYZE_SRC/_build/default/src/Reanalyze.exe"
+echo "==> Using reanalyze $REANALYZE_SHA"
 
 # 2. Typecheck-build so dune emits fresh .cmt for EVERY module, including the
 #    executable mains (bsc, res_cli). A plain `dune build` does native compilation
